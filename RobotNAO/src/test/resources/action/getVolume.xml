@@ -4,11 +4,9 @@
       <mutation declare="false"></mutation>
       <field name="DEBUG">FALSE</field>
     </block>
-    <block type="naoActions_setVolume" id="?0!^}H%/5ol7c0QL6nXE" intask="true">
+    <block type="naoActions_setVolume" id="Yb)XRXzG|a+-XI[^Z6L!" intask="true">
       <value name="VOLUME">
-        <block type="math_number" id="+SL#)/oJn~zIfW3-WUFn" intask="true">
-          <field name="NUM">50</field>
-        </block>
+        <block type="naoActions_getVolume" id="e*4}a+X]S8},SH#_zVZ7" intask="true"></block>
       </value>
     </block>
   </instance>

@@ -4,12 +4,8 @@
       <mutation declare="false"></mutation>
       <field name="DEBUG">FALSE</field>
     </block>
-    <block type="naoActions_setVolume" id="?0!^}H%/5ol7c0QL6nXE" intask="true">
-      <value name="VOLUME">
-        <block type="math_number" id="+SL#)/oJn~zIfW3-WUFn" intask="true">
-          <field name="NUM">50</field>
-        </block>
-      </value>
+    <block type="naoActions_setLanguage" id="(IJ9~.{_2-@tHX.i^w~r" intask="true">
+      <field name="LANGUAGE">GERMAN</field>
     </block>
   </instance>
 </block_set>
