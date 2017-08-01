@@ -4,8 +4,8 @@
       <mutation declare="false"></mutation>
       <field name="DEBUG">FALSE</field>
     </block>
-    <block type="naoActions_applyPosture" id="`NP:Q;+4(uzpsyey};q1" intask="true">
-      <field name="DIRECTION">STAND</field>
+    <block type="naoActions_mode" id="(}37`TuR@I3Ud[7ydgjP" intask="true">
+      <field name="DIRECTION">SIT</field>
     </block>
   </instance>
 </block_set>

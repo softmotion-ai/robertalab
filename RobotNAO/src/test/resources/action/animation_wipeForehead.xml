@@ -4,6 +4,8 @@
       <mutation declare="false"></mutation>
       <field name="DEBUG">FALSE</field>
     </block>
-    <block type="naoActions_stop" id="jqj!b{#2.3^YWbyWLl{k" intask="true"></block>
+    <block type="naoActions_animation" id="SWT}UZF7q+Pk{kJRZjL)" intask="true">
+      <field name="MOVE">WIPEFOREHEAD</field>
+    </block>
   </instance>
 </block_set>

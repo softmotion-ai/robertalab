@@ -1,28 +1,29 @@
-<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="ev3" xmlversion="" description="">y" robottype="nao" xmlversion="">
-  <instance x="38" y="88">
-    <block type="robControls_start" id="y#o+?y]FjL_GfGa]^1GJ" intask="true" deletable="false">
+<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nao" xmlversion="" description="">
+  <instance x="138" y="88">
+    <block type="robControls_start" id="620P}NBy3A}|E4i@Eq.O" intask="true" deletable="false">
       <mutation declare="false"></mutation>
       <field name="DEBUG">FALSE</field>
     </block>
-    <block type="naoActions_pointAt" id="!v8cLwA8lC0l8`c=?9/J" intask="true">
+    <block type="naoActions_pointLookAt" id="MnV26T=UBa@,[B!;2J,T" intask="true">
+      <field name="MODE">0</field>
       <field name="DIRECTION">0</field>
       <value name="X">
-        <block type="math_number" id="k4ehi#OXd1BQ-TQnR3tm" intask="true">
+        <block type="math_number" id="j:j4x2UVJkK;6jOq9m|A" intask="true">
           <field name="NUM">0</field>
         </block>
       </value>
       <value name="Y">
-        <block type="math_number" id="mU;*C8MOL6=B^#,Xp^G+" intask="true">
+        <block type="math_number" id="2lFl8H/WO7EfOG:GH#!G" intask="true">
           <field name="NUM">0</field>
         </block>
       </value>
       <value name="Z">
-        <block type="math_number" id="1shz@(!Z9Re%JZLq5|+k" intask="true">
+        <block type="math_number" id="QHOz@ZmTZ}C4zLE+dTrG" intask="true">
           <field name="NUM">0</field>
         </block>
       </value>
       <value name="Speed">
-        <block type="math_number" id="f[_TI+J*~O{m3Le:P|+s" intask="true">
+        <block type="math_number" id="3v9`vVyWvEjbqy6S5[@9" intask="true">
           <field name="NUM">0</field>
         </block>
       </value>

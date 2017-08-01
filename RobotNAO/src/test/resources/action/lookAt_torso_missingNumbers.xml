@@ -4,6 +4,9 @@
       <mutation declare="false"></mutation>
       <field name="DEBUG">FALSE</field>
     </block>
-    <block type="naoActions_stop" id="jqj!b{#2.3^YWbyWLl{k" intask="true"></block>
+    <block type="naoActions_pointLookAt" id="MnV26T=UBa@,[B!;2J,T" intask="true">
+      <field name="MODE">1</field>
+      <field name="DIRECTION">0</field>
+    </block>
   </instance>
 </block_set>

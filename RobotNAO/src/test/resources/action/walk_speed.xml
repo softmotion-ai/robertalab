@@ -4,19 +4,19 @@
       <mutation declare="false"></mutation>
       <field name="DEBUG">FALSE</field>
     </block>
-    <block type="naoActions_walkTo" id="Za;biOx%F!YK`1HH7.l`" intask="true">
-      <value name="X">
-        <block type="math_number" id="qg03|u`aLXCUTVrCO^fG" intask="true">
+    <block type="naoActions_walk_async" id="hpIiJeM{P_y=;vvY[i:m" intask="true">
+      <value name="XSpeed">
+        <block type="math_number" id="hEdM19]pE|Gh}*,/nSL]" intask="true">
           <field name="NUM">0</field>
         </block>
       </value>
-      <value name="Y">
-        <block type="math_number" id="ve|:tDyT25t9:WP@Htk," intask="true">
+      <value name="YSpeed">
+        <block type="math_number" id="_M7QlHxbKZ[zG/t6my%4" intask="true">
           <field name="NUM">0</field>
         </block>
       </value>
-      <value name="Theta">
-        <block type="math_number" id="ArdJYcx6*OMB8R)_9+oi" intask="true">
+      <value name="ZSpeed">
+        <block type="math_number" id="75f;oWj.rVcy,k]`p!0t" intask="true">
           <field name="NUM">0</field>
         </block>
       </value>

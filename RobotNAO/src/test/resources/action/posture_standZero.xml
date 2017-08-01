@@ -5,7 +5,7 @@
       <field name="DEBUG">FALSE</field>
     </block>
     <block type="naoActions_applyPosture" id="`NP:Q;+4(uzpsyey};q1" intask="true">
-      <field name="DIRECTION">STAND</field>
+      <field name="DIRECTION">STANDZERO</field>
     </block>
   </instance>
 </block_set>

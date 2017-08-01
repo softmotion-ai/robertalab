@@ -6,7 +6,7 @@
     </block>
     <block type="naoActions_pointLookAt" id="MnV26T=UBa@,[B!;2J,T" intask="true">
       <field name="MODE">1</field>
-      <field name="DIRECTION">0</field>
+      <field name="DIRECTION">1</field>
       <value name="X">
         <block type="math_number" id="j:j4x2UVJkK;6jOq9m|A" intask="true">
           <field name="NUM">0</field>
