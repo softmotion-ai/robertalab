@@ -1,0 +1,5 @@
+<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nxt" xmlversion="" description="">
+  <instance x="212" y="213">
+    <block type="bob3Sensors_getCode" id="I-QQ2T`QKEK3!e}27ehb" intask="false"></block>
+  </instance>
+</block_set>
