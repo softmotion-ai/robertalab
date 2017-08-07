@@ -1,0 +1,32 @@
+<block_set xmlns="http://de.fhg.iais.roberta.blockly"
+	robottype="makeblock" xmlversion="2.0" description="">
+	<instance x="273" y="50">
+		<block type="robControls_start_ardu" id="4x8QZ3=GI_i9owqg2d%+"
+			intask="true" deletable="false">
+			<mutation declare="true"></mutation>
+			<field name="DEBUG">FALSE</field>
+			<statement name="ST">
+				<block type="robGlobalVariables_declare" id="im;=K])[XV0R|`l;DtYn"
+					intask="true" deletable="false" movable="false">
+					<mutation next="false" declaration_type="Boolean"></mutation>
+					<field name="VAR">item</field>
+					<field name="TYPE">Boolean</field>
+					<value name="VALUE">
+						<block type="makeblockSensors_light" id="13+]ux:NFVRQd9EKC?`~"
+							intask="true">
+							<field name="MODE">Right</field>
+							<field name="SENSORPORT">1</field>
+						</block>
+					</value>
+				</block>
+			</statement>
+		</block>
+		<block type="robControls_loopForever_ardu" id="iWmPnKSZ9n?Jdu+Z}D7,"
+			intask="true" deletable="false" movable="false"></block>
+	</instance>
+	<instance x="1171" y="526">
+		<block type="logic_boolean" id="S{h;)QGk1I`%X)tUFBpK" intask="false">
+			<field name="BOOL">TRUE</field>
+		</block>
+	</instance>
+</block_set>
