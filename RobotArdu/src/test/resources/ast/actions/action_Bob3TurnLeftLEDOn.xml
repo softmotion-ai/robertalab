@@ -1,8 +1,0 @@
-<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nxt" xmlversion="" description="">
-  <instance x="113" y="238">
-    <block type="bob3Actions_set_led" id="ycMzd}b_Xb%|i,{E,i~=" intask="false">
-      <field name="LEDSIDE">LED_4</field>
-      <field name="LEDSTATE">ON</field>
-    </block>
-  </instance>
-</block_set>
