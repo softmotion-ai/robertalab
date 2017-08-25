@@ -92,7 +92,7 @@ recipe.preproc.macros="{compiler.path}{compiler.cpp.cmd}" {compiler.cpp.flags} {
 # AVR Uploader/Programmers tools
 # ------------------------------
 
-tools.avrdude.path={runtime.tools.avrdude.path}
+tools.avrdude.path=C:\Program Files (x86)\Arduino\hardware\tools\avr
 tools.avrdude.cmd.path={path}/bin/avrdude
 tools.avrdude.config.path={path}/etc/avrdude.conf
 
