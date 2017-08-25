@@ -119,7 +119,7 @@ create table CONFIGURATION (
   NAME varchar(255) not null,
   OWNER_ID INTEGER,
   ROBOT_ID INTEGER not null,
-  CONFIGURATION_TEXT varchar(16M),
+  CONFIGURATION_HASH varchar(255),
   CREATED timestamp not null,
   LAST_CHANGED timestamp not null,
   LAST_CHECKED timestamp,
@@ -130,6 +130,13 @@ create table CONFIGURATION (
   primary key (ID),
   foreign key (OWNER_ID) references USER(ID) ON DELETE CASCADE,
   foreign key (ROBOT_ID) references ROBOT(ID)
+);
+
+create table CONFIGURATION_DATA (
+  CONFIGURATION_HASH varchar(255) not null,
+  CONFIGURATION_TEXT varchar(16M) not null,
+  
+  primary key (CONFIGURATION_HASH)
 );
 
 insert into ROBOT
