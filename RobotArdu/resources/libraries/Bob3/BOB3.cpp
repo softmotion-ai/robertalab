@@ -180,7 +180,8 @@ void Bob3::enableArms(bool enable) {
 
 
 uint16_t Bob3::getTemperature() {
-  return analog_getValueExt(ANALOG_TEMP, 0);
+  uint16_t centigradeValue = uint16_t( ( analog_getValueExt(ANALOG_TEMP, 0) - 32 ) * ( 5.0 / 9.0 ) );
+  return centigradeValue;
 }
 
 
