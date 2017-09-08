@@ -1,4 +1,6 @@
-alter table PROGRAM add AUTHOR_ID INTEGER default 0 not null before PROGRAM_TEXT;
+alter table PROGRAM add CONFIG_NAME varchar(256) default null before CREATED;
+alter table PROGRAM add CONFIG_HASH varchar(256) default null before CREATED;
+alter table PROGRAM add AUTHOR_ID INTEGER default 0 not null before ROBOT_ID;
 alter table PROGRAM add foreign key(AUTHOR_ID) references USER(ID) on delete cascade;
 
 update PROGRAM set AUTHOR_ID = OWNER_ID;
