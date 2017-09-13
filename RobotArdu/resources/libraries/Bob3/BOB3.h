@@ -115,5 +115,14 @@ uint16_t random16() {
   return random32() & 0xffff;
 }
 
+static inline
+void remember(int16_t value) {
+    eeprom_update_word ((uint16_t *)(E2END-1), ~value);
+}
+
+static inline
+int16_t recall() {
+    return ~eeprom_read_word ((const uint16_t *)(E2END-1));
+}
 
 #endif
