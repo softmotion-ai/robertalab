@@ -759,3 +759,7 @@ void SteerDrive(unsigned char portLeft, unsigned char portRight, float powerLeft
     OnFwdReg(portLeft, powerLeft, OUT_REGMODE_SPEED);
   }
 }
+
+inline float SpeedTest(float speed){
+    return abs(speed) < 100  ? speed : speed/abs(speed)*100;
+}
