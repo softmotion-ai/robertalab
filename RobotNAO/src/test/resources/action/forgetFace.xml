@@ -6,7 +6,7 @@
     </block>
   </instance>
   <instance x="87" y="113">
-    <block type="naoSensors_forgetFace" id=")ymAL)u5g|y%/r0]PgOt" intask="false">
+    <block type="naoActions_forgetFace" id=")ymAL)u5g|y%/r0]PgOt" intask="false">
       <value name="NAME">
         <block type="text" id="7w=Jy:js5Gkk0iVxTP?a" intask="false">
           <field name="TEXT">roberta</field>
