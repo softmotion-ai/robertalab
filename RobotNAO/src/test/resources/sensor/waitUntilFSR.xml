@@ -1,0 +1,46 @@
+<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nao" xmlversion="" description="" tags="undefined">
+  <instance x="288" y="113">
+    <block type="robControls_start" id="vGp;udPRaay)BS^Cgw2H" intask="true" deletable="false">
+      <mutation declare="false"></mutation>
+      <field name="DEBUG">FALSE</field>
+    </block>
+    <block type="naoControls_wait_for" id="Dm|~A(gP+,;;{{uB5vVA" intask="true">
+      <value name="WAIT0">
+        <block type="logic_compare" id="H!FkF2TYUSAic(fTR3{|" intask="true">
+          <field name="OP">GT</field>
+          <value name="A">
+            <block type="naoSensors_getSample" id="mYqdV~IVUNJdO9vi5|aJ" intask="true" deletable="false" movable="false">
+              <mutation input="NAO_FSR"></mutation>
+              <field name="SENSORTYPE">NAO_FSR</field>
+              <field name="SIDE">LEFT</field>
+            </block>
+          </value>
+          <value name="B">
+            <block type="math_number" id="9g-!pr{w`)h}Au~rNS|V" intask="true">
+              <field name="NUM">2</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="naoControls_wait_for" id="+~Zj89=Ng^U1)vfBFreG" intask="true">
+      <value name="WAIT0">
+        <block type="logic_compare" id="li9r%^91vl@;QJD--U(Z" intask="true">
+          <field name="OP">GT</field>
+          <value name="A">
+            <block type="naoSensors_getSample" id="p|f,L]WZ-1W11CRNH8;t" intask="true" deletable="false" movable="false">
+              <mutation input="NAO_FSR"></mutation>
+              <field name="SENSORTYPE">NAO_FSR</field>
+              <field name="SIDE">RIGHT</field>
+            </block>
+          </value>
+          <value name="B">
+            <block type="math_number" id="XgscxCuq(1;EonbtI}Dj" intask="true">
+              <field name="NUM">2</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+  </instance>
+</block_set>

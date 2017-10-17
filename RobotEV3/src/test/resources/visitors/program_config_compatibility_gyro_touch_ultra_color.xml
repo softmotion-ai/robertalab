@@ -1,5 +1,5 @@
 <block_set xmlns="http://de.fhg.iais.roberta.blockly"
-	robottype="ev3" xmlversion="2.0" description="">
+	robottype="ev3" xmlversion="2.0" description="" tags="">
 	<instance x="683" y="59">
 		<block type="robControls_start" id="ht7;UpapMC=|;X[Hs^+Q"
 			intask="true" deletable="false">

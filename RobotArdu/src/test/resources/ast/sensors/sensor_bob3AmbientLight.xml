@@ -1,5 +1,5 @@
 <block_set xmlns="http://de.fhg.iais.roberta.blockly"
-	robottype="nibo" xmlversion="2.0" description="">
+	robottype="nibo" xmlversion="2.0" description="" tags="">
 	<instance x="273" y="50">
 		<block type="robControls_start_ardu" id="9gQ`lvA-06F0GogyKtF*"
 			intask="true" deletable="false">

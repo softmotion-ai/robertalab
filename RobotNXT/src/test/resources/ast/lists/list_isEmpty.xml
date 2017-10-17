@@ -1,4 +1,4 @@
-<block_set  xmlns="http://de.fhg.iais.roberta.blockly" robottype="nxt" xmlversion="" description="">
+<block_set  xmlns="http://de.fhg.iais.roberta.blockly" robottype="nxt" xmlversion="" description="" tags="">
   <instance x="-7" y="230">
     <block type="lists_isEmpty" id="523" inline="true">
       <value name="VALUE">
