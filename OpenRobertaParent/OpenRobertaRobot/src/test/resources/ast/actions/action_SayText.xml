@@ -1,3 +1,4 @@
+<<<<<<< HEAD:OpenRobertaParent/RobotNAO/src/test/resources/action/say.xml
 <block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nao" xmlversion="" description="" tags="undefined">
   <instance x="88" y="63">
     <block type="robControls_start" id="y7Zp]?DK8BHoi+KqV|*)" intask="true" deletable="false">
@@ -22,4 +23,20 @@
       </value>
     </block>
   </instance>
+=======
+<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nao" xmlversion="" description="" tags="">
+  <instance x="138" y="138">
+    <block type="robControls_start" id="620P}NBy3A}|E4i@Eq.O" intask="true" deletable="false">
+      <mutation declare="false"></mutation>
+      <field name="DEBUG">FALSE</field>
+    </block>
+    <block type="naoActions_sayText" id="=2?#^?FoMo_|*P75M}tS" intask="true">
+      <value name="OUT">
+        <block type="text" id="lg/;-9.5OW!C03bsjPb@" intask="true">
+          <field name="TEXT">Hello</field>
+        </block>
+      </value>
+    </block>
+  </instance>
+>>>>>>>  #425 moved SayText from NAO to generic robot:OpenRobertaParent/OpenRobertaRobot/src/test/resources/ast/actions/action_SayText.xml
 </block_set>
