@@ -1,13 +1,23 @@
-<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nao" xmlversion="" description="" tags="">
-  <instance x="138" y="138">
-    <block type="robControls_start" id="620P}NBy3A}|E4i@Eq.O" intask="true" deletable="false">
+<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nao" xmlversion="" description="" tags="undefined">
+  <instance x="88" y="63">
+    <block type="robControls_start" id="y7Zp]?DK8BHoi+KqV|*)" intask="true" deletable="false">
       <mutation declare="false"></mutation>
       <field name="DEBUG">FALSE</field>
     </block>
-    <block type="naoActions_sayText" id="=2?#^?FoMo_|*P75M}tS" intask="true">
+    <block type="naoActions_sayText" id="MUEMW*nA8L:2},J|MQ,p" intask="true">
       <value name="OUT">
-        <block type="text" id="lg/;-9.5OW!C03bsjPb@" intask="true">
+        <block type="text" id="N??Q9Q`1dc0)=z_dKMki" intask="true">
           <field name="TEXT">Hello</field>
+        </block>
+      </value>
+      <value name="SPEED">
+        <block type="math_number" id="_)!RGEnA;^7bF9voV3xG" intask="true">
+          <field name="NUM">100</field>
+        </block>
+      </value>
+      <value name="SHAPE">
+        <block type="math_number" id="{@IC|Bdqi,vQDzIUlWon" intask="true">
+          <field name="NUM">100</field>
         </block>
       </value>
     </block>
