@@ -69,7 +69,7 @@
             <block type="controls_whileUntil" id="*wJ)*qM7.yXsv406#Jcn" intask="true">
               <field name="MODE">WHILE</field>
               <value name="BOOL">
-                <block type="robSensors_key_isPressed" id="B5045}XpZ93VqTJDfCzg" intask="true">
+                <block type="robSensors_key_getSample" id="B5045}XpZ93VqTJDfCzg" intask="true">
                   <field name="KEY">LEFT</field>
                   <data>ardu</data>
                 </block>

@@ -8,7 +8,7 @@
       <mutation else="1"></mutation>
       <repetitions>
         <value name="IF0">
-          <block type="robSensors_touch_isPressed" id="503">
+          <block type="robSensors_touch_getSample" id="503">
             <field name="SENSORPORT">1</field>
           </block>
         </value>
@@ -23,7 +23,7 @@
             <mutation elseif="1" else="1"></mutation>
             <repetitions>
               <value name="IF0">
-                <block type="robSensors_touch_isPressed" id="509">
+                <block type="robSensors_touch_getSample" id="509">
                   <field name="SENSORPORT">1</field>
                 </block>
               </value>
@@ -68,7 +68,7 @@
                   <block type="controls_whileUntil" id="633" inline="false">
                   <field name="MODE">UNTIL</field>
                   <value name="BOOL">
-                    <block type="robSensors_key_isPressed" id="661">
+                    <block type="robSensors_key_getSample" id="661">
                       <field name="KEY">UP</field>
                     </block>
                   </value>

@@ -16,7 +16,7 @@
           <block type="robProcedures_ifreturn" id="101" inline="true">
             <mutation value="1" return_type="Boolean"></mutation>
             <value name="CONDITION">
-              <block type="robSensors_touch_isPressed" id="104">
+              <block type="robSensors_touch_getSample" id="104">
                 <field name="SENSORPORT">1</field>
               </block>
             </value>

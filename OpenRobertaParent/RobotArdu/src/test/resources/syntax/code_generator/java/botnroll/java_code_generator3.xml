@@ -62,7 +62,7 @@
           <field name="TYPE">Number</field>
           <value name="VALUE">
             <block type="robSensors_timer_getSample" id="E0}p#@!12QeyH]4FLScj" intask="true">
-              <field name="SENSORNUM">1</field>
+              <field name="SENSORPORT">1</field>
               <data>ev3</data>
             </block>
           </value>
@@ -81,7 +81,7 @@
       </value>
       <statement name="DO">
         <block type="robSensors_timer_reset" id="C.hUh7XM3`qw?`n6I%G@" intask="true">
-          <field name="SENSORNUM">1</field>
+          <field name="SENSORPORT">1</field>
           <data>ev3</data>
         </block>
         <block type="variables_set" id="uM6oJtf|EgSP+f@%7`49" intask="true">

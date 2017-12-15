@@ -28,7 +28,7 @@
         </block>
       </value>
       <value name="ADD5">
-        <block type="robSensors_touch_isPressed" id="141" >
+        <block type="robSensors_touch_getSample" id="141" >
           <field name="SENSORPORT">1</field>
         </block>
       </value>

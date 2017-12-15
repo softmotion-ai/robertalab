@@ -429,7 +429,7 @@
               <block type="robSensors_getSample" id="88" intask="true" deletable="false" movable="false">
                 <mutation input="TIME"></mutation>
                 <field name="SENSORTYPE">TIME</field>
-                <field name="SENSORNUM">1</field>
+                <field name="SENSORPORT">1</field>
               </block>
             </value>
             <value name="B">

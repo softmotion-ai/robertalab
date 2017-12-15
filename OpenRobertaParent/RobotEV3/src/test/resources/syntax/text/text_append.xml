@@ -8,7 +8,7 @@
         </block>
       </value>
       <value name="TEXT">
-        <block type="robSensors_touch_isPressed" id="162" >
+        <block type="robSensors_touch_getSample" id="162" >
           <field name="SENSORPORT">1</field>
         </block>
       </value>

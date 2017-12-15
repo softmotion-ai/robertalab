@@ -52,14 +52,14 @@
     <block type="robSensors_getSample" id="46" >
       <mutation input="ENCODER_ROTATION"></mutation>
       <field name="SENSORTYPE">ENCODER_ROTATION</field>
-      <field name="MOTORPORT">A</field>
+      <field name="SENSORPORT">A</field>
     </block>
   </instance>
   <instance x="176" y="319">
     <block type="robSensors_getSample" id="46" >
       <mutation input="ENCODER_DEGREE"></mutation>
       <field name="SENSORTYPE">ENCODER_DEGREE</field>
-      <field name="MOTORPORT">A</field>
+      <field name="SENSORPORT">A</field>
     </block>
   </instance>
   <instance x="196" y="359">
@@ -87,7 +87,7 @@
     <block type="robSensors_getSample" id="55" >
       <mutation input="TIME"></mutation>
       <field name="SENSORTYPE">TIME</field>
-      <field name="SENSORNUM">1</field>
+      <field name="SENSORPORT">1</field>
     </block>
   </instance>
 </block_set>

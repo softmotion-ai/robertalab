@@ -9,7 +9,7 @@
 		<block type="robActions_display_text" id="}@8p#L8JKPa~p!8P/[5V"
 			intask="true">
 			<value name="OUT">
-				<block type="robSensors_touch_isPressed" id="iL+Gb+96Jrh|8}Fkru*^"
+				<block type="robSensors_touch_getSample" id="iL+Gb+96Jrh|8}Fkru*^"
 					intask="true">
 					<field name="SENSORPORT">1</field>
 				</block>
@@ -96,7 +96,7 @@
 				<block type="robSensors_encoder_getSample" id="I%@xuf;uE!:+KBSB4eFG"
 					intask="true">
 					<field name="MODE">ROTATION</field>
-					<field name="MOTORPORT">A</field>
+					<field name="SENSORPORT">A</field>
 				</block>
 			</value>
 			<value name="COL">

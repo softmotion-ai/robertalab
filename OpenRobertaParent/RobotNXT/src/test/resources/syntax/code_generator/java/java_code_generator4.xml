@@ -94,7 +94,7 @@
           <block type="controls_whileUntil" id="216" inline="false">
             <field name="MODE">WHILE</field>
             <value name="BOOL">
-              <block type="robSensors_touch_isPressed" id="350">
+              <block type="robSensors_touch_getSample" id="350">
                 <field name="SENSORPORT">1</field>
               </block>
             </value>

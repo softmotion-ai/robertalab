@@ -49,13 +49,13 @@
           </block>
         </value>
         <statement name="DO1">
-          <block type="robSensors_encoder_reset" id="10">
-            <field name="MOTORPORT">A</field>
+          <block type="robSensors_encoder_reset" id="26">
+            <field name="SENSORPORT">A</field>
           </block>
         </statement>
         <statement name="ELSE">
-          <block type="robSensors_encoder_reset" id="16">
-            <field name="MOTORPORT">A</field>
+          <block type="robSensors_encoder_reset" id="26">
+            <field name="SENSORPORT">A</field>
           </block>
         </statement>
       </repetitions>

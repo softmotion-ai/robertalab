@@ -76,7 +76,7 @@
       <mutation datatype="Boolean"></mutation>
       <field name="VAR">variablenName2</field>
       <value name="VALUE">
-        <block type="robSensors_touch_isPressed" id="161" intask="true">
+        <block type="robSensors_touch_getSample" id="161" intask="true">
           <field name="SENSORPORT">1</field>
         </block>
       </value>
@@ -159,7 +159,7 @@
       </value>
     </block>
     <block type="robSensors_encoder_reset" id="264" intask="true">
-      <field name="MOTORPORT">A</field>
+      <field name="SENSORPORT">A</field>
     </block>
     <block type="variables_set" id="284" inline="false" intask="true">
       <mutation datatype="Number"></mutation>
@@ -167,7 +167,7 @@
       <value name="VALUE">
         <block type="robSensors_encoder_getSample" id="277" intask="true">
           <field name="MODE">ROTATION</field>
-          <field name="MOTORPORT">A</field>
+          <field name="SENSORPORT">A</field>
         </block>
       </value>
     </block>
@@ -177,7 +177,7 @@
       <value name="VALUE">
         <block type="robSensors_encoder_getSample" id="277" intask="true">
           <field name="MODE">DEGREE</field>
-          <field name="MOTORPORT">D</field>
+          <field name="SENSORPORT">D</field>
         </block>
       </value>
     </block>
@@ -185,7 +185,7 @@
       <mutation datatype="Boolean"></mutation>
       <field name="VAR">variablenName2</field>
       <value name="VALUE">
-        <block type="robSensors_key_isPressed" id="297" intask="true">
+        <block type="robSensors_key_getSample" id="297" intask="true">
           <field name="KEY">ENTER</field>
         </block>
       </value>
@@ -218,12 +218,12 @@
       <field name="VAR">variablenName</field>
       <value name="VALUE">
         <block type="robSensors_timer_getSample" id="345" intask="true">
-          <field name="SENSORNUM">2</field>
+          <field name="SENSORPORT">2</field>
         </block>
       </value>
     </block>
     <block type="robSensors_timer_reset" id="364" intask="true">
-      <field name="SENSORNUM">2</field>
+      <field name="SENSORPORT">2</field>
     </block>
   </instance>
 </block_set>

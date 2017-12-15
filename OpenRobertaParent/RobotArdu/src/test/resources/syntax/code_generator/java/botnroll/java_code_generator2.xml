@@ -58,19 +58,19 @@
       <value name="WAIT0">
         <block type="logic_ternary" id="[kWD-31Ma0J.`P/cxt*:" intask="true">
           <value name="IF">
-            <block type="robSensors_key_isPressed" id=":7uzN9|sz~xOmc~W4m;(" intask="true">
+            <block type="robSensors_key_getSample" id=":7uzN9|sz~xOmc~W4m;(" intask="true">
               <field name="KEY">ENTER</field>
               <data>ardu</data>
             </block>
           </value>
           <value name="THEN">
-            <block type="robSensors_key_isPressed" id="YrMG{x-|B2^.m{%Y@;BN" intask="true">
+            <block type="robSensors_key_getSample" id="YrMG{x-|B2^.m{%Y@;BN" intask="true">
               <field name="KEY">ANY</field>
               <data>ardu</data>
             </block>
           </value>
           <value name="ELSE">
-            <block type="robSensors_key_isPressed" id="[O8zqi[(,7gtG[H7A{dz" intask="true">
+            <block type="robSensors_key_getSample" id="[O8zqi[(,7gtG[H7A{dz" intask="true">
               <field name="KEY">RIGHT</field>
               <data>ardu</data>
             </block>

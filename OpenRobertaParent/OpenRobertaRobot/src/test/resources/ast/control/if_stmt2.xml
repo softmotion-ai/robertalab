@@ -50,7 +50,7 @@
         </value>
         <statement name="DO1">
           <block type="robSensors_encoder_reset" id="26">
-            <field name="MOTORPORT">A</field>
+            <field name="SENSORPORT">A</field>
           </block>
         </statement>
       </repetitions>

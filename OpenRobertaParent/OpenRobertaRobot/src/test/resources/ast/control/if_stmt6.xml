@@ -25,7 +25,7 @@
         </statement>
         <statement name="ELSE">
           <block type="robSensors_encoder_reset" id="242">
-            <field name="MOTORPORT">A</field>
+            <field name="SENSORPORT">A</field>
           </block>
         </statement>
       </repetitions>

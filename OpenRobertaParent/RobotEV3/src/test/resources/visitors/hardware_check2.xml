@@ -8,7 +8,7 @@
       <mutation elseif="1"></mutation>
       <repetitions>
         <value name="IF0">
-          <block type="robSensors_touch_isPressed" id="194">
+          <block type="robSensors_touch_getSample" id="194">
             <field name="SENSORPORT">1</field>
           </block>
         </value>

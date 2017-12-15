@@ -2,7 +2,7 @@
 <instance x="-96" y="73">
     <block type="controls_if" id="858" inline="false">
       <value name="IF0">
-        <block type="robSensors_touch_isPressed" id="859">
+        <block type="robSensors_touch_getSample" id="859">
           <field name="SENSORPORT">1</field>
         </block>
       </value>
@@ -11,7 +11,7 @@
           <mutation datatype="Number"></mutation>
           <field name="VAR">item</field>
           <value name="VALUE">
-            <block type="robSensors_key_isPressed" id="966">
+            <block type="robSensors_key_getSample" id="966">
               <field name="KEY">ENTER</field>
             </block>
           </value>

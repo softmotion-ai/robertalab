@@ -24,12 +24,12 @@
             <block type="logic_operation" id="57" inline="true" disabled="true">
               <field name="OP">AND</field>
               <value name="A">
-                <block type="robSensors_touch_isPressed" id="65" disabled="true">
+                <block type="robSensors_touch_getSample" id="65" disabled="true">
                   <field name="SENSORPORT">1</field>
                 </block>
               </value>
               <value name="B">
-                <block type="robSensors_touch_isPressed" id="63" disabled="true">
+                <block type="robSensors_touch_getSample" id="63" disabled="true">
                   <field name="SENSORPORT">2</field>
                 </block>
               </value>

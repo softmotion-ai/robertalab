@@ -42,7 +42,7 @@
             </block>
           </value>
           <value name="B">
-            <block type="robSensors_touch_isPressed" id="83" intask="true">
+            <block type="robSensors_touch_getSample" id="83" intask="true">
               <field name="SENSORPORT">1</field>
             </block>
           </value>
@@ -78,7 +78,7 @@
               </block>
             </value>
             <value name="B">
-              <block type="robSensors_touch_isPressed" id="83" intask="true">
+              <block type="robSensors_touch_getSample" id="83" intask="true">
                 <field name="SENSORPORT">1</field>
               </block>
             </value>
@@ -110,7 +110,7 @@
               </block>
             </value>
             <value name="B">
-              <block type="robSensors_touch_isPressed" id="83" intask="true">
+              <block type="robSensors_touch_getSample" id="83" intask="true">
                 <field name="SENSORPORT">3</field>
               </block>
             </value>
@@ -147,7 +147,7 @@
               </block>
             </value>
             <value name="B">
-              <block type="robSensors_touch_isPressed" id="83" intask="true">
+              <block type="robSensors_touch_getSample" id="83" intask="true">
                 <field name="SENSORPORT">3</field>
               </block>
             </value>
@@ -179,7 +179,7 @@
               </block>
             </value>
             <value name="B">
-              <block type="robSensors_touch_isPressed" id="83" intask="true">
+              <block type="robSensors_touch_getSample" id="83" intask="true">
                 <field name="SENSORPORT">1</field>
               </block>
             </value>
@@ -232,7 +232,7 @@
               </block>
             </value>
             <value name="B">
-              <block type="robSensors_touch_isPressed" id="83" intask="true">
+              <block type="robSensors_touch_getSample" id="83" intask="true">
                 <field name="SENSORPORT">1</field>
               </block>
             </value>
@@ -284,7 +284,7 @@
             </block>
           </value>
           <value name="B">
-            <block type="robSensors_touch_isPressed" id="83" intask="true">
+            <block type="robSensors_touch_getSample" id="83" intask="true">
               <field name="SENSORPORT">1</field>
             </block>
           </value>
