@@ -14,7 +14,7 @@
               <block type="mbedSensors_getSample" id="*t_xfBS]br;R1rg)pxOL" intask="true" deletable="false" movable="false">
                 <mutation input="KEYS_PRESSED"></mutation>
                 <field name="SENSORTYPE">KEYS_PRESSED</field>
-                <field name="KEY">A</field>
+                <field name="SENSORPORT">A</field>
                 <data>calliope</data>
               </block>
             </value>

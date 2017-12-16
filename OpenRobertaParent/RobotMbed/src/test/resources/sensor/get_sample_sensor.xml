@@ -12,7 +12,7 @@
             <block type="mbedSensors_getSample" id="f2:7=_#{oXzjNG57DO7N" intask="true" deletable="false" movable="false">
               <mutation input="KEYS_PRESSED"></mutation>
               <field name="SENSORTYPE">KEYS_PRESSED</field>
-              <field name="KEY">A</field>
+              <field name="SENSORPORT">A</field>
               <data>calliope</data>
             </block>
           </value>
@@ -32,7 +32,7 @@
             <block type="mbedSensors_getSample" id="~j!#Xmii)x,*FNu5YDrP" intask="true" deletable="false" movable="false">
               <mutation input="KEYS_PRESSED"></mutation>
               <field name="SENSORTYPE">KEYS_PRESSED</field>
-              <field name="KEY">B</field>
+              <field name="SENSORPORT">B</field>
               <data>calliope</data>
             </block>
           </value>

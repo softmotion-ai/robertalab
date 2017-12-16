@@ -69,7 +69,7 @@
                   <field name="MODE">UNTIL</field>
                   <value name="BOOL">
                     <block type="robSensors_key_getSample" id="661">
-                      <field name="KEY">UP</field>
+                      <field name="SENSORPORT">UP</field>
                     </block>
                   </value>
                   <statement name="DO">
