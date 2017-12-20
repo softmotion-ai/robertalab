@@ -10,7 +10,7 @@
 			intask="true">
 			<field name="TYPE">TEXT</field>
 			<value name="OUT">
-				<block type="mbedSensors_pin_isTouched" id="yF5,YMW9Ndze[l*kbGW!"
+				<block type="robSensors_pintouch_getSample" id="yF5,YMW9Ndze[l*kbGW!"
 					intask="true">
 					<field name="PIN">0</field>
 				</block>
@@ -20,7 +20,7 @@
 			intask="true">
 			<field name="TYPE">TEXT</field>
 			<value name="OUT">
-				<block type="mbedSensors_pin_isTouched" id="Ji;/tOC{z_Vz@CL5IY/e"
+				<block type="robSensors_pintouch_getSample" id="Ji;/tOC{z_Vz@CL5IY/e"
 					intask="true">
 					<field name="PIN">2</field>
 				</block>
@@ -30,7 +30,7 @@
 			intask="true">
 			<field name="TYPE">TEXT</field>
 			<value name="OUT">
-				<block type="mbedSensors_pin_isTouched" id="Ji;/tOC{z_Vz@CL5IY/e"
+				<block type="robSensors_pintouch_getSample" id="Ji;/tOC{z_Vz@CL5IY/e"
 					intask="true">
 					<field name="PIN">3</field>
 				</block>

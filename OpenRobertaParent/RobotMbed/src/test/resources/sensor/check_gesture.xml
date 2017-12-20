@@ -7,16 +7,16 @@
     <block type="mbedActions_display_text" id="wUYntpW]ME]UnXLcQkOB" intask="true">
     <field name="TYPE">TEXT</field>
       <value name="OUT">
-        <block type="mbedSensors_gesture_isActive" id="Ci3toFp~LsL^fPW]G5A[" intask="true">
-          <field name="GESTURE">FACE_DOWN</field>
+        <block type="robSensors_gesture_getSample" id="Ci3toFp~LsL^fPW]G5A[" intask="true">
+          <field name="MODE">FACE_DOWN</field>
         </block>
       </value>
     </block>
     <block type="mbedActions_display_text" id="n^HI2t0UsQ1BfPvA8-1." intask="true">
     <field name="TYPE">TEXT</field>
       <value name="OUT">
-        <block type="mbedSensors_gesture_isActive" id="We!RjD%w-R,xhqsXDl=U" intask="true">
-          <field name="GESTURE">LEFT</field>
+        <block type="robSensors_gesture_getSample" id="We!RjD%w-R,xhqsXDl=U" intask="true">
+          <field name="MODE">LEFT</field>
         </block>
       </value>
     </block>

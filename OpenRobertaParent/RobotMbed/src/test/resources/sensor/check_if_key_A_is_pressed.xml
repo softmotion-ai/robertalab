@@ -10,7 +10,7 @@
 			intask="true">
 			<field name="TYPE">TEXT</field>
 			<value name="OUT">
-				<block type="mbedSensors_key_isPressed" id="v]oxb)rSg{s5!9ivnPs)"
+				<block type="robSensors_key_getSample" id="v]oxb)rSg{s5!9ivnPs)"
 					intask="true">
 					<mutation name="PRESSED" />
 					<field name="MODE">PRESSED</field>

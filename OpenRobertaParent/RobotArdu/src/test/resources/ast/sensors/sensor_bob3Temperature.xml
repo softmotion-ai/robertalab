@@ -26,7 +26,7 @@
 					<mutation datatype="Number"></mutation>
 					<field name="VAR">item</field>
 					<value name="VALUE">
-						<block type="bob3Sensors_temperature_getSample" id="M*ZGLxzQ0Nh|u+S`5VPn"
+						<block type="robSensors_temperature_getSample" id="M*ZGLxzQ0Nh|u+S`5VPn"
 							intask="true"></block>
 					</value>
 				</block>

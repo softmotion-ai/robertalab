@@ -1,5 +1,5 @@
 <block_set xmlns="http://de.fhg.iais.roberta.blockly"
-	robottype="nibo" xmlversion="2.0" description="" tags="">
+	robottype="bob3" xmlversion="2.0" description="" tags="">
 	<instance x="273" y="50">
 		<block type="robControls_start_ardu" id="9gQ`lvA-06F0GogyKtF*"
 			intask="true" deletable="false">
@@ -26,7 +26,7 @@
 					<mutation datatype="Number"></mutation>
 					<field name="VAR">item</field>
 					<value name="VALUE">
-						<block type="bob3Sensors_ambientlight" id="yw[sJ[PHx2Vp+o~FPXr,"
+						<block type="robSensors_infrared_getSample" id="yw[sJ[PHx2Vp+o~FPXr,"
 							intask="true"></block>
 					</value>
 				</block>
