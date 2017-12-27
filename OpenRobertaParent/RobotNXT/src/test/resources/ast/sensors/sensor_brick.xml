@@ -15,7 +15,7 @@
 						<block type="robSensors_key_getSample" id="966">
 							<mutation mode="PRESSED" />
 							<field name="MODE">PRESSED</field>
-							<field name="SENSORPORT">1</field>
+							<field name="SENSORPORT">ENTER</field>
 						</block>
 					</value>
 				</block>
