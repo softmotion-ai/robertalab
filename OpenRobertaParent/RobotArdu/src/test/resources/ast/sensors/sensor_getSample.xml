@@ -20,7 +20,7 @@
           <field name="VAR">item</field>
           <value name="VALUE">
             <block type="robSensors_colour_getSample" id="933">
-              <field name="MODE">RGB</field>
+              <field name="MODE">LIGHT</field>
               <field name="SENSORPORT">3</field>
             </block>
           </value>

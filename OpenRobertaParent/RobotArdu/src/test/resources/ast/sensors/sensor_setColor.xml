@@ -8,8 +8,8 @@
   </instance>
   <instance x="-13" y="147">
     <block type="robSensors_colour_getSample" id="75" >
-    <mutation mode="RED"></mutation>
-      <field name="MODE">RED</field>
+    <mutation mode="LIGHT"></mutation>
+      <field name="MODE">LIGHT</field>
       <field name="SENSORPORT">1</field>
     </block>
   </instance>

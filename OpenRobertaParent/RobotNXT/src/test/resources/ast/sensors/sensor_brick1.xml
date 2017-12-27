@@ -4,7 +4,7 @@
 		<block type="robSensors_key_getSample" id="63">
 			<mutation mode="PRESSED" />
 			<field name="MODE">PRESSED</field>
-			<field name="SENSORPORT">ENTER</field>
+			<field name="SENSORPORT">1</field>
 		</block>
 	</instance>
 </block_set>

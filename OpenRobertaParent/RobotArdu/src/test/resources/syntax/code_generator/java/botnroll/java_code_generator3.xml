@@ -117,7 +117,7 @@
           <value name="IF0">
             <block type="robSensors_infrared_getSample" id="[F2B^GaW[Fv9hk+OjV8h" intask="true">
               <mutation mode="SEEK"></mutation>
-              <field name="MODE">SEEK</field>
+              <field name="MODE">PRESENCE</field>
               <field name="SENSORPORT">BOTH</field>
             </block>
           </value>
