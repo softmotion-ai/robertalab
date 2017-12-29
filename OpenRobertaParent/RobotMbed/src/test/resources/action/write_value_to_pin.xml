@@ -1,29 +1,27 @@
-<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="calliope" xmlversion="" description="" tags="">
-	<instance x="62" y="162">
-		<block type="robControls_start" id="Z]U!j%Af,:_LL.sLqXE+"
-			intask="true" deletable="false">
-			<mutation declare="false"></mutation>
-			<field name="DEBUG">FALSE</field>
-		</block>
-		<block type="mbedActions_write_to_pin" id="=(o8Tz7%4ByD?V?-8Vbo"
-			intask="true">
-			<field name="VALUETYPE">ANALOG</field>
-			<field name="PIN">0</field>
-			<value name="VALUE">
-				<block type="math_number" id="U2,:9)soa|^fip2Thk]/" intask="true">
-					<field name="NUM">0</field>
-				</block>
-			</value>
-		</block>
-		<block type="mbedActions_write_to_pin" id="n|4/96BVnryHcvYm!~:Y"
-			intask="true">
-			<field name="VALUETYPE">DIGITAL</field>
-			<field name="PIN">2</field>
-			<value name="VALUE">
-				<block type="math_number" id="0LeP=#=K{}7-}66|pcjB" intask="true">
-					<field name="NUM">0</field>
-				</block>
-			</value>
-		</block>
-	</instance>
+<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="calliope" xmlversion="2.0" description="" tags="">
+  <instance x="116" y="42">
+    <block type="robControls_start" id="92{0xdN*AMU3RH7%t_`K" intask="true" deletable="false">
+      <mutation declare="false">
+      </mutation>
+      <field name="DEBUG">TRUE</field>
+    </block>
+    <block type="mbedActions_write_to_pin" id="!z?)mITqyU^UEwhvZ_G}" intask="true">
+      <field name="VALUETYPE">ANALOG</field>
+      <field name="PIN">1</field>
+      <value name="VALUE">
+        <block type="math_number" id="mTiS+y[x!0YL~SMfSW~o" intask="true">
+          <field name="NUM">1</field>
+        </block>
+      </value>
+    </block>
+    <block type="mbedActions_write_to_pin" id="pgbp;X8Ou3Q,X%-[e+Ej" intask="true">
+      <field name="VALUETYPE">DIGITAL</field>
+      <field name="PIN">0</field>
+      <value name="VALUE">
+        <block type="math_number" id="ij2G^=|Ikj!wNkTf_Z/c" intask="true">
+          <field name="NUM">1</field>
+        </block>
+      </value>
+    </block>
+  </instance>
 </block_set>

@@ -7,19 +7,21 @@
     <block type="mbedActions_display_text" id="d2+yOm[2[PFOi.E[biVg" intask="true">
     <field name="TYPE">TEXT</field>
       <value name="OUT">
-        <block type="mbedSensors_pin_getSample" id="Uq~on1Y-~)+xmo23=g*p" intask="true">
-          <field name="VALUETYPE">ANALOG</field>
-          <field name="PIN">0</field>
-        </block>
+        <block type="robSensors_pin_getSample" id="upcu-el7H75BFy@O(DGy" intask="true">
+			<mutation mode="ANALOG"/>
+			<field name="MODE">ANALOG</field>
+			<field name="SENSORPORT">1</field>
+		</block>
       </value>
     </block>
     <block type="mbedActions_display_text" id="ACFg;26yT6s1N=df_P~A" intask="true">
     <field name="TYPE">TEXT</field>
       <value name="OUT">
-        <block type="mbedSensors_pin_getSample" id="KLgm0}lW:-sg;KVbOXvQ" intask="true">
-          <field name="VALUETYPE">DIGITAL</field>
-          <field name="PIN">2</field>
-        </block>
+		<block type="robSensors_pin_getSample" id="upcu-el7H75BFy@O(DGy" intask="true">
+			<mutation mode="DIGITAL"/>
+			<field name="MODE">DIGITAL</field>
+			<field name="SENSORPORT">0</field>
+		</block>
       </value>
     </block>
   </instance>

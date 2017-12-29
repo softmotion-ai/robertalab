@@ -8,8 +8,8 @@
   </instance>
   <instance x="-19" y="199">
     <block type="robSensors_infrared_getSample" id="91">
-      <mutation mode="SEEK"></mutation>
-      <field name="MODE">SEEK</field>
+      <mutation mode="PRESENCE"></mutation>
+      <field name="MODE">PRESENCE</field>
       <field name="SENSORPORT">3</field>
     </block>
   </instance>

@@ -7,17 +7,21 @@
     <block type="mbedActions_display_text" id="//U9g@Q@x%*/0Vmh!*w!" intask="true">
       <field name="TYPE">TEXT</field>
       <value name="OUT">
-        <block type="mbedSensors_rotation_getSample" id="D,Vz=;r?!4Q*KP|Naw{j" intask="true">
-          <field name="MODE">PITCH</field>
-        </block>
+        <block type="robSensors_gyro_getSample" id="pgdvV6d,B#D(zW,X(R5U" intask="true">
+			<mutation mode="ANGLE"/>
+			<field name="MODE">ANGLE</field>
+			<field name="SENSORPORT">x</field>
+		</block>
       </value>
     </block>
     <block type="mbedActions_display_text" id="_gQoz{qau4|egBbedrW]" intask="true">
       <field name="TYPE">TEXT</field>
       <value name="OUT">
-        <block type="mbedSensors_rotation_getSample" id="kvrI8^?b2Q=}}WJO-L[t" intask="true">
-          <field name="MODE">ROLL</field>
-        </block>
+        <block type="robSensors_gyro_getSample" id="ny65tLUsH}x:Y*0;v+h)" intask="true">
+		<mutation mode="ANGLE"/>
+			<field name="MODE">ANGLE</field>
+			<field name="SENSORPORT">y</field>
+		</block>
       </value>
     </block>
   </instance>
