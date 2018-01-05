@@ -13,7 +13,7 @@
             <field name="OP">EQ</field>
             <value name="A">
               <block type="robSensors_touch_getSample" id="145" intask="true">
-                <field name="SENSORPORT">1</field>
+                <field name="SENSORPORT">1</field><field name="SLOT" />
               </block>
             </value>
             <value name="B">
@@ -39,7 +39,7 @@
             <field name="OP">EQ</field>
             <value name="A">
               <block type="robSensors_touch_getSample" id="145" intask="true">
-                <field name="SENSORPORT">1</field>
+                <field name="SENSORPORT">1</field><field name="SLOT" />
               </block>
             </value>
             <value name="B">

@@ -7,7 +7,7 @@
     <block type="robActions_display_text" id="PqWgr4A!z)9)r99(?BVn" intask="true">
       <value name="OUT">
         <block type="robSensors_sound_getSample" id="3Y/M/qhi?Aw)IDpi25u4" intask="true">
-          <field name="SENSORPORT">1</field>
+          <field name="SENSORPORT">1</field><field name="SLOT" />
         </block>
       </value>
       <value name="COL">

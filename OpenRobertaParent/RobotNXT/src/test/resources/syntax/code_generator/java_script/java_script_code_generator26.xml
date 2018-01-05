@@ -8,7 +8,7 @@
       <value name="OUT">
         <block type="robSensors_gyro_getSample" id="*vtw7aV8{`m*PBZlP4iO" intask="true">
           <field name="MODE">ANGLE</field>
-          <field name="SENSORPORT">2</field>
+          <field name="SENSORPORT">2</field><field name="SLOT" />
         </block>
       </value>
       <value name="COL">
@@ -26,7 +26,7 @@
       <value name="OUT">
         <block type="robSensors_gyro_getSample" id="*vtw7aV8{`m*PBZlP4iO" intask="true">
           <field name="MODE">RATE</field>
-          <field name="SENSORPORT">2</field>
+          <field name="SENSORPORT">2</field><field name="SLOT" />
         </block>
       </value>
       <value name="COL">

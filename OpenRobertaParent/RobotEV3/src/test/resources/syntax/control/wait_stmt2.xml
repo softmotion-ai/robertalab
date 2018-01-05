@@ -13,6 +13,7 @@
 							<mutation input="KEY_PRESSED"/>
 							<field name="SENSORTYPE">KEY_PRESSED</field>
 							<field name="SENSORPORT">ENTER</field>
+                            <field name="SLOT" />
 						</block>
 					</value>
 					<value name="B">

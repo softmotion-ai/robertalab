@@ -8,7 +8,7 @@
       <value name="OUT">
         <block type="robSensors_encoder_getSample" id="o~q1-akXdjDpF*(+S`C*" intask="true">
           <field name="MODE">ROTATION</field>
-          <field name="SENSORPORT">B</field>
+          <field name="SENSORPORT">B</field><field name="SLOT" />
         </block>
       </value>
       <value name="COL">
@@ -26,7 +26,7 @@
       <value name="OUT">
         <block type="robSensors_encoder_getSample" id="o~q1-akXdjDpF*(+S`C*" intask="true">
           <field name="MODE">DEGREE</field>
-          <field name="SENSORPORT">B</field>
+          <field name="SENSORPORT">B</field><field name="SLOT" />
         </block>
       </value>
       <value name="COL">
@@ -44,7 +44,7 @@
       <value name="OUT">
         <block type="robSensors_encoder_getSample" id="o~q1-akXdjDpF*(+S`C*" intask="true">
           <field name="MODE">DISTANCE</field>
-          <field name="SENSORPORT">B</field>
+          <field name="SENSORPORT">B</field><field name="SLOT" />
         </block>
       </value>
       <value name="COL">

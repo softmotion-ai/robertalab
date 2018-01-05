@@ -15,6 +15,7 @@
               </mutation>
               <field name="SENSORTYPE">KEY_PRESSED</field>
               <field name="SENSORPORT">button_a</field>
+              <field name="SLOT" />
             </block>
           </value>
           <value name="B">
@@ -43,6 +44,7 @@
               </mutation>
               <field name="SENSORTYPE">GYRO_ANGLE</field>
               <field name="SENSORPORT">X</field>
+              <field name="SLOT" />
             </block>
           </value>
           <value name="B">

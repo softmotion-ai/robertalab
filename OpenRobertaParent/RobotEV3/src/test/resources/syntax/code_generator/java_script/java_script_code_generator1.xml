@@ -80,6 +80,7 @@
               <mutation input="TOUCH"></mutation>
               <field name="SENSORTYPE">TOUCH</field>
               <field name="SENSORPORT">1</field>
+              <field name="SLOT" />
             </block>
           </value>
           <value name="B">
@@ -126,6 +127,7 @@
               <mutation input="ULTRASONIC_DISTANCE"></mutation>
               <field name="SENSORTYPE">ULTRASONIC_DISTANCE</field>
               <field name="SENSORPORT">4</field>
+              <field name="SLOT" />
             </block>
           </value>
           <value name="B">

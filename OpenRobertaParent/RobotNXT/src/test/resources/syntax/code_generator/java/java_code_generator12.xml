@@ -53,6 +53,7 @@
                     <mutation input="LIGHT_LIGHT" />
                     <field name="SENSORTYPE">LIGHT_LIGHT</field>
                     <field name="SENSORPORT">3</field>
+                    <field name="SLOT" />
                     <data>nxt</data>
                   </block>
                 </value>
@@ -86,6 +87,7 @@
                     <mutation input="LIGHT_LIGHT" />
                     <field name="SENSORTYPE">LIGHT_LIGHT</field>
                     <field name="SENSORPORT">3</field>
+                    <field name="SLOT" />
                     <data>nxt</data>
                   </block>
                 </value>

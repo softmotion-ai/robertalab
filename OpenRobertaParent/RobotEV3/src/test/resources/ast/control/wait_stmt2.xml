@@ -12,7 +12,7 @@
 						<block type="robSensors_getSample" id="161">
 							<mutation input="KEYS_PRESSED"/>
 							<field name="SENSORTYPE">KEYS_PRESSED</field>
-							<field name="SENSORPORT">ENTER</field>
+							<field name="SENSORPORT">1</field><field name="SLOT" />
 						</block>
 					</value>
 					<value name="B">

@@ -15,7 +15,7 @@
               <block type="robSensors_getSample" id="68" intask="true" deletable="false" movable="false">
                 <mutation input="TOUCH"></mutation>
                 <field name="SENSORTYPE">TOUCH</field>
-                <field name="SENSORPORT">1</field>
+                <field name="SENSORPORT">1</field><field name="SLOT" />
               </block>
             </value>
             <value name="B">
@@ -43,7 +43,7 @@
               <block type="robSensors_getSample" id="75" intask="true" deletable="false" movable="false">
                 <mutation input="TOUCH"></mutation>
                 <field name="SENSORTYPE">TOUCH</field>
-                <field name="SENSORPORT">1</field>
+                <field name="SENSORPORT">1</field><field name="SLOT" />
               </block>
             </value>
             <value name="B">

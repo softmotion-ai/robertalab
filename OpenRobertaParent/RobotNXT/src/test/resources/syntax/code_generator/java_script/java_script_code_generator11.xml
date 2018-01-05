@@ -13,7 +13,7 @@
             <block type="robSensors_getSample" id="75" intask="true" deletable="false" movable="false">
               <mutation input="COLOUR_LIGHT"></mutation>
               <field name="SENSORTYPE">COLOUR_LIGHT</field>
-              <field name="SENSORPORT">3</field>
+              <field name="SENSORPORT">3</field><field name="SLOT" />
             </block>
           </value>
           <value name="B">
@@ -33,7 +33,7 @@
             <block type="robSensors_getSample" id="87" intask="true" deletable="false" movable="false">
               <mutation input="COLOUR_COLOUR"></mutation>
               <field name="SENSORTYPE">COLOUR_COLOUR</field>
-              <field name="SENSORPORT">3</field>
+              <field name="SENSORPORT">3</field><field name="SLOT" />
             </block>
           </value>
           <value name="B">
@@ -53,7 +53,7 @@
             <block type="robSensors_getSample" id="87" intask="true" deletable="false" movable="false">
               <mutation input="COLOUR_COLOUR"></mutation>
               <field name="SENSORTYPE">COLOUR_COLOUR</field>
-              <field name="SENSORPORT">3</field>
+              <field name="SENSORPORT">3</field><field name="SLOT" />
             </block>
           </value>
           <value name="B">
@@ -73,7 +73,7 @@
             <block type="robSensors_getSample" id="75" intask="true" deletable="false" movable="false">
               <mutation input="COLOUR_LIGHT"></mutation>
               <field name="SENSORTYPE">COLOUR_LIGHT</field>
-              <field name="SENSORPORT">3</field>
+              <field name="SENSORPORT">3</field><field name="SLOT" />
             </block>
           </value>
           <value name="B">

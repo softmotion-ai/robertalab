@@ -34,7 +34,7 @@
 									intask="true" deletable="false" movable="false">
 									<mutation input="TOUCH"></mutation>
 									<field name="SENSORTYPE">TOUCH</field>
-									<field name="SENSORPORT">1</field>
+									<field name="SENSORPORT">1</field><field name="SLOT" />
 									<data>ev3</data>
 								</block>
 							</value>

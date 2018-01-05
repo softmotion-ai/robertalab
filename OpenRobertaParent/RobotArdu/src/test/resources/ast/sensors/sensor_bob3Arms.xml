@@ -13,18 +13,22 @@
 					<mutation elseif="1"></mutation>
 					<repetitions>
 						<value name="IF0">
-							<block type="bob3Sensors_touch_getSample" id="x/lO,R)~B8jtu@`NGG8s"
-								intask="true">
-								<field name="ARM">1</field>
-								<field name="ARMPAIR">1</field>
-							</block>
+			                <block type="robSensors_touch_getSample" id="iWO9hkxq}zIKfY?U_kAd" intask="true">
+			                  <mutation mode="PRESSED">
+			                  </mutation>
+			                  <field name="MODE">PRESSED</field>
+			                  <field name="SENSORPORT">1</field>
+			                  <field name="SLOT">0</field>
+			                </block>
 						</value>
 						<value name="IF1">
-							<block type="bob3Sensors_touch_getSample" id="cP(Qr1`RIevkP5az02YJ"
-								intask="true">
-								<field name="ARM">2</field>
-								<field name="ARMPAIR">1</field>
-							</block>
+			                <block type="robSensors_touch_getSample" id="CJ0y1lcrO#ZS#z|c6%;o" intask="true">
+			                  <mutation mode="PRESSED">
+			                  </mutation>
+			                  <field name="MODE">PRESSED</field>
+			                  <field name="SENSORPORT">2</field>
+			                  <field name="SLOT">1</field>
+			                </block>
 						</value>
 					</repetitions>
 				</block>
