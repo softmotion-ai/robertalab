@@ -10,12 +10,12 @@
           <field name="TEXT">Hello</field>
         </block>
       </value>
-      <value name="SPEED">
+      <value name="VOICESPEED">
         <block type="math_number" id="_)!RGEnA;^7bF9voV3xG" intask="true">
           <field name="NUM">100</field>
         </block>
       </value>
-      <value name="SHAPE">
+      <value name="VOICEPITCH">
         <block type="math_number" id="{@IC|Bdqi,vQDzIUlWon" intask="true">
           <field name="NUM">100</field>
         </block>
