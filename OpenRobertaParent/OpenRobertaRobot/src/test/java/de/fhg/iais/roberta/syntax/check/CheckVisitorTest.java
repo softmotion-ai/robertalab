@@ -22,8 +22,8 @@ import de.fhg.iais.roberta.syntax.check.program.RobotCommonCheckVisitor;
 import de.fhg.iais.roberta.syntax.lang.stmt.StmtTextComment;
 import de.fhg.iais.roberta.syntax.sensor.ExternalSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.TemperatureSensor;
-import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 import de.fhg.iais.roberta.util.test.AbstractHelperForXmlTest;
+import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 
 public class CheckVisitorTest {
     AbstractHelperForXmlTest h = new GenericHelperForXmlTest();

@@ -6,8 +6,8 @@ import org.junit.Test;
 import de.fhg.iais.roberta.syntax.BlocklyBlockProperties;
 import de.fhg.iais.roberta.syntax.action.motor.MotorDriveStopAction;
 import de.fhg.iais.roberta.syntax.lang.stmt.ActionStmt;
-import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 import de.fhg.iais.roberta.util.test.AbstractHelperForXmlTest;
+import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 
 public class ActionStmtTest {
     AbstractHelperForXmlTest h = new GenericHelperForXmlTest();

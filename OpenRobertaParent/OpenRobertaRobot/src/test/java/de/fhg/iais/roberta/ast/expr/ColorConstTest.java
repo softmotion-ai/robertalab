@@ -7,8 +7,8 @@ import de.fhg.iais.roberta.mode.general.PickColor;
 import de.fhg.iais.roberta.syntax.lang.expr.Assoc;
 import de.fhg.iais.roberta.syntax.lang.expr.ColorConst;
 import de.fhg.iais.roberta.transformer.Jaxb2BlocklyProgramTransformer;
-import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 import de.fhg.iais.roberta.util.test.AbstractHelperForXmlTest;
+import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 
 public class ColorConstTest {
     AbstractHelperForXmlTest h = new GenericHelperForXmlTest();

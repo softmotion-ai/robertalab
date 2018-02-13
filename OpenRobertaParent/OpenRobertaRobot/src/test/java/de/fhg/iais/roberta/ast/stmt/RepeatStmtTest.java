@@ -7,8 +7,8 @@ import de.fhg.iais.roberta.syntax.lang.stmt.RepeatStmt;
 import de.fhg.iais.roberta.syntax.lang.stmt.RepeatStmt.Mode;
 import de.fhg.iais.roberta.transformer.Jaxb2BlocklyProgramTransformer;
 import de.fhg.iais.roberta.util.dbc.DbcException;
-import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 import de.fhg.iais.roberta.util.test.AbstractHelperForXmlTest;
+import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 
 public class RepeatStmtTest {
     AbstractHelperForXmlTest h = new GenericHelperForXmlTest();

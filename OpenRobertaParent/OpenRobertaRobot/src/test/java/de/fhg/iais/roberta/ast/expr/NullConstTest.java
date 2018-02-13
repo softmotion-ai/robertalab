@@ -6,8 +6,8 @@ import org.junit.Test;
 import de.fhg.iais.roberta.syntax.BlocklyBlockProperties;
 import de.fhg.iais.roberta.syntax.lang.expr.Assoc;
 import de.fhg.iais.roberta.syntax.lang.expr.NullConst;
-import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 import de.fhg.iais.roberta.util.test.AbstractHelperForXmlTest;
+import de.fhg.iais.roberta.util.test.GenericHelperForXmlTest;
 
 public class NullConstTest {
     AbstractHelperForXmlTest h = new GenericHelperForXmlTest();
