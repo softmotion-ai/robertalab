@@ -1,8 +1,8 @@
 require(
     [
         'comm',
-        'wrap', 
-        'jquery-cookie', 
+        'wrap',
+        'jquery',
         'guiState.controller', 
         'galleryList.controller',
         'progList.controller', 
@@ -23,12 +23,13 @@ require(
         'program.controller', 
         'configuration.controller', 
         'language.controller',
-        'user.model'
+        'user.model',
+        'bootstrap'
     ], 
     function(
             COMM,
-            WRAP, 
-            $, 
+            WRAP,
+            $,
             guiStateController, 
             galleryListController,
             progListController, 

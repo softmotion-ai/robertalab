@@ -1,4 +1,4 @@
-define([ 'exports', 'util', 'log', 'message', 'guiState.model', 'socket.controller', 'jquery' ], function(exports, UTIL, LOG, MSG, GUISTATE, SOCKET_C, $) {
+define([ 'exports', 'util', 'log', 'message', 'guiState.model', 'socket.controller', 'jquery', 'jquery-cookie' ], function(exports, UTIL, LOG, MSG, GUISTATE, SOCKET_C, $) {
 
     /**
      * Init robot
