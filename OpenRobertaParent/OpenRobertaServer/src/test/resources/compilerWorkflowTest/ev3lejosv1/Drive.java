@@ -21,7 +21,7 @@ import java.util.Arrays;
 
 import lejos.remote.nxt.NXTConnection;
 
-public class NEPOprog {
+public class Drive {
     private static Configuration brickConfiguration;
 
     private Set<UsedSensor> usedSensors = new LinkedHashSet<UsedSensor>();
@@ -40,7 +40,7 @@ public class NEPOprog {
                 .addSensor(SensorPort.S4, new Sensor(SensorType.ULTRASONIC))
                 .build();
 
-            new NEPOprog().run();
+            new Drive().run();
         } catch ( Exception e ) {
             Hal.displayExceptionWaitForKeyPress(e);
         }
