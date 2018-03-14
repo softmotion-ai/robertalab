@@ -574,8 +574,8 @@ class Hal(object):
             return self.memory.getData("Device/SubDeviceList/InertialSensor/GyroscopeY/Sensor/Value")
 
     def ultrasonic(self):
-        # Retrieve sonar data from ALMemory (distance in meters)
-        return self.memory.getData("Device/SubDeviceList/US/Right/Sensor/Value")
+        # Retrieve sonar data from ALMemory (distance in centimeters)
+        return self.memory.getData("Device/SubDeviceList/US/Right/Sensor/Value") * 100
 
     def fsr(self, side):
         if side == "left":
