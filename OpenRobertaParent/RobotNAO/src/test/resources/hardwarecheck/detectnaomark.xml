@@ -1,0 +1,17 @@
+<block_set xmlns="http://de.fhg.iais.roberta.blockly"
+	robottype="nao" xmlversion="" description="" tags="undefined">
+	<instance x="384" y="50">
+		<block type="robControls_start" id="-VwmUf{x+.U6K-H~z*g,"
+			intask="true" deletable="false">
+			<mutation declare="false" />
+			<field name="DEBUG">TRUE</field>
+		</block>
+		<block type="robActions_sayText" id="qV[j%`g#E(iZoAQSROSr"
+			intask="true">
+			<value name="OUT">
+				<block type="naoSensors_naoMark" id="TB4EkA5mX[=e%:=r0/_c"
+					intask="true" />
+			</value>
+		</block>
+	</instance>
+</block_set>
