@@ -10,6 +10,10 @@ class BlocklyMethods:
     GOLDEN_RATIO = (1 + math.sqrt(5)) / 2
 
     @staticmethod
+    def rgba2hex(red, green, blue, alpha):
+        return int("0x{:02x}{:02x}{:02x}".format(red, green, blue), 16)
+    
+    @staticmethod
     def isEven(number):
         return (number % 2) == 0
 
