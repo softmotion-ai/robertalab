@@ -1,6 +1,7 @@
 # Import
 import math
 from optparse import OptionParser
+
 import time
 
 from naoqi import *
@@ -423,12 +424,8 @@ class Hal(object):
         self.led.fadeRGB("FaceLeds", 0xffffff, 1)
 
     def pointLookAt(self, mode, frame, x, y, z, speed):
-        if speed < 0:
-            speed = 1
-        elif speed > 100:
-            speed = 100
-        else:
-            speed /= 100.
+        speed = min(max(speed, 1.), 100.)
+        speed /= 100.
         if mode == "POINT":
             self.tracker.pointAt("Arms", [x, y, z], frame, speed)
         elif mode == "LOOK":
