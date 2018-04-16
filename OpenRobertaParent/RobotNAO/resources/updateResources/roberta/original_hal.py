@@ -560,10 +560,7 @@ class Hal(object):
         return self.memory.getData("Device/SubDeviceList/InertialSensor/Accelerometer{}/Sensor/Value".format(coordinate))
         
     def gyrometer(self, coordinate):
-        if coordinate == "x":
-            return self.memory.getData("Device/SubDeviceList/InertialSensor/GyroscopeX/Sensor/Value")
-        elif coordinate == "y":
-            return self.memory.getData("Device/SubDeviceList/InertialSensor/GyroscopeY/Sensor/Value")
+        return self.memory.getData("Device/SubDeviceList/InertialSensor/Gyroscope{}/Sensor/Value".format(coordinate))
 
     def ultrasonic(self):
         # Retrieve sonar data from ALMemory (distance in centimeters)

@@ -33,8 +33,13 @@
 			<field name="joint">HEADYAW</field>
 			<field name="MODE">ABSOLUTE</field>
 			<value name="POWER">
-				<block type="naoSensors_sonar" id="#H9yXA;/hxFvOz1v3P1@"
-					intask="true" />
+				<block type="robSensors_ultrasonic_getSample"
+					id="hBZ)sxR:`IpNULtFsxFw" intask="true">
+					<mutation mode="VALUE" />
+					<field name="MODE">DISTANCE</field>
+					<field name="SENSORPORT"></field>
+					<field name="SLOT" />
+				</block>
 			</value>
 		</block>
 	</instance>

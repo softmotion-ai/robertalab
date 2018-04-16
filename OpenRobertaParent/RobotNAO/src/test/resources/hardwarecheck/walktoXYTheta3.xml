@@ -21,8 +21,13 @@
 				</block>
 			</value>
 			<value name="Theta">
-				<block type="naoSensors_sonar" id="Ape@Aca7]OfLfDIvZ~6f"
-					intask="true" />
+				<block type="robSensors_ultrasonic_getSample"
+					id="hBZ)sxR:`IpNULtFsxFw" intask="true">
+					<mutation mode="VALUE" />
+					<field name="MODE">DISTANCE</field>
+					<field name="SENSORPORT"></field>
+					<field name="SLOT" />
+				</block>
 			</value>
 		</block>
 	</instance>

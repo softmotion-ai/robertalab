@@ -4,8 +4,13 @@
 		<block type="naoActions_walkTo" id="F/r!:WE-+UVF@X}QLcX0"
 			intask="true">
 			<value name="X">
-				<block type="naoSensors_sonar" id="Ape@Aca7]OfLfDIvZ~6f"
-					intask="true" />
+				<block type="robSensors_ultrasonic_getSample"
+					id="hBZ)sxR:`IpNULtFsxFw" intask="true">
+					<mutation mode="VALUE" />
+					<field name="MODE">DISTANCE</field>
+					<field name="SENSORPORT"></field>
+					<field name="SLOT" />
+				</block>
 			</value>
 			<value name="Y">
 				<block type="math_number" id="d}CThiKe`9?,j]l@E~N5"
