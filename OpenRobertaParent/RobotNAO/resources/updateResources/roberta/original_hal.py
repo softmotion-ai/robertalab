@@ -557,13 +557,8 @@ class Hal(object):
     # SENSORS
 
     def accelerometer(self, coordinate):
-        if coordinate == "x":
-            return self.memory.getData("Device/SubDeviceList/InertialSensor/AccelerometerX/Sensor/Value")
-        elif coordinate == "y":
-            return self.memory.getData("Device/SubDeviceList/InertialSensor/AccelerometerY/Sensor/Value")
-        elif coordinate == "z":
-            return self.memory.getData("Device/SubDeviceList/InertialSensor/AccelerometerZ/Sensor/Value")
-
+        return self.memory.getData("Device/SubDeviceList/InertialSensor/Accelerometer{}/Sensor/Value".format(coordinate))
+        
     def gyrometer(self, coordinate):
         if coordinate == "x":
             return self.memory.getData("Device/SubDeviceList/InertialSensor/GyroscopeX/Sensor/Value")
