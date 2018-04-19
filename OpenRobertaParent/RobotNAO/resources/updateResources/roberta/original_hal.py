@@ -557,10 +557,10 @@ class Hal(object):
     # SENSORS
 
     def accelerometer(self, coordinate):
-        return self.memory.getData("Device/SubDeviceList/InertialSensor/Accelerometer{}/Sensor/Value".format(coordinate))
+        return self.memory.getData("Device/SubDeviceList/InertialSensor/Accelerometer{}/Sensor/Value".format(coordinate.upper()))
         
     def gyrometer(self, coordinate):
-        return self.memory.getData("Device/SubDeviceList/InertialSensor/Gyroscope{}/Sensor/Value".format(coordinate))
+        return self.memory.getData("Device/SubDeviceList/InertialSensor/Gyroscope{}/Sensor/Value".format(coordinate.upper()))
 
     def ultrasonic(self):
         # Retrieve sonar data from ALMemory (distance in centimeters)
@@ -573,30 +573,13 @@ class Hal(object):
             return self.memory.getData("rightFootTotalWeight")
 
     def touchsensors(self, position, side):
+        side = side.title()
         if position == "hand":
-            if side == "left":
-                if self.memory.getData("HandLeftBackTouched") == 1:
-                    return True
-            elif side == "right":
-                if self.memory.getData("HandRightBackTouched") == 1:
-                    return True
+            return self.memory.getData("Hand{}BackTouched".format(side)) == 1
         elif position == "bumper":
-            if side == "left":
-                if self.memory.getData("LeftBumperPressed") == 1:
-                    return True
-            elif side == "right":
-                if self.memory.getData("RightBumperPressed") == 1:
-                    return True
+                return self.memory.getData("{}BumperPressed".format(side)) == 1
         elif position == "head":
-            if side == "front":
-                if self.memory.getData("FrontTactilTouched") == 1:
-                    return True
-            elif side == "middle":
-                if self.memory.getData("MiddleTactilTouched") == 1:
-                    return True
-            elif side == "rear":
-                if self.memory.getData("RearTactilTouched") == 1:
-                    return True
+            return self.memory.getData("{}TactilTouched".format(side)) == 1
         return False
 
     def naoMark(self):
