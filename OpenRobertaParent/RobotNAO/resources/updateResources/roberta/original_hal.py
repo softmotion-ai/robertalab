@@ -580,7 +580,7 @@ class Hal(object):
             return self.memory.getData("{}TactilTouched".format(side)) == 1
         return False
 
-    def naoMark(self):
+    def getDetectedMarks(self):
         data = self.memory.getData("LandmarkDetected")
         if (not data is None and len(data) != 0):
             marks = data[1]
