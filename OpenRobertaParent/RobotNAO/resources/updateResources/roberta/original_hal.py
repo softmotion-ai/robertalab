@@ -567,10 +567,8 @@ class Hal(object):
         return self.memory.getData("Device/SubDeviceList/US/Right/Sensor/Value") * 100
 
     def fsr(self, side):
-        if side == "left":
-            return self.memory.getData("leftFootTotalWeight")
-        else:
-            return self.memory.getData("rightFootTotalWeight")
+        return self.memory.getData("{}FootTotalWeight".format(side))
+
 
     def touchsensors(self, position, side):
         side = side.title()

@@ -9,8 +9,13 @@
 		<block type="robActions_sayText" id="qV[j%`g#E(iZoAQSROSr"
 			intask="true">
 			<value name="OUT">
-				<block type="naoSensors_naoMark" id="TB4EkA5mX[=e%:=r0/_c"
-					intask="true" />
+				<block type="robSensors_detectmark_getSample"
+					id="`y1.iYX)UGQIyQ(sQkox" intask="true">
+					<mutation mode="VALUE" />
+					<field name="MODE">VALUE</field>
+					<field name="SENSORPORT" />
+					<field name="SLOT" />
+				</block>
 			</value>
 		</block>
 	</instance>
