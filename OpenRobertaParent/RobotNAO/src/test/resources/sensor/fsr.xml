@@ -13,7 +13,7 @@
 					id="VWzSxnu.*mg`l^itvdx}" intask="true">
 					<mutation mode="VALUE" />
 					<field name="MODE">VALUE</field>
-					<field name="SENSORPORT">left</field>
+					<field name="SENSORPORT">LEFT</field>
 					<field name="SLOT" />
 				</block>
 			</value>
@@ -25,7 +25,7 @@
 					id="iqI6f)7feLsuuLI7N(%V" intask="true">
 					<mutation mode="VALUE" />
 					<field name="MODE">VALUE</field>
-					<field name="SENSORPORT">right</field>
+					<field name="SENSORPORT">RIGHT</field>
 					<field name="SLOT" />
 				</block>
 			</value>

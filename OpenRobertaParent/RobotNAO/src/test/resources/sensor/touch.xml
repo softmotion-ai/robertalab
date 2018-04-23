@@ -1,92 +1,92 @@
 <block_set xmlns="http://de.fhg.iais.roberta.blockly"
 	robottype="nao" xmlversion="" description="" tags="undefined">
 	<instance x="384" y="50">
-		<block type="robControls_start" id="nu`Pp,riIToac5TY]PDd"
+		<block type="robControls_start" id="RfjmxOg,O2eV`mjs*o.x"
 			intask="true" deletable="false">
 			<mutation declare="false" />
 			<field name="DEBUG">TRUE</field>
 		</block>
-		<block type="robActions_sayText" id="Y8BYM[/Pb%qz*(Lg);?~"
+		<block type="robActions_sayText" id="_q}KP(jyn.?^{UYY2Itd"
 			intask="true">
 			<value name="OUT">
 				<block type="robSensors_touch_getSample"
-					id="pliCir9g5aFW0wtf1d)[" intask="true">
-					<mutation mode="HAND" />
-					<field name="MODE">HAND</field>
-					<field name="SENSORPORT">left</field>
-					<field name="SLOT" />
+					id="[jRQoRm~Zoa#r3jE,s)}" intask="true">
+					<mutation mode="PRESSED" port="HEAD" />
+					<field name="MODE">PRESSED</field>
+					<field name="SENSORPORT">HEAD</field>
+					<field name="SLOT">FRONT</field>
 				</block>
 			</value>
 		</block>
-		<block type="robActions_sayText" id="l0n=Xj].!B32+gb)i..^"
+		<block type="robActions_sayText" id="cL?l4j_[%pC+hT=]XEck"
 			intask="true">
 			<value name="OUT">
 				<block type="robSensors_touch_getSample"
-					id="0j=yK^dm(#,QNjeWs6g0" intask="true">
-					<mutation mode="HAND" />
-					<field name="MODE">HAND</field>
-					<field name="SENSORPORT">right</field>
-					<field name="SLOT" />
+					id="sY?Ti?j4*NH+4BtMegBu" intask="true">
+					<mutation mode="PRESSED" port="HEAD" />
+					<field name="MODE">PRESSED</field>
+					<field name="SENSORPORT">HEAD</field>
+					<field name="SLOT">MIDDLE</field>
 				</block>
 			</value>
 		</block>
-		<block type="robActions_sayText" id="#9r?O*tCgR/=L@S1ap}c"
+		<block type="robActions_sayText" id="9uJ}fLVJ835j5GQ4;FFH"
 			intask="true">
 			<value name="OUT">
 				<block type="robSensors_touch_getSample"
-					id="u1^z;%qNc]DbUuyR|.!G" intask="true">
-					<mutation mode="HEAD" />
-					<field name="MODE">HEAD</field>
-					<field name="SENSORPORT">front</field>
-					<field name="SLOT" />
+					id="mdx7|#;,Z-W^ZmGzE(M7" intask="true">
+					<mutation mode="PRESSED" port="HEAD" />
+					<field name="MODE">PRESSED</field>
+					<field name="SENSORPORT">HEAD</field>
+					<field name="SLOT">REAR</field>
 				</block>
 			</value>
 		</block>
-		<block type="robActions_sayText" id=",Snnu*9K[3`n_?B*n0`T"
+		<block type="robActions_sayText" id=".sl:(aF.D61s/]1/0]S|"
 			intask="true">
 			<value name="OUT">
 				<block type="robSensors_touch_getSample"
-					id="j(Rg;-hc_aJ~.dmfGWFo" intask="true">
-					<mutation mode="HEAD" />
-					<field name="MODE">HEAD</field>
-					<field name="SENSORPORT">middle</field>
-					<field name="SLOT" />
+					id=":*;o9Bg3!-kTC~qf,irU" intask="true">
+					<mutation mode="PRESSED" port="HAND" />
+					<field name="MODE">PRESSED</field>
+					<field name="SENSORPORT">HAND</field>
+					<field name="SLOT">LEFT</field>
 				</block>
 			</value>
 		</block>
-		<block type="robActions_sayText" id="~CA`4ke0HbOS-5j7-EX6"
+		<block type="robActions_sayText" id=":,Be8T7r*7*X?jP:Gdr_"
 			intask="true">
 			<value name="OUT">
 				<block type="robSensors_touch_getSample"
-					id="gL8n5EBCHaHb[piSda9{" intask="true">
-					<mutation mode="HEAD" />
-					<field name="MODE">HEAD</field>
-					<field name="SENSORPORT">rear</field>
-					<field name="SLOT" />
+					id="6H{[!yl!2e@!4@5na8}@" intask="true">
+					<mutation mode="PRESSED" port="HAND" />
+					<field name="MODE">PRESSED</field>
+					<field name="SENSORPORT">HAND</field>
+					<field name="SLOT">RIGHT</field>
 				</block>
 			</value>
 		</block>
-		<block type="robActions_sayText" id="9jFtTBOE03HSTZZZF}E:"
+		<block type="robActions_sayText" id="sBQv:L-W!HMO+*:r.%h@"
 			intask="true">
 			<value name="OUT">
 				<block type="robSensors_touch_getSample"
-					id="G?,kAL%c{W#7w6J04oW`" intask="true">
-					<mutation mode="BUMPER" />
-					<field name="MODE">BUMPER</field>
-					<field name="SENSORPORT">left</field>
-					<field name="SLOT" />
+					id="HuypU=O]AmWxh`4lyS?C" intask="true">
+					<mutation mode="PRESSED" port="BUMPER" />
+					<field name="MODE">PRESSED</field>
+					<field name="SENSORPORT">BUMPER</field>
+					<field name="SLOT">LEFT</field>
 				</block>
 			</value>
 		</block>
-		<block type="robActions_sayText" id="f`gytTB1P0?g50hMZcf1"
+		<block type="robActions_sayText" id="ZTQwr@j!YIh!_}2nk25z"
 			intask="true">
 			<value name="OUT">
 				<block type="robSensors_touch_getSample"
-					id="Le;XDOwkCWg,bL^wXXFa" intask="true">
-					<mutation mode="BUMPER" />
-					<field name="MODE">BUMPER</field>
-					<field name="SENSORPORT">right</field>
-					<field name="SLOT" />
+					id="!;o~:U#m4a4kxe8gM4d]" intask="true">
+					<mutation mode="PRESSED" port="BUMPER" />
+					<field name="MODE">PRESSED</field>
+					<field name="SENSORPORT">BUMPER</field>
+					<field name="SLOT">RIGHT</field>
 				</block>
 			</value>
 		</block>
