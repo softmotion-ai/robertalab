@@ -1,0 +1,58 @@
+<block_set xmlns="http://de.fhg.iais.roberta.blockly"
+	robottype="nao" xmlversion="" description="" tags="undefined">
+	<instance x="384" y="50">
+		<block type="robControls_start" id="Py5VG{*RC3re6A?lD@LI"
+			intask="true" deletable="false">
+			<mutation declare="false" />
+			<field name="DEBUG">TRUE</field>
+		</block>
+		<block type="naoControls_wait_for" id="F]ni-)9E_g_OJ8+pc4;#"
+			intask="true">
+			<value name="WAIT0">
+				<block type="logic_compare" id="S;s~QY,92.t7QtNp6WOh"
+					intask="true">
+					<field name="OP">LT</field>
+					<value name="A">
+						<block type="robSensors_getSample" id="g*Ge^[nnSi4{zBxl%6wP"
+							intask="true">
+							<mutation input="ELECTRICCURRENT_VALUE" />
+							<field name="SENSORTYPE">ELECTRICCURRENT_VALUE</field>
+							<field name="SENSORPORT">HEAD</field>
+							<field name="SLOT">YAW</field>
+						</block>
+					</value>
+					<value name="B">
+						<block type="math_number" id="x{|Z}b!JGG,RGoUzQ-1P"
+							intask="true">
+							<field name="NUM">30</field>
+						</block>
+					</value>
+				</block>
+			</value>
+		</block>
+		<block type="naoControls_wait_for" id="=OuHZf4l}d]lCG|0FIQd"
+			intask="true">
+			<value name="WAIT0">
+				<block type="logic_compare" id="6H}-,B)*}H15)S6k9=]o"
+					intask="true">
+					<field name="OP">LT</field>
+					<value name="A">
+						<block type="robSensors_getSample" id="kPU{s/E(Dx-Ul#=?jv,["
+							intask="true">
+							<mutation input="ELECTRICCURRENT_VALUE" />
+							<field name="SENSORTYPE">ELECTRICCURRENT_VALUE</field>
+							<field name="SENSORPORT">HEAD</field>
+							<field name="SLOT">PITCH</field>
+						</block>
+					</value>
+					<value name="B">
+						<block type="math_number" id="_Fs5wqU({X-oy2S.id.m"
+							intask="true">
+							<field name="NUM">30</field>
+						</block>
+					</value>
+				</block>
+			</value>
+		</block>
+	</instance>
+</block_set>
