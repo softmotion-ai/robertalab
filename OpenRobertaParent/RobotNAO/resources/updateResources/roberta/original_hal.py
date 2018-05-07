@@ -46,18 +46,13 @@ class Hal(object):
 
     # MOVEMENT
 
-    def mode(self, modus):
-        if modus == 1:
-            self.posture.goToPosture("Stand", 0.8)
-        elif modus == 2:
-            self.motion.rest()
-        elif modus == 3:
-            self.posture.goToPosture("Sit", 0.8)
-
     def applyPosture(self, pose):
         # posture.goToPosture is used instead of applyPosture as this is a
         # "intelligent" move calculating the path on its own
-        self.posture.goToPosture(pose, 0.8)
+        if pose == 'Rest'
+            self.motion.rest()
+        else:
+            self.posture.goToPosture(pose, 0.8)
 
     def stiffness(self, bodypart, status):
         if status == 1:
