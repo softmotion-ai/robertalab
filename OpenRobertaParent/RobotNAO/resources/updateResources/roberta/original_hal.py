@@ -49,7 +49,7 @@ class Hal(object):
     def applyPosture(self, pose):
         # posture.goToPosture is used instead of applyPosture as this is a
         # "intelligent" move calculating the path on its own
-        if pose == 'Rest'
+        if pose == 'Rest':
             self.motion.rest()
         else:
             self.posture.goToPosture(pose, 0.8)
