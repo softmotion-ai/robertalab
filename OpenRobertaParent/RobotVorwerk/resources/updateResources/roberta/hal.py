@@ -58,7 +58,7 @@ class Hal(object):
         key = key.upper()
         return sensors[key]
 
-    def sample_drop_sensor(self, port):
+    def sample_dropoff_sensor(self, port):
         sensors = self.sample_analog_sensors()
         key = 'DropSensor' + port.title()
         return sensors[key] / 10.
