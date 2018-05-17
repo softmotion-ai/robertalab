@@ -29,7 +29,30 @@ class Hal(object):
             sensor = sensor.split(",")
             result.update({sensor[0]: float(sensor[1].strip())})
         return result
-            
+
+    def __right_wheel_disable(self):
+        self.exec_command('SetMotor RWheelDisable')
+
+    def __left_wheel_disable(self):
+        self.exec_command('SetMotor LWheelDisable')
+
+    def __disable_wheels(self):
+        self.__right_wheel_disable()
+        self.__left_wheel_disable()
+
+    def stop_motors(self):
+        self.__disable_wheels()
+
+    def drive_distance(self, direction, speed, distance):
+        if direction != 'forwards':
+            distance *= -1
+        speed = (speed / 350.) * 100.
+        if distance <= -10000:
+            distance = -9999
+        if distance >= 10000:
+            distance = 9999
+        self.exec_command('SetMotor LWheelDistance {0} RWheelDistance {1} Speed {2}'.format(distance, distance, speed))
+
     def exec_command(self, cmd):
         self.conn.write(cmd + '\r\n')
         time.sleep(.05)
@@ -41,7 +64,7 @@ class Hal(object):
         response = self.exec_command('GetAnalogSensors')
         response = self.__convert_analog_sensors_to_dictionary(response[1:])
         return response
-    
+
     def sample_digital_sensors(self):
         response = self.exec_command('GetDigitalSensors')
         response = self.__convert_digital_sensors_to_dictionary(response[1:])
