@@ -1,5 +1,4 @@
 # Import
-import math
 import time
 import serial
 
@@ -30,6 +29,12 @@ class Hal(object):
             result.update({sensor[0]: float(sensor[1].strip())})
         return result
 
+    def __right_wheel_enable(self):
+        self.exec_command('SetMotor RWheelEnable')
+
+    def __left_wheel_enable(self):
+        self.exec_command('SetMotor LWheelEnable')
+        
     def __right_wheel_disable(self):
         self.exec_command('SetMotor RWheelDisable')
 
@@ -39,25 +44,31 @@ class Hal(object):
     def __disable_wheels(self):
         self.__right_wheel_disable()
         self.__left_wheel_disable()
+        
+    def __enable_wheels(self):
+        self.__right_wheel_enable()
+        self.__left_wheel_enable()
 
     def stop_motors(self):
         self.__disable_wheels()
 
     def drive_distance(self, direction, speed, distance):
-        if direction != 'forwards':
+        if direction != 'foreward':
             distance *= -1
         speed = (speed / 350.) * 100.
         if distance <= -10000:
             distance = -9999
         if distance >= 10000:
             distance = 9999
-        self.exec_command('SetMotor LWheelDistance {0} RWheelDistance {1} Speed {2}'.format(distance, distance, speed))
+        self.exec_command('SetMotor LWheelDist {0} RWheelDist {1} Speed {2}'.format(distance, distance, speed))
 
     def exec_command(self, cmd):
         self.conn.write(cmd + '\r\n')
         time.sleep(.05)
         response = self.conn.readlines()
         response = self.__format_response(response)
+        for r in response:
+            print r
         return response
 
     def sample_analog_sensors(self):
