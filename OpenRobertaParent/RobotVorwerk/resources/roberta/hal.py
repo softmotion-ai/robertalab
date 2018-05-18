@@ -4,15 +4,15 @@ import serial
 
 
 class Hal(object):
-
     def __init__(self):
-        self.conn = serial.Serial(port='/dev/ttyACM0', baudrate=115200, timeout=1)
+        self.conn = serial.Serial(
+            port='/dev/ttyACM0', baudrate=115200, timeout=1)
         self.exec_command('TestMode On')
         time.sleep(12)
 
     def __format_response(self, response):
         size = len(response)
-        response = response[1:size-2]
+        response = response[1:size - 2]
         return response
 
     def __convert_analog_sensors_to_dictionary(self, sensors):
@@ -34,7 +34,7 @@ class Hal(object):
 
     def __left_wheel_enable(self):
         self.exec_command('SetMotor LWheelEnable')
-        
+
     def __right_wheel_disable(self):
         self.exec_command('SetMotor RWheelDisable')
 
@@ -44,7 +44,7 @@ class Hal(object):
     def __disable_wheels(self):
         self.__right_wheel_disable()
         self.__left_wheel_disable()
-        
+
     def __enable_wheels(self):
         self.__right_wheel_enable()
         self.__left_wheel_enable()
@@ -60,7 +60,38 @@ class Hal(object):
             distance = -9999
         if distance >= 10000:
             distance = 9999
-        self.exec_command('SetMotor LWheelDist {0} RWheelDist {1} Speed {2}'.format(distance, distance, speed))
+        self.exec_command(
+            'SetMotor LWheelDist {0} RWheelDist {1} Speed {2}'.format(
+                distance, distance, speed))
+
+    def play_sound(self, sound_id):
+        self.exec_command('PlaySound SoundID ' + str(sound_id))
+
+    def brush_on(self, speed):
+        if speed < 0:
+            speed = 0
+        elif speed > 10000:
+            speed = 10000
+        self.exec_command("SetMotor Brush RPM " + str(speed))
+
+    def brush_off(self):
+        self.exec_command("SetMotor Brush RPM 0")
+
+    def vacuum_on(self, speed):
+        if speed < 1:
+            speed = 1
+        elif speed > 100:
+            speed = 100
+        self.exec_command("SetMotor VacuumOn VacuumSpeed " + str(speed))
+
+    def vacuum_off(self):
+        self.exec_command("SetMotor VacuumOff")
+
+    def side_brush_on(self):
+        self.exec_command("SetMotor SideBrushOn")
+
+    def side_brush_off(self):
+        self.exec_command("SetMotor SideBrushOff")
 
     def exec_command(self, cmd):
         self.conn.write(cmd + '\r\n')
