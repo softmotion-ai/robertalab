@@ -53,16 +53,48 @@ class Hal(object):
         self.__disable_wheels()
 
     def drive_distance(self, direction, speed, distance):
+        distance *= 10
+        speed *= 350.
         if direction != 'foreward':
             distance *= -1
-        speed = (speed / 350.) * 100.
         if distance <= -10000:
             distance = -9999
         if distance >= 10000:
             distance = 9999
+        self.__enable_wheels()
         self.exec_command(
             'SetMotor LWheelDist {0} RWheelDist {1} Speed {2}'.format(
                 distance, distance, speed))
+
+    def left_motor_on(self, speed, distance):
+        distance *= 10
+        speed *= 350.
+        if distance <= -10000:
+            distance = -9999
+        if distance >= 10000:
+            distance = 9999
+        self.__left_wheel_enable()
+        self.exec_command(
+            'SetMotor LWheelDist {0} RWheelDist 0 Speed {1}'.format(
+                distance, speed))
+
+    def right_motor_on(self, speed, distance):
+        distance *= 10
+        speed *= 350.
+        if distance <= -10000:
+            distance = -9999
+        if distance >= 10000:
+            distance = 9999
+        self.__right_wheel_enable()
+        self.exec_command(
+            'SetMotor LWheelDist 0 RWheelDist {0} Speed {1}'.format(
+                distance, speed))
+
+    def left_motor_stop(self):
+        self.__left_wheel_disable()
+
+    def right_motor_stop(self):
+        self.__right_wheel_disable()
 
     def play_sound(self, sound_id):
         self.exec_command('PlaySound SoundID ' + str(sound_id))
@@ -70,8 +102,9 @@ class Hal(object):
     def brush_on(self, speed):
         if speed < 0:
             speed = 0
-        elif speed > 10000:
-            speed = 10000
+        elif speed > 100:
+            speed = 100
+        speed *= 100
         self.exec_command("SetMotor Brush RPM " + str(speed))
 
     def brush_off(self):
