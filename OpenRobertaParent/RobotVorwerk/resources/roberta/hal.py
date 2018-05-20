@@ -8,7 +8,6 @@ class Hal(object):
         self.conn = serial.Serial(
             port='/dev/ttyACM0', baudrate=115200, timeout=1)
         self.exec_command('TestMode On')
-        time.sleep(12)
 
     def __format_response(self, response):
         size = len(response)
@@ -50,51 +49,48 @@ class Hal(object):
         self.__left_wheel_enable()
 
     def stop_motors(self):
-        self.__disable_wheels()
+        self.exec_command('SetMotor LWheelDist 1 RWheelDist 1 Speed 100')
 
     def drive_distance(self, direction, speed, distance):
         distance *= 10
-        speed *= 350.
+        speed *= 3.5
         if direction != 'foreward':
             distance *= -1
         if distance <= -10000:
             distance = -9999
         if distance >= 10000:
             distance = 9999
-        self.__enable_wheels()
         self.exec_command(
             'SetMotor LWheelDist {0} RWheelDist {1} Speed {2}'.format(
                 distance, distance, speed))
 
     def left_motor_on(self, speed, distance):
         distance *= 10
-        speed *= 350.
+        speed *= 3.5
         if distance <= -10000:
             distance = -9999
         if distance >= 10000:
             distance = 9999
-        self.__left_wheel_enable()
         self.exec_command(
             'SetMotor LWheelDist {0} RWheelDist 0 Speed {1}'.format(
                 distance, speed))
 
     def right_motor_on(self, speed, distance):
         distance *= 10
-        speed *= 350.
+        speed *= 3.5
         if distance <= -10000:
             distance = -9999
         if distance >= 10000:
             distance = 9999
-        self.__right_wheel_enable()
         self.exec_command(
             'SetMotor LWheelDist 0 RWheelDist {0} Speed {1}'.format(
                 distance, speed))
 
     def left_motor_stop(self):
-        self.__left_wheel_disable()
+        self.exec_command('SetMotor LWheelDist 1 Speed 100')
 
     def right_motor_stop(self):
-        self.__right_wheel_disable()
+        self.exec_command('SetMotor RWheelDist 1 Speed 100')
 
     def play_sound(self, sound_id):
         self.exec_command('PlaySound SoundID ' + str(sound_id))
@@ -170,3 +166,7 @@ class Hal(object):
         sensors = self.sample_analog_sensors()
         key = 'Accelerometer' + port.upper()
         return sensors[key]
+
+    def wait(self, timeMilliSeconds):
+        timeSeconds = timeMilliSeconds / 1000
+        time.sleep(timeSeconds)
