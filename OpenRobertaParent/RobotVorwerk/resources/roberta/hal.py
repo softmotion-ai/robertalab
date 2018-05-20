@@ -143,6 +143,7 @@ class Hal(object):
 
     def sample_ultrasonic_sensor(self, port, slot):
         sensors = self.sample_analog_sensors()
+        port = port.split()[0]
         key = 'UltraSound' + port.title() + slot.title()
         return sensors[key] / 10.
 
