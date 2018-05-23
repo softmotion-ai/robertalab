@@ -127,8 +127,8 @@ class Hal(object):
         time.sleep(.05)
         response = self.conn.readlines()
         response = self.__format_response(response)
-        for r in response:
-            print r
+        # for r in response:
+        #     print r
         return response
 
     def sample_analog_sensors(self):
@@ -143,7 +143,7 @@ class Hal(object):
 
     def sample_ultrasonic_sensor(self, port, slot):
         sensors = self.sample_analog_sensors()
-        port = port.split()[0]
+        port = port.split('_')[0]
         key = 'UltraSound' + port.title() + slot.title()
         return sensors[key] / 10.
 
