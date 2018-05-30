@@ -13,7 +13,6 @@
 					id="YkSWjW44382W+a_ih8ON" intask="true">
 					<mutation mode="IDONE" />
 					<field name="MODE">IDONE</field>
-					<field name="SENSORPORT" />
 					<field name="SLOT" />
 				</block>
 			</value>
@@ -25,7 +24,6 @@
 					id="Q3sVl3T_uS_U,Ik7{~e;" intask="true">
 					<mutation mode="IDALL" />
 					<field name="MODE">IDALL</field>
-					<field name="SENSORPORT" />
 					<field name="SLOT" />
 				</block>
 			</value>
