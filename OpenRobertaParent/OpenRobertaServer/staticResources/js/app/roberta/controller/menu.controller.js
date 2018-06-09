@@ -1,7 +1,7 @@
 define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socket.controller', 'user.controller', 'user.model', 'guiState.controller',
-        'cookieDisclaimer.controller', 'program.controller', 'progRun.controller', 'configuration.controller', 'import.controller', 'enjoyHint',
-        'tour.controller', 'simulation.simulation', 'jquery', 'blocks', 'slick' ], function(exports, LOG, UTIL, MSG, COMM, ROBOT_C, SOCKET_C, USER_C, USER,
-        GUISTATE_C, CookieDisclaimer, PROGRAM_C, RUN_C, CONFIGURATION_C, IMPORT_C, EnjoyHint, TOUR_C, SIM, $, Blockly) {
+        'cookieDisclaimer.controller', 'program.controller','program.model', 'progRun.controller', 'configuration.controller', 'import.controller', 'enjoyHint',
+        'tour.controller', 'simulation.simulation','progList.model', 'jquery', 'blocks', 'slick' ], function(exports, LOG, UTIL, MSG, COMM, ROBOT_C, SOCKET_C, USER_C, USER,
+        GUISTATE_C, CookieDisclaimer, PROGRAM_C,PROGRAM_M, RUN_C, CONFIGURATION_C, IMPORT_C, EnjoyHint, TOUR_C,PROGLIST, SIM, $, Blockly) {
 
     function init() {
         initMenu();
