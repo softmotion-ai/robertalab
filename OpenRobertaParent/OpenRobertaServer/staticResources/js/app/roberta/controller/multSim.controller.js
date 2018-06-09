@@ -3,7 +3,7 @@
  */
 define(['exports','util', 'progList.model', 'program.model','guiState.controller','guiState.model', 'jquery'],function(exports, UTIL, PROGLIST, PROGRAM_M,GUISTATE_C, GUISTATE_M, $){
     function init(){
-        //currently does nothing
+        //currently does nothing 
     }
     exports.init = init;
     
