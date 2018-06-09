@@ -5,7 +5,7 @@ define(['exports','util', 'progList.model','program.controller', 'program.model'
         function(exports, UTIL, PROGLIST,PROG_C, PROGRAM_M,GUISTATE_C, GUISTATE_M, SIM, USER,  $){
     function init(){
         //currently for debugging purpose logged in a default user
-//        debugger;
+//        debugger;  
    //un comment following lines to switch default login on     
 //        USER.login("a","123456",function(result){
 //            if (result.rc === "ok") {
