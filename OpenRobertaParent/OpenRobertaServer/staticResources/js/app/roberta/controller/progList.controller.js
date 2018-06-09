@@ -13,7 +13,6 @@ define([ 'require', 'exports', 'log', 'util', 'comm', 'progList.model', 'program
     exports.init = init;
 
     function initProgList() {
-
         $('#programNameTable').bootstrapTable({
             height : UTIL.calcDataTableHeight(),
             pageList : '[ 10, 25, All ]',
@@ -190,6 +189,8 @@ define([ 'require', 'exports', 'log', 'util', 'comm', 'progList.model', 'program
             $('#programNameTable').find('[rel="tooltip"]').tooltip();
         }
     }
+    
+    
 
     var eventsDeleteShareLoad = {
         'click .delete' : function(e, value, row, index) {
