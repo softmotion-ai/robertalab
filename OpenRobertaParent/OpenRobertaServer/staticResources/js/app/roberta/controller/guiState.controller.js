@@ -35,7 +35,7 @@ define([ 'exports', 'util', 'log', 'message', 'guiState.model', 'progHelp.contro
             GUISTATE.program.name = 'NEPOprog';
             GUISTATE.program.shared = false;
             GUISTATE.program.toolbox.level = 'beginner';
-
+            
             for (var i = 0; i < GUISTATE.server.tutorial.length; i++) {
                 var tutorialPath = '../tutorial/' + GUISTATE.server.tutorial[i];
                 $.getJSON(tutorialPath).done(function(data) {
@@ -102,7 +102,7 @@ define([ 'exports', 'util', 'log', 'message', 'guiState.model', 'progHelp.contro
         return true;
     }
     exports.isProgramWritable = isProgramWritable;
-
+    
     function isConfigurationStandard() {
         return GUISTATE.configuration.name == getRobotGroup().toUpperCase() + 'basis';
     }
