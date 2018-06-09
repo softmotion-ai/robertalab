@@ -7,7 +7,7 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
         initMenu();
         initMenuEvents();
         /**
-         * Regularly ping the server to keep status information up-to-date
+         * Regularly ping the server to keep status information up-to-date 
          */
         function pingServer() {
             if (GUISTATE_C.doPing()) {
