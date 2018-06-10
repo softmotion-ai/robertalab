@@ -1966,7 +1966,10 @@ label.quiz.answer.fail {
 #welcomeHaribo .modal-dialog {
 	width: 40vw;
 }
-.lds-ellipsis {
+/*CSS FOR MULTIPLE SIMULATION POPUP*/
+#simModal .fixed-table-header{
+	background-color:#B3BFB8;
+}.lds-ellipsis {
   display: inline-block;
   position: relative;
   width: 64px;
