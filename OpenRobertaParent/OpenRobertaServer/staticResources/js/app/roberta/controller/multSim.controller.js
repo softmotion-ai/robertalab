@@ -191,7 +191,10 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                         if(programsparsed===oriarray.length ){ //the end of loop
                             $('#mtable').bootstrapTable({
                                 height : 400,
+<<<<<<< 3ec49f116898a31936b394e167cc0ab1d368ff7f
 <<<<<<< 8b78552bc5ea54b0c11ab956e4c64d0d09fe964e
+=======
+>>>>>>> added pagination, sorting order in popup, updated roberta.css to have table head of nice color
                                 sortName: "name",
                                 toggle: "mtable",
                                 iconsPrefix : 'typcn',
@@ -204,6 +207,7 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                                 buttonsAlign : 'right',
                                 resizable : 'true',
                                 
+<<<<<<< 3ec49f116898a31936b394e167cc0ab1d368ff7f
                                 columns: [
                                 {
                                     field: 'name',
@@ -218,17 +222,26 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                                     title: 'Creator',
                                     sortable: true
 =======
+=======
+>>>>>>> added pagination, sorting order in popup, updated roberta.css to have table head of nice color
                                 columns: [
                                 {
                                     field: 'name',
-                                    title: 'Program Name'
+                                    title: 'Program Name',
+                                    sortable: true
                                 }, {
                                     field: 'robot',
-                                    title: 'Robot Name'
+                                    title: 'Robot Name',
+                                    sortable: true
                                 },{
                                     field: 'creator',
+<<<<<<< 3ec49f116898a31936b394e167cc0ab1d368ff7f
                                     title: 'Creator'
 >>>>>>> separate controller added for multiple simulation simulation, the multsim is disabled when not login
+=======
+                                    title: 'Creator',
+                                    sortable: true
+>>>>>>> added pagination, sorting order in popup, updated roberta.css to have table head of nice color
                                 },{
                                     checkbox : true,
                                     valign : 'middle',
@@ -248,6 +261,8 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
 =======
                         }
                         $("#simModal .btn-primary").show();
+                        //the css manipulation has been done in roberta.css
+//                        $("#simModal .fixed-table-header").css({"background-color": "#B3BFB8"});
                         $("#simModal .btn-primary").on("click",function(){
                             console.log('Selections obtained via getSelections: are ' + JSON.stringify($("#mtable").bootstrapTable('getSelections')));
                             
