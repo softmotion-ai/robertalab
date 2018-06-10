@@ -254,7 +254,7 @@ define(['exports','util', 'progList.model','program.controller', 'program.model'
                             });
                         }
                     });                     
-                }); 
+                });   
             }else{
                 // the user is not logged in
                 console.log(result.message);
