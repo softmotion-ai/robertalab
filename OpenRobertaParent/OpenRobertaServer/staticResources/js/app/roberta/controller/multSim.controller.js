@@ -6,7 +6,6 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
         //currently does nothing
     }
     exports.init = init;
-    
     function showListProg(){
         PROGLIST.loadProgList(function(result){
             if(result.rc === "ok"){
