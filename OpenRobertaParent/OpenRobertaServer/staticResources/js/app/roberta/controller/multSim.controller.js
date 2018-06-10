@@ -3,7 +3,7 @@
  */
 define(['exports','util', 'progList.model', 'program.model','guiState.controller','guiState.model', 'jquery'],function(exports, UTIL, PROGLIST, PROGRAM_M,GUISTATE_C, GUISTATE_M, $){
     function init(){
-        //currently does nothing 
+        //currently does nothing
     }
     exports.init = init;
     
@@ -191,6 +191,7 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                         if(programsparsed===oriarray.length ){ //the end of loop
                             $('#mtable').bootstrapTable({
                                 height : 400,
+<<<<<<< 8b78552bc5ea54b0c11ab956e4c64d0d09fe964e
                                 sortName: "name",
                                 toggle: "mtable",
                                 iconsPrefix : 'typcn',
@@ -216,12 +217,25 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                                     field: 'creator',
                                     title: 'Creator',
                                     sortable: true
+=======
+                                columns: [
+                                {
+                                    field: 'name',
+                                    title: 'Program Name'
+                                }, {
+                                    field: 'robot',
+                                    title: 'Robot Name'
+                                },{
+                                    field: 'creator',
+                                    title: 'Creator'
+>>>>>>> separate controller added for multiple simulation simulation, the multsim is disabled when not login
                                 },{
                                     checkbox : true,
                                     valign : 'middle',
                                 }],
                                 data: dataarr
                             });
+<<<<<<< 8b78552bc5ea54b0c11ab956e4c64d0d09fe964e
                             $("#simModal .btn-primary").show();
                             //the css manipulation has been done in roberta.css
 //                            $("#simModal .fixed-table-header").css({"background-color": "#B3BFB8"});
@@ -231,6 +245,14 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                                 alert("The following programs would be executed: "+ JSON.stringify($("#mtable").bootstrapTable('getSelections')));
                             });
                         }
+=======
+                        }
+                        $("#simModal .btn-primary").show();
+                        $("#simModal .btn-primary").on("click",function(){
+                            console.log('Selections obtained via getSelections: are ' + JSON.stringify($("#mtable").bootstrapTable('getSelections')));
+                            
+                        });
+>>>>>>> separate controller added for multiple simulation simulation, the multsim is disabled when not login
                     });                     
                 });
             }else{
@@ -241,5 +263,9 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
             }
         });
     }
+<<<<<<< 8b78552bc5ea54b0c11ab956e4c64d0d09fe964e
     exports.showListProgOld = showListProgOld
+=======
+    exports.showListProg = showListProg
+>>>>>>> separate controller added for multiple simulation simulation, the multsim is disabled when not login
 });
