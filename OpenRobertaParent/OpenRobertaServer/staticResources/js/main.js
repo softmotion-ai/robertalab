@@ -31,6 +31,7 @@ require.config({
         'logList.controller' : '../app/roberta/controller/logList.controller',
         'logList.model' : '../app/roberta/models/logList.model',
         'menu.controller' : '../app/roberta/controller/menu.controller',
+        'multSim.controller' : '../app/roberta/controller/multSim.controller',
         'progCode.controller' : '../app/roberta/controller/progCode.controller',
         'progDelete.controller' : '../app/roberta/controller/progDelete.controller',
         'progHelp.controller' : '../app/roberta/controller/progHelp.controller',
@@ -118,7 +119,7 @@ require.config({
 });
 
 require([ 'require', 'wrap', 'jquery', 'jquery-cookie', 'guiState.controller', 'progList.controller', 'logList.controller', 'confList.controller',
-        'progDelete.controller', 'confDelete.controller', 'progShare.controller', 'cookieDisclaimer.controller', 'menu.controller', 'user.controller',
+        'progDelete.controller', 'confDelete.controller', 'progShare.controller', 'cookieDisclaimer.controller', 'menu.controller','multSim.controller', 'user.controller',
         'robot.controller', 'program.controller', 'progSim.controller', 'progCode.controller', 'progDelete.controller', 'progHelp.controller',
         'progInfo.controller', 'progRun.controller', 'configuration.controller', 'language.controller', 'socket.controller', 'progTutorial.controller', 'volume-meter', 'user.model' ], function(
         require) {
@@ -134,6 +135,7 @@ require([ 'require', 'wrap', 'jquery', 'jquery-cookie', 'guiState.controller', '
     logListController = require('logList.controller');
     cookieDisclaimer = require('cookieDisclaimer.controller');
     menuController = require('menu.controller');
+    multSimController = require('multSim.controller');
     progDeleteController = require('progDelete.controller');
     progListController = require('progList.controller');
     galleryListController = require('galleryList.controller');
@@ -181,6 +183,7 @@ function init() {
         progRunController.init();
         menuController.init();
         tutorialController.init();
+        multSimController.init();
         
         cookieDisclaimer.init();
         $(".cover").fadeOut(100, function() {
