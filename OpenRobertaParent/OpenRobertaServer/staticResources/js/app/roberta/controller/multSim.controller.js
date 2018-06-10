@@ -19,7 +19,6 @@ define(['exports','util', 'progList.model','program.controller', 'program.model'
 //        });
     }
     exports.init = init;
-    
     function showListProg(){
         PROGLIST.loadProgList(function(result){
             if(result.rc === "ok"){
