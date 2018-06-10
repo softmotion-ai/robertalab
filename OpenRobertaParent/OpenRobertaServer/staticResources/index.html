@@ -135,7 +135,7 @@ limitations under the License.
                             lkey="Blockly.Msg.MENU_ROBOT"></span>
                     </a>
                         <ul id="navigation-robot" class="dropdown-menu">
-                            <li id="robotConnect"><a href="#" id="menuConnect" class="typcn typcn-wi-fi" lkey="Blockly.Msg.MENU_CONNECT">verbinden ...</a></li>
+                            <li id="robotConnect" ><a href="#" id="menuConnect" class="typcn typcn-wi-fi" lkey="Blockly.Msg.MENU_CONNECT">verbinden ...</a></li>
                             <li><a href="#" id="menuRobotInfo" class="typcn typcn-input-checked" lkey="Blockly.Msg.MENU_ROBOT_STATE_INFO">Roboterinformationen</a></li>
                             <li class="divider"></li>
                             <li class="robotType"><a href="#" class="typcn menu-robot"></a></li>
@@ -156,7 +156,7 @@ limitations under the License.
                             <li><a href="#" id="menuShowStart" class="typcn typcn-refresh" lkey="Blockly.Msg.MENU_SHOW_AGAIN">Starthinweis anzeigen</a></li>
                             <li><a href="#" id="menuLogging" class="typcn typcn-spanner" lkey="Blockly.Msg.MENU_LOGGING">Logging</a></li>
                             <li><a href="https://www.roberta-home.de/index.php?id=137" target="_blank" class="typcn typcn-info-large DE">Datenschutzerklärung</a>
-                                <a href="https://www.roberta-home.de/index.php?id=137&L=1" target="_blank" class="typcn typcn-info-large EN">privacy policy</a></li>
+                                <a href="https://www.roberta-home.de/index.php?id=137&L=1" target="_blank" class="typcn typcn-info-large EN">privacy policy</a></li> 
                             <li><a href="https://www.roberta-home.de/impressum" target="_blank" class="typcn typcn-info-large DE">Impressum</a> <a
                                 href="https://www.roberta-home.de/impressum/?L=1" target="_blank" class="typcn typcn-info-large EN">publishing notes</a></li>
                         </ul></li>
@@ -731,7 +731,29 @@ limitations under the License.
             </div>
         </div>
     </div>
-    <!--  Popup to show relations / share programs -->
+    
+    <div class="modal fade" id="simModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center" id="myModalLabel">Multiple Simulation </h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table id="mtable"></table>
+        <p id="voidList" class="text-center"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Run Selected</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!--   Popup to show relations / share programs -->
     <div id="show-available-connections" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -1118,7 +1140,7 @@ limitations under the License.
     <div id="device-size">
         <div id="xs" class="visible-xs"></div>
     </div>
-    <div class="hidden">
+    <div class="hidden"> 
         <input type="file" id="fileSelector" display="none"></input>
     </div>
     <div id="cookieDisclaimer" class="cookies-enabled hidden">
