@@ -1970,3 +1970,7 @@ label.quiz.answer.fail {
 #welcomeHaribo .modal-dialog {
 	width: 40vw;
 }
+/*CSS FOR MULTIPLE SIMULATION POPUP*/
+#simModal .fixed-table-header{
+	background-color:#B3BFB8;
+}
