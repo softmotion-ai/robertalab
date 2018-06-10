@@ -148,7 +148,7 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                             });
                         }
                     });                     
-                });
+                }); 
             }else{
                 // the user is not logged in
                 console.log(result.message);
