@@ -10,7 +10,7 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
     function showListProg(){
         PROGLIST.loadProgList(function(result){
             if(result.rc === "ok"){
-                $("#mtable").bootstrapTable('destroy'); //refreshing the table
+                $("#mtable").bootstrapTable('destroy'); //refreshing the table 
                 $("#simModal .btn-primary").off('click'); // deleting any click event attached to this button 
                 var dataarr = []; //Array having data to be displayed in table shown
                 var programsparsed =0; //iterator for the synchronously running for loops
