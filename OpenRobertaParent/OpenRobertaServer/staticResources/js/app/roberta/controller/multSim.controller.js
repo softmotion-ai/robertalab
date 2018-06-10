@@ -147,7 +147,6 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                                 alert("The following programs would be executed: "+ JSON.stringify($("#mtable").bootstrapTable('getSelections')));
                             });
                         }
-
                     });                     
                 });
             }else{
