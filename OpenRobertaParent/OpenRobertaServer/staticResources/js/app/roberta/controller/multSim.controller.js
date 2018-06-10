@@ -346,8 +346,16 @@ define(['exports','util', 'progList.model','program.controller', 'program.model'
             }
         });
     }
+<<<<<<< 8b78552bc5ea54b0c11ab956e4c64d0d09fe964e
     exports.showListProgOld = showListProgOld
+<<<<<<< 728a683abf6ba00a73c76e5c03fc92b76fae25f9
 }); 
     
   
     
+=======
+=======
+    exports.showListProg = showListProg
+>>>>>>> separate controller added for multiple simulation simulation, the multsim is disabled when not login
+});
+>>>>>>> separate controller added for multiple simulation simulation, the multsim is disabled when not login
