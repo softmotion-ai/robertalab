@@ -25,7 +25,7 @@ public class CompilerWorkflow extends AbstractCompilerWorkflow {
 
     public CompilerWorkflow(String pathToCrosscompilerBaseDir, String pathToCompilerResourcesDir) {
         this.pathToCrosscompilerBaseDir = pathToCrosscompilerBaseDir;
-        this.vorwerkCommunicator = new VorwerkCommunicator("10.116.20.73", "pi", "raspberry", pathToCompilerResourcesDir);
+        this.vorwerkCommunicator = new VorwerkCommunicator(pathToCompilerResourcesDir);
     }
 
     @Override
@@ -33,6 +33,8 @@ public class CompilerWorkflow extends AbstractCompilerWorkflow {
         if ( data.getErrorMessage() != null ) {
             return null;
         }
+        VorwerkConfiguration configuration = (VorwerkConfiguration) data.getBrickConfiguration();
+        this.vorwerkCommunicator.updateRobotInformation(configuration.getIpAddress(), configuration.getUserName(), configuration.getPassword());
         return PythonVisitor.generate((VorwerkConfiguration) data.getBrickConfiguration(), data.getProgramTransformer().getTree(), true, language);
     }
 

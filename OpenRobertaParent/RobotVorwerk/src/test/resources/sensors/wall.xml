@@ -30,7 +30,6 @@
 					id="HXhTn8l2JAS%6lSK*`ky" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT" />
 					<field name="SLOT" />
 				</block>
 			</value>

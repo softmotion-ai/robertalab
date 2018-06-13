@@ -13,7 +13,6 @@
 					id="JaA4@vP[#iAKXv3z]_A)" intask="true">
 					<mutation mode="NAMEONE" />
 					<field name="MODE">NAMEONE</field>
-					<field name="SENSORPORT" />
 					<field name="SLOT" />
 				</block>
 			</value>
@@ -25,7 +24,6 @@
 					id="?0{AmQOsMhP,Bbe%d[[2" intask="true">
 					<mutation mode="NAMEALL" />
 					<field name="MODE">NAMEALL</field>
-					<field name="SENSORPORT" />
 					<field name="SLOT" />
 				</block>
 			</value>

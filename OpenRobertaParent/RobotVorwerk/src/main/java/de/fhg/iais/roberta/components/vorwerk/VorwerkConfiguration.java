@@ -5,10 +5,14 @@ import java.util.HashMap;
 import de.fhg.iais.roberta.components.Actor;
 import de.fhg.iais.roberta.components.ActorType;
 import de.fhg.iais.roberta.components.Configuration;
+import de.fhg.iais.roberta.components.Sensor;
+import de.fhg.iais.roberta.components.SensorType;
 import de.fhg.iais.roberta.inter.mode.action.IActorPort;
+import de.fhg.iais.roberta.inter.mode.sensor.ISensorPort;
 import de.fhg.iais.roberta.mode.action.ActorPort;
 import de.fhg.iais.roberta.mode.action.DriveDirection;
 import de.fhg.iais.roberta.mode.action.MotorSide;
+import de.fhg.iais.roberta.mode.sensor.SensorPort;
 import de.fhg.iais.roberta.util.dbc.DbcException;
 
 public class VorwerkConfiguration extends Configuration {
@@ -24,11 +28,23 @@ public class VorwerkConfiguration extends Configuration {
     public VorwerkConfiguration(String ipAddress, String portNumber, String userName, String password) {
         super(new HashMap<IActorPort, Actor>() {
             {
-                put(ActorPort.LEFT, leftMotor);
-                put(ActorPort.RIGHT, rightMotor);
+                put(new ActorPort("LEFT", "left"), leftMotor);
+                put(new ActorPort("RIGHT", "right"), rightMotor);
 
             }
-        }, null, 0.0, 0.0);
+        }, new HashMap<ISensorPort, Sensor>() {
+            {
+                put(new SensorPort("LEFT_ULTRASONIC", "LEFT_ULTRASONIC"), new Sensor(SensorType.ULTRASONIC));
+                put(new SensorPort("CENTER_ULTRASONIC", "CENTER_ULTRASONIC"), new Sensor(SensorType.ULTRASONIC));
+                put(new SensorPort("RIGHT_ULTRASONIC", "RIGHT_ULTRASONIC"), new Sensor(SensorType.ULTRASONIC));
+                put(new SensorPort("LEFT", "left"), new Sensor(SensorType.TOUCH));
+                put(new SensorPort("RIGHT", "right"), new Sensor(SensorType.TOUCH));
+                put(new SensorPort("X", "X"), new Sensor(SensorType.ACCELEROMETER));
+                put(new SensorPort("Y", "Y"), new Sensor(SensorType.ACCELEROMETER));
+                put(new SensorPort("Z", "Z"), new Sensor(SensorType.ACCELEROMETER));
+                put(new SensorPort("STRENGTH", "strength"), new Sensor(SensorType.ACCELEROMETER));
+            }
+        }, 0.0, 0.0);
 
         this.ipAddress = ipAddress;
         this.portNumber = portNumber;

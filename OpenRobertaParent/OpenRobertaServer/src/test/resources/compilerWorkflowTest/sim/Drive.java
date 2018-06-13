@@ -34,10 +34,10 @@ public class Drive {
                 .setTrackWidth(18.0)
                 .addActor(ActorPort.B, new Actor(ActorType.LARGE, true, DriveDirection.FOREWARD, MotorSide.RIGHT))
                 .addActor(ActorPort.C, new Actor(ActorType.LARGE, true, DriveDirection.FOREWARD, MotorSide.LEFT))
-                .addSensor(SensorPort.S1, new Sensor(SensorType.TOUCH))
-                .addSensor(SensorPort.S2, new Sensor(SensorType.GYRO))
-                .addSensor(SensorPort.S3, new Sensor(SensorType.COLOR))
-                .addSensor(SensorPort.S4, new Sensor(SensorType.ULTRASONIC))
+                .addSensor(new SensorPort("1", "S1"), new Sensor(SensorType.TOUCH))
+                .addSensor(new SensorPort("2", "S2"), new Sensor(SensorType.GYRO))
+                .addSensor(new SensorPort("3", "S3"), new Sensor(SensorType.COLOR))
+                .addSensor(new SensorPort("4", "S4"), new Sensor(SensorType.ULTRASONIC))
                 .build();
 
             new Drive().run();

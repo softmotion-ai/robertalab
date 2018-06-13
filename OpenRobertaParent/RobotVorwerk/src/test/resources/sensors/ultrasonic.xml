@@ -30,7 +30,7 @@
 					id="qtnnFQ:5251L#vPfv4ho" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">LEFT</field>
+					<field name="SENSORPORT">LEFT_ULTRASONIC</field>
 					<field name="SLOT">LEFT</field>
 				</block>
 			</value>
@@ -44,7 +44,7 @@
 					id="ezHgrc~lRo0cK,^V?9^Y" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">LEFT</field>
+					<field name="SENSORPORT">LEFT_ULTRASONIC</field>
 					<field name="SLOT">CENTER</field>
 				</block>
 			</value>
@@ -58,7 +58,7 @@
 					id="QRd%DcMxB#]aX^1:ai;(" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">LEFT</field>
+					<field name="SENSORPORT">LEFT_ULTRASONIC</field>
 					<field name="SLOT">RIGHT</field>
 				</block>
 			</value>
@@ -72,7 +72,7 @@
 					id="z67*XB4aSliDJl.yC[dx" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">CENTER</field>
+					<field name="SENSORPORT">CENTER_ULTRASONIC</field>
 					<field name="SLOT">LEFT</field>
 				</block>
 			</value>
@@ -86,7 +86,7 @@
 					id="Rbv)I2}vn;,Id_X5Y9)O" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">CENTER</field>
+					<field name="SENSORPORT">CENTER_ULTRASONIC</field>
 					<field name="SLOT">CENTER</field>
 				</block>
 			</value>
@@ -100,7 +100,7 @@
 					id="8Kq}TXdNz0ELp,zlRVj." intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">CENTER</field>
+					<field name="SENSORPORT">CENTER_ULTRASONIC</field>
 					<field name="SLOT">RIGHT</field>
 				</block>
 			</value>
@@ -114,7 +114,7 @@
 					id="i6+Z*CY(/NS@@hH!^38x" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">RIGHT</field>
+					<field name="SENSORPORT">RIGHT_ULTRASONIC</field>
 					<field name="SLOT">LEFT</field>
 				</block>
 			</value>
@@ -128,7 +128,7 @@
 					id="ke5.rvN4F-iAj3jeB*eO" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">RIGHT</field>
+					<field name="SENSORPORT">RIGHT_ULTRASONIC</field>
 					<field name="SLOT">CENTER</field>
 				</block>
 			</value>
@@ -142,7 +142,7 @@
 					id="a=C!6O_QUIo@q%kx^_0W" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">RIGHT</field>
+					<field name="SENSORPORT">RIGHT_ULTRASONIC</field>
 					<field name="SLOT">RIGHT</field>
 				</block>
 			</value>

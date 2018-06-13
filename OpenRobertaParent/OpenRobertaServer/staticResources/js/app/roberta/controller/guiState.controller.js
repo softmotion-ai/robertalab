@@ -51,6 +51,18 @@ define([ 'exports', 'util', 'log', 'message', 'guiState.model', 'progHelp.contro
                     console.error('"' + tutorialPath + '" is not a valid json file! The reason is probably a', r);
                 });
             }
+
+            if (GUISTATE.server.theme !== 'default') {
+                var themePath = '../theme/' + GUISTATE.server.theme + '.json';
+                $.getJSON(themePath).done(function(data) {
+                 // store new theme properties (only colors so far)
+                    GUISTATE.server.theme = data;
+                }).fail(function(e, r) {
+                    // this should not happen
+                    console.error('"' + themePath + '" is not a valid json file! The reason is probably a', r);
+                    GUISTATE.server.theme = 'default';
+                });
+            }
             LOG.info('init gui state');
             ready.resolve();
         });
@@ -202,6 +214,8 @@ define([ 'exports', 'util', 'log', 'message', 'guiState.model', 'progHelp.contro
             break;
         case GUISTATE.gui.connectionType.AUTO:
             break;
+        case GUISTATE.gui.connectionType.LOCAL:
+            break;
         case GUISTATE.gui.connectionType.AGENT:
             break;
         default:
@@ -296,6 +310,7 @@ define([ 'exports', 'util', 'log', 'message', 'guiState.model', 'progHelp.contro
             $('#menuRunProg').parent().addClass('disabled');
             $('#menuConnect').parent().removeClass('disabled');
             break;
+        case GUISTATE.gui.connectionType.LOCAL:
         case GUISTATE.gui.connectionType.AUTO:
             SOCKET_C.listRobotStop();
             //console.log('autoConnection');
@@ -985,8 +1000,14 @@ define([ 'exports', 'util', 'log', 'message', 'guiState.model', 'progHelp.contro
         return GUISTATE.server.help;
     }
     exports.getAvailableHelp = getAvailableHelp;
+    
+    function getTheme() {
+        return GUISTATE.server.theme;
+    }
+    exports.getTheme = getTheme;
 
     function updateMenuStatus() {
+        // TODO revice this function, because isAgent is the exception
         switch (SOCKET_C.getPortList().length) {
         case 0:
             if (getConnection() !== GUISTATE.gui.connectionType.AGENTORTOKEN) {
