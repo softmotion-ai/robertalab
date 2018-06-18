@@ -432,7 +432,7 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
             obstacle.h = 50;
             obstacle.color = "#009EE3";
             obstacle.img = null;
-        } else {
+        } else { 
             var x = imgObjectList[currentBackground].width - 50;
             var y = imgObjectList[currentBackground].height - 50;
             obstacle.x = x;
