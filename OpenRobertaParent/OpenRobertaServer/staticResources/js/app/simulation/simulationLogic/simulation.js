@@ -198,7 +198,7 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
         h : 0,
         wOld : 0,
         hOld : 0
-    };
+    }; 
     var obslist= [ground, obstacle];
     for(var i=0;i<20;i++){
         var tempobs= {
