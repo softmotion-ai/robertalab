@@ -874,4 +874,4 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
             clearTimeout(id);
         };
     }
-}());
+}()); 
