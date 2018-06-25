@@ -18,6 +18,7 @@ import de.fhg.iais.roberta.syntax.Phrase;
 import de.fhg.iais.roberta.syntax.action.display.ClearDisplayAction;
 import de.fhg.iais.roberta.syntax.action.display.ShowPictureAction;
 import de.fhg.iais.roberta.syntax.action.display.ShowTextAction;
+import de.fhg.iais.roberta.syntax.action.light.LedAction;
 import de.fhg.iais.roberta.syntax.action.light.LightAction;
 import de.fhg.iais.roberta.syntax.action.light.LightStatusAction;
 import de.fhg.iais.roberta.syntax.action.motor.CurveAction;
@@ -413,7 +414,7 @@ public class CppVisitor extends ArduinoVisitor implements ArduinoAstVisitor<Void
 
     @Override
     public Void visitBrickSensor(BrickSensor<Void> brickSensor) {
-        this.sb.append("bnr.buttonIsPressed(" + brickSensor.getPort().getValues()[1] + ")");
+        this.sb.append("bnr.buttonIsPressed(" + brickSensor.getPort().getCodeName() + ")");
         return null;
     }
 
@@ -657,6 +658,12 @@ public class CppVisitor extends ArduinoVisitor implements ArduinoAstVisitor<Void
 
     @Override
     public Void visitRgbColor(RgbColor<Void> rgbColor) {
+        return null;
+    }
+
+    @Override
+    public Void visitLedAction(LedAction<Void> ledAction) {
+        // TODO Auto-generated method stub
         return null;
     }
 }

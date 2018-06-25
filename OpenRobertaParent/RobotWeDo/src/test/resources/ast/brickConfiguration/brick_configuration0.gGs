@@ -1,0 +1,9 @@
+private WeDoConfiguration brickConfiguration = new WeDoConfiguration.Builder()
+	.setWheelDiameter(5.5)
+	.setTrackWidth(17.0)
+	.addActor(ActorPort.A, new WeDoActor(WeDoActors.WeDo_MEDIUM_MOTOR, true, DriveDirection.FOREWARD, MotorSide.NONE))
+	.addActor(ActorPort.B, new WeDoActor(WeDoActors.WeDo_LARGE_MOTOR, true, DriveDirection.FOREWARD, MotorSide.NONE))
+	.addSensor(SensorPort.S1, new WeDoSensor(WeDoSensors.WeDo_TOUCH_SENSOR))
+	.addSensor(SensorPort.S2, new WeDoSensor(WeDoSensors.WeDo_COLOR_SENSOR))
+	.addSensor(SensorPort.S3, new WeDoSensor(WeDoSensors.WeDo_ULTRASONIC_SENSOR))
+	.build();

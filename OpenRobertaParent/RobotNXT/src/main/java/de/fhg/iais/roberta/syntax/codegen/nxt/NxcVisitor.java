@@ -16,7 +16,6 @@ import de.fhg.iais.roberta.mode.action.MotorStopMode;
 import de.fhg.iais.roberta.mode.action.TurnDirection;
 import de.fhg.iais.roberta.mode.general.IndexLocation;
 import de.fhg.iais.roberta.mode.general.nxt.PickColor;
-import de.fhg.iais.roberta.mode.sensor.BrickKey;
 import de.fhg.iais.roberta.mode.sensor.ColorSensorMode;
 import de.fhg.iais.roberta.mode.sensor.LightSensorMode;
 import de.fhg.iais.roberta.mode.sensor.MotorTachoMode;
@@ -30,6 +29,7 @@ import de.fhg.iais.roberta.syntax.action.communication.BluetoothWaitForConnectio
 import de.fhg.iais.roberta.syntax.action.display.ClearDisplayAction;
 import de.fhg.iais.roberta.syntax.action.display.ShowPictureAction;
 import de.fhg.iais.roberta.syntax.action.display.ShowTextAction;
+import de.fhg.iais.roberta.syntax.action.light.LedAction;
 import de.fhg.iais.roberta.syntax.action.light.LightAction;
 import de.fhg.iais.roberta.syntax.action.light.LightStatusAction;
 import de.fhg.iais.roberta.syntax.action.motor.CurveAction;
@@ -818,21 +818,7 @@ public class NxcVisitor extends RobotCppVisitor implements NxtAstVisitor<Void>, 
 
     @Override
     public Void visitBrickSensor(BrickSensor<Void> brickSensor) {
-        String button = null;
-        switch ( (BrickKey) brickSensor.getPort() ) {
-            case ENTER:
-                button = "BTNCENTER";
-                break;
-            case LEFT:
-                button = "BTNLEFT";
-                break;
-            case RIGHT:
-                button = "BTNRIGHT";
-                break;
-            default:
-                throw new DbcException("Invalid Key!");
-        }
-        this.sb.append("ButtonPressed(" + button + ", false)");
+        this.sb.append("ButtonPressed(" + brickSensor.getPort().getCodeName() + ", false)");
         return null;
     }
 
@@ -1410,6 +1396,12 @@ public class NxcVisitor extends RobotCppVisitor implements NxtAstVisitor<Void>, 
 
     @Override
     public Void visitTemperatureSensor(TemperatureSensor<Void> temperatureSensor) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Void visitLedAction(LedAction<Void> ledAction) {
         // TODO Auto-generated method stub
         return null;
     }

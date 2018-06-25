@@ -100,7 +100,7 @@ public class RobotCommunicator {
     // TODO: when can this fail?
     private boolean checkRobotMatchesClient(String robot, RobotCommunicationData state) {
         //TODO: it is a hot fix for the release on 6.7.17, later we need to change the state robot name from ardu to botnroll
-        if ( robot.equals("botnroll") ) {
+        if ( robot.equals("botnroll") || robot.equals("arduino") ) {
             robot = "ardu";
         }
 

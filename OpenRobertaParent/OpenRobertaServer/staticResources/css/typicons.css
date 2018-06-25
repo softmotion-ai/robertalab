@@ -469,7 +469,7 @@
 .typcn-image-outline:before {
   content: "\e9d6";
 }
-.typcn-infinity:before {
+.typcn-arduino:before {
   content: "\e9d3";
 }
 .typcn-infinity-outline:before {
@@ -1051,7 +1051,7 @@
 .typcn-waves-outline:before {
   content: "\e929";
 }
-.typcn-weather-cloudy:before {
+.typcn-wedo:before {
   content: "\e927";
 }
 .typcn-weather-downpour:before {
