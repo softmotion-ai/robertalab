@@ -26,7 +26,7 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
             USER_C.showResetPassword(target[1]);
         } else if (target[0] === "#loadProgram" && target.length >= 4) {
             GUISTATE_C.setStartWithoutPopup();
-            IMPORT_C.openProgramFromXML(target);
+            IMPORT_C.openProgramFromXML(target); 
         } else if (target[0] === "#activateAccount") {
             USER_C.activateAccount(target[1]);
         } else if (target[0] === "#overview") {
@@ -42,7 +42,7 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
         var uri = window.location.toString();
         if (uri.indexOf("#") > 0) {
             var clean_uri = uri.substring(0, uri.indexOf("#"));
-            window.history.replaceState({}, document.title, clean_uri);
+            window.history.replaceState({}, document.title, clean_uri); 
         }
 
         var firsttime = true
@@ -638,7 +638,7 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
         // experimental
         $(document).on('keydown', function(e) {
             if ((e.metaKey || e.ctrlKey) && (String.fromCharCode(e.which) === '1')) {
-                IMPORT_C.importSourceCodeToCompile();
+                IMPORT_C.importSourceCodeToCompile(); 
                 return false;
             }
             if ((e.metaKey || e.ctrlKey) && (String.fromCharCode(e.which) === '2')) {
