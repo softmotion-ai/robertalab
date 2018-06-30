@@ -270,10 +270,10 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
                 PROGRAM_C.showSaveAsModal();
                 break;
             case 'menuShowCode':
-                $('#codeButton').trigger("click");
+                $('codeButton').trigger("click");
                 break;
             case 'menuImportProg':
-                IMPORT_C.importXml();
+                PROGRAM_C.importXml();
                 break;
             case 'menuExportProg':
                 PROGRAM_C.exportXml();
@@ -632,7 +632,7 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
                 return false;
             }
             if ((e.metaKey || e.ctrlKey) && (String.fromCharCode(e.which) === '2')) {
-                IMPORT_C.importNepoCodeToCompile();
+                PROGRAM_C.importNepoCodeToCompile();
                 return false;
             }
         });
