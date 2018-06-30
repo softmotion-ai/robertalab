@@ -54,6 +54,7 @@ require.config({
         'rest.robot' : '../app/roberta/rest/robot',
         'socket.controller' : '../app/roberta/controller/socket.controller',
         'cookieDisclaimer.controller' : '../app/roberta/controller/cookieDisclaimer.controller',
+        'webview.controller' : '../app/roberta/controller/webview.controller',
 
         'simulation.constants' : '../app/simulation/simulationLogic/constants',
         'simulation.math' : '../app/simulation/simulationLogic/math',
@@ -122,7 +123,7 @@ require.config({
 require([ 'require', 'wrap', 'jquery', 'jquery-cookie', 'guiState.controller', 'progList.controller', 'logList.controller', 'confList.controller',
         'progDelete.controller', 'confDelete.controller', 'progShare.controller', 'cookieDisclaimer.controller', 'menu.controller','multSim.controller', 'user.controller',
         'robot.controller', 'program.controller', 'progSim.controller', 'progCode.controller', 'progDelete.controller', 'progHelp.controller',
-        'progInfo.controller', 'progRun.controller', 'configuration.controller', 'language.controller', 'socket.controller', 'progTutorial.controller', 'volume-meter', 'user.model' ], function(
+        'progInfo.controller', 'progRun.controller', 'configuration.controller', 'language.controller', 'socket.controller', 'progTutorial.controller', 'volume-meter', 'user.model', 'webview.controller' ], function(
         require) {
 
     $ = require('jquery', 'jquery-cookie');
@@ -152,6 +153,7 @@ require([ 'require', 'wrap', 'jquery', 'jquery-cookie', 'guiState.controller', '
     userModel = require('user.model');
     socketController = require('socket.controller');
     tutorialController = require('progTutorial.controller');
+    webviewController = require('webview.controller');
 
     $(document).ready(WRAP.fn3(init, 'page init'));
 });
@@ -162,7 +164,9 @@ require([ 'require', 'wrap', 'jquery', 'jquery-cookie', 'guiState.controller', '
 function init() {
     COMM.setErrorFn(handleServerErrors);
     $.when(languageController.init()).then(function(language) {
-        return guiStateController.init(language);
+        return webviewController.init(language);
+    }).then(function(language, opt_data) {
+        return guiStateController.init(language, opt_data);
     }).then(function() {
         return robotController.init();
     }).then(function() {
@@ -175,8 +179,9 @@ function init() {
         confDeleteController.init();
         progShareController.init();
         logListController.init();
-        configurationController.init();
+        
         programController.init();
+        configurationController.init();
         progHelpController.init();
         progInfoController.init();
         progCodeController.init();

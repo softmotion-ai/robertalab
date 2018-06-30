@@ -1,7 +1,8 @@
 /**
  * Controller for multiple simulation part of the project
  */
-define(['exports','util', 'progList.model', 'program.model','guiState.controller','guiState.model', 'jquery'],function(exports, UTIL, PROGLIST, PROGRAM_M,GUISTATE_C, GUISTATE_M, $){
+define(['exports','util', 'progList.model', 'program.model','guiState.controller','guiState.model','simulation.simulation', 'jquery'],
+        function(exports, UTIL, PROGLIST, PROGRAM_M,GUISTATE_C, GUISTATE_M, SIM,  $){
     function init(){
         //currently does nothing
     }
@@ -71,8 +72,18 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
 //                        $("#simModal .fixed-table-header").css({"background-color": "#B3BFB8"});
                         $("#simModal .btn-primary").on("click",function(){
                             console.log("Selections will be executed");
+                            var selections = $("#mtable").bootstrapTable('getSelections');
+                            var selectedprograms = [];
+                            for(var i=0;i<selections.length;i++){
+                                var tempfind = oriarray.find(function(ele){
+                                    var thisarrm = oriarray;
+                                    return selections[i].name=== ele[0];
+                                });
+                                selectedprograms.push(tempfind);
+                            }
                             console.log('Selections obtained via getSelections: are ' + JSON.stringify($("#mtable").bootstrapTable('getSelections')));
                             alert("The following programs would be executed: "+ JSON.stringify($("#mtable").bootstrapTable('getSelections')));
+                            
                         });
                     }
                 });

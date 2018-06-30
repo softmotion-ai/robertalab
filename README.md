@@ -52,7 +52,7 @@ Please also check our wiki for detailed installation instructions, development p
 
 #### Step 1: Clone the repository and compile
 
-    git clone git://github.com/OpenRoberta/robertalab.git # get the repository
+    git clone https://github.com/OpenRoberta/robertalab.git # get the repository
     cd robertalab        # cd into repository
 	cd OpenRobertaParent # cd to parent project
     mvn clean install    # generate the server
@@ -101,7 +101,7 @@ You can follow the test status on https://travis-ci.org/OpenRoberta/.
 
 Development happens in the `develop` branch. Please sent PRs against that branch.
 
-    git clone git://github.com/OpenRoberta/robertalab.git
+    git clone https://github.com/OpenRoberta/robertalab.git
     cd robertalab
     git checkout -b develop origin/develop
 	
@@ -122,6 +122,15 @@ Furthermore, the project OpenRobertaServer contains in directory staticResources
   * assertions (DBC), ajax-based server calls (COMM), logging (LOG) and
   * javascript resources for blockly (see: http://code.google.com/p/blockly/)
   * controller and models written in Javascript, which implement the GUI
+
+To run specific tests, use `mvn test` with the `-Dtest=` option to specify the
+test name and `-DfailIfNoTests=false` to avoid a failure if a test of such name
+is not present in every sub-project of the repository. Example:
+
+    mvn -Dtest=de.fhg.iais.roberta.syntax.codegen.PythonVisitorTest -DfailIfNoTests=false test
+
+If the tests report broken dependencies, make sure to run `mvn clean install`
+first.
 
 #### Blockly
 
