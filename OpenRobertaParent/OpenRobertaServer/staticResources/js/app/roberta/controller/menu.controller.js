@@ -2,7 +2,7 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
         'cookieDisclaimer.controller', 'program.controller', 'program.model','multSim.controller', 'progRun.controller', 'configuration.controller', 'enjoyHint', 'tour.controller',
         'simulation.simulation', 'progList.model', 'jquery', 'blocks', 'slick' ], function(exports, LOG, UTIL, MSG, COMM, ROBOT_C, SOCKET_C, USER_C, USER, GUISTATE_C,
         CookieDisclaimer, PROGRAM_C, PROGRAM_M, MULT_SIM, RUN_C, CONFIGURATION_C, EnjoyHint, TOUR_C, SIM, PROGLIST, $, Blockly) {
-
+  
     function init() {
         initMenu();
         initMenuEvents();
