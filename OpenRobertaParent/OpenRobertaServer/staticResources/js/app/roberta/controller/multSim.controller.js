@@ -75,7 +75,7 @@ define(['exports','util', 'progList.model', 'program.model','guiState.controller
                             alert("The following programs would be executed: "+ JSON.stringify($("#mtable").bootstrapTable('getSelections')));
                         });
                     }
-                });
+                });  
             }else{
                 // the user is not logged in, this code might never be executed until the user deletes the disabled class and click the multiplication button
                 console.log(result.message);
