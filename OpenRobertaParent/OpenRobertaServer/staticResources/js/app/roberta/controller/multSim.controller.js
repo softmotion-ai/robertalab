@@ -131,7 +131,6 @@ define(['exports','util', 'progList.model','program.controller', 'program.model'
                                                     programsfetched++;
                                                     if(programsfetched === oriarray.length){
                                                         console.log("reached end");
-                                                        alert("simulate");
                                                         
                                                         console.log(extractedprograms);
                                                         simulateMultiple(extractedprograms);
