@@ -1,13 +1,13 @@
 define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socket.controller', 'user.controller', 'user.model', 'guiState.controller',
-        'cookieDisclaimer.controller', 'program.controller', 'progRun.controller', 'configuration.controller', 'import.controller', 'enjoyHint',
-        'tour.controller', 'simulation.simulation', 'jquery', 'blocks', 'slick' ], function(exports, LOG, UTIL, MSG, COMM, ROBOT_C, SOCKET_C, USER_C, USER,
-        GUISTATE_C, CookieDisclaimer, PROGRAM_C, RUN_C, CONFIGURATION_C, IMPORT_C, EnjoyHint, TOUR_C, SIM, $, Blockly) {
+        'cookieDisclaimer.controller', 'program.controller', 'program.model','multSim.controller', 'progRun.controller', 'configuration.controller','import.controller', 'enjoyHint', 'tour.controller',
+        'simulation.simulation', 'progList.model', 'jquery', 'blocks', 'slick' ], function(exports, LOG, UTIL, MSG, COMM, ROBOT_C, SOCKET_C, USER_C, USER, GUISTATE_C,
+        CookieDisclaimer,PROGRAM_C, PROGRAM_M,MULT_SIM, RUN_C, CONFIGURATION_C,IMPORT_C, EnjoyHint, TOUR_C, SIM, PROGLIST, $, Blockly) {
 
-    function init() {
+    function init() { 
         initMenu();
         initMenuEvents();
         /**
-         * Regularly ping the server to keep status information up-to-date
+         * Regularly ping the server to keep status information up-to-date 
          */
         function pingServer() {
             if (GUISTATE_C.doPing()) {
@@ -26,7 +26,7 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
             USER_C.showResetPassword(target[1]);
         } else if (target[0] === "#loadProgram" && target.length >= 4) {
             GUISTATE_C.setStartWithoutPopup();
-            IMPORT_C.openProgramFromXML(target);
+            IMPORT_C.openProgramFromXML(target); 
         } else if (target[0] === "#activateAccount") {
             USER_C.activateAccount(target[1]);
         } else if (target[0] === "#overview") {
@@ -42,7 +42,7 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
         var uri = window.location.toString();
         if (uri.indexOf("#") > 0) {
             var clean_uri = uri.substring(0, uri.indexOf("#"));
-            window.history.replaceState({}, document.title, clean_uri);
+            window.history.replaceState({}, document.title, clean_uri); 
         }
 
         var firsttime = true
@@ -280,10 +280,10 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
                 PROGRAM_C.showSaveAsModal();
                 break;
             case 'menuShowCode':
-                $('#codeButton').trigger("click");
+                $('codeButton').trigger("click");
                 break;
             case 'menuImportProg':
-                IMPORT_C.importXml();
+                PROGRAM_C.importXml();
                 break;
             case 'menuExportProg':
                 PROGRAM_C.exportXml();
@@ -297,6 +297,9 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
             case 'menuToolboxExpert':
                 $('.levelTabs a[href="#expert"]').tab('show');
                 break;
+            case 'multipleSimNav':
+                MULT_SIM.showListProg();
+                break;          
             default:
                 break;
             }
@@ -635,11 +638,11 @@ define([ 'exports', 'log', 'util', 'message', 'comm', 'robot.controller', 'socke
         // experimental
         $(document).on('keydown', function(e) {
             if ((e.metaKey || e.ctrlKey) && (String.fromCharCode(e.which) === '1')) {
-                IMPORT_C.importSourceCodeToCompile();
+                IMPORT_C.importSourceCodeToCompile(); 
                 return false;
             }
             if ((e.metaKey || e.ctrlKey) && (String.fromCharCode(e.which) === '2')) {
-                IMPORT_C.importNepoCodeToCompile();
+                PROGRAM_C.importNepoCodeToCompile();
                 return false;
             }
         });
