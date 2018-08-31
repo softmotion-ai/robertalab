@@ -1968,7 +1968,8 @@ label.quiz.answer.fail {
 }
 /*CSS FOR MULTIPLE SIMULATION POPUP*/
 #simModal .fixed-table-header{
-	background-color:#B3BFB8;
+	background-color:rgb(137,137,137);
+	color: white;
 }.lds-ellipsis {
   display: inline-block;
   position: relative;
