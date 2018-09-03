@@ -31,7 +31,7 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
     var imgRuler = new Image();
     var imgList = [ '/js/app/simulation/simBackgrounds/baustelle.svg', '/js/app/simulation/simBackgrounds/ruler.svg', '/js/app/simulation/simBackgrounds/wallPattern.png', '/js/app/simulation/simBackgrounds/calliopeBackground.svg', '/js/app/simulation/simBackgrounds/microbitBackground.svg', '/js/app/simulation/simBackgrounds/simpleBackground.svg', '/js/app/simulation/simBackgrounds/drawBackground.svg', '/js/app/simulation/simBackgrounds/robertaBackground.svg', '/js/app/simulation/simBackgrounds/rescueBackground.svg', '/js/app/simulation/simBackgrounds/wroBackground.svg', '/js/app/simulation/simBackgrounds/mathBackground.svg' ];
     var imgListIE = [ '/js/app/simulation/simBackgrounds/baustelle.png', '/js/app/simulation/simBackgrounds/ruler.png', '/js/app/simulation/simBackgrounds/wallPattern.png', '/js/app/simulation/simBackgrounds/calliopeBackground.png', '/js/app/simulation/simBackgrounds/microbitBackground.png', '/js/app/simulation/simBackgrounds/simpleBackground.png', '/js/app/simulation/simBackgrounds/drawBackground.png', '/js/app/simulation/simBackgrounds/robertaBackground.png', '/js/app/simulation/simBackgrounds/rescueBackground.png', '/js/app/simulation/simBackgrounds/wroBackground.png', '/js/app/simulation/simBackgrounds/mathBackground.png' ];
-    var imgObjectList = [];
+    var imgObjectList = [];  
 
     function preloadImages() {
         if (isIE()) {
@@ -64,7 +64,12 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
         if (num == undefined) {
             setObstacle();
             setRuler();
-            scene = new Scene(imgObjectList[currentBackground], robot, imgPattern, ruler);
+            if(!multipleSwitch){
+                scene = new Scene(imgObjectList[currentBackground], robot, imgPattern, ruler);
+            }else{
+                scene = new Scene(imgObjectList[currentBackground], robots, imgPattern, ruler);
+            }
+//            scene = new Scene(imgObjectList[currentBackground], robot, imgPattern, ruler);
             scene.updateBackgrounds();
             scene.drawObjects();
             scene.drawRuler();
@@ -84,11 +89,25 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
         } else {
             currentBackground = num;
         }
-        var debug = robot.debug;
+        if(!multipleSwitch){
+            var debug = robot.debug;
+        }else{
+            var debug = robots[0].debug;
+        }
+//        var debug = robot.debug;
         var moduleName = 'simulation.robot.' + simRobotType;
         require([ moduleName ], function(ROBOT) {
-            createRobot(ROBOT);
-            robot.debug = debug;
+            if(!multipleSwitch){
+                createRobot(ROBOT);
+                robot.debug = debug;
+            }else{
+                createRobots(ROBOT, numprogs);
+                for(var i=0;i<robots.length;i++){
+                    robots[i].debug = debug;
+                }
+            }
+//            createRobot(ROBOT);
+//            robot.debug = debug;
             callback();
         });
 
@@ -233,6 +252,10 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
         isParallelToAxis : true
     }; 
     var obslist= [ground, obstacle];
+    /*
+     * The below code if uncommented will give multiple obstacles
+     * 
+     * 
     for(var i=0;i<7;i++){
         var tempobs= {
                 x : 0,
@@ -247,6 +270,7 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
             };
         obslist.push(tempobs);
     }
+    */
     var hoverindex =1;
     
     exports.hoverindex = hoverindex;
@@ -430,8 +454,16 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
     exports.isMultiple = isMultiple;
 
     function getRobotOfConsideration(){
-        var temp = parseInt($("#robotOfConsideration").find(":selected").text());
-        return temp-1;
+        if($("#robotOfConsideration")[0]==null){
+            return 0;
+        }else{
+            var temp = $("#robotOfConsideration")[0].selectedIndex;
+            return temp;
+
+        }
+//        var temp = $("#robotOfConsideration")[0].selectedIndex;
+////        return 0;
+//        return temp;
     }
     exports.getRobotOfConsideration = getRobotOfConsideration;
     
@@ -486,7 +518,20 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
         sensorValues = scene.updateSensorValues(!pause);
         scene.drawRobot();
     }
-    
+/*
+ * The below Colors are picked from the toolkit and should be used to color the robots
+ */
+    const colorsAdmissible = 
+        [
+            [242, 148, 0],
+            [143, 164, 2],
+            [235, 106, 10],
+            [51, 184, 202],
+            [0, 90, 148],
+            [186, 204, 30],
+            [235, 195, 0],
+            [144, 133, 186]
+        ];    
     function renderMultiple(){
         if (canceled) {
             cancelAnimationFrame(globalID);
@@ -506,6 +551,7 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
         if(temprobotOfConsideration!=robotOfConsideration){
             var blockxml = userProgram[getRobotOfConsideration()].programText;
             PROGRAM_C.programToBlocklyWorkspace(blockxml);
+            $("#robotOfConsideration").css('background-color',robots[robotOfConsideration].geom.color);
         }
         stepCounter += 1;
         addKeyEvents();
@@ -565,6 +611,15 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
             obstacle.img = null;
             obstacle.color = "#33B8CA";
         } else if (currentBackground == 2) {
+            obstacle.x = 580;
+            obstacle.y = 290;
+            obstacle.w = 100;
+            obstacle.h = 100;
+            obstacle.img = null;
+            obstacle.color = "#33B8CA";
+            /*
+             * The below commentated code if uncommented will generate multiple obstacles
+             * 
             for(var i=1;i<obslist.length; i++){
                 var batchx;
                 var prevy;
@@ -594,6 +649,7 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
                 obslist[i].h = 30;
                 obslist[i].img = null;
             }
+            */
         } else if (currentBackground == 4) {
             obstacle.x = 500;
             obstacle.y = 260;
@@ -635,7 +691,7 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
             obstacle.h = 50;
             obstacle.color = "#009EE3";
             obstacle.img = null;
-        } else {
+        } else { 
             var x = imgObjectList[currentBackground].width - 50;
             var y = imgObjectList[currentBackground].height - 50;
             obstacle.x = x;
@@ -853,8 +909,8 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
                 robot.mouse.rx += dx;
                 robot.mouse.ry += dy;
             } else if (isDownObstacle) {
-                console.log("when does this isDownObstacle occur");
-                console.log(hoverindex);
+//                console.log("when does this isDownObstacle occur");
+//                console.log(hoverindex);
                 obslist[hoverindex].x += dx;
                 obslist[hoverindex].y += dy;
                 scene.drawObjects();
@@ -1152,6 +1208,9 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
     }
     exports.importImage = importImage;
 
+    function arrToRgb(values) {
+        return 'rgb(' + values.join(', ') + ')';
+    }
     function createRobots(reqRobot, numprogs){
         robots = [];
         var posvec = []
@@ -1171,6 +1230,9 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
             });
             temprobot.savedName = userProgram[i].savedName;
             temprobot.canDraw = false;
+            /*
+             * The below code gives random color to robots
+             * 
             var letters = '0123456789ABCDEF';
             if(i!=0){
                 var tempcol= "#";
@@ -1180,7 +1242,13 @@ define([ 'exports', 'simulation.scene', 'simulation.program.eval', 'simulation.m
                 temprobot.geom.color = tempcol;
                 temprobot.touchSensor.color = tempcol;
             }
-
+            */
+            if(i!=0){
+                var tempcolor = arrToRgb(colorsAdmissible[((i-1)%(colorsAdmissible.length))]);
+                temprobot.geom.color = tempcolor;
+                temprobot.touchSensor.color = tempcolor;
+                
+            }
             robots.push(temprobot);
         }
     }

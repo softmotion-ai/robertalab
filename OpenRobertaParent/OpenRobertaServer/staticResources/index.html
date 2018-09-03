@@ -81,18 +81,18 @@ limitations under the License.
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="nav navbar-nav" id="mainNavigationBar">
-                    <!-- Menu Program -->
+                    <!-- Menu Program -->   
                     <li class="dropdown" id="head-navigation-program-edit"><a href="#" data-toggle="dropdown" class="dropdown-toggle"
                         id="head-navi-tooltip-program" lkey="Blockly.Msg.MENU_EDIT_TOOLTIP" rel="tooltip" data-original-title="" title=""> <span
                             id="head-navi-icon-program" class="head-navi-icons typcn typcn-document-text"></span><span
                             class="head-navi-title hidden-sm hidden-md hidden-lg" lkey="Blockly.Msg.MENU_EDIT"></span>
-                    </a>
+                    </a> 
                         <ul class="dropdown-menu">
                             <li><a href="#" id="menuRunProg" class="typcn typcn-media-play" lkey="Blockly.Msg.MENU_START_BRICK">run on brick</a></li>
                             <li><a href="#" id="menuRunSim" class="typcn typcn-simulation" lkey="Blockly.Msg.MENU_START_SIM">run in simulation</a></li>
                             <li><a href="#" id="menuNewProg" class="typcn typcn-document-add" lkey="Blockly.Msg.MENU_NEW">neu ...</a></li>
                             <li class="login"><a href="#" id="menuListProg" class="typcn typcn-th-list" lkey="Blockly.Msg.MENU_LIST_PROG">Liste ...</a></li>
-                            <li class="login" ><a href="#" id="multipleSimNav" class="typcn typcn-arrow-maximise" data-toggle="modal" data-target="#simModal">Run mult sim</a></li>
+                            <li class="login" ><a href="#" id="multipleSimNav" class="typcn typcn-open" data-toggle="modal" data-target="#simModal">multiple simulation</a></li>
                             <li><a href="#" id="menuListExamples" class="typcn typcn-th-list" lkey="Blockly.Msg.MENU_LIST_PROG_EXAMPLES">Beispielprogramme
                                     ...</a></li>
                             <li class="login"><a href="#" id="menuSaveProg" class="typcn typcn-cloud-storage" lkey="Blockly.Msg.MENU_SAVE">speichern</a></li>
@@ -159,7 +159,7 @@ limitations under the License.
                                  <a href="https://www.roberta-home.de/index.php?id=137&L=1" target="_blank" class="typcn typcn-info-large EN">privacy policy</a></li> 
                             <li><a href="https://www.roberta-home.de/impressum" target="_blank" class="typcn typcn-info-large DE">Impressum</a> <a
                                 href="https://www.roberta-home.de/impressum/?L=1" target="_blank" class="typcn typcn-info-large EN">publishing notes</a></li>
-                        </ul></li>
+                        </ul></li>  
                     <!--   Menu User -->
                     <li class="dropdown" id="head-navigation-user"><a href="#" data-toggle="dropdown" class="dropdown-toggle" id="head-navi-tooltip-user"
                         lkey="Blockly.Msg.MENU_USER_TOOLTIP" rel="tooltip" data-original-title="" title=""> <span id="head-navi-icon-user"
@@ -178,7 +178,7 @@ limitations under the License.
                         </ul></li>
                     <li id="head-navigation-tutorial" class="hidden-xs"><a href="#" data-toggle="dropdown" class="dropdown-toggle"
                         id="head-navi-tooltip-tutorials" lkey="Blockly.Msg.MENU_TUTORIAL_TOOLTIP" rel="tooltip" data-original-title="" title=""> <span
-                            id="head-navi-icon-tutorial" class="head-navi-icons typcn typcn-contacts"></span><span
+                            id="head-navi-icon-tutorial" class="head-navi-icons typcn typcn-mortar-board"></span><span
                             class="head-navi-title hidden-sm hidden-md hidden-lg" lkey="Blockly.Msg.MENU_TUTORIAL">tutorial</span>
                     </a>
                         <ul id="head-navigation-tutorial-dropdown" class="dropdown-menu">
@@ -286,7 +286,7 @@ limitations under the License.
                 <div id="rightMenuDiv">
                     <div href="#" id="tutorialButton" class="rightMenuButton tutorial" style="display: none;" lkey="Blockly.Msg.MENU_RIGHT_TUTORIAL_TOOLTIP"
                         rel="tooltip" data-original-title="" title="">
-                        <span id="" class="tutorialButton typcn typcn-contacts"></span>
+                        <span id="" class="tutorialButton typcn typcn-mortar-board"></span>
                     </div>
                     <div href="#" id="helpButton" class="rightMenuButton help" lkey="Blockly.Msg.MENU_RIGHT_HELP_TOOLTIP" rel="tooltip" data-original-title=""
                         title="">
@@ -730,7 +730,7 @@ limitations under the License.
                 </form>
             </div>
         </div>
-    </div>
+    </div>  
     <!--  Popup to show connections triggered from a webview-->
     <div id="show-available-connections" class="modal fade">
         <div class="modal-dialog">
@@ -748,51 +748,30 @@ limitations under the License.
                 </div>
             </div>
         </div>
-    </div>
+        </div>
+ <!--Multiple Simulation Modal-->
 <div class="modal fade" id="simModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title text-center" id="myModalLabel">Multiple Simulation </h4>
+        <h3 class="modal-title text-center" id="myModalLabel">Multiple Simulation </h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" >
         <table id="mtable"></table>
         <p id="voidList" class="text-center"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Run Selected</button>
+      	<button type="button" class="btn btn-primary">Ok</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>        
       </div>
     </div>
   </div>
 </div>
 
-    <!--   Popup to show relations / share programs -->
-     <div id="show-available-connections" class="modal fade">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h3 id="#headConnections" class="modal-title">Available robots</h3>
-                </div>
-                <!-- <form id="share-program-form"> -->
-                <div class="modal-body">
-                    <table id="connectionsTable">
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <input type="button" class="btn backButton" data-dismiss="modal" lkey="Blockly.Msg.POPUP_CANCEL"></input>
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Popup show about info -->
+    <!-- Popup show about info -->    
     <div id="show-about" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">

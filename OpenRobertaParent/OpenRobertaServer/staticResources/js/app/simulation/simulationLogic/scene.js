@@ -57,16 +57,25 @@ define([ 'simulation.simulation', 'simulation.math', 'util', 'robertaLogic.const
             this.waves = Array(this.numprogs).fill(0.0);
             this.isMultiple = true;
             $("#constantValue").html("");
-            var pagistr = "<select class=\"form-control\" id=\"robotOfConsideration\">";
+            var pagistr = "<select class=\"form-control\" style=\"background-color:"+this.robots[SIM.getRobotOfConsideration()].geom.color +"\" id=\"robotOfConsideration\">";
             for(var pagirobot = 0; pagirobot<this.numprogs; pagirobot++){
+                /*
                 if(SIM.getRobotOfConsideration()===pagirobot){
-                    pagistr += "<option selected>"+(pagirobot+1)+"</option>";
+                    pagistr += "<option selected style=\"background-color:"+this.robots[pagirobot].geom.color+'">&nbsp'+"</option>";
+//                    pagistr += "<option selected>"+(pagirobot+1)+"</option>";
+
                 }else{
-                    pagistr += "<option >"+(pagirobot+1)+"</option>"
+                    pagistr += "<option style=\"background-color:"+this.robots[pagirobot].geom.color+'">&nbsp'+"</option>";
+//                    pagistr += "<option >"+(pagirobot+1)+"</option>";
+
                 }
+                */
+                pagistr += "<option class=\"robotOfConsiderationOptions\" style=\"background-color:"+this.robots[pagirobot].geom.color+'">&nbsp'+"</option>";
+
             }
             pagistr += "</select>";
-            $("#constantValue").append('<div><label>Robot</label><span style=\"width:64px\">' + pagistr + '</span></div>');
+            $("#constantValue").append('<div><label>Robot</label><span style=\"width:auto\">' + pagistr + '</span></div>');
+//            $("#notConstantValue").append('<div><label>Color Sensor</label><span style="margin-left:6px; width: 20px; background-color:' + this.robot.geom.color + '">&nbsp;</span></div>');
 
         }
     }
@@ -418,7 +427,7 @@ define([ 'simulation.simulation', 'simulation.math', 'util', 'robertaLogic.const
 //                $(".robotsel").on("click", function(){
 //                    console.log("clicked");
 //                });
-                $("#notConstantValue").append('<div><label>Saved Name</label><span>' + this.robots[iterrobot].savedName+ '</span></div>');
+                $("#notConstantValue").append('<div><label>Program Name</label><span>' + this.robots[iterrobot].savedName+ '</span></div>');
                 $("#notConstantValue").append('<div><label>FPS</label><span>' + UTIL.round(1 / SIM.getDt(), 0) + '</span></div>');
                 $("#notConstantValue").append('<div><label>Time</label><span>' + UTIL.round(this.robots[iterrobot].time, 3) + 's</span></div>');
                 $("#notConstantValue").append('<div><label>Robot X</label><span>' + UTIL.round(x, 0) + '</span></div>');
@@ -1202,8 +1211,23 @@ define([ 'simulation.simulation', 'simulation.math', 'util', 'robertaLogic.const
     
                 var uA = new Array(u1, u2, u3, u4, u5);
                 this.robots[progiter].ultraSensor.distance = CONSTANTS.MAXDIAG;
-                for (var i = 0; i < SIM.obstacleList.length; i++) {
-                    var obstacleLines = (SIMATH.getLinesFromRect(SIM.obstacleList[i]));
+                var personalObstacleList = SIM.obstacleList.slice();
+                for(var i=0;i<this.numprogs;i++){
+                    if(i===progiter){
+                        continue;
+                    }else{
+                        var tempobstacle = {
+                                isParallelToAxis : false,
+                                backLeft : this.robots[i].backLeft,
+                                backRight : this.robots[i].backRight,
+                                frontLeft : this.robots[i].frontLeft,
+                                frontRight : this.robots[i].frontRight
+                        }
+                        personalObstacleList.push(tempobstacle);
+                    }
+                }
+                for (var i = 0; i < personalObstacleList.length; i++) {
+                    var obstacleLines = (SIMATH.getLinesFromRect(personalObstacleList[i]));
                     var uDis = [ CONSTANTS.MAXDIAG, CONSTANTS.MAXDIAG, CONSTANTS.MAXDIAG, CONSTANTS.MAXDIAG, CONSTANTS.MAXDIAG ];
                     for (var k = 0; k < obstacleLines.length; k++) {
                         for (var j = 0; j < uA.length; j++) {

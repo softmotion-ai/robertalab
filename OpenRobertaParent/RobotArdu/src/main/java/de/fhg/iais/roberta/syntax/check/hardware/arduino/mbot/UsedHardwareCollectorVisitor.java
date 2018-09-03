@@ -9,12 +9,14 @@ import de.fhg.iais.roberta.components.UsedSensor;
 import de.fhg.iais.roberta.components.arduino.MbotConfiguration;
 import de.fhg.iais.roberta.inter.mode.sensor.ISensorPort;
 import de.fhg.iais.roberta.syntax.Phrase;
-import de.fhg.iais.roberta.syntax.action.light.LedAction;
+import de.fhg.iais.roberta.syntax.action.control.RelayAction;
 import de.fhg.iais.roberta.syntax.action.motor.CurveAction;
 import de.fhg.iais.roberta.syntax.action.motor.DriveAction;
 import de.fhg.iais.roberta.syntax.action.motor.TurnAction;
 import de.fhg.iais.roberta.syntax.action.sound.PlayNoteAction;
 import de.fhg.iais.roberta.syntax.action.sound.ToneAction;
+import de.fhg.iais.roberta.syntax.actors.arduino.PinWriteValueAction;
+import de.fhg.iais.roberta.syntax.actors.arduino.SerialWriteAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.mbot.DisplayImageAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.mbot.DisplayTextAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.mbot.ExternalLedOffAction;
@@ -198,8 +200,19 @@ public class UsedHardwareCollectorVisitor extends RobotUsedHardwareCollectorVisi
     }
 
     @Override
-    public Void visitLedAction(LedAction<Void> ledAction) {
+    public Void visitRelayAction(RelayAction<Void> relayAction) {
         return null;
     }
 
+    @Override
+    public Void visitPinWriteValueAction(PinWriteValueAction<Void> pinWriteValueSensor) {
+        // TODO Auto-generated method stub
+        return null;
+    }
+
+    @Override
+    public Void visitSerialWriteAction(SerialWriteAction<Void> serialWriteAction) {
+        // TODO Auto-generated method stub
+        return null;
+    }
 }

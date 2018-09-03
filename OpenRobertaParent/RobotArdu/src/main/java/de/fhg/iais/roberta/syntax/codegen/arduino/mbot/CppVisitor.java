@@ -12,10 +12,10 @@ import de.fhg.iais.roberta.mode.action.TurnDirection;
 import de.fhg.iais.roberta.mode.sensor.LightSensorMode;
 import de.fhg.iais.roberta.syntax.MotorDuration;
 import de.fhg.iais.roberta.syntax.Phrase;
+import de.fhg.iais.roberta.syntax.action.control.RelayAction;
 import de.fhg.iais.roberta.syntax.action.display.ClearDisplayAction;
 import de.fhg.iais.roberta.syntax.action.display.ShowPictureAction;
 import de.fhg.iais.roberta.syntax.action.display.ShowTextAction;
-import de.fhg.iais.roberta.syntax.action.light.LedAction;
 import de.fhg.iais.roberta.syntax.action.light.LightAction;
 import de.fhg.iais.roberta.syntax.action.light.LightStatusAction;
 import de.fhg.iais.roberta.syntax.action.motor.CurveAction;
@@ -32,6 +32,8 @@ import de.fhg.iais.roberta.syntax.action.sound.SayTextAction;
 import de.fhg.iais.roberta.syntax.action.sound.SetLanguageAction;
 import de.fhg.iais.roberta.syntax.action.sound.ToneAction;
 import de.fhg.iais.roberta.syntax.action.sound.VolumeAction;
+import de.fhg.iais.roberta.syntax.actors.arduino.PinWriteValueAction;
+import de.fhg.iais.roberta.syntax.actors.arduino.SerialWriteAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.mbot.DisplayImageAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.mbot.DisplayTextAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.mbot.ExternalLedOffAction;
@@ -411,8 +413,6 @@ public class CppVisitor extends ArduinoVisitor implements MbotAstVisitor<Void> {
         nlIndent();
         generateUsedVars();
         this.sb.append("\n}");
-        this.sb.append("\n").append("void loop() \n");
-        this.sb.append("{");
         for ( final UsedSensor usedSensor : this.usedSensors ) {
             switch ( (SensorType) usedSensor.getType() ) {
                 case GYRO:
@@ -454,9 +454,9 @@ public class CppVisitor extends ArduinoVisitor implements MbotAstVisitor<Void> {
 
     @Override
     protected void generateProgramSuffix(boolean withWrapping) {
-        if ( withWrapping ) {
-            this.sb.append("\n}\n");
-        }
+//        if ( withWrapping ) {
+//            this.sb.append("\n}\n");
+//        }
     }
 
     private void generateSensors() {
@@ -720,12 +720,22 @@ public class CppVisitor extends ArduinoVisitor implements MbotAstVisitor<Void> {
 
     @Override
     public Void visitMbotGetSampleSensor(GetSampleSensor<Void> getSampleSensor) {
+        return null;
+    }
+
+    @Override
+    public Void visitRelayAction(RelayAction<Void> relayAction) {
+        return null;
+    }
+
+    @Override
+    public Void visitPinWriteValueAction(PinWriteValueAction<Void> pinWriteValueSensor) {
         // TODO Auto-generated method stub
         return null;
     }
 
     @Override
-    public Void visitLedAction(LedAction<Void> ledAction) {
+    public Void visitSerialWriteAction(SerialWriteAction<Void> serialWriteAction) {
         // TODO Auto-generated method stub
         return null;
     }

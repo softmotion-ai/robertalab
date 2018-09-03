@@ -104,7 +104,6 @@ public class CompilerWorkflow extends AbstractCompilerWorkflow {
         Path base = Paths.get("");
 
         try {
-            System.out.println(this.robotCompilerResourcesDir);
             ProcessBuilder procBuilder =
                 new ProcessBuilder(
                     new String[] {

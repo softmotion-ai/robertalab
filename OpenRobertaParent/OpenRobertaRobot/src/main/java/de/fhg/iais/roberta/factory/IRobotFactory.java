@@ -11,15 +11,14 @@ import com.google.inject.AbstractModule;
 
 import de.fhg.iais.roberta.components.Configuration;
 import de.fhg.iais.roberta.inter.mode.action.IActorPort;
-import de.fhg.iais.roberta.inter.mode.action.IBlinkMode;
 import de.fhg.iais.roberta.inter.mode.action.IBrickLedColor;
 import de.fhg.iais.roberta.inter.mode.action.IDriveDirection;
 import de.fhg.iais.roberta.inter.mode.action.ILanguage;
-import de.fhg.iais.roberta.inter.mode.action.ILedMode;
-import de.fhg.iais.roberta.inter.mode.action.ILightSensorActionMode;
+import de.fhg.iais.roberta.inter.mode.action.ILightMode;
 import de.fhg.iais.roberta.inter.mode.action.IMotorMoveMode;
 import de.fhg.iais.roberta.inter.mode.action.IMotorSide;
 import de.fhg.iais.roberta.inter.mode.action.IMotorStopMode;
+import de.fhg.iais.roberta.inter.mode.action.IRelayMode;
 import de.fhg.iais.roberta.inter.mode.action.IShowPicture;
 import de.fhg.iais.roberta.inter.mode.action.ITurnDirection;
 import de.fhg.iais.roberta.inter.mode.general.IDirection;
@@ -59,14 +58,14 @@ import de.fhg.iais.roberta.inter.mode.sensor.ITouchSensorMode;
 import de.fhg.iais.roberta.inter.mode.sensor.IUltrasonicSensorMode;
 import de.fhg.iais.roberta.inter.mode.sensor.IVoltageSensorMode;
 import de.fhg.iais.roberta.mode.action.ActorPort;
-import de.fhg.iais.roberta.mode.action.BlinkMode;
 import de.fhg.iais.roberta.mode.action.BrickLedColor;
 import de.fhg.iais.roberta.mode.action.DriveDirection;
 import de.fhg.iais.roberta.mode.action.Language;
-import de.fhg.iais.roberta.mode.action.LedMode;
+import de.fhg.iais.roberta.mode.action.LightMode;
 import de.fhg.iais.roberta.mode.action.MotorMoveMode;
 import de.fhg.iais.roberta.mode.action.MotorSide;
 import de.fhg.iais.roberta.mode.action.MotorStopMode;
+import de.fhg.iais.roberta.mode.action.RelayMode;
 import de.fhg.iais.roberta.mode.action.TurnDirection;
 import de.fhg.iais.roberta.mode.general.Direction;
 import de.fhg.iais.roberta.mode.general.IndexLocation;
@@ -112,18 +111,25 @@ import de.fhg.iais.roberta.syntax.sensor.generic.AccelerometerSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.BrickSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.ColorSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.CompassSensor;
+import de.fhg.iais.roberta.syntax.sensor.generic.DropSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.EncoderSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.GestureSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.GyroSensor;
+import de.fhg.iais.roberta.syntax.sensor.generic.HumiditySensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.InfraredSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.LightSensor;
+import de.fhg.iais.roberta.syntax.sensor.generic.MoistureSensor;
+import de.fhg.iais.roberta.syntax.sensor.generic.MotionSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.PinTouchSensor;
+import de.fhg.iais.roberta.syntax.sensor.generic.PulseSensor;
+import de.fhg.iais.roberta.syntax.sensor.generic.RfidSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.SoundSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.TemperatureSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.TimerSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.TouchSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.UltrasonicSensor;
+import de.fhg.iais.roberta.syntax.sensor.generic.VoltageSensor;
 import de.fhg.iais.roberta.util.dbc.DbcException;
 
 public interface IRobotFactory {
@@ -306,14 +312,14 @@ public interface IRobotFactory {
     }
 
     /**
-     * Get a {@link IBlinkMode} enumeration given string parameter. It is possible for one mode to have multiple string mappings. Throws exception if the mode
+     * Get a {@link ILightMode} enumeration given string parameter. It is possible for one mode to have multiple string mappings. Throws exception if the mode
      * does not exists.
      *
      * @param name of the mode
-     * @return mode from the enum {@link BlinkMode}
+     * @return mode from the enum {@link LightMode}
      */
-    default IBlinkMode getBlinkMode(String mode) {
-        return IRobotFactory.getModeValue(mode, BlinkMode.class);
+    default ILightMode getBlinkMode(String mode) {
+        return IRobotFactory.getModeValue(mode, LightMode.class);
     }
 
     /**
@@ -321,7 +327,7 @@ public interface IRobotFactory {
      * mode does not exists.
      *
      * @param name of the mode
-     * @return mode from the enum {@link IBlinkMode}
+     * @return mode from the enum {@link ILightMode}
      */
     default IBrickLedColor getBrickLedColor(String mode) {
         return IRobotFactory.getModeValue(mode, BrickLedColor.class);
@@ -346,8 +352,6 @@ public interface IRobotFactory {
     default ILightSensorMode getLightColor(String mode) {
         return IRobotFactory.getModeValue(mode, LightSensorMode.class);
     }
-
-    ILightSensorActionMode getLightActionColor(String mode);
 
     default IWorkingState getWorkingState(String mode) {
         return IRobotFactory.getModeValue(mode, WorkingState.class);
@@ -396,17 +400,6 @@ public interface IRobotFactory {
     }
 
     /**
-     * Get LED mode from {@link ILedMode} from string parameter. Throws
-     * exception if the mode does not exists.
-     *
-     * @param name of the mode
-     * @return name of the mode from the enum {@link LedMode}
-     */
-    default ILedMode getLedMode(String mode) {
-        return IRobotFactory.getModeValue(mode, LedMode.class);
-    }
-
-    /**
      * Get motor side from {@link IMotorSide} given string parameter. It is possible for one motor side to have multiple string mappings. Throws exception if
      * the motor side does not exists.
      *
@@ -426,6 +419,16 @@ public interface IRobotFactory {
      */
     default IDriveDirection getDriveDirection(String driveDirection) {
         return IRobotFactory.getModeValue(driveDirection, DriveDirection.class);
+    }
+
+    /**
+     * Get relay mode {@link IRelayMode} given string parameter. Throws exception if the mode does not exists.
+     *
+     * @param name of the mode
+     * @return the drelay mode from the enum {@link IRelayMode}
+     */
+    default IRelayMode getRelayMode(String relayMode) {
+        return IRobotFactory.getModeValue(relayMode, RelayMode.class);
     }
 
     /**
@@ -798,6 +801,62 @@ public interface IRobotFactory {
                         getSlot(BlocklyConstants.EMPTY_SLOT),
                         isPortInMutation);
                 return GestureSensor.make(sensorMetaDataBean, properties, comment);
+            case BlocklyConstants.MOISTURE:
+                sensorMetaDataBean =
+                    new SensorMetaDataBean(
+                        getSensorPort(port),
+                        getMoistureSensorMode(sensorType.getSensorMode()),
+                        getSlot(BlocklyConstants.EMPTY_SLOT),
+                        isPortInMutation);
+                return MoistureSensor.make(sensorMetaDataBean, properties, comment);
+            case BlocklyConstants.POTENTIOMETER:
+                sensorMetaDataBean =
+                    new SensorMetaDataBean(
+                        getSensorPort(port),
+                        getVoltageSensorMode(sensorType.getSensorMode()),
+                        getSlot(BlocklyConstants.EMPTY_SLOT),
+                        isPortInMutation);
+                return VoltageSensor.make(sensorMetaDataBean, properties, comment);
+            case BlocklyConstants.HUMIDITY:
+                sensorMetaDataBean =
+                    new SensorMetaDataBean(
+                        getSensorPort(port),
+                        getHumiditySensorMode(sensorType.getSensorMode()),
+                        getSlot(BlocklyConstants.EMPTY_SLOT),
+                        isPortInMutation);
+                return HumiditySensor.make(sensorMetaDataBean, properties, comment);
+            case BlocklyConstants.MOTION:
+                sensorMetaDataBean =
+                    new SensorMetaDataBean(
+                        getSensorPort(port),
+                        getMotionSensorMode(sensorType.getSensorMode()),
+                        getSlot(BlocklyConstants.EMPTY_SLOT),
+                        isPortInMutation);
+                return MotionSensor.make(sensorMetaDataBean, properties, comment);
+            case BlocklyConstants.PULSE:
+                sensorMetaDataBean =
+                    new SensorMetaDataBean(
+                        getSensorPort(port),
+                        getPulseSensorMode(sensorType.getSensorMode()),
+                        getSlot(BlocklyConstants.EMPTY_SLOT),
+                        isPortInMutation);
+                return PulseSensor.make(sensorMetaDataBean, properties, comment);
+            case BlocklyConstants.DROP:
+                sensorMetaDataBean =
+                    new SensorMetaDataBean(
+                        getSensorPort(port),
+                        getDropSensorMode(sensorType.getSensorMode()),
+                        getSlot(BlocklyConstants.EMPTY_SLOT),
+                        isPortInMutation);
+                return DropSensor.make(sensorMetaDataBean, properties, comment);
+            case BlocklyConstants.RFID:
+                sensorMetaDataBean =
+                    new SensorMetaDataBean(
+                        getSensorPort(port),
+                        getRfidSensorMode(sensorType.getSensorMode()),
+                        getSlot(BlocklyConstants.EMPTY_SLOT),
+                        isPortInMutation);
+                return RfidSensor.make(sensorMetaDataBean, properties, comment);
             default:
                 throw new DbcException("Invalid sensor " + sensorType.getSensorType() + "!");
         }

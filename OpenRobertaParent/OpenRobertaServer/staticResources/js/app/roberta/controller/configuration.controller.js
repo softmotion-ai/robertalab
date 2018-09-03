@@ -44,7 +44,10 @@ define([ 'exports', 'log', 'util', 'comm', 'message', 'guiState.controller', 'bl
             robControls : true,
             theme : GUISTATE_C.getTheme()
         });
-        bricklyWorkspace.setDevice(GUISTATE_C.getRobotGroup());
+        bricklyWorkspace.setDevice({
+            group : GUISTATE_C.getRobotGroup(),
+            robot : GUISTATE_C.getRobot()
+        });
         bricklyWorkspace.setVersion('2.0');
         // Configurations can't be executed
         bricklyWorkspace.robControls.runOnBrick.setAttribute("style", "display : none");
@@ -64,6 +67,7 @@ define([ 'exports', 'log', 'util', 'comm', 'message', 'guiState.controller', 'bl
             } else {
                 bricklyWorkspace.setVisible(false);
             }
+            $(window).resize();
             if (!seen) {
                 reloadConf();
             }
@@ -190,7 +194,7 @@ define([ 'exports', 'log', 'util', 'comm', 'message', 'guiState.controller', 'bl
             }
             var blocks = bricklyWorkspace.getTopBlocks(true);
             if (blocks[0]) {
-                var coord = blocks[0].getRelativeToSurfaceXY();
+                var coord = Blockly.getSvgXY_(blocks[0].svgGroup_, bricklyWorkspace);
                 blocks[0].moveBy(x - coord.x, y - coord.y);
             }
             seen = true;
@@ -300,7 +304,24 @@ define([ 'exports', 'log', 'util', 'comm', 'message', 'guiState.controller', 'bl
         } else {
             conf = GUISTATE_C.getConfigurationXML();
         }
-        configurationToBricklyWorkspace(conf);
+        if (!seen) {
+            configurationToBricklyWorkspace(conf);
+            var x, y;
+            if ($(window).width() < 768) {
+                x = $(window).width() / 50;
+                y = 25;
+            } else {
+                x = $(window).width() / 5;
+                y = 50;
+            }
+            var blocks = bricklyWorkspace.getTopBlocks(true);
+            if (blocks[0]) {
+                var coord = Blockly.getSvgXY_(blocks[0].svgGroup_, bricklyWorkspace);
+                blocks[0].moveBy(x - coord.x, y - coord.y);
+            }
+        } else {
+            configurationToBricklyWorkspace(conf);
+        }
     }
     exports.reloadConf = reloadConf;
 
@@ -318,7 +339,10 @@ define([ 'exports', 'log', 'util', 'comm', 'message', 'guiState.controller', 'bl
     exports.reloadView = reloadView;
 
     function resetView() {
-        bricklyWorkspace.setDevice(GUISTATE_C.getRobotGroup());
+        bricklyWorkspace.setDevice({
+            group : GUISTATE_C.getRobotGroup(),
+            robot : GUISTATE_C.getRobot()
+        });
         bricklyWorkspace.setVersion('2.0');
         initConfigurationEnvironment();
         var toolbox = GUISTATE_C.getConfigurationToolbox();

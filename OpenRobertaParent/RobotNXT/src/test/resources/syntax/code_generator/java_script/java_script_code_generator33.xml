@@ -7,12 +7,12 @@
     <block type="robActions_sensorLight_on" id="JAC-o#LhN[{6g*rZB/Up" intask="true">
       <field name="SWITCH_COLOR">RED</field>
       <field name="SWITCH_STATE">ON</field>
-      <field name="SENSORPORT">1</field><field name="SLOT" />
+      <field name="SENSORPORT">1</field>
     </block>
     <block type="robActions_sensorLight_on" id=",,!BQUK+FfmArAs`/3EP" intask="true">
       <field name="SWITCH_COLOR">BLUE</field>
       <field name="SWITCH_STATE">OFF</field>
-      <field name="SENSORPORT">1</field><field name="SLOT" />
+      <field name="SENSORPORT">1</field>
     </block>
   </instance>
 </block_set>

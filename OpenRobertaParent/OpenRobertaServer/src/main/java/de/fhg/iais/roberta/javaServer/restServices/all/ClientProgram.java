@@ -418,6 +418,7 @@ public class ClientProgram {
                         messageKey =
                             robotFactory.getRobotCompilerWorkflow().generateSourceAndCompile(token, programName, programAndConfigTransformer, language);
                         if ( messageKey == Key.COMPILERWORKFLOW_SUCCESS && token != null && !token.equals(ClientAdmin.NO_CONNECT) ) {
+                            this.brickCommunicator.setSubtype(httpSessionState.getRobotName());
                             wasRobotWaiting = this.brickCommunicator.theRunButtonWasPressed(token, programName);
                             Statistics.info("ProgramRun", "LoggedIn", String.valueOf(httpSessionState.isUserLoggedIn()));
                         } else {

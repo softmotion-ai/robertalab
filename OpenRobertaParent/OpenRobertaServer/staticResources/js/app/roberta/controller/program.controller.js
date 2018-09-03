@@ -40,7 +40,10 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'ro
             theme : GUISTATE_C.getTheme()
         });
         $(window).resize();
-        blocklyWorkspace.setDevice(GUISTATE_C.getRobotGroup());
+        blocklyWorkspace.setDevice({
+            group : GUISTATE_C.getRobotGroup(),
+            robot : GUISTATE_C.getRobot()
+        });
         //TODO: add the version information in the Parent POM!.
         blocklyWorkspace.setVersion('2.0');
         GUISTATE_C.setBlocklyWorkspace(blocklyWorkspace);
@@ -92,6 +95,7 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'ro
             if (!seen) {
                 reloadView();
             }
+            $(window).resize();
         });
         $('#tabProgram').on('hide.bs.tab', function(e) {
             Blockly.hideChaff();
@@ -385,13 +389,13 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'ro
         blocklyWorkspace.robControls.disable('saveProgram');
     }
 
-    function reloadProgram(opt_result) {
+    function reloadProgram(opt_result, opt_fromShowSource) {
         if (opt_result) {
             program = opt_result.data;
         } else {
             program = GUISTATE_C.getProgramXML();
         }
-        programToBlocklyWorkspace(program);
+        programToBlocklyWorkspace(program, opt_fromShowSource);
     }
     exports.reloadProgram = reloadProgram;
 
@@ -411,7 +415,10 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'ro
     exports.reloadView = reloadView;
 
     function resetView() {
-        blocklyWorkspace.setDevice(GUISTATE_C.getRobotGroup());
+        blocklyWorkspace.setDevice({
+            group : GUISTATE_C.getRobotGroup(),
+            robot : GUISTATE_C.getRobot()
+        });
         //TODO: add the version information in the Parent POM!.
         blocklyWorkspace.setVersion('2.0');
         initProgramEnvironment();
@@ -447,7 +454,7 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'ro
         return GUISTATE_C.getView() == 'tabProgram';
     }
 
-    function programToBlocklyWorkspace(xml) {
+    function programToBlocklyWorkspace(xml, opt_fromShowSource) {
         listenToBlocklyEvents = false;
         Blockly.hideChaff();
         blocklyWorkspace.clear();
@@ -472,7 +479,7 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'ro
         var xmlConfigText = GUISTATE_C.isConfigurationAnonymous() ? GUISTATE_C.getConfigurationXML() : undefined;
 
         var language = GUISTATE_C.getLanguage();
-        if ($('#codeDiv').hasClass('rightActive')) {
+        if ($('#codeDiv').hasClass('rightActive') && !opt_fromShowSource) {
             PROGRAM.showSourceProgram(GUISTATE_C.getProgramName(), configName, xmlProgram, xmlConfigText, language, function(result) {
                 $('#codeContent').html('<pre class="prettyprint linenums">' + prettyPrintOne(result.sourceCode.escapeHTML(), null, true) + '</pre>');
             });

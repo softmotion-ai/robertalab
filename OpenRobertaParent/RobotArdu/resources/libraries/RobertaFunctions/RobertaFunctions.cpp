@@ -13,7 +13,7 @@
 
 int RobertaFunctions::randomIntegerInRange(int val1, int val2){
 	int min = fmin(val1, val2);
-	int max = fmax(val1, val2);
+	int max = fmax(val1, val2) + 1;
 	return min + (rand()%(min - max));
 }
 

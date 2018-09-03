@@ -1,5 +1,6 @@
 package de.fhg.iais.roberta.components.arduino;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import de.fhg.iais.roberta.components.Configuration;
@@ -26,6 +27,31 @@ public class ArduinoConfiguration extends Configuration {
         generateConfigurationBlocks(sb);
         sb.append("}");
         return sb.toString();
+    }
+
+    /**
+     * This class is a builder of {@link Configuration}
+     */
+    public static class Builder extends Configuration.Builder<Builder> {
+        protected final List<Quadruplet<ConfigurationBlock, String, List<String>, List<String>>> confBlocks =
+            new ArrayList<>();
+
+        /**
+         * Add configuration block to the {@link Configuration}
+         *
+         * @param port on which the component is connected
+         * @param configuration block we want to connect
+         * @return
+         */
+        public Builder addConfigurationBlock(ConfigurationBlock block, String name, List<String> ports, List<String> pins) {
+            this.confBlocks.add(Quadruplet.of(block, name, ports, pins));
+            return this;
+        }
+
+        @Override
+        public Configuration build() {
+            return new ArduinoConfiguration(this.confBlocks);
+        }
     }
 
     private void generateConfigurationBlocks(StringBuilder sb) {
@@ -64,12 +90,18 @@ public class ArduinoConfiguration extends Configuration {
         return configurationBlock.getFourth();
     }
 
+    public ConfigurationBlock getConfigurationBlockOnPort(String port) {
+        for ( int i = 0; i < this.configurationBlocks.size(); i++ ) {
+            if ( this.configurationBlocks.get(i).getSecond().toUpperCase().equals(port) ) {
+                return this.configurationBlocks.get(i).getFirst();
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
         return "BrickConfiguration [configuration blocks=" + this.configurationBlocks + "]";
     }
 
-    public Configuration getConfiguration() {
-        return new ArduinoConfiguration(this.configurationBlocks);
-    }
 }
