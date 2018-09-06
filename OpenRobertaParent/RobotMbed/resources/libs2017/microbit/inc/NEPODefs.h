@@ -19,7 +19,7 @@
 #endif
 
 #ifndef M_GOLDEN_RATIO
-#define M_PHI 1.61803398875
+#define M_GOLDEN_RATIO 1.61803398875
 #endif
 
 #ifndef M_SQRT2
