@@ -15,7 +15,7 @@ byte colorsLeft[3]={0,0,0};
 byte colorsRight[3]={0,0,0};
     
  
- void setup() 
+void setup() 
 {
     Wire.begin();
     Serial.begin(9600);   // sets baud rate to 9600bps for printing values at serial monitor.
@@ -30,6 +30,5 @@ byte colorsRight[3]={0,0,0};
 
 void loop() 
 {
-    
     bnr.moveTimePID(30, 30, 500);
 }
