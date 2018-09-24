@@ -3,7 +3,7 @@
     <block type="lists_setIndex" id="359" inline="true" disabled="true">
       <mutation at="false"></mutation>
       <field name="MODE">SET</field>
-      <field name="WHERE">RANDOM</field>
+      <field name="WHERE">LAST</field>
       <value name="LIST">
         <block type="variables_get" id="360" disabled="true">
         <mutation datatype="Array_Number"></mutation>
