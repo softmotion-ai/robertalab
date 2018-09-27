@@ -14,7 +14,7 @@ import de.fhg.iais.roberta.syntax.lang.expr.ColorConst;
 import de.fhg.iais.roberta.transformer.Jaxb2AstTransformer;
 import de.fhg.iais.roberta.transformer.JaxbTransformerHelper;
 import de.fhg.iais.roberta.visitor.AstVisitor;
-import de.fhg.iais.roberta.visitors.arduino.ArduinoAstVisitor;
+import de.fhg.iais.roberta.visitors.arduino.Bob3AstVisitor;
 
 /**
  * This class represents the <b>mbedActions_leds_on</b> blocks from Blockly into the AST (abstract syntax tree). Object from this class will generate code for
@@ -25,7 +25,7 @@ import de.fhg.iais.roberta.visitors.arduino.ArduinoAstVisitor;
  * To create an instance from this class use the method {@link #make(ColorConst, BlocklyBlockProperties, BlocklyComment)}.<br>
  */
 public class LedOffAction<V> extends Action<V> {
-    private String side;
+    private final String side;
 
     private LedOffAction(String side, BlocklyBlockProperties properties, BlocklyComment comment) {
         super(BlockTypeContainer.getByName("MAKEBLOCK_RGB_LED_OFF"), properties, comment);
@@ -52,7 +52,7 @@ public class LedOffAction<V> extends Action<V> {
 
     @Override
     protected V accept(AstVisitor<V> visitor) {
-        return ((ArduinoAstVisitor<V>) visitor).visitLedOffAction(this);
+        return ((Bob3AstVisitor<V>) visitor).visitLedOffAction(this);
     }
 
     public String getSide() {

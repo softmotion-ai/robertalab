@@ -2,10 +2,6 @@ package de.fhg.iais.roberta.visitors.arduino;
 
 import de.fhg.iais.roberta.syntax.actors.arduino.PinWriteValueAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.SerialWriteAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.ExternalLedOffAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.ExternalLedOnAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.LedOffAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.LedOnAction;
 import de.fhg.iais.roberta.visitor.actor.AstActorControlVisitor;
 import de.fhg.iais.roberta.visitor.actor.AstActorDisplayVisitor;
 import de.fhg.iais.roberta.visitor.actor.AstActorLightVisitor;
@@ -24,13 +20,6 @@ public interface ArduinoAstVisitor<V> extends AstSensorsVisitor<V>, AstActorDisp
      *
      * @param ledOnAction phrase to be visited
      */
-    V visitLedOnAction(LedOnAction<V> ledOnAction);
-
-    V visitLedOffAction(LedOffAction<V> ledOffAction);
-
-    V visitExternalLedOnAction(ExternalLedOnAction<V> externalLedOnAction);
-
-    V visitExternalLedOffAction(ExternalLedOffAction<V> externalLedOffAction);
 
     V visitPinWriteValueAction(PinWriteValueAction<V> pinWriteValueSensor);
 

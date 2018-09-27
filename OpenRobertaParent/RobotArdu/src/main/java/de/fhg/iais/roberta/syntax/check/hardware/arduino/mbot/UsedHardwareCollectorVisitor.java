@@ -12,17 +12,12 @@ import de.fhg.iais.roberta.syntax.Phrase;
 import de.fhg.iais.roberta.syntax.action.control.RelayAction;
 import de.fhg.iais.roberta.syntax.action.motor.CurveAction;
 import de.fhg.iais.roberta.syntax.action.motor.DriveAction;
+import de.fhg.iais.roberta.syntax.action.motor.MotorDriveStopAction;
 import de.fhg.iais.roberta.syntax.action.motor.TurnAction;
 import de.fhg.iais.roberta.syntax.action.sound.PlayNoteAction;
 import de.fhg.iais.roberta.syntax.action.sound.ToneAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.PinWriteValueAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.SerialWriteAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.DisplayImageAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.DisplayTextAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.ExternalLedOffAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.ExternalLedOnAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.LedOffAction;
-import de.fhg.iais.roberta.syntax.actors.arduino.mbot.LedOnAction;
 import de.fhg.iais.roberta.syntax.check.hardware.RobotUsedHardwareCollectorVisitor;
 import de.fhg.iais.roberta.syntax.expressions.arduino.LedMatrix;
 import de.fhg.iais.roberta.syntax.sensor.generic.AccelerometerSensor;
@@ -30,11 +25,8 @@ import de.fhg.iais.roberta.syntax.sensor.generic.GyroSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.LightSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.TemperatureSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.VoltageSensor;
-import de.fhg.iais.roberta.syntax.sensors.arduino.mbot.AmbientLightSensor;
 import de.fhg.iais.roberta.syntax.sensors.arduino.mbot.FlameSensor;
-import de.fhg.iais.roberta.syntax.sensors.arduino.mbot.GetSampleSensor;
 import de.fhg.iais.roberta.syntax.sensors.arduino.mbot.Joystick;
-import de.fhg.iais.roberta.syntax.sensors.arduino.mbot.PIRMotionSensor;
 import de.fhg.iais.roberta.visitors.arduino.MbotAstVisitor;
 
 /**
@@ -57,12 +49,6 @@ public class UsedHardwareCollectorVisitor extends RobotUsedHardwareCollectorVisi
     @Override
     public Void visitJoystick(Joystick<Void> joystick) {
         this.usedSensors.add(new UsedSensor((ISensorPort) joystick.getPort(), SensorType.JOYSTICK, null));
-        return null;
-    }
-
-    @Override
-    public Void visitAmbientLightSensor(AmbientLightSensor<Void> lightSensor) {
-        this.usedSensors.add(new UsedSensor(lightSensor.getPort(), SensorType.AMBIENT_LIGHT, null));
         return null;
     }
 
@@ -91,12 +77,6 @@ public class UsedHardwareCollectorVisitor extends RobotUsedHardwareCollectorVisi
     }
 
     @Override
-    public Void visitPIRMotionSensor(PIRMotionSensor<Void> motionSensor) {
-        this.usedSensors.add(new UsedSensor(motionSensor.getPort(), SensorType.PIR_MOTION, null));
-        return null;
-    }
-
-    @Override
     public Void visitToneAction(ToneAction<Void> toneAction) {
         super.visitToneAction(toneAction);
         this.usedActors.add(new UsedActor(null, ActorType.BUZZER));
@@ -107,30 +87,6 @@ public class UsedHardwareCollectorVisitor extends RobotUsedHardwareCollectorVisi
     public Void visitPlayNoteAction(PlayNoteAction<Void> playNoteAction) {
         super.visitPlayNoteAction(playNoteAction);
         this.usedActors.add(new UsedActor(null, ActorType.BUZZER));
-        return null;
-    }
-
-    @Override
-    public Void visitLedOnAction(LedOnAction<Void> ledOnAction) {
-        this.usedActors.add(new UsedActor(null, ActorType.LED_ON_BOARD));
-        return null;
-    }
-
-    @Override
-    public Void visitLedOffAction(LedOffAction<Void> ledOffAction) {
-        this.usedActors.add(new UsedActor(null, ActorType.LED_ON_BOARD));
-        return null;
-    }
-
-    @Override
-    public Void visitExternalLedOnAction(ExternalLedOnAction<Void> externalLedOnAction) {
-        this.usedActors.add(new UsedActor(externalLedOnAction.getPort(), ActorType.EXTERNAL_LED));
-        return null;
-    }
-
-    @Override
-    public Void visitExternalLedOffAction(ExternalLedOffAction<Void> externalLedOffAction) {
-        this.usedActors.add(new UsedActor(externalLedOffAction.getPort(), ActorType.EXTERNAL_LED));
         return null;
     }
 
@@ -177,30 +133,24 @@ public class UsedHardwareCollectorVisitor extends RobotUsedHardwareCollectorVisi
     }
 
     @Override
-    public Void visitDisplayImageAction(DisplayImageAction<Void> displayImageAction) {
-        this.usedActors.add(new UsedActor(displayImageAction.getPort(), ActorType.LED_MATRIX));
-        return null;
-    }
-
-    @Override
-    public Void visitDisplayTextAction(DisplayTextAction<Void> displayTextAction) {
-        this.usedActors.add(new UsedActor(displayTextAction.getPort(), ActorType.LED_MATRIX));
-        return null;
-    }
-
-    @Override
     public Void visitVoltageSensor(VoltageSensor<Void> voltageSensor) {
         this.usedSensors.add(new UsedSensor((ISensorPort) voltageSensor.getPort(), SensorType.VOLTAGE, null));
         return null;
     }
 
     @Override
-    public Void visitMbotGetSampleSensor(GetSampleSensor<Void> getSampleSensor) {
+    public Void visitRelayAction(RelayAction<Void> relayAction) {
         return null;
     }
 
     @Override
-    public Void visitRelayAction(RelayAction<Void> relayAction) {
+    public Void visitMotorDriveStopAction(MotorDriveStopAction<Void> stopAction) {
+        if ( this.brickConfiguration != null ) {
+            if ( (this.brickConfiguration.getLeftMotorPort() != null) && (this.brickConfiguration.getRightMotorPort() != null) ) {
+                this.usedActors.add(new UsedActor(this.brickConfiguration.getLeftMotorPort(), ActorType.GEARED_MOTOR));
+                this.usedActors.add(new UsedActor(this.brickConfiguration.getRightMotorPort(), ActorType.GEARED_MOTOR));
+            }
+        }
         return null;
     }
 
