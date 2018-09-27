@@ -1,55 +1,45 @@
-<block_set xmlns="http://de.fhg.iais.roberta.blockly"
-	robottype="makeblock" xmlversion="2.0" description="" tags="">
-	<instance x="320" y="50">
-		<block type="robControls_start_ardu" id="9C|W2MLL!)Qw@}MO/p-r"
-			intask="true" deletable="false">
-			<mutation declare="true"></mutation>
-			<field name="DEBUG">FALSE</field>
-			<statement name="ST">
-				<block type="robGlobalVariables_declare" id="@dk3sW+1B]Sw!?gWI([n"
-					intask="true" deletable="false" movable="false">
-					<mutation next="false" declaration_type="Number"></mutation>
-					<field name="VAR">item</field>
-					<field name="TYPE">Number</field>
-				</block>
-			</statement>
-		</block>
-		<block type="robControls_loopForever_ardu" id="/!QWuc%|*xn)P?=A-qEh"
-			intask="true" deletable="false" movable="false">
-			<statement name="DO">
-				<block type="robControls_if" id="XF_K|X)G~3;RbZy%@9/g" intask="true">
-					<value name="IF0">
-						<block type="logic_compare" id="WXhC}ODNC`Q-e:}|]Nt{"
-							intask="true">
-							<field name="OP">NEQ</field>
-							<value name="A">
-								<block type="robSensors_light_getSample" id="o2W_c3g5E2=eE{2G#O{J"
-									intask="true">
-									<field name="MODE">RED</field>
-									<field name="SENSORPORT">1</field>
-								</block>
-							</value>
-							<value name="B">
-								<block type="math_number" id="]P!-mNRI1xF-Rn6U[T`K"
-									intask="true">
-									<field name="NUM">0</field>
-								</block>
-							</value>
-						</block>
-					</value>
-					<statement name="DO0">
-						<block type="robControls_wait_time" id="u@QR3aO`0,ZBJQOK4{T:"
-							intask="true">
-							<value name="WAIT">
-								<block type="math_number" id="PecD=[q:~0;2wi7NEU!1"
-									intask="true">
-									<field name="NUM">500</field>
-								</block>
-							</value>
-						</block>
-					</statement>
-				</block>
-			</statement>
-		</block>
-	</instance>
-</block_set>
+    <block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="mbot" xmlversion="2.0" description="" tags="">
+      <instance x="44" y="76">
+        <block type="robControls_start_ardu" id="7!ld#gSNPcEyl6-R:`7l" intask="true" deletable="false">
+          <mutation declare="false">
+          </mutation>
+          <field name="DEBUG">FALSE</field>
+        </block>
+        <block type="robControls_loopForever_ardu" id="(wlhByKRG2@6QT]7jFuY" intask="true" deletable="false" movable="false">
+          <statement name="DO">
+            <block type="robControls_if" id="=+wEdG,^wyPM4{i^{k}U" intask="true">
+              <value name="IF0">
+                <block type="logic_compare" id="VL[gl.OMFy^HR0`Ywl2y" intask="true">
+                  <field name="OP">EQ</field>
+                  <value name="A">
+                    <block type="robSensors_light_getSample" id="rs7aXuu!{pK((Ru#YggR" intask="true">
+                      <mutation mode="LIGHT">
+                      </mutation>
+                      <field name="MODE">LIGHT</field>
+                      <field name="SENSORPORT">0</field>
+                      <field name="SLOT">
+                      </field>
+                    </block>
+                  </value>
+                  <value name="B">
+                    <block type="math_number" id="wCN.w@vF5fl*tH%l~#E~" intask="true">
+                      <field name="NUM">0</field>
+                    </block>
+                  </value>
+                </block>
+              </value>
+              <statement name="DO0">
+                <block type="robActions_motor_on" id="]4i|rL@UiVLQl94}`wYd" intask="true">
+                  <field name="MOTORPORT">M1</field>
+                  <value name="POWER">
+                    <block type="math_number" id="colyVN%U%[*TMm}gy+.w" intask="true">
+                      <field name="NUM">60</field>
+                    </block>
+                  </value>
+                </block>
+              </statement>
+            </block>
+          </statement>
+        </block>
+      </instance>
+    </block_set>
