@@ -8,8 +8,8 @@
             <field name="OP">EQ</field>
             <value name="A">
               <block type="robSensors_getSample" id="28" disabled="true">
-                <mutation input="TOUCH"></mutation>
-                <field name="SENSORTYPE">TOUCH</field>
+                <mutation input="TOUCH_PRESSED"></mutation>
+                <field name="SENSORTYPE">TOUCH_PRESSED</field>
                 <field name="SENSORPORT">1</field>
               </block>
             </value>
@@ -89,8 +89,8 @@
             <field name="OP">EQ</field>
             <value name="A">
               <block type="robSensors_getSample" id="41" disabled="true">
-                <mutation input="KEYS_PRESSED"></mutation>
-                <field name="SENSORTYPE">KEYS_PRESSED</field>
+                <mutation input="KEY_PRESSED"></mutation>
+                <field name="SENSORTYPE">KEY_PRESSED</field>
                 <field name="SENSORPORT">ENTER</field>
               </block>
             </value>

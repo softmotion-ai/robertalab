@@ -1,5 +1,5 @@
 <block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="ev3" xmlversion="" description="" tags="">
-  <instance x="53" y="245">
+  <instance x="53" y="246">
     <block type="lists_getIndex" id="99" inline="true" disabled="true">
       <mutation statement="false" at="false"></mutation>
       <field name="MODE">GET</field>
