@@ -173,12 +173,12 @@ double _getListMedian(std::list<double> &list) {
     sorted.sort();
     auto iterator = sorted.begin();
     if( sorted.size() % 2 == 0 ) {
-        for( int i = 0 ; i < sorted.size() / 2 ; i ++ ) {
+        for( uint16_t i = 0 ; i < sorted.size() / 2 ; i ++ ) {
             iterator++;
         }
         return (*iterator + *--iterator ) / 2;
     } else {
-        for( int i = 0 ; i < sorted.size() / 2 ; i ++ ) {
+        for( uint16_t i = 0 ; i < sorted.size() / 2 ; i ++ ) {
             iterator++;
         }
         return *iterator;
