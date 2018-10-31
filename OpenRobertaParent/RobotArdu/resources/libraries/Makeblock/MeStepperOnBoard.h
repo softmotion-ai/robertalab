@@ -4,8 +4,8 @@
  * \brief   Driver for Me Stepper on MegaPi.
  * @file    MeStepperOnBoard.h
  * @author  MakeBlock
- * @version V1.0.2
- * @date    2016/05/06
+ * @version V1.0.3
+ * @date    2018/01/03
  * @brief   Header for MeStepperOnBoard.cpp module
  *
  * \par Copyright
@@ -28,9 +28,9 @@
  *    1. void MeStepperOnBoard::setMicroStep(int8_t value);
  *    2. void MeStepperOnBoard::setpin(int slot);
  *    3. void MeStepperOnBoard::moveTo(long absolute);
- *    4. void MeStepperOnBoard::moveTo(long absolute, cb callback, int extId);
+ *    4. void MeStepperOnBoard::moveTo(long absolute, int16_t extId, cb callback);
  *    5. void MeStepperOnBoard::move(long relative);
- *    6. void MeStepperOnBoard::move(long relative, cb callback, int extId);
+ *    6. void MeStepperOnBoard::move(long relative, int16_t extId, cb callback);
  *    7. boolean MeStepperOnBoard::run(void);
  *    8. boolean MeStepperOnBoard::runSpeed(void);
  *    9. void MeStepperOnBoard::setMaxSpeed(float speed);
@@ -54,7 +54,8 @@
  * `<Author>`         `<Time>`        `<Version>`        `<Descr>`
  * Mark Yan        2016/03/05     1.0.0            Bulid the new
  * Mark Yan        2016/05/06     1.0.1            Add function move and moveTo
-* Zzipeng          2017/02/20     1.0.2            put the array megaPi_slots[4] to MegaPi.h/MegaPiPro.h
+ * Zzipeng         2017/02/20     1.0.2            put the array megaPi_slots[4] to MegaPi.h/MegaPiPro.h
+ * Mark Yan        2018/01/03     1.0.3            Change the parameters order of moveTo/move
  * </pre>
  */
  
@@ -71,21 +72,13 @@
 
 #define NUM_SLOTS          4
 #define SLOT_NUM_PINS      8
-// #define SLOT_1             1
-// #define SLOT_2             2
-// #define SLOT_3             3
-// #define SLOT_4             4
-// #define SLOT1             SLOT_1
-// #define SLOT2             SLOT_2
-// #define SLOT3             SLOT_3
-// #define SLOT4             SLOT_4
 
  typedef struct megaPi_slot
  {
    uint8_t pin[SLOT_NUM_PINS];
  } megaPi_slot_type;
 
- extern megaPi_slot_type megaPi_slots[4];
+ extern megaPi_slot_type megaPi_slots[NUM_SLOTS];
 
 // These defs cause trouble on some versions of Arduino
 #undef round
@@ -169,17 +162,17 @@ void setMicroStep(int8_t value);
  * \param[in]
  *    absolute - The absolute length to Stepper's movement.
  * \param[in]
- *    absolute - callback function when the target position has been reached.
- * \param[in]
  *    extId - It is used to indicate the ID of motor.
+ * \param[in]
+ *    callback - callback function when the target position has been reached.
  * \par Output
  *    None
  * \par Return
  *    None
  * \par Others
  *    None
- */ 
-  void  moveTo(long absolute,cb callback,int extId); 
+ */
+  void moveTo(long absolute, int16_t extId, cb callback);
 
 /**
  * \par Function
@@ -205,9 +198,9 @@ void setMicroStep(int8_t value);
  * \param[in]
  *    relative - The relative length to Stepper's movement.
  * \param[in]
- *    absolute - callback function when the target position has been reached.
- * \param[in]
  *    extId - It is used to indicate the ID of motor.
+ * \param[in]
+ *    callback - callback function when the target position has been reached.
  * \par Output
  *    None
  * \par Return
@@ -215,7 +208,7 @@ void setMicroStep(int8_t value);
  * \par Others
  *    None
  */
-  void  move(long relative,cb callback,int extId);
+  void move(long relative, int16_t extId, cb callback);
   
 /**
  * \par Function
