@@ -1,15 +1,3 @@
-//NEPO definitions for calliope
-// Display brightness is in interval of 0..255
-// To scale that to 0..9 we use the following multipliers:
-#define _SET_BRIGHTNESS_MULTIPLIER 28.34
-#define _GET_BRIGHTNESS_MULTIPLIER 0.0353
-// Light sensor returns values in interval 0..255
-// To scale them to 0..100 we use this multiplier:
-#define _GET_LIGHTLEVEL_MULTIPLIER 0.3922
-#define _ITERATION_SLEEP_TIMEOUT 1
-
-// math constants used in math blocks. Avoids inclusion of <math.h>
-
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
@@ -35,7 +23,6 @@
 #endif
 
 #include <list>
-#include <array>
 #include <math.h>
 
 template <typename T>
@@ -166,6 +153,11 @@ double _getListMedian(std::list<double> &list) {
     }
 }
 
+double _getListAverage(std::list<double> &list) {
+    double sum = _getListSum(list);
+    return sum / list.size();
+}
+
 double _getListStandardDeviation(std::list<double> &list) {
     double mean = _getListSum(list) / list.size();
     double sum = 0;
@@ -174,26 +166,4 @@ double _getListStandardDeviation(std::list<double> &list) {
     }
     sum /= list.size() - 1;
     return sqrt(sum);
-}
-
-template <typename T, long unsigned S>
-std::array<T, S> _convertToArray(std::list<T> &list) {
-    auto iterator = list.begin();
-    std::array<T, S> result;
-    int i = 0;
-    for(auto iterator = list.begin(), i = 0; iterator != list.end(); ++iterator, ++i) {
-        result[i] = *iterator;
-    }
-    return result;
-}
-
-template <typename T, long unsigned S>
-std::array<T, S> _convertToArray(std::initializer_list<T> list) {
-    auto iterator = list.begin();
-    std::array<T, S> result;
-    int i = 0;
-    for(auto iterator = list.begin(), i = 0; iterator != list.end(); ++iterator, ++i) {
-        result[i] = *iterator;
-    }
-    return result;
 }

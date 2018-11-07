@@ -34,6 +34,7 @@
 #define M_INFINITY 0x7f800000
 #endif
 #include <list>
+#include <array>
 
 inline double absD(double d) {
 	return d < 0.0 ? -d : d;
@@ -183,6 +184,11 @@ double _getListMedian(std::list<double> &list) {
         }
         return *iterator;
     }
+}
+
+double _getListAverage(std::list<double> &list) {
+    double sum = _getListSum(list);
+    return sum / list.size();
 }
 
 double _getListStandardDeviation(std::list<double> &list) {
