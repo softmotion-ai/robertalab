@@ -22,6 +22,7 @@
 #define M_INFINITY 0x7f800000
 #endif
 
+#include <ArduinoSTL.h>
 #include <list>
 #include <math.h>
 
