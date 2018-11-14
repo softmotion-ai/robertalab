@@ -30,7 +30,7 @@
 					id="{yXUt,riMI3]Y`xxdGto" intask="true">
 					<mutation mode="PRESSED" />
 					<field name="MODE">PRESSED</field>
-					<field name="SENSORPORT">LEFT</field>
+					<field name="SENSORPORT">LEFT_TOUCH</field>
 					<field name="SLOT">FRONT</field>
 				</block>
 			</value>
@@ -44,7 +44,7 @@
 					id="vohG10,PWO0]~Wd)L#1|" intask="true">
 					<mutation mode="PRESSED" />
 					<field name="MODE">PRESSED</field>
-					<field name="SENSORPORT">LEFT</field>
+					<field name="SENSORPORT">LEFT_TOUCH</field>
 					<field name="SLOT">SIDE</field>
 				</block>
 			</value>
@@ -58,7 +58,7 @@
 					id="DmbDsY6`T/[D;El::xZz" intask="true">
 					<mutation mode="PRESSED" />
 					<field name="MODE">PRESSED</field>
-					<field name="SENSORPORT">RIGHT</field>
+					<field name="SENSORPORT">RIGHT_TOUCH</field>
 					<field name="SLOT">FRONT</field>
 				</block>
 			</value>
@@ -72,7 +72,7 @@
 					id="q4zrN.oZO;,RcJt.v`3U" intask="true">
 					<mutation mode="PRESSED" />
 					<field name="MODE">PRESSED</field>
-					<field name="SENSORPORT">RIGHT</field>
+					<field name="SENSORPORT">RIGHT_TOUCH</field>
 					<field name="SLOT">SIDE</field>
 				</block>
 			</value>

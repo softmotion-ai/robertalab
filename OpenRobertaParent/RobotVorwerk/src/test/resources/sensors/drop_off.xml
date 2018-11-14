@@ -30,7 +30,7 @@
 					id="H:%xi`kVByo?(nua~-bq" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">LEFT</field>
+					<field name="SENSORPORT">LEFT_DROPOFF</field>
 					<field name="SLOT" />
 				</block>
 			</value>
@@ -44,7 +44,7 @@
 					id="G*25)=R#fk2Y8H`0KS:k" intask="true">
 					<mutation mode="DISTANCE" />
 					<field name="MODE">DISTANCE</field>
-					<field name="SENSORPORT">RIGHT</field>
+					<field name="SENSORPORT">RIGHT_DROPOFF</field>
 					<field name="SLOT" />
 				</block>
 			</value>

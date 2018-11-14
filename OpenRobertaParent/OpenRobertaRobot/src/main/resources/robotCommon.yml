@@ -359,350 +359,6 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.action.communication.BluetoothReceiveAction
       type: [robCommunication_receiveBlock]
-  SHOW_PICTURE_ACTION:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.display.ShowPictureAction
-      type: [robActions_display_picture,robActions_display_picture_new]
-  # Arduino
-  WRITE_TO_PIN:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.PinWriteValueAction
-      type: [robActions_write_to_pin]
-  WRITE_TO_SERIAL:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.SerialWriteAction
-      type: [robActions_serial_print]
-  RELAY_ACTION:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.RelayAction
-      type: [robactions_set_relay]
-  # Bob3
-  BOB3_BODYLED:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.bob3.BodyLEDAction
-      type: [bob3Actions_set_led]
-  BOB3_CODEPAD:
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensors.arduino.bob3.CodePadSensor
-      type: [bob3Sensors_getCode,robSensors_code_getSample]
-  BOB3_SENDIR:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.bob3.SendIRAction
-      type: [bob3Communication_sendBlock]
-  BOB3_RECVIR:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.bob3.ReceiveIRAction
-      type: [bob3Communication_receiveBlock]
-  BOB3_SENSOR_GET_SAMPLE :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensors.arduino.bob3.GetSampleSensor
-      type: [bob3Sensors_getSample_bob3 ]
-  BOB3_REMEMBER :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.bob3.RememberAction
-      type: [bob3Actions_remember]
-  BOB3_RECALL :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.bob3.RecallAction
-      type: [bob3Actions_recall]
-  MAKEBLOCK_RGB_LED_ON:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.LedOnAction
-      type: [makeblockActions_leds_on]
-  MAKEBLOCK_RGB_LED_OFF:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.LedOffAction
-      type: [makeblockActions_leds_off]
-  #MBOT
-  ARDU_JOYSTICK_GETSAMPLE:
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensors.arduino.mbot.Joystick
-      type: [robSensors_joystick_getSample]
-  FLAMESENSOR_GET_SAMPLE:
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensors.arduino.mbot.FlameSensor
-      type: [robSensors_flame_getSample]
-  #MBED
-  DISPLAY_TEXT_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.DisplayTextAction
-      type: [mbedActions_display_text]
-  DISPLAY_IMAGE_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.DisplayImageAction
-      type: [mbedActions_display_image]
-  LED_ON_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.LedOnAction
-      type: [mbedActions_leds_on]
-  RADIO_SEND_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.RadioSendAction
-      type: [mbedCommunication_sendBlock]
-  RADIO_RECEIVE_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.RadioReceiveAction
-      type: [mbedCommunication_receiveBlock]
-  RADIO_SET_CHANNEL_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.RadioSetChannelAction
-      type: [mbedCommunication_setChannel]
-  IMAGE_SHIFT :
-      category: FUNCTION
-      implementor: de.fhg.iais.roberta.syntax.functions.mbed.ImageShiftFunction
-      type: [mbedImage_shift]
-  IMAGE_INVERT :
-      category: FUNCTION
-      implementor: de.fhg.iais.roberta.syntax.functions.mbed.ImageInvertFunction
-      type: [mbedImage_invert]
-  PREDEFINED_IMAGE :
-      category: EXPR
-      implementor: de.fhg.iais.roberta.syntax.expr.mbed.PredefinedImage
-      type: [mbedImage_get_image]
-  IMAGE :
-      category: EXPR
-      implementor: de.fhg.iais.roberta.syntax.expr.mbed.Image
-      type: [mbedImage_image]
-  LED_COLOR_CONST :
-      category: EXPR
-      implementor: de.fhg.iais.roberta.syntax.expr.mbed.LedColor
-      type: [mbedColour_picker]
-  RADIO_RSSI :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.mbed.RadioRssiSensor
-      type: [mbedSensors_getRssi,robsensors_rssi_getsample]
-  PIN_WRITE_VALUE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.PinWriteValue
-      type: [mbedActions_write_to_pin]
-  DISPLAY_SET_BRIGHTNESS :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.DisplaySetBrightnessAction
-      type: [mbedActions_display_setBrightness]
-  DISPLAY_GET_BRIGHTNESS :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.DisplayGetBrightnessAction
-      type: [mbedActions_display_getBrightness]
-  DISPLAY_SET_PIXEL :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.DisplaySetPixelAction
-      type: [mbedActions_display_setPixel]
-  DISPLAY_GET_PIXEL :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.DisplayGetPixelAction
-      type: [mbedActions_display_getPixel]
-  SINGLE_MOTOR_ON_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.SingleMotorOnAction
-      type: [mbedActions_single_motor_on]
-  SINGLE_MOTOR_STOP_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.SingleMotorStopAction
-      type: [mbedActions_single_motor_stop]
-  BOTH_MOTORS_ON_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.BothMotorsOnAction
-      type: [mbedActions_motors_on]
-  BOTH_MOTORS_STOP_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.BothMotorsStopAction
-      type: [mbedActions_motors_stop]
-  FOURDIGITDISPLAY_SHOW_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.FourDigitDisplayShowAction
-      type: [mbedActions_fourDigitDisplay_show]
-  FOURDIGITDISPLAY_CLEAR_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.FourDigitDisplayClearAction
-      type: [mbedActions_fourDigitDisplay_clear]
-  LEDBAR_SET_ACTION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.LedBarSetAction
-      type: [mbedActions_ledBar_set]
-  PIN_SET_PULL :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.PinSetPullAction
-      type: [mbedActions_pin_set_pull]
-  #NAO MOVEMENT
-  SET_MODE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.SetMode
-      type: [naoActions_mode]
-  APPLY_POSTURE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.ApplyPosture
-      type: [naoActions_applyPosture]
-  SET_STIFFNESS :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.SetStiffness
-      type: [naoActions_stiffness]
-  AUTONOMOUS :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.Autonomous
-      type: [naoActions_autonomous]
-  HAND :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.Hand
-      type: [naoActions_hand]
-  MOVE_JOINT :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.MoveJoint
-      type: [naoActions_moveJoint]
-  # NAO WALK
-  WALK_DISTANCE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.WalkDistance
-      type: [naoActions_walk]
-  TURN_DEGREES :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.TurnDegrees
-      type: [naoActions_turn]
-  Walk_To :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.WalkTo
-      type: [naoActions_walkTo]
-  WALK_ASYNC :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.WalkAsync
-      type: [naoActions_walk_async]
-  Stop :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.Stop
-      type: [naoActions_stop]
-  # NAO ANIMATIONS
-  ANIMATION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.Animation
-      type: [naoActions_animation]
-  POINT_LOOK_AT :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.PointLookAt
-      type: [naoActions_pointLookAt]
-  # NAO SOUNDS
-  SET_VOLUME :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.SetVolume
-      type: [naoActions_setVolume]
-  GET_VOLUME :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.GetVolume
-      type: [naoActions_getVolume]
-  GET_LANGUAGE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.GetLanguage
-      type: [naoActions_getLanguage]
-  PLAY_FILE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.PlayFile
-      type: [naoActions_playFile]
-  # NAO VISION
-  TAKE_PICTURE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.TakePicture
-      type: [naoActions_takePicture]
-  RECORD_VIDEO :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.RecordVideo
-      type: [naoActions_recordVideo]
-  # NAO LIGHTS
-  RGB_LED :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.SetLeds
-      type: [naoActions_rgbLeds]
-  SET_INTENSITY :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.SetIntensity
-      type: [naoActions_setIntensity]
-  LED_OFF :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.LedOff
-      type: [naoActions_ledOff]
-  LED_RESET :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.LedReset
-      type: [naoActions_ledReset]
-  RANDOM_EYES_DURATION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.RandomEyesDuration
-      type: [naoActions_randomEyes]
-  RASTA_DURATION :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.RastaDuration
-      type: [naoActions_rasta]
-  COLOR_HEX_STRING :
-      category: EXPR
-      implementor: de.fhg.iais.roberta.syntax.lang.expr.nao.ColorHexString
-      type: [naoColour_picker]
-  LEARN_FACE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.LearnFace
-      type: [naoActions_learnFace]
-  FORGET_FACE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.nao.ForgetFace
-      type: [naoActions_forgetFace]
-  # NAO SENSORS
-  FSR_SENSOR :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.nao.FsrSensor
-      type: [robSensors_fsr_getSample]
-  DETECT_MARK :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.nao.DetectMarkSensor
-      type: [robSensors_detectmark_getSample]
-  NAO_MARK_INFORMATION :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.nao.NaoMarkInformation
-      type: [naoSensors_getMarkInformation]
-  DETECT_FACE :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.nao.DetectFaceSensor
-      type: [robSensors_detectface_getSample]
-  NAO_FACE_INFORMATION :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.nao.DetectedFaceInformation
-      type: [naoSensors_getFaceInformation]
-  NAO_SENSOR_GET_SAMPLE :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.generic.GetSampleSensor
-      type: [naoSensors_getSample]
-  RECOGNIZE_WORD :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.nao.RecognizeWord
-      type: [naoSensors_recognizeWord]
-  ELECTRIC_CURRENT :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.nao.ElectricCurrentSensor
-      type: [robSensors_electriccurrent_getSample]
-  #Vorwerk
-  BRUSH_ON :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.vorwerk.BrushOn
-      type: [vorwerkActions_brush_on]
-  BRUSH_OFF :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.vorwerk.BrushOff
-      type: [vorwerkActions_brush_off]
-  VACUUM_ON :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.vorwerk.VacuumOn
-      type: [vorwerkActions_vacuum_on]
-  VACUUM_OFF :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.vorwerk.VacuumOff
-      type: [vorwerkActions_vacuum_off]
-  SIDE_BRUSH :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.vorwerk.SideBrush
-      type: [vorwerkActions_side_brush]
-  DROP_OFF_SENSOR :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.vorwerk.DropOffSensor
-      type: [robSensors_drop_off_getSample]
-  WALL_SENSOR :
-      category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensor.vorwerk.WallSensor
-      type: [robSensors_wall_getSample]
   
 wait:
   ACCELERATION :
@@ -757,22 +413,6 @@ wait:
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.CompassSensor
         sensor: COMPASS
         mode: ANGLE
-  DETECTFACE_NAMEONE :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.DetectSensor
-        sensor: DETECT_FACE
-        mode: NAMEONE
-  DETECTFACE_NAMEONE_1 :
-        implementor: de.fhg.iais.roberta.syntax.sensor.nao.DetectFaceSensor
-        sensor: DETECT_FACE
-        mode: NAMEONE
-  DETECTMARK_IDONE :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.DetectSensor
-        sensor: DETECT_MARK
-        mode: IDONE
-  DETECTMARK_IDONE_1 :
-        implementor: de.fhg.iais.roberta.syntax.sensor.nao.DetectMarkSensor
-        sensor: DETECT_MARK
-        mode: IDONE
   DROP_OFF_DISTANCE :
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.DropSensor
         sensor: DROP_OFF
@@ -783,10 +423,6 @@ wait:
         mode: VALUE
   ELECTRICCURRENT_VALUE_1 :
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.ElectricSensor
-        sensor: ELECTRIC_CURRENT
-        mode: VALUE
-  ELECTRICCURRENT_VALUE :
-        implementor: de.fhg.iais.roberta.syntax.sensor.nao.ElectricCurrentSensor
         sensor: ELECTRIC_CURRENT
         mode: VALUE
   ENCODER_DEGREE :
@@ -805,14 +441,6 @@ wait:
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.FlameSensor
         sensor: FLAME
         mode: FLAME_VALUE
-  FSR_VALUE :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.FsrSensor
-        sensor: FSR
-        mode: VALUE
-  FSR_VALUE_1 :
-        implementor: de.fhg.iais.roberta.syntax.sensor.nao.FsrSensor
-        sensor: FSR
-        mode: VALUE
   GESTURE_ACTIVE :
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.GestureSensor
         sensor: GESTURE
@@ -1042,9 +670,9 @@ mode:
   drop: [VALUE]
   encoder: [DEFAULT,DEGREE,DISTANCE,RESET,ROTATION]
   gesture: [DOWN,FACE_DOWN,FACE_UP,FREEFALL,G3,G6,G8,LEFT,SHAKE,UP,VALUE]
-  gyro: [ANGLE,DEFAULT,RESET,TILTED,VALUE,X,Y,Z]
+  gyro: [ANGLE,RATE,DEFAULT,RESET,TILTED,VALUE,X,Y,Z]
   humidity: [HUMIDITY,TEMPERATURE,VALUE]
-  infrared: [AMBIENTLIGHT,DEFAULT,DISTANCE,OBSTACLE,PRESENCE,SEEK,SENSOR1,SENSOR2,UNMODULATED,VALUE]
+  infrared: [AMBIENTLIGHT,DEFAULT,DISTANCE,OBSTACLE,PRESENCE,SEEK,SENSOR1,SENSOR2,MODULATED,UNMODULATED,VALUE]
   keys: [PRESSED,WAIT_FOR_PRESS,WAIT_FOR_PRESS_AND_RELEASE]
   light: [AMBIENTLIGHT,DEFAULT,LEFT,LIGHT,LIGHT_VALUE,RED,RIGHT,VALUE]
   moisture: [VALUE,PRESENCE,VALUE]
@@ -1052,6 +680,7 @@ mode:
   pinvalue: [ANALOG,DEFAULT,DIGITAL,PULSE_HIGH,PULSE_LOW]
   pulse: [VALUE]
   rfid: [PRESENCE,SERIAL,VALUE]
+  detect: [NAMEONE,IDONE,IDALL,NAMEALL]
 
 color:
   BLACK: "#000000"
