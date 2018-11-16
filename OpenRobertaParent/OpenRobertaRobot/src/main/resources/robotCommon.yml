@@ -566,35 +566,35 @@ wait:
         sensor: ORIENTATION
         mode: ORIENTATION
   PINTOUCH_PRESSED :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PintouchSensor
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinTouchSensor
         sensor: PINTOUCH
         mode: PRESSED
   PIN_ANALOG :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinSensor
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
         sensor: PIN_ANALOG
         mode: ANALOG
   PIN_DIGITAL :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinSensor
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
         sensor: PIN_DIGITAL
         mode: DIGITAL
   PIN_PULSEHIGH :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinSensor
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
         sensor: PIN_PULSEHIGH
         mode: PULSEHIGH
-  PIN_PULSELOW :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinSensor
-        sensor: PIN_PULSELOW
-        mode: PULSELOW
   PIN_PULSE_HIGH :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinSensor
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
         sensor: PIN_PULSE_HIGH
         mode: PULSE_HIGH
   PIN_PULSE_LOW :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinSensor
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
         sensor: PIN_PULSE_LOW
         mode: PULSE_LOW
+  PIN_PULSELOW :
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
+        sensor: PIN_PULSELOW
+        mode: PULSELOW
   PIN_TOUCHED :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinSensor
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinTouchSensor
         sensor: PIN_TOUCHED
         mode: PIN_TOUCHED
   POTENTIOMETER_VALUE :
@@ -681,7 +681,7 @@ mode:
   pulse: [VALUE]
   rfid: [PRESENCE,SERIAL,VALUE]
   detect: [NAMEONE,IDONE,IDALL,NAMEALL]
-
+  sound: [SOUND]
 color:
   BLACK: "#000000"
   BLUE: "#0057A6"
@@ -716,63 +716,49 @@ color:
   YELLOW: "#F7D117"
 
 configuration:
-  ACCELEROMETER: robBrick_accelerometer
-  ANALOG_PIN: robActions_write_to_pin
-  ARDU: robBrick_motor_ardu
-  BUTTON: robBrick_key_
-  BUZZER_1: robActions_play_tone
-  BUZZER: robConf_buzzer
-  COLOUR: robBrick_colour
-  COMPASS: robBrick_compass
-  DETECT_MARK: naoSensors_naoMark
-  DROP_1: robBrick_drop
-  DROP: robConf_drop
-  ENCODER_1: robBrick_encoder
-  ENCODER: robConf_encoder
-  EXTERNAL_LED: robBrick_led
-  FLAMESENSOR: robBrick_flame
-  GEARED_MOTOR: robBrick_motor_geared
-  GYRO_1: robBrick_gyro
-  GYRO: robConf_gyro
-  HT_COLOR: robBrick_HiTechnic_colour
-  HUMIDITY_1: robBrick_humidity
-  HUMIDITY: robConf_humidity
-  INFRARED_1: robBrick_infrared
-  INFRARED: robConf_infrared
-  IRSEEKER: robBrick_irseeker
-  JOYSTICK: arduSensors_joystick_getSample
-  KEY_1: robBrick_key
-  KEY: robConf_key
-  LARGE: robBrick_motor_big
-  LCD: robConf_lcd
-  LCDI2C: robConf_lcdi2c
-  LED: robConf_led
-  LED_MATRIX: robBrick_led_matrix
-  LED_ON_BOARD: makeblockActions_leds_on
-  LIGHT_1: robBrick_light
-  LIGHT: robConf_light
-  MEDIUM: robBrick_motor_middle
-  MOISTURE_1: robBrick_moisture
-  MOISTURE: robConf_moisture
-  MOTION_1: robBrick_motion
-  MOTION: robConf_motion
-  MOTOR: robConf_motor
-  OTHER: robBrick_actor
-  PIN_VALUE: robSensors_pin_getSample
-  POTENTIOMETER: robConf_potentiometer
-  PULSE_1: robBrick_pulse
-  PULSE: robConf_pulse
-  RELAY: robConf_relay
-  RFID_1: robBrick_rfide
-  RFID: robConf_rfid
-  RGBLED: robConf_rgbled
-  SERVOMOTOR: robConf_servo
-  SOUND: robBrick_sound
-  STEPMOTOR: robConf_stepmotor
-  TEMPERATURE_1: robBrick_temperature
-  TEMPERATURE: robConf_temperature
-  TIMER: robBrick_timer
-  TOUCH: robBrick_touch
-  ULTRASONIC_1: robBrick_ultrasonic
-  ULTRASONIC: robConf_ultrasonic
-  WEDO: robBrick_WeDo-Brick
+  ACCELEROMETER: [robBrick_accelerometer]
+  ANALOG_PIN: [robActions_write_to_pin]
+  ARDU: [robBrick_motor_ardu]
+  BUTTON: [robBrick_key_]
+  BUZZER: [robConf_buzzer, robActions_play_tone]
+  COLOR: [robBrick_colour]
+  COMPASS: [robBrick_compass]
+  DETECT_MARK: [naoSensors_naoMark]
+  DROP: [robConf_drop, robBrick_drop]
+  ENCODER: [robConf_encoder, robBrick_encoder]
+  EXTERNAL_LED: [robBrick_led]
+  FLAMESENSOR: [robBrick_flame]
+  GEARED_MOTOR: [robBrick_motor_geared]
+  GYRO: [robConf_gyro, robBrick_gyro]
+  HT_COLOR: [robBrick_HiTechnic_colour]
+  HUMIDITY: [robConf_humidity, robBrick_humidity]
+  INFRARED: [robConf_infrared, robBrick_infrared]
+  IRSEEKER: [robBrick_irseeker]
+  JOYSTICK: [arduSensors_joystick_getSample]
+  KEY: [robConf_key, robBrick_key]
+  LARGE: [robBrick_motor_big]
+  LCD: [robConf_lcd]
+  LCDI2C: [robConf_lcdi2c]
+  LED: [robConf_led]
+  LED_MATRIX: [robBrick_led_matrix]
+  LED_ON_BOARD: [makeblockActions_leds_on]
+  LIGHT: [robConf_light, robBrick_light]
+  MEDIUM: [robBrick_motor_middle]
+  MOISTURE: [robConf_moisture, robBrick_moisture]
+  MOTION: [robConf_motion, robBrick_motion]
+  MOTOR: [robConf_motor]
+  OTHER: [robBrick_actor]
+  PIN_VALUE: [robSensors_pin_getSample]
+  POTENTIOMETER: [robConf_potentiometer]
+  PULSE: [robConf_pulse, robBrick_pulse]
+  RELAY: [robConf_relay]
+  RFID: [robConf_rfid, robBrick_rfide]
+  RGBLED: [robConf_rgbled]
+  SERVOMOTOR: [robConf_servo]
+  SOUND: [robBrick_sound]
+  STEPMOTOR: [robConf_stepmotor]
+  TEMPERATURE: [robConf_temperature, robBrick_temperature]
+  TIMER: [robBrick_timer]
+  TOUCH: [robBrick_touch]
+  ULTRASONIC: [robConf_ultrasonic, robBrick_ultrasonic]
+  WEDO: [robBrick_WeDo-Brick]
