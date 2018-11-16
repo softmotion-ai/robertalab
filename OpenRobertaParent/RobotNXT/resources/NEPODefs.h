@@ -763,3 +763,19 @@ void SteerDrive(unsigned char portLeft, unsigned char portRight, float powerLeft
 inline float SpeedTest(float speed){
     return abs(speed) < 100  ? speed : speed/abs(speed)*100;
 }
+
+int sanitise_index(int array_length, int index) {
+    if(index >= 0 && index < array_length) {
+        return index;
+    } else {
+        TextOut(0, (MAXLINES - 1) * MAXLINES, "Index out of bounds: ");
+        NumOut(0, (MAXLINES - 2) * MAXLINES, index);
+        TextOut(0, (MAXLINES - 1) * MAXLINES, "Press enter to continue.");
+        while (true) {
+            if ( ButtonPressed(BTNCENTER, false) == true ) {
+                Stop(true);
+            }
+            Wait(15);
+        }
+    }
+}
