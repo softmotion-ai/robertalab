@@ -4,10 +4,6 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.PinWriteValueAction
       type: [robActions_write_to_pin]
-  WRITE_TO_SERIAL:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.SerialWriteAction
-      type: [robActions_serial_print]
   RELAY_ACTION:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.RelayAction

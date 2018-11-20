@@ -359,6 +359,10 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.action.communication.BluetoothReceiveAction
       type: [robCommunication_receiveBlock]
+  WRITE_TO_SERIAL:
+      category: ACTOR
+      implementor: de.fhg.iais.roberta.syntax.action.serial.SerialWriteAction
+      type: [robActions_serial_print]
   
 wait:
   ACCELERATION :
