@@ -54,3 +54,11 @@ block:
       category: SENSOR
       implementor: de.fhg.iais.roberta.syntax.sensors.arduino.mbot.FlameSensor
       type: [robSensors_flame_getSample]
+  MAKEBLOCK_IR_SENDER:
+      category: ACTOR
+      implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.SendIRAction
+      type: [makeblockCommunication_sendBlock]
+  MAKEBLOCK_IR_RECEIVER:
+      category: ACTOR
+      implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.ReceiveIRAction
+      type: [makeblockCommunication_receiveBlock]
