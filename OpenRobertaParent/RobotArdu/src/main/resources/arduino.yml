@@ -37,13 +37,13 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.bob3.RecallAction
       type: [bob3Actions_recall]
-  MAKEBLOCK_RGB_LED_ON:
+  BOB3_RGB_LED_ON:
       category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.LedOnAction
+      implementor: de.fhg.iais.roberta.syntax.actors.arduino.bob3.LedOnAction
       type: [makeblockActions_leds_on]
-  MAKEBLOCK_RGB_LED_OFF:
+  BOB3_RGB_LED_OFF:
       category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.LedOffAction
+      implementor: de.fhg.iais.roberta.syntax.actors.arduino.bob3.LedOffAction
       type: [makeblockActions_leds_off]
   #MBOT
   ARDU_JOYSTICK_GETSAMPLE:
@@ -54,11 +54,11 @@ block:
       category: SENSOR
       implementor: de.fhg.iais.roberta.syntax.sensors.arduino.mbot.FlameSensor
       type: [robSensors_flame_getSample]
-  MAKEBLOCK_IR_SENDER:
+  IR_SENDER:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.SendIRAction
-      type: [makeblockCommunication_sendBlock]
-  MAKEBLOCK_IR_RECEIVER:
+      type: [robCommunication_ir_sendBlock]
+  IR_RECEIVER:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.ReceiveIRAction
-      type: [makeblockCommunication_receiveBlock]
+      type: [robCommunication_ir_receiveBlock]
