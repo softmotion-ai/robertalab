@@ -93,6 +93,8 @@
 			use="optional" />
 		<xs:attribute name="editable" type="xs:boolean"
 			use="optional" />
+		<xs:attribute name="error_attribute" type="xs:boolean"
+			use="optional" />
 	</xs:complexType>
 	<xs:complexType name="field">
 		<xs:simpleContent>
