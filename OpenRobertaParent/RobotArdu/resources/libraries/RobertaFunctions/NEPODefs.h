@@ -31,7 +31,7 @@
 #endif
 
 #ifndef GCHANNEL(color)
-#define GCHANNEL(color) ( ((color << 5) >> 10 ) * 255 / 31)
+#define GCHANNEL(color) ( ((color << 5) >> 10 ) * 255 / 63)
 #endif
 
 #ifndef BCHANNEL(color)
