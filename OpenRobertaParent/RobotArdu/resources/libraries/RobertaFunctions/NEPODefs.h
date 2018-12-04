@@ -22,6 +22,22 @@
 #define M_INFINITY 0x7f800000
 #endif
 
+#ifndef RGB(r, g, b)
+#define RGB(r, g, b) (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3))
+#endif
+
+#ifndef RCHANNEL(color)
+#define RCHANNEL(color) ((color >> 11) * 255 / 31)
+#endif
+
+#ifndef GCHANNEL(color)
+#define GCHANNEL(color) ( ((color << 5) >> 10 ) * 255 / 31)
+#endif
+
+#ifndef BCHANNEL(color)
+#define BCHANNEL(color) ( ((color << 11) >> 11 ) * 255 / 31)
+#endif
+
 #include <ArduinoSTL.h>
 #include <list>
 #include <math.h>

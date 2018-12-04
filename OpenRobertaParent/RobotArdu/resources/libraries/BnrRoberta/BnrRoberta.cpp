@@ -124,70 +124,15 @@ int BnrRoberta::colorSensorLight(byte colors[], int port)
 
 
 
-String BnrRoberta::colorSensorColor(byte colors[], int port)
+unsigned int BnrRoberta::colorSensorColor(byte colors[], int port)
 {   
-	String color;
-	if (port == 1){
+    if (port == 1){
 		brm.readRgbL(&colors[0],&colors[1],&colors[2]);
 	}
 	else{
 		brm.readRgbR(&colors[0],&colors[1],&colors[2]);
 	}
-	double r = colors[0];
-	double g = colors[1];
-	double b = colors[2];
-	double min = fmin(r, fmin(g, b));
-	double max = fmax(r, fmax(g, b));
-	double delta = max - min;
-	double h, s, v = max;
-
-	v = max / 255.0 * 100.0;
-
-	if (max != 0) {
-		s = delta / max * 100;
-	} else {
-		h, s, v = 0;
-	}
-	if (r == max) {
-		h = (g - b) / delta;
-	} else if (g == max) {
-		h = 2 + (b - r) / delta;
-	} else {
-		h = 4 + (r - g) / delta;
-	}
-	h = h * 60;
-	if (h < 0) {
-		h += 360;
-	}
-
-	double hsv[3] = {h, s, v};
-	if (hsv[2] <= 10) {
-		color = "BLACK";
-	}
-	else if ((hsv[0] < 40 || hsv[0] > 300) && hsv[1] > 50 && hsv[2] > 30) {
-		color = "RED";
-	}
-	else if (hsv[0] > 30 && hsv[0] < 70 && hsv[1] > 60 && hsv[2] > 50) {
-		color = "YELLOW";
-	}
-	else if (hsv[0] < 50 && hsv[1] > 50 && hsv[1] < 100 && hsv[2] < 50) {
-		color = "BROWN";
-	}
-	else if (hsv[1] < 10 && hsv[2] > 90) {
-		color = "WHITE";
-	}
-	else if (hsv[0] > 70 && hsv[0] < 160 && hsv[1] > 40) {
-		color = "GREEN";
-	}
-	else if (hsv[0] > 200 && hsv[0] < 250 && hsv[1] > 60 && hsv[2] > 50) {
-		color = "BLUE";
-	}
-	else{
-		color = "NONE";
-	}
-
-	Serial.print("hsv ");Serial.print(h);Serial.print("s");Serial.print(s);Serial.print("v");Serial.print(v);
-	return color;
+	return RGB(colors[0], colors[1], colors[2]);
 }
 
 bool BnrRoberta::infraredSensorObstacle(int port)

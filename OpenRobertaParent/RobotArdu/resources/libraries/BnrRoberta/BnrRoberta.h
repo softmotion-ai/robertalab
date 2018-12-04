@@ -10,12 +10,16 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include<stdio.h>
-#include<string.h>
+#include <stdio.h>
+#include <string.h>
 #include "Arduino.h"
 #include "BnrOneA.h" 
 #include "BnrRescue.h" 
 #include "Wire.h" 
+
+#ifndef RGB(r, g, b)
+#define RGB(r, g, b) (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3))
+#endif
 
 
 class BnrRoberta
@@ -30,7 +34,7 @@ class BnrRoberta
 		bool buttonIsPressed(int button);
 		byte *colorSensorRGB(byte colors[],int port);
 		int colorSensorLight(byte colors[], int port);
-		String colorSensorColor(byte colors[], int port);
+		unsigned int colorSensorColor(int port);
 		bool infraredSensorObstacle(int port);
 		bool infraredSensorPresence(int port);
 		float readBearing();
