@@ -717,7 +717,10 @@ color:
 
 configuration:
   ACCELEROMETER: [robBrick_accelerometer]
-  ANALOG_PIN: [robActions_write_to_pin]
+  ANALOG_PIN: [robActions_write_to_pin, robConf_analogout]
+  DIGITAL_PIN: [robConf_digitalout]
+  ANALOG_INPUT: [robConf_analogin]
+  DIGITAL_INPUT: [robConf_digitalin] 
   ARDU: [robBrick_motor_ardu]
   BUTTON: [robBrick_key_]
   BUZZER: [robConf_buzzer, robActions_play_tone]
