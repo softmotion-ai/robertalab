@@ -682,39 +682,7 @@ mode:
   rfid: [PRESENCE,SERIAL,VALUE]
   detect: [NAMEONE,IDONE,IDALL,NAMEALL]
   sound: [SOUND]
-color:
-  BLACK: "#000000"
-  BLUE: "#0057A6"
-  BROWN: "#532115"
-  CRIMSON: "#DC143C"
-  CYAN: "#000007"
-  DARK_GRAY: "#000006"
-  GRAY: "#000004"
-  GREEN: "#00642E"
-  LIGHT_GRAY: "#000005"
-  LIME: "#00FF00"
-  MAGENTA: "#000001"
-  MAGENTA_1: "#FF00FF"
-  NONE: "#585858"
-  ORANGE: "#000002"
-  ORANGE_1: "#FFA500"
-  PINK: "#000003"
-  PURPLE: "#800080"
-  RED: "#B30006"
-  VIOLET: "#EE82EE"
-  WHITE: "#FFFFFF"
-  W_BLUE: "#4876FF"
-  W_CYAN: "#00FFFF"
-  W_GREEN: "#008000"
-  W_LIGHTGREEN: "#90EE90"
-  W_ORANGE: "#FFA501"
-  W_PINK: "#FF1493"
-  W_PURPLE: "#800081"
-  W_RED: "#FF0000"
-  W_WHITE: "#FFFFFE"
-  W_YELLOW: "#FFFF00"
-  YELLOW: "#F7D117"
-
+  
 configuration:
   ACCELEROMETER: [robBrick_accelerometer]
   ANALOG_PIN: [robActions_write_to_pin, robConf_analogout]
