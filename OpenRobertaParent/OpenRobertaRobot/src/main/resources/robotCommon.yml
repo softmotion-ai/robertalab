@@ -110,7 +110,7 @@ block:
   RGB_COLOR :
       category: EXPR
       implementor: de.fhg.iais.roberta.syntax.lang.expr.RgbColor
-      type: [makeblockcolour_rgb,mbedColour_rgb,naoColour_rgb]
+      type: [robColour_rgb,mbedColour_rgb,naoColour_rgb]
   NULL_CONST:
       category: EXPR
       implementor: de.fhg.iais.roberta.syntax.lang.expr.NullConst
