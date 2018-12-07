@@ -59,7 +59,7 @@ inline bool isPrimeD(double d) {
 }
 
 template <typename T>
-T _getListElementByIndex(std::list<T> list, unsigned index) {
+T _getListElementByIndex(std::list<T> &list, unsigned index) {
     auto iterator = list.begin();
     advance(iterator, index);
     return (*iterator);
@@ -118,7 +118,7 @@ int _getFirstOccuranceOfElement(std::list<T> list, P value) {
 }
 
 template <typename T, typename P>
-int _getLastOccuranceOfElement(std::list<T> list, P value) {
+int _getLastOccuranceOfElement(std::list<T> &list, P value) {
     int i = 0;
     auto iterator = list.rbegin();
     for(i = 0, iterator = list.rbegin(); iterator != list.rend(); ++iterator, ++i) {
@@ -132,13 +132,12 @@ int _getLastOccuranceOfElement(std::list<T> list, P value) {
 }
 
 template <typename T>
-std::list<T> _getSubList(std::list<T> list, int startIndex, int endIndex) {
+std::list<T> &_getSubList(std::list<T> &list, int startIndex, int endIndex) {
     auto beginIterator = list.begin();
     advance(beginIterator, startIndex);
     auto endIterator = list.begin();
     advance(endIterator, endIndex);
-    std::list<T> result(beginIterator, endIterator);
-    return result;
+    return *(new std::list<T>(beginIterator, endIterator));
 }
 
 double _getListSum(std::list<double> list) {
@@ -149,7 +148,7 @@ double _getListSum(std::list<double> list) {
     return result;
 }
 
-double _getListMin(std::list<double> list) {
+double _getListMin(std::list<double> &list) {
     double result = *(list.begin());
     for(auto iterator = list.begin(); iterator != list.end(); ++iterator) {
         if (result > *iterator) {
@@ -159,7 +158,7 @@ double _getListMin(std::list<double> list) {
     return result;
 }
 
-double _getListMax(std::list<double> list) {
+double _getListMax(std::list<double> &list) {
     double result = *(list.begin());
     for(auto iterator = list.begin(); iterator != list.end(); ++iterator) {
         if (result < *iterator) {
@@ -169,7 +168,7 @@ double _getListMax(std::list<double> list) {
     return result;
 }
 
-double _getListMedian(std::list<double> list) {
+double _getListMedian(std::list<double> &list) {
     std::list<double> sorted(list);
     sorted.sort();
     auto iterator = sorted.begin();
@@ -186,7 +185,7 @@ double _getListMedian(std::list<double> list) {
     }
 }
 
-double _getListAverage(std::list<double> list) {
+double _getListAverage(std::list<double> &list) {
     double sum = _getListSum(list);
     return sum / list.size();
 }
@@ -213,7 +212,7 @@ std::array<T, S> _convertToArray(std::list<T> &list) {
 }
 
 template <typename T, long unsigned S>
-std::array<T, S> _convertToArray(std::initializer_list<T> list) {
+std::array<T, S> _convertToArray(std::initializer_list<T> &list) {
   auto iterator = list.begin();
   std::array<T, S> result;
   int i = 0;
