@@ -19,7 +19,7 @@ public class VorwerkFactory extends AbstractRobotFactory {
 
     @Override
     public ICompilerWorkflow getRobotCompilerWorkflow() {
-        return new VorwerkCompilerWorkflow(this.pluginProperties);
+        return new VorwerkCompilerWorkflow(pluginProperties);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class VorwerkFactory extends AbstractRobotFactory {
 
     @Override
     public AbstractProgramValidatorVisitor getRobotProgramCheckVisitor(Configuration brickConfiguration) {
-        return new VorwerkBrickValidatorVisitor(brickConfiguration);
+        return new VorwerkBrickValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override

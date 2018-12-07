@@ -30,16 +30,16 @@ public abstract class AbstractMbedFactory extends AbstractRobotFactory {
 
     @Override
     public ICompilerWorkflow getSimCompilerWorkflow() {
-        return new MbedSimCompilerWorkflow(this.pluginProperties);
+        return new MbedSimCompilerWorkflow(pluginProperties);
     }
 
     @Override
     public AbstractSimValidatorVisitor getSimProgramCheckVisitor(Configuration brickConfiguration) {
-        return new CalliopeSimValidatorVisitor(brickConfiguration);
+        return new CalliopeSimValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override
     public AbstractProgramValidatorVisitor getRobotProgramCheckVisitor(Configuration brickConfiguration) {
-        return new MbedBoardValidatorVisitor(brickConfiguration);
+        return new MbedBoardValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 }

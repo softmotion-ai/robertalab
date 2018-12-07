@@ -53,6 +53,7 @@ public class BlocklyDropdownFactory {
     private final Map<String, String> modes;
     private final Map<String, String> colorDefs;
     private final Map<String, String> configurationComponentTypes;
+    private final Map<String, String[]> sensorTypes;
 
     public BlocklyDropdownFactory(PluginProperties pluginProperties) {
         String robotDescriptor = pluginProperties.getStringProperty("robot.descriptor");
@@ -63,7 +64,7 @@ public class BlocklyDropdownFactory {
         this.waMap = BlocklyDropdownFactoryHelper.getWaitUntils(this.robotDescription);
         this.modes = BlocklyDropdownFactoryHelper.getModes(this.robotDescription);
         this.configurationComponentTypes = BlocklyDropdownFactoryHelper.getConfigurationComponents(this.robotDescription);
-
+		this.sensorTypes = BlocklyDropdownFactoryHelper.getSensorTypes(robotDescription);
     }
 
     public String getConfigurationComponentTypeByBlocklyName(String blocklyName) {
@@ -102,6 +103,10 @@ public class BlocklyDropdownFactory {
         String internalMode = this.modes.get(sUpper);
         Assert.notNull(internalMode, "Undefined mode %s", mode);
         return internalMode;
+    }
+
+    public Map<String, String[]> getSensorTypes() {
+        return sensorTypes;
     }
 
     /**
@@ -271,5 +276,4 @@ public class BlocklyDropdownFactory {
         }
 
     }
-
 }

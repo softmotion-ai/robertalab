@@ -28,12 +28,12 @@ public abstract class AbstractEV3Factory extends AbstractRobotFactory {
 
     @Override
     public ICompilerWorkflow getSimCompilerWorkflow() {
-        return new Ev3SimCompilerWorkflow(this.pluginProperties);
+        return new Ev3SimCompilerWorkflow(pluginProperties);
     }
 
     @Override
     public ICompilerWorkflow getRobotCompilerWorkflow() {
-        return new Ev3LejosCompilerWorkflow(this.pluginProperties);
+        return new Ev3LejosCompilerWorkflow(pluginProperties);
     }
 
     @Override
@@ -43,12 +43,12 @@ public abstract class AbstractEV3Factory extends AbstractRobotFactory {
 
     @Override
     public AbstractSimValidatorVisitor getSimProgramCheckVisitor(Configuration brickConfiguration) {
-        return new Ev3SimValidatorVisitor(brickConfiguration);
+        return new Ev3SimValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override
     public AbstractProgramValidatorVisitor getRobotProgramCheckVisitor(Configuration brickConfiguration) {
-        return new Ev3BrickValidatorVisitor(brickConfiguration);
+        return new Ev3BrickValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override

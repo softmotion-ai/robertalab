@@ -4,6 +4,7 @@ block:
     category: ACTOR
     implementor: de.fhg.iais.roberta.syntax.action.ev3.ShowPictureAction
     type: [robActions_display_picture,robActions_display_picture_new]
+
 color:
   NONE: "#585858"
   BLACK: "#000000"
@@ -13,3 +14,16 @@ color:
   RED: "#B30006"
   WHITE: "#FFFFFF"
   BROWN: "#532115"
+
+sensorTypes:
+  ULTRASONIC_SENSING: [ULTRASONIC]
+  COLOR_SENSING: [COLOUR, HT_COLOR]
+  INFRARED_SENSING: [INFRARED]
+  TOUCH_SENSING: [TOUCH]
+  GYRO_SENSING: [GYRO]
+  SOUND_SENSING: [SOUND]
+  COMPASS_SENSING: [COMPASS]
+  IRSEEKER_SENSING: [IRSEEKER]
+  POTENTIOMETER_SENSING: [POTENTIOMETER]
+  MOISTURE_SENSING: [MOISTURE]
+  RFID_SENSING: [RFID]

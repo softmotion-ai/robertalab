@@ -25,22 +25,22 @@ public class NxtFactory extends AbstractRobotFactory {
 
     @Override
     public ICompilerWorkflow getRobotCompilerWorkflow() {
-        return new NxtCompilerWorkflow(this.pluginProperties);
+        return new NxtCompilerWorkflow(pluginProperties);
     }
 
     @Override
     public ICompilerWorkflow getSimCompilerWorkflow() {
-        return new NxtSimCompilerWorkflow(this.pluginProperties);
+        return new NxtSimCompilerWorkflow(pluginProperties);
     }
 
     @Override
     public AbstractSimValidatorVisitor getSimProgramCheckVisitor(Configuration brickConfiguration) {
-        return new NxtSimValidatorVisitor(brickConfiguration);
+        return new NxtSimValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override
     public AbstractProgramValidatorVisitor getRobotProgramCheckVisitor(Configuration brickConfiguration) {
-        return new NxtBrickValidatorVisitor(brickConfiguration);
+        return new NxtBrickValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override

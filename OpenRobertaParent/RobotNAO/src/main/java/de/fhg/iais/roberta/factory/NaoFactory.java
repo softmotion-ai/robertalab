@@ -36,7 +36,7 @@ public class NaoFactory extends AbstractRobotFactory {
 
     @Override
     public ICompilerWorkflow getRobotCompilerWorkflow() {
-        return new NaoCompilerWorkflow(this.pluginProperties);
+        return new NaoCompilerWorkflow(pluginProperties);
     }
 
     @Override

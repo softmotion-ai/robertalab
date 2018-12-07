@@ -58,6 +58,19 @@ public class BlocklyDropdownFactoryHelper {
         return map;
     }
 
+    public static Map<String, String[]> getSensorTypes(JSONObject robotDescription) {
+        Map<String, String[]> sensorTypes = new HashMap<>();
+        JSONObject sensorType = robotDescription.optJSONObject("sensorTypes");
+        if ( sensorType != null ) {
+            for ( String key : sensorType.keySet() ) {
+                JSONArray value = sensorType.getJSONArray(key);
+
+                sensorTypes.put(key, jsonArray2stringArray(value));
+            }
+        }
+        return sensorTypes;
+    }
+
     public static Map<String, WaitUntilSensorBean> getWaitUntils(JSONObject robotDescription) {
         Map<String, WaitUntilSensorBean> map = new HashMap<>();
         JSONObject waitUntils = robotDescription.getJSONObject("wait");
@@ -104,4 +117,5 @@ public class BlocklyDropdownFactoryHelper {
         }
         return resultValues;
     }
+
 }

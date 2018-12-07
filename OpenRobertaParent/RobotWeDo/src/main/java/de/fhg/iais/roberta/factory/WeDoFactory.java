@@ -19,7 +19,7 @@ public class WeDoFactory extends AbstractRobotFactory {
 
     @Override
     public ICompilerWorkflow getRobotCompilerWorkflow() {
-        return new WeDoCompilerWorkflow(this.pluginProperties);
+        return new WeDoCompilerWorkflow(pluginProperties);
     }
 
     @Override
@@ -39,7 +39,7 @@ public class WeDoFactory extends AbstractRobotFactory {
 
     @Override
     public AbstractBrickValidatorVisitor getRobotProgramCheckVisitor(Configuration brickConfiguration) {
-        return new WedoBrickValidatorVisitor<Void>(brickConfiguration);
+        return new WedoBrickValidatorVisitor<Void>(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override

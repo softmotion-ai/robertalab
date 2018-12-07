@@ -41,8 +41,8 @@ import de.fhg.iais.roberta.visitor.hardware.IMbedVisitor;
 
 public final class MicrobitSimValidatorVisitor extends AbstractSimValidatorVisitor implements IMbedVisitor<Void> {
 
-    public MicrobitSimValidatorVisitor(Configuration brickConfiguration) {
-        super(brickConfiguration);
+    public MicrobitSimValidatorVisitor(Configuration brickConfiguration, BlocklyDropdownFactory blocklyDdf) {
+        super(brickConfiguration, blocklyDdf);
     }
 
     @Override

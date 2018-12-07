@@ -25,7 +25,7 @@ public class Bob3Factory extends AbstractRobotFactory {
 
     @Override
     public ICompilerWorkflow getRobotCompilerWorkflow() {
-        return new Bob3CompilerWorkflow(this.pluginProperties);
+        return new Bob3CompilerWorkflow(pluginProperties);
     }
 
     @Override

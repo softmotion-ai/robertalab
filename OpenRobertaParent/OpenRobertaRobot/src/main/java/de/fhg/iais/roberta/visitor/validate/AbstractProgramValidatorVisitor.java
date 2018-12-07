@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import de.fhg.iais.roberta.components.Configuration;
 import de.fhg.iais.roberta.components.ConfigurationComponent;
+import de.fhg.iais.roberta.factory.BlocklyDropdownFactory;
 import de.fhg.iais.roberta.syntax.MotorDuration;
 import de.fhg.iais.roberta.syntax.Phrase;
 import de.fhg.iais.roberta.syntax.SC;
 import de.fhg.iais.roberta.syntax.action.Action;
 import de.fhg.iais.roberta.syntax.action.MoveAction;
-import de.fhg.iais.roberta.syntax.action.serial.SerialWriteAction;
 import de.fhg.iais.roberta.syntax.action.communication.BluetoothCheckConnectAction;
 import de.fhg.iais.roberta.syntax.action.communication.BluetoothConnectAction;
 import de.fhg.iais.roberta.syntax.action.communication.BluetoothReceiveAction;
@@ -27,6 +27,7 @@ import de.fhg.iais.roberta.syntax.action.motor.differential.CurveAction;
 import de.fhg.iais.roberta.syntax.action.motor.differential.DriveAction;
 import de.fhg.iais.roberta.syntax.action.motor.differential.MotorDriveStopAction;
 import de.fhg.iais.roberta.syntax.action.motor.differential.TurnAction;
+import de.fhg.iais.roberta.syntax.action.serial.SerialWriteAction;
 import de.fhg.iais.roberta.syntax.action.sound.PlayFileAction;
 import de.fhg.iais.roberta.syntax.action.sound.PlayNoteAction;
 import de.fhg.iais.roberta.syntax.action.sound.ToneAction;
@@ -78,7 +79,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     protected int warningCount = 0;
     protected Configuration robotConfiguration;
 
-    public AbstractProgramValidatorVisitor(Configuration robotConfiguration) {
+    public AbstractProgramValidatorVisitor(Configuration robotConfiguration, BlocklyDropdownFactory blocklyDdf) {
         this.robotConfiguration = robotConfiguration;
     }
 
@@ -91,28 +92,28 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
                 phrase.visit(this);
             }
         }
-        this.checkedProgram = phrasesSet;
+        checkedProgram = phrasesSet;
     }
 
     /**
      * @return the checkedProgram
      */
     public ArrayList<ArrayList<Phrase<Void>>> getCheckedProgram() {
-        return this.checkedProgram;
+        return checkedProgram;
     }
 
     /**
      * @return the countErrors
      */
     public int getErrorCount() {
-        return this.errorCount;
+        return errorCount;
     }
 
     /**
      * @return the warningCount
      */
     public int getWarningCount() {
-        return this.warningCount;
+        return warningCount;
     }
 
     protected abstract void checkSensorPort(ExternalSensor<Void> sensor);
@@ -120,9 +121,9 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     @Override
     public Void visitVar(Var<Void> var) {
         String name = var.getValue();
-        if ( !this.declaredVariables.contains(name) ) {
+        if ( !declaredVariables.contains(name) ) {
             var.addInfo(NepoInfo.error("VARIABLE_USED_BEFORE_DECLARATION"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -198,9 +199,9 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
 
     @Override
     public Void visitEncoderSensor(EncoderSensor<Void> encoderSensor) {
-        if ( this.robotConfiguration.optConfigurationComponent(encoderSensor.getPort()) == null ) {
+        if ( robotConfiguration.optConfigurationComponent(encoderSensor.getPort()) == null ) {
             encoderSensor.addInfo(NepoInfo.error("CONFIGURATION_ERROR_MOTOR_MISSING"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -349,7 +350,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     public Void visitBluetoothReceiveAction(BluetoothReceiveAction<Void> bluetoothReceiveAction) {
         if ( bluetoothReceiveAction.getConnection() instanceof EmptyExpr ) {
             bluetoothReceiveAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_SENSOR_WRONG"));
-            this.errorCount++;
+            errorCount++;
         }
         bluetoothReceiveAction.getConnection().visit(this);
         return null;
@@ -365,7 +366,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     public Void visitBluetoothSendAction(BluetoothSendAction<Void> bluetoothSendAction) {
         if ( bluetoothSendAction.getConnection() instanceof EmptyExpr ) {
             bluetoothSendAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_SENSOR_WRONG"));
-            this.errorCount++;
+            errorCount++;
         }
         bluetoothSendAction.getConnection().visit(this);
         bluetoothSendAction.getMsg().visit(this);
@@ -394,16 +395,16 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     }
 
     protected void checkMotorPort(MoveAction<Void> action) {
-        if ( this.robotConfiguration.optConfigurationComponent(action.getUserDefinedPort()) == null ) {
+        if ( robotConfiguration.optConfigurationComponent(action.getUserDefinedPort()) == null ) {
             action.addInfo(NepoInfo.error("CONFIGURATION_ERROR_MOTOR_MISSING"));
-            this.errorCount++;
+            errorCount++;
         }
     }
 
     private void checkLeftRightMotorPort(Phrase<Void> driveAction) {
         if ( validNumberOfMotors(driveAction) ) {
-            ConfigurationComponent leftMotor = this.robotConfiguration.getFirstMotor(SC.LEFT);
-            ConfigurationComponent rightMotor = this.robotConfiguration.getFirstMotor(SC.RIGHT);
+            ConfigurationComponent leftMotor = robotConfiguration.getFirstMotor(SC.LEFT);
+            ConfigurationComponent rightMotor = robotConfiguration.getFirstMotor(SC.RIGHT);
             checkLeftMotorPresenceAndRegulation(driveAction, leftMotor);
             checkRightMotorPresenceAndRegulation(driveAction, rightMotor);
             checkMotorRotationDirection(driveAction, leftMotor, rightMotor);
@@ -413,7 +414,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     private void checkRightMotorPresenceAndRegulation(Phrase<Void> driveAction, ConfigurationComponent rightMotor) {
         if ( rightMotor == null ) {
             driveAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_MOTOR_RIGHT_MISSING"));
-            this.errorCount++;
+            errorCount++;
         } else {
             checkIfMotorRegulated(driveAction, rightMotor, "CONFIGURATION_ERROR_MOTOR_RIGHT_UNREGULATED");
         }
@@ -422,7 +423,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     private void checkLeftMotorPresenceAndRegulation(Phrase<Void> driveAction, ConfigurationComponent leftMotor) {
         if ( leftMotor == null ) {
             driveAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_MOTOR_LEFT_MISSING"));
-            this.errorCount++;
+            errorCount++;
         } else {
             checkIfMotorRegulated(driveAction, leftMotor, "CONFIGURATION_ERROR_MOTOR_LEFT_UNREGULATED");
         }
@@ -431,19 +432,19 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     private void checkMotorRotationDirection(Phrase<Void> driveAction, ConfigurationComponent m1, ConfigurationComponent m2) {
         if ( (m1 != null) && (m2 != null) && !m1.getProperty(SC.MOTOR_REVERSE).equals(m2.getProperty(SC.MOTOR_REVERSE)) ) {
             driveAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_MOTORS_ROTATION_DIRECTION"));
-            this.errorCount++;
+            errorCount++;
         }
     }
 
     private boolean validNumberOfMotors(Phrase<Void> driveAction) {
-        if ( this.robotConfiguration.getMotors(SC.RIGHT).size() != 1 ) {
+        if ( robotConfiguration.getMotors(SC.RIGHT).size() != 1 ) {
             driveAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_MULTIPLE_RIGHT_MOTORS"));
-            this.errorCount++;
+            errorCount++;
             return false;
         }
-        if ( this.robotConfiguration.getMotors(SC.LEFT).size() > 1 ) {
+        if ( robotConfiguration.getMotors(SC.LEFT).size() > 1 ) {
             driveAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_MULTIPLE_LEFT_MOTORS"));
-            this.errorCount++;
+            errorCount++;
             return false;
         }
         return true;
@@ -452,7 +453,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
     private void checkIfMotorRegulated(Phrase<Void> driveAction, ConfigurationComponent motor, String errorMsg) {
         if ( !motor.getProperty(SC.MOTOR_REGULATION).equals(SC.TRUE) ) {
             driveAction.addInfo(NepoInfo.error(errorMsg));
-            this.errorCount++;
+            errorCount++;
         }
     }
 
@@ -461,7 +462,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
             NumConst<Void> speedNumConst = (NumConst<Void>) speed;
             if ( Integer.valueOf(speedNumConst.getValue()) == 0 ) {
                 action.addInfo(NepoInfo.warning("MOTOR_SPEED_0"));
-                this.warningCount++;
+                warningCount++;
             }
         }
     }
@@ -475,7 +476,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
             boolean sameSpeed = Math.abs(speedLeftNumConst) == Math.abs(speedRightNumConst); //NOSONAR : TODO: supply an delta of 0.1 (speed is in [0,100] ?
             if ( sameSpeed && (signLeft != signRight) && (signLeft != 0) && (signRight != 0) ) {
                 action.addInfo(NepoInfo.warning("BLOCK_NOT_EXECUTED"));
-                this.warningCount++;
+                warningCount++;
             }
         }
     }
@@ -491,7 +492,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         super.visitMethodReturn(methodReturn);
         if ( methodReturn.getReturnValue() instanceof EmptyExpr ) {
             methodReturn.addInfo(NepoInfo.error("ERROR_MISSING_RETURN"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -505,7 +506,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         }
         if ( oneParamEmpty ) {
             methodCall.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -515,16 +516,16 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         super.visitRepeatStmt(repeatStmt);
         if ( repeatStmt.getExpr() instanceof EmptyExpr ) {
             repeatStmt.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         } else if ( repeatStmt.getExpr() instanceof Unary ) {
             if ( ((Unary<Void>) repeatStmt.getExpr()).getExpr() instanceof EmptyExpr ) {
                 repeatStmt.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-                this.errorCount++;
+                errorCount++;
             }
         } else if ( repeatStmt.getExpr() instanceof Binary ) {
             if ( ((Binary<Void>) repeatStmt.getExpr()).getRight() instanceof EmptyExpr ) {
                 repeatStmt.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-                this.errorCount++;
+                errorCount++;
             }
         }
         return null;
@@ -550,7 +551,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         }
         if ( oneParamEmpty ) {
             indexOfFunct.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -560,7 +561,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         super.visitMathOnListFunct(mathOnListFunct);
         if ( mathOnListFunct.getParam().get(0) instanceof EmptyExpr ) {
             mathOnListFunct.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -570,7 +571,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         super.visitLengthOfIsEmptyFunct(lengthOfIsEmptyFunct);
         if ( lengthOfIsEmptyFunct.getParam().get(0) instanceof EmptyExpr ) {
             lengthOfIsEmptyFunct.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -584,7 +585,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         }
         if ( oneParamEmpty ) {
             listRepeat.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -594,7 +595,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         super.visitListGetIndex(listGetIndex);
         if ( listGetIndex.getParam().get(0) instanceof EmptyExpr ) {
             listGetIndex.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -604,7 +605,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         super.visitGetSubFunct(getSubFunct);
         if ( getSubFunct.getParam().get(0) instanceof EmptyExpr ) {
             getSubFunct.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -618,7 +619,7 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         }
         if ( oneParamEmpty ) {
             listSetIndex.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
@@ -628,13 +629,13 @@ public abstract class AbstractProgramValidatorVisitor extends AbstractCollectorV
         super.visitBinary(binary);
         if ( ((binary.getOp() == Binary.Op.MATH_CHANGE) || (binary.getOp() == Binary.Op.TEXT_APPEND)) && (binary.getLeft() instanceof EmptyExpr) ) {
             binary.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
 
         if ( ((binary.getOp() == Binary.Op.AND) || (binary.getOp() == Binary.Op.OR))
             && ((binary.getLeft() instanceof EmptyExpr) || (binary.getRight() instanceof EmptyExpr)) ) {
             binary.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }

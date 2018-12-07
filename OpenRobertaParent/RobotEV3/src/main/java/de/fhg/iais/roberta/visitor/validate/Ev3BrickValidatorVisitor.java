@@ -4,6 +4,7 @@ import java.util.List;
 
 import de.fhg.iais.roberta.components.Configuration;
 import de.fhg.iais.roberta.components.ConfigurationComponent;
+import de.fhg.iais.roberta.factory.BlocklyDropdownFactory;
 import de.fhg.iais.roberta.syntax.SC;
 import de.fhg.iais.roberta.syntax.action.ev3.ShowPictureAction;
 import de.fhg.iais.roberta.syntax.action.motor.MotorOnAction;
@@ -18,19 +19,19 @@ import de.fhg.iais.roberta.visitor.hardware.IEv3Visitor;
 
 public final class Ev3BrickValidatorVisitor extends AbstractBrickValidatorVisitor implements IEv3Visitor<Void> {
 
-    public Ev3BrickValidatorVisitor(Configuration brickConfiguration) {
-        super(brickConfiguration);
+    public Ev3BrickValidatorVisitor(Configuration brickConfiguration, BlocklyDropdownFactory blocklyDdf) {
+        super(brickConfiguration, blocklyDdf);
     }
 
     @Override
     public Void visitMotorOnAction(MotorOnAction<Void> motorOnAction) {
         super.visitMotorOnAction(motorOnAction);
         if ( motorOnAction.getInfos().getErrorCount() == 0 ) {
-            ConfigurationComponent usedConfigurationBlock = this.robotConfiguration.optConfigurationComponent(motorOnAction.getUserDefinedPort());
+            ConfigurationComponent usedConfigurationBlock = robotConfiguration.optConfigurationComponent(motorOnAction.getUserDefinedPort());
             boolean duration = motorOnAction.getParam().getDuration() != null;
             if ( usedConfigurationBlock == null ) {
                 motorOnAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_ACTOR_MISSING"));
-                this.errorCount++;
+                errorCount++;
             } else {
                 if ( SC.OTHER.equals(usedConfigurationBlock.getComponentType()) && duration ) {
                     motorOnAction.addInfo(NepoInfo.error("CONFIGURATION_ERROR_OTHER_NOT_SUPPORTED"));
@@ -67,7 +68,7 @@ public final class Ev3BrickValidatorVisitor extends AbstractBrickValidatorVisito
     @Override
     public Void visitCompassSensor(CompassSensor<Void> compassSensor) {
         super.visitCompassSensor(compassSensor);
-        if ( this.robotConfiguration.getRobotName().equals("ev3dev") && (compassSensor.getMode().equals(SC.CALIBRATE)) ) {
+        if ( robotConfiguration.getRobotName().equals("ev3dev") && (compassSensor.getMode().equals(SC.CALIBRATE)) ) {
             compassSensor.addInfo(NepoInfo.warning("BLOCK_NOT_EXECUTED"));
         }
         return null;
@@ -76,7 +77,7 @@ public final class Ev3BrickValidatorVisitor extends AbstractBrickValidatorVisito
     @Override
     public Void visitSayTextAction(SayTextAction<Void> sayTextAction) {
         super.visitSayTextAction(sayTextAction);
-        if ( this.robotConfiguration.getRobotName().equals("ev3lejosV0") ) {
+        if ( robotConfiguration.getRobotName().equals("ev3lejosV0") ) {
             sayTextAction.addInfo(NepoInfo.warning("BLOCK_NOT_EXECUTED"));
         }
         return null;

@@ -25,22 +25,22 @@ public class MicrobitFactory extends AbstractMbedFactory {
 
     @Override
     public ICompilerWorkflow getRobotCompilerWorkflow() {
-        return new MicrobitCompilerWorkflow(this.pluginProperties);
+        return new MicrobitCompilerWorkflow(pluginProperties);
     }
 
     @Override
     public ICompilerWorkflow getSimCompilerWorkflow() {
-        return new MbedSimCompilerWorkflow(this.pluginProperties);
+        return new MbedSimCompilerWorkflow(pluginProperties);
     }
 
     @Override
     public AbstractSimValidatorVisitor getSimProgramCheckVisitor(Configuration brickConfiguration) {
-        return new MicrobitSimValidatorVisitor(brickConfiguration);
+        return new MicrobitSimValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override
     public AbstractProgramValidatorVisitor getRobotProgramCheckVisitor(Configuration brickConfiguration) {
-        return new MbedBoardValidatorVisitor(brickConfiguration);
+        return new MbedBoardValidatorVisitor(brickConfiguration, blocklyDropdown2EnumFactory);
     }
 
     @Override

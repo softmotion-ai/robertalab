@@ -1,6 +1,7 @@
 package de.fhg.iais.roberta.syntax.check;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -29,8 +30,8 @@ public class CheckVisitorTest {
 
     class TestProgramCheckVisitor extends AbstractProgramValidatorVisitor {
 
-        public TestProgramCheckVisitor(Configuration brickConfiguration) {
-            super(brickConfiguration);
+        public TestProgramCheckVisitor(Configuration brickConfiguration, Map<String, String> map) {
+            super(brickConfiguration, null);
         }
 
         @Override
@@ -104,7 +105,7 @@ public class CheckVisitorTest {
     public void check_noLoops_returnsEmptyMap() throws Exception {
         ArrayList<ArrayList<Phrase<Void>>> phrases = this.h.generateASTs("/visitors/invalide_use_of_variable.xml");
 
-        TestProgramCheckVisitor checkVisitor = new TestProgramCheckVisitor(null);
+        TestProgramCheckVisitor checkVisitor = new TestProgramCheckVisitor(null, null);
         checkVisitor.check(phrases);
 
         Assert.assertEquals(1, checkVisitor.getErrorCount());

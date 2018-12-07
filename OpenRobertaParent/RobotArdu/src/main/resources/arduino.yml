@@ -66,3 +66,38 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.mbot.ReceiveIRAction
       type: [robCommunication_ir_receiveBlock]
+sensorTypes:
+  DIGITALOUT_SENSING: [DIGITALOUT]
+  ANALOGOUT_SENSING: [ANALOGOUT]
+  KEY_SENSING: [KEY]
+  MOTION_SENSING: [MOTION]
+  LIGHT_SENSING: [LIGHT]
+  INFRARED_SENSING: [INFRARED]
+  TEMPERATURE_SENSING: [TEMPERATURE]
+  HUMIDITY_SENSING: [HUMIDITY]
+  DROP_SENSING: [DROP]
+  PULSE_SENSING: [PULSE]
+  POTENTIOMETER_SENSING: [POTENTIOMETER]
+  MOISTURE_SENSING: [MOISTURE]
+  ULTRASONIC_SENSING: [ULTRASONIC]
+  RFID_SENSING: [RFID]
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+          

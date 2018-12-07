@@ -2,6 +2,7 @@ package de.fhg.iais.roberta.visitor.validate;
 
 import de.fhg.iais.roberta.components.Configuration;
 import de.fhg.iais.roberta.components.ConfigurationComponent;
+import de.fhg.iais.roberta.factory.BlocklyDropdownFactory;
 import de.fhg.iais.roberta.syntax.action.communication.BluetoothCheckConnectAction;
 import de.fhg.iais.roberta.syntax.action.communication.BluetoothConnectAction;
 import de.fhg.iais.roberta.syntax.action.communication.BluetoothReceiveAction;
@@ -17,13 +18,13 @@ import de.fhg.iais.roberta.typecheck.NepoInfo;
 
 public abstract class AbstractSimValidatorVisitor extends AbstractProgramValidatorVisitor {
 
-    public AbstractSimValidatorVisitor(Configuration brickConfiguration) {
-        super(brickConfiguration);
+    public AbstractSimValidatorVisitor(Configuration brickConfiguration, BlocklyDropdownFactory blocklyDdf) {
+        super(brickConfiguration, blocklyDdf);
     }
 
     @Override
     protected void checkSensorPort(ExternalSensor<Void> sensor) {
-        ConfigurationComponent usedSensor = this.robotConfiguration.optConfigurationComponent(sensor.getPort());
+        ConfigurationComponent usedSensor = robotConfiguration.optConfigurationComponent(sensor.getPort());
         if ( usedSensor == null ) {
             if ( sensor.getKind().hasName("INFRARED_SENSING") ) {
                 sensor.addInfo(NepoInfo.warning("SIM_CONFIGURATION_WARNING_WRONG_INFRARED_SENSOR_PORT"));

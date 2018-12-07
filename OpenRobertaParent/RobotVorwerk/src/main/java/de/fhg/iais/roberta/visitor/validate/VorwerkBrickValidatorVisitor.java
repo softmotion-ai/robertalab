@@ -1,6 +1,7 @@
 package de.fhg.iais.roberta.visitor.validate;
 
 import de.fhg.iais.roberta.components.Configuration;
+import de.fhg.iais.roberta.factory.BlocklyDropdownFactory;
 import de.fhg.iais.roberta.syntax.action.vorwerk.BrushOff;
 import de.fhg.iais.roberta.syntax.action.vorwerk.BrushOn;
 import de.fhg.iais.roberta.syntax.action.vorwerk.SideBrush;
@@ -12,8 +13,8 @@ import de.fhg.iais.roberta.visitor.hardware.IVorwerkVisitor;
 
 public final class VorwerkBrickValidatorVisitor extends AbstractBrickValidatorVisitor implements IVorwerkVisitor<Void> {
 
-    public VorwerkBrickValidatorVisitor(Configuration brickConfiguration) {
-        super(brickConfiguration);
+    public VorwerkBrickValidatorVisitor(Configuration brickConfiguration, BlocklyDropdownFactory blocklyDdf) {
+        super(brickConfiguration, blocklyDdf);
     }
 
     @Override

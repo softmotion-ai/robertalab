@@ -10,3 +10,9 @@ color:
   W_RED: "#FF0000"
   W_WHITE: "#FFFFFE"
   W_YELLOW: "#FFFF00"
+
+sensorTypes:
+  KEY_SENSING: [KEY]
+  INFRARED_SENSING: [INFRARED]
+  GYRO_SENSING: [GYRO]
+    

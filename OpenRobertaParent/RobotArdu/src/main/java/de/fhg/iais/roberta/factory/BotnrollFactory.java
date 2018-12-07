@@ -19,7 +19,7 @@ public class BotnrollFactory extends AbstractRobotFactory {
 
     @Override
     public ICompilerWorkflow getRobotCompilerWorkflow() {
-        return new BotnrollCompilerWorkflow(this.pluginProperties);
+        return new BotnrollCompilerWorkflow(pluginProperties);
     }
 
     @Override

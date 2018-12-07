@@ -1,6 +1,7 @@
 package de.fhg.iais.roberta.visitor.validate;
 
 import de.fhg.iais.roberta.components.Configuration;
+import de.fhg.iais.roberta.factory.BlocklyDropdownFactory;
 import de.fhg.iais.roberta.mode.action.mbed.DisplayImageMode;
 import de.fhg.iais.roberta.syntax.action.mbed.BothMotorsOnAction;
 import de.fhg.iais.roberta.syntax.action.mbed.BothMotorsStopAction;
@@ -38,8 +39,8 @@ import de.fhg.iais.roberta.visitor.hardware.IMbedVisitor;
 
 public final class MbedBoardValidatorVisitor extends AbstractBoardValidatorVisitor implements IMbedVisitor<Void> {
 
-    public MbedBoardValidatorVisitor(Configuration brickConfiguration) {
-        super(brickConfiguration);
+    public MbedBoardValidatorVisitor(Configuration brickConfiguration, BlocklyDropdownFactory blocklyDdf) {
+        super(brickConfiguration, blocklyDdf);
     }
 
     @Override
@@ -58,7 +59,7 @@ public final class MbedBoardValidatorVisitor extends AbstractBoardValidatorVisit
         displayImageAction.getValuesToDisplay().visit(this);
         if ( (displayImageAction.getDisplayImageMode() == DisplayImageMode.ANIMATION) && (displayImageAction.getValuesToDisplay() instanceof EmptyExpr) ) {
             displayImageAction.addInfo(NepoInfo.error("ERROR_MISSING_PARAMETER"));
-            this.errorCount++;
+            errorCount++;
         }
         return null;
     }
