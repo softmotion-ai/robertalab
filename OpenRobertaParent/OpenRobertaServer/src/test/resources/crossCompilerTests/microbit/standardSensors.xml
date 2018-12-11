@@ -115,8 +115,8 @@
 							<value name="VALUE">
 								<block type="robSensors_pin_getSample"
 									id="Yjl{pp@[M{D^7wnHoXb^" intask="true">
-									<mutation mode="PULSE_HIGH"></mutation>
-									<field name="MODE">PULSE_HIGH</field>
+									<mutation mode="PULSEHIGH"></mutation>
+									<field name="MODE">PULSEHIGH</field>
 									<field name="SENSORPORT">0</field>
 									<field name="SLOT"></field>
 								</block>
@@ -131,8 +131,8 @@
 							<value name="VALUE">
 								<block type="robSensors_pin_getSample"
 									id="}7tiQ7qE;udk#8xH|wWc" intask="true">
-									<mutation mode="PULSE_LOW"></mutation>
-									<field name="MODE">PULSE_LOW</field>
+									<mutation mode="PULSELOW"></mutation>
+									<field name="MODE">PULSELOW</field>
 									<field name="SENSORPORT">0</field>
 									<field name="SLOT"></field>
 								</block>

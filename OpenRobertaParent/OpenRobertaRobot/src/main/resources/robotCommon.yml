@@ -581,14 +581,6 @@ wait:
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
         sensor: PIN_PULSEHIGH
         mode: PULSEHIGH
-  PIN_PULSE_HIGH :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
-        sensor: PIN_PULSE_HIGH
-        mode: PULSE_HIGH
-  PIN_PULSE_LOW :
-        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
-        sensor: PIN_PULSE_LOW
-        mode: PULSE_LOW
   PIN_PULSELOW :
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
         sensor: PIN_PULSELOW
@@ -677,7 +669,7 @@ mode:
   light: [AMBIENTLIGHT,DEFAULT,LEFT,LIGHT,LIGHT_VALUE,RED,RIGHT,VALUE]
   moisture: [VALUE,PRESENCE,VALUE]
   pinpull: [DOWN,NONE,UP]
-  pinvalue: [ANALOG,DEFAULT,DIGITAL,PULSE_HIGH,PULSE_LOW]
+  pinvalue: [ANALOG,DEFAULT,DIGITAL,PULSEHIGH,PULSELOW]
   pulse: [VALUE]
   rfid: [PRESENCE,SERIAL,VALUE]
   detect: [NAMEONE,IDONE,IDALL,NAMEALL]

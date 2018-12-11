@@ -379,8 +379,8 @@
 							<value name="A">
 								<block type="robSensors_getSample"
 									id="h}SR7f8MN~X_^j_{cpJ6" intask="true">
-									<mutation input="PIN_PULSE_HIGH"></mutation>
-									<field name="SENSORTYPE">PIN_PULSE_HIGH</field>
+									<mutation input="PIN_PULSEHIGH"></mutation>
+									<field name="SENSORTYPE">PIN_PULSEHIGH</field>
 									<field name="SENSORPORT">0</field>
 									<field name="SLOT"></field>
 								</block>
@@ -403,8 +403,8 @@
 							<value name="A">
 								<block type="robSensors_getSample"
 									id="3`pQ*zSG11eF,[Q2AtC-" intask="true">
-									<mutation input="PIN_PULSE_LOW"></mutation>
-									<field name="SENSORTYPE">PIN_PULSE_LOW</field>
+									<mutation input="PIN_PULSELOW"></mutation>
+									<field name="SENSORTYPE">PIN_PULSELOW</field>
 									<field name="SENSORPORT">0</field>
 									<field name="SLOT"></field>
 								</block>
