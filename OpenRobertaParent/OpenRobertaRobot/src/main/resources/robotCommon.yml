@@ -529,6 +529,10 @@ wait:
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.InfraredSensor
         sensor: INFRARED
         mode: VALUE
+  INFRARED_REFLEXION :
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.InfraredSensor
+        sensor: INFRARED
+        mode: REFLEXION
   KEY_PRESSED :
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.KeysSensor
         sensor: KEY_PRESSED
