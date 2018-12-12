@@ -145,5 +145,6 @@ public class HelperEv3ForXmlTest extends AbstractHelperForXmlTest {
     public void compareExistingAndGeneratedJavaSource(String sourceCodeFilename, String xmlFilename, Configuration configuration) throws Exception {
         Assert.assertEquals(Util1.readResourceContent(sourceCodeFilename), generateJava(xmlFilename, configuration));
     }
+    
 
 }

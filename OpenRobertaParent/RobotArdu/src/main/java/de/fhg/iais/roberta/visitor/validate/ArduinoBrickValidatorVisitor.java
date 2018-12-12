@@ -15,7 +15,6 @@ import de.fhg.iais.roberta.syntax.action.sound.ToneAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.PinReadValueAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.PinWriteValueAction;
 import de.fhg.iais.roberta.syntax.actors.arduino.RelayAction;
-import de.fhg.iais.roberta.syntax.sensor.ExternalSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.DropSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.EncoderSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.HumiditySensor;
@@ -102,32 +101,6 @@ public final class ArduinoBrickValidatorVisitor extends AbstractBrickValidatorVi
     public Void visitEncoderSensor(EncoderSensor<Void> encoderSensor) {
         checkSensorPort(encoderSensor);
         return null;
-    }
-
-    @Override
-    protected void checkSensorPort(ExternalSensor<Void> sensor) {
-        ConfigurationComponent usedConfigurationBlock = robotConfiguration.optConfigurationComponent(sensor.getPort());
-        if ( usedConfigurationBlock == null ) {
-            sensor.addInfo(NepoInfo.error("CONFIGURATION_ERROR_SENSOR_MISSING"));
-            errorCount++;
-        } else {
-            switch ( usedConfigurationBlock.getComponentType() ) {
-                case "INFRARED_SENSING":
-                    if ( !usedConfigurationBlock.getComponentType().equals(SC.INFRARED) ) {
-                        sensor.addInfo(NepoInfo.error("CONFIGURATION_ERROR_SENSOR_WRONG"));
-                        errorCount++;
-                    }
-                    break;
-                case "GYRO_SENSING":
-                    if ( !usedConfigurationBlock.getComponentType().equals(SC.GYRO) ) {
-                        sensor.addInfo(NepoInfo.error("CONFIGURATION_ERROR_SENSOR_WRONG"));
-                        errorCount++;
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 
     @Override

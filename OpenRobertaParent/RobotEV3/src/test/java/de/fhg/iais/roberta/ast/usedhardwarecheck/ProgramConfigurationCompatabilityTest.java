@@ -10,8 +10,11 @@ import org.junit.Test;
 
 import de.fhg.iais.roberta.components.Configuration;
 import de.fhg.iais.roberta.components.ConfigurationComponent;
+import de.fhg.iais.roberta.factory.BlocklyDropdownFactory;
 import de.fhg.iais.roberta.syntax.BlocklyConstants;
 import de.fhg.iais.roberta.syntax.Phrase;
+import de.fhg.iais.roberta.util.PluginProperties;
+import de.fhg.iais.roberta.util.Util1;
 import de.fhg.iais.roberta.util.test.ev3.HelperEv3ForXmlTest;
 import de.fhg.iais.roberta.visitor.validate.AbstractBrickValidatorVisitor;
 import de.fhg.iais.roberta.visitor.validate.Ev3BrickValidatorVisitor;
@@ -38,10 +41,19 @@ public class ProgramConfigurationCompatabilityTest {
         Configuration brickConfiguration = builder.build();
         ArrayList<ArrayList<Phrase<Void>>> phrases = this.h.generateASTs("/visitors/program_config_compatibility.xml");
 
-        AbstractBrickValidatorVisitor programChecker = new Ev3BrickValidatorVisitor(brickConfiguration);
+        AbstractBrickValidatorVisitor programChecker = new Ev3BrickValidatorVisitor(brickConfiguration, makeBlocklyFactory());
         programChecker.check(phrases);
 
         Assert.assertEquals(4, programChecker.getErrorCount());
+
+    }
+
+    private BlocklyDropdownFactory makeBlocklyFactory() {
+
+        BlocklyDropdownFactory blocklyDropdownFactory =
+            new BlocklyDropdownFactory(new PluginProperties("ev3lejosv1", "", "", Util1.loadProperties("classpath:ev3lejosv1.properties")));
+
+        return blocklyDropdownFactory;
 
     }
 
@@ -74,7 +86,7 @@ public class ProgramConfigurationCompatabilityTest {
         Configuration brickConfiguration = builder.build();
         ArrayList<ArrayList<Phrase<Void>>> phrases = this.h.generateASTs("/visitors/program_config_compatibility_gyro_touch_ultra_color.xml");
 
-        AbstractBrickValidatorVisitor programChecker = new Ev3BrickValidatorVisitor(brickConfiguration);
+        AbstractBrickValidatorVisitor programChecker = new Ev3BrickValidatorVisitor(brickConfiguration, makeBlocklyFactory());
         programChecker.check(phrases);
 
         Assert.assertEquals(0, programChecker.getErrorCount());

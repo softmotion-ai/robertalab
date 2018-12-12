@@ -11,8 +11,11 @@ import org.junit.Test;
 
 import de.fhg.iais.roberta.components.Configuration;
 import de.fhg.iais.roberta.components.ConfigurationComponent;
+import de.fhg.iais.roberta.factory.BlocklyDropdownFactory;
 import de.fhg.iais.roberta.syntax.BlocklyConstants;
 import de.fhg.iais.roberta.syntax.Phrase;
+import de.fhg.iais.roberta.util.PluginProperties;
+import de.fhg.iais.roberta.util.Util1;
 import de.fhg.iais.roberta.util.test.ev3.HelperEv3ForXmlTest;
 import de.fhg.iais.roberta.visitor.validate.Ev3BrickValidatorVisitor;
 
@@ -37,6 +40,14 @@ public class Ev3RobProgramCheckVisitorTest {
         return builder.build();
     }
 
+    private static BlocklyDropdownFactory makeBlocklyFactory() {
+
+        PluginProperties pluginProperties =
+            new PluginProperties("robotName", "resourceDir", "tempDir", Util1.loadProperties("classpath:ev3lejosv1.properties"));
+
+        return new BlocklyDropdownFactory(pluginProperties);
+    }
+
     private static Map<String, String> createMap(String... args) {
         Map<String, String> m = new HashMap<>();
         for ( int i = 0; i < args.length; i += 2 ) {
@@ -49,7 +60,7 @@ public class Ev3RobProgramCheckVisitorTest {
     public void check_GlobalVariableUsedInUserCreatedFunction_returnsListWithOneElement() throws Exception {
         ArrayList<ArrayList<Phrase<Void>>> phrases = this.h.generateASTs("/visitors/MoveWithZeroSpeed.xml");
 
-        Ev3BrickValidatorVisitor checkVisitor = new Ev3BrickValidatorVisitor(makeConfiguration());
+        Ev3BrickValidatorVisitor checkVisitor = new Ev3BrickValidatorVisitor(makeConfiguration(), makeBlocklyFactory());
         checkVisitor.check(phrases);
         Assert.assertEquals(2, checkVisitor.getWarningCount());
 

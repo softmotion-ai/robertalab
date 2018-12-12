@@ -10,7 +10,6 @@ import de.fhg.iais.roberta.syntax.action.motor.MotorOnAction;
 import de.fhg.iais.roberta.syntax.action.motor.MotorStopAction;
 import de.fhg.iais.roberta.syntax.action.sound.PlayNoteAction;
 import de.fhg.iais.roberta.syntax.action.sound.ToneAction;
-import de.fhg.iais.roberta.syntax.sensor.ExternalSensor;
 import de.fhg.iais.roberta.syntax.sensor.generic.KeysSensor;
 import de.fhg.iais.roberta.typecheck.NepoInfo;
 
@@ -24,32 +23,6 @@ public final class WedoBrickValidatorVisitor<V> extends AbstractBrickValidatorVi
     public Void visitKeysSensor(KeysSensor<Void> keysSensor) {
         checkSensorPort(keysSensor);
         return null;
-    }
-
-    @Override
-    protected void checkSensorPort(ExternalSensor<Void> sensor) {
-        ConfigurationComponent usedConfigurationBlock = robotConfiguration.optConfigurationComponent(sensor.getPort());
-        if ( usedConfigurationBlock == null ) {
-            sensor.addInfo(NepoInfo.error("CONFIGURATION_ERROR_SENSOR_MISSING"));
-            errorCount++;
-        } else {
-            switch ( sensor.getMode() ) {
-                case "INFRARED_SENSING":
-                    if ( !usedConfigurationBlock.getComponentType().equals("INFRARED") ) {
-                        sensor.addInfo(NepoInfo.error("CONFIGURATION_ERROR_SENSOR_WRONG"));
-                        errorCount++;
-                    }
-                    break;
-                case "GYRO_SENSING":
-                    if ( !usedConfigurationBlock.getComponentType().equals("GYRO") ) {
-                        sensor.addInfo(NepoInfo.error("CONFIGURATION_ERROR_SENSOR_WRONG"));
-                        errorCount++;
-                    }
-                    break;
-                default:
-                    break;
-            }
-        }
     }
 
     @Override
