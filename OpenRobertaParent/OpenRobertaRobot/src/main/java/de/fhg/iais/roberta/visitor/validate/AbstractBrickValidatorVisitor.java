@@ -22,7 +22,7 @@ public abstract class AbstractBrickValidatorVisitor extends AbstractProgramValid
     }
 
     @Override
-    protected void checkSensorPort(ExternalSensor<Void> sensor) {
+    protected final void checkSensorPort(ExternalSensor<Void> sensor) {
         ConfigurationComponent usedSensor = robotConfiguration.optConfigurationComponent(sensor.getPort());
         String sensorType = sensor.getKind().getName();
         String[] validSensorStatementNames = sensorTypes.get(sensorType);
