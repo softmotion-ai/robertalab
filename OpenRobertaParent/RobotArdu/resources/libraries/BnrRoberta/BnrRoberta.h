@@ -34,7 +34,7 @@ class BnrRoberta
 		bool buttonIsPressed(int button);
 		byte *colorSensorRGB(byte colors[],int port);
 		int colorSensorLight(byte colors[], int port);
-		unsigned int colorSensorColor(int port);
+        unsigned int colorSensorColor(byte colors[], int port);
 		bool infraredSensorObstacle(int port);
 		bool infraredSensorPresence(int port);
 		float readBearing();
