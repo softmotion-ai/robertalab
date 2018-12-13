@@ -1,4 +1,4 @@
-include: "classpath:robotCommon.yml"
+include: "classpath:/robotCommon.yml"
 block:
   BRUSH_ON :
       category: ACTOR

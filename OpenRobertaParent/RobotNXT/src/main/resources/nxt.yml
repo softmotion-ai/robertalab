@@ -1,4 +1,4 @@
-include: "classpath:robotCommon.yml"
+include: "classpath:/robotCommon.yml"
 color:
   BLACK: "#000000"
   BLUE: "#0057A6"

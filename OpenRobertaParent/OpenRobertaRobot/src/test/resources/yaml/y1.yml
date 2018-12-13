@@ -1,4 +1,4 @@
-include: "classpath:yaml/y2.yml"
+include: "classpath:/yaml/y2.yml"
 k1: v1
 k2:
   k3: v3

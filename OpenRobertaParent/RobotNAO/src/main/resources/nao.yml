@@ -1,4 +1,4 @@
-include: "classpath:robotCommon.yml"
+include: "classpath:/robotCommon.yml"
 wait:
   FSR_VALUE :
     implementor: de.fhg.iais.roberta.syntax.sensor.nao.FsrSensor
