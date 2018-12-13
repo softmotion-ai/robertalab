@@ -9,6 +9,10 @@
 #include <util/delay.h>
 #include <bob3/utils.h>
 
+#ifndef _CLAMP
+#define _CLAMP(x, lower, upper) (( (x) > (upper) ) ? (upper) : ( (x) < (lower) ? (lower) : (x) ))
+#endif
+
 void setup();
 void loop();
 
