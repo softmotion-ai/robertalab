@@ -112,7 +112,7 @@ int _getFirstOccuranceOfElement(std::list<T> list, P value) {
         return i;
       }
     }
-    if ((P) (*iterator) != value) {
+    if ( !((P) (*iterator) == value) ) {
       return -1;
     }
 }
@@ -126,8 +126,8 @@ int _getLastOccuranceOfElement(std::list<T> &list, P value) {
         return i;
       }
     }
-    if ((P) (*iterator) != value) {
-      return -1;
+    if ( !((P) (*iterator) == value) ) {
+        return -1;
     }
 }
 
