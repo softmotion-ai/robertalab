@@ -162,4 +162,3 @@ block:
       category: SENSOR
       implementor: de.fhg.iais.roberta.syntax.sensor.nao.ElectricCurrentSensor
       type: [robSensors_electriccurrent_getSample]
-      
