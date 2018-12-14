@@ -1,0 +1,3 @@
+include: "classpath:ardu.yml"
+sensorTypes:
+  TOUCH_SENSING: [TOUCH]  

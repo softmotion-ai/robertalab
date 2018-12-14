@@ -1,0 +1,5 @@
+include: "classpath:ardu.yml"
+sensorTypes:  
+  ULTRASONIC_SENSING: [ULTRASONIC]
+  INFRARED_SENSING: [INFRARED]
+  LIGHT_SENSING: [LIGHT]
