@@ -417,6 +417,10 @@ wait:
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.CompassSensor
         sensor: COMPASS
         mode: ANGLE
+  COMPASS_COMPASS :
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.CompassSensor
+        sensor: COMPASS
+        mode: COMPASS
   DROP_OFF_DISTANCE :
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.DropSensor
         sensor: DROP_OFF
@@ -533,6 +537,14 @@ wait:
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.InfraredSensor
         sensor: INFRARED
         mode: REFLEXION
+  IRSEEKER_MODULATED :
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.IRSeekerSensor
+        sensor: IRSEEKER
+        mode: MODULATED
+  IRSEEKER_UNMODULATED :
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.IRSeekerSensor
+        sensor: IRSEEKER
+        mode: UNMODULATED
   KEY_PRESSED :
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.KeysSensor
         sensor: KEY_PRESSED
