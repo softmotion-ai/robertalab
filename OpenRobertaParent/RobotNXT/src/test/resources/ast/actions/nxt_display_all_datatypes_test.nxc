@@ -58,3 +58,4 @@ task main() {
     ColorOut(0, (MAXLINES - 1) * MAXLINES, SensorColor(S3, "COLOUR"));
     NumOut(0, (MAXLINES - 1) * MAXLINES, Sensor(S2));
 }
+

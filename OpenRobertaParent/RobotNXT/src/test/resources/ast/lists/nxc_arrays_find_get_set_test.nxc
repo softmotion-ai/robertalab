@@ -52,3 +52,4 @@ task main() {
     item5[sanitise_index(ArrayLen(item5), 0)] = INPUT_WHITECOLOR;
     item6[sanitise_index(ArrayLen(item6), 0)] = 0;
 }
+

@@ -36,3 +36,4 @@ int main()
     item2 = _getLastOccuranceOfElement(item6, MicroBitImage("0,255,0,255,0\n255,255,255,255,255\n255,255,255,255,255\n0,255,255,255,0\n0,0,255,0,0\n"));
     release_fiber();
 }
+

@@ -33,3 +33,4 @@ int main()
     item2 = (int) pow(1, 5) % ((int) pow(1, 5));
     release_fiber();
 }
+

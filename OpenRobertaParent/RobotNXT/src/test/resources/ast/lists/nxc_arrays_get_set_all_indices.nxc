@@ -22,3 +22,4 @@ task main() {
     item2 = item[sanitise_index(ArrayLen(item), ArrayLen(item) - 1)];
     item2 = item[sanitise_index(ArrayLen(item), 0)];
 }
+
