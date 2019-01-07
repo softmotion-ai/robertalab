@@ -46,6 +46,8 @@
 #endif
 
 
+int _LIGHT_SENSOR_MODE = 0; // 0 - non initialised, 1 - reflective, 2 - ambient
+
 
 //sensor functions
 
@@ -116,6 +118,7 @@ int SensorLight(int port, string mode){
   } else {
     SetSensorType(port, SENSOR_TYPE_LIGHT_ACTIVE);
   }
+  ResetSensor(port);
   return Sensor(port);
 }
 
@@ -778,4 +781,17 @@ int sanitise_index(int array_length, int index) {
             Wait(15);
         }
     }
+}
+
+int _readLightSensor(int port, int mode) {
+    if (mode != _LIGHT_SENSOR_MODE) {
+        if (mode == 1) {
+            SetSensorType(port, SENSOR_TYPE_LIGHT_ACTIVE);
+        } else if (mode == 2) {
+            SetSensorType(port, SENSOR_TYPE_LIGHT_INACTIVE);
+        }
+        _LIGHT_SENSOR_MODE = mode;
+        ResetSensor(port);
+    }
+    return Sensor(port);
 }
