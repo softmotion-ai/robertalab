@@ -13,7 +13,7 @@ create cached table USER (
   primary key (ID)
 );
 
-create table LOST_PASSWORD (
+create cached table LOST_PASSWORD (
     ID INTEGER not null,
     USER_ID INTEGER not null,
     URL_POSTFIX varchar(255),
@@ -21,7 +21,7 @@ create table LOST_PASSWORD (
     primary key (ID)
 );
 
-create table PENDING_EMAIL_CONFIRMATIONS (
+create cached table PENDING_EMAIL_CONFIRMATIONS (
     ID INTEGER not null,
     USER_ID INTEGER not null,
     URL_POSTFIX varchar(255),
