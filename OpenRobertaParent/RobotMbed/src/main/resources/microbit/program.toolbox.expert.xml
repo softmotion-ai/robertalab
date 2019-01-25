@@ -50,7 +50,7 @@
       </block>
     </category>
     <category name="TOOLBOX_PIN" svg="false">
-      <block type="mbedActions_write_to_pin">
+      <block type='mbedActions_write_to_pin'>
         <value name="VALUE">
           <block type="math_number">
             <field name="NUM">1</field>
@@ -66,9 +66,9 @@
     <block type="mbedSensors_timer_getSample"/>
     <block type="mbedSensors_timer_reset"/>
     <block type="mbedSensors_temperature_getSample"/>
-    <block type="mbedSensors_pin_isTouched"/>
-    <block type="mbedSensors_pin_getSample"/>
-    <block type="robSensors_accelerometer_getSample"/>
+    <block type='mbedSensors_pin_isTouched'/>
+    <block type='mbedSensors_pin_getSample'/>
+    <block type='robSensors_accelerometer_getSample'/>
   </category>
   <category name="TOOLBOX_CONTROL" svg="true">
     <category name="TOOLBOX_DECISION" svg="true">
@@ -201,11 +201,19 @@
         <block type="math_number"/>
       </value>
     </block>
+    <block type="robLists_repeat">
+      <value name="NUM">
+        <block type="math_number">
+          <field name="NUM">5</field>
+        </block>
+      </value>
+    </block>
     <block type="robLists_length"/>
     <block type="robLists_isEmpty"/>
     <block type="robLists_indexOf"/>
     <block type="robLists_getIndex"/>
     <block type="robLists_setIndex"/>
+    <block type="robLists_getSublist"/>
   </category>
   <category name="TOOLBOX_IMAGE" svg="true">
     <block type="mbedImage_image"/>

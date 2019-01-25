@@ -86,22 +86,8 @@
       <block type="robActions_brickLight_on"/>
       <block type="robActions_led_on">
         <value name="COLOR">
-          <block type="naoColour_rgb" id="}5Mo%q:TrW0j?sU1YvH~" intask="true">
-            <value name="RED">
-              <block type="math_number" id="*7Hv+KpK]L.uOa1IcZhz" intask="true">
-                <field name="NUM">120</field>
-              </block>
-            </value>
-            <value name="GREEN">
-              <block type="math_number" id="`(x8wbFu;0^%5ReLsE[a" intask="true">
-                <field name="NUM">120</field>
-              </block>
-            </value>
-            <value name="BLUE">
-              <block type="math_number" id="MC;w8o2dOx(i7UhoBGY=" intask="true">
-                <field name="NUM">120</field>
-              </block>
-            </value>
+          <block type="robColour_picker">
+            <field name="COLOUR">#cc0000</field>
           </block>
         </value>
       </block>
@@ -280,6 +266,30 @@
     <block type="robLists_getSublist"/>
   </category>
   <category name="TOOLBOX_COLOUR" svg="true">
+    <block type="robColour_picker">
+      <field name="COLOUR">#999999</field>
+    </block>
+    <block type="robColour_picker">
+      <field name="COLOUR">#cc0000</field>
+    </block>
+    <block type="robColour_picker">
+      <field name="COLOUR">#ff6600</field>
+    </block>
+    <block type="robColour_picker">
+      <field name="COLOUR">#ffcc33</field>
+    </block>
+    <block type="robColour_picker">
+      <field name="COLOUR">#33cc00</field>
+    </block>
+    <block type="robColour_picker">
+      <field name="COLOUR">#00cccc</field>
+    </block>
+    <block type="robColour_picker">
+      <field name="COLOUR">#3366ff</field>
+    </block>
+    <block type="robColour_picker">
+      <field name="COLOUR">#cc33cc</field>
+    </block>
     <block type="naoColour_rgb">
       <value name="RED">
         <block type="math_number" intask="true">
