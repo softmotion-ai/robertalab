@@ -1,5 +1,12 @@
 <toolbox_set id="toolbox" style="display: none">
   <category name="TOOLBOX_ACTION" svg="true">
+      <block type="robActions_serial_print">
+      <value name="OUT">
+        <block type="text">
+          <field name="TEXT">Hallo</field>
+        </block>
+      </value>
+    </block>
     <block type="robActions_play_tone">
       <value name="FREQUENCE">
         <block type="math_number">
@@ -12,35 +19,20 @@
         </block>
       </value>
     </block>
-    <block type="robActions_serial_print">
-      <value name="OUT">
-        <block type="text">
-          <field name="TEXT">Hallo</field>
-        </block>
-      </value>
-    </block>
     <block type="robActions_brickLight_on"/>
-    <block type="robActions_led_on">
-      <value name="COLOR">
-        <block type="robColour_picker">
-          <field name="COLOUR">#cc0000</field>
-        </block>
-      </value>
-    </block>
-    <block type="robActions_send_data_to_opensensemap">
-    </block>
+    <block type="robActions_send_data_to_opensensemap"/>
   </category>
    <category name="TOOLBOX_SENSOR" svg="true">
     <block type="robSensors_key_getSample"/>
     <block type="robSensors_light_getSample"/>
-    <block type="robSensors_timer_getSample"/>
-    <block type="robSensors_timer_reset"/>
     <block type="robSensors_potentiometer_getSample"/>
+    <block type="robSensors_sound_getSample"/>
+    <block type="robSensors_ultrasonic_getSample"/>
     <block type="robSensors_humidity_getSample"/>
     <block type="robSensors_temperature_getSample"/>
-    <block type="robSensors_ultrasonic_getSample"/>
-    <block type="robSensors_sound_getSample"/>
     <block type="robSensors_lightveml_getSample"/>
+    <block type="robSensors_timer_getSample"/>
+    <block type="robSensors_timer_reset"/>
   </category>
   <category name="TOOLBOX_CONTROL" svg="true">
     <block type="robControls_if"/>
@@ -54,6 +46,20 @@
         </block>
       </value>
     </block>
+    <block type="robControls_wait_for">
+        <value name="WAIT0">
+          <block type="logic_compare">
+            <value name="A">
+              <block type="robSensors_getSample"/>
+            </value>
+            <value name="B">
+              <block type="logic_boolean">
+                <field name="BOOL">TRUE</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
   </category>
   <category name="TOOLBOX_LOGIC" svg="true">
     <block type="logic_compare"/>
