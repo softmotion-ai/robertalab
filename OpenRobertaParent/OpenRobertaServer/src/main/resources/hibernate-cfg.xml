@@ -19,6 +19,7 @@
 		<property name="c3p0.timeout">7200</property>
 		<property name="c3p0.max_statements">100</property>
 		<property name="c3p0.idle_test_period">3600</property>
+		<property name="c3p0.testConnectionOnCheckout">true</property>
 
 		<mapping class="de.fhg.iais.roberta.persistence.bo.Program" />
 		<mapping class="de.fhg.iais.roberta.persistence.bo.Configuration" />
