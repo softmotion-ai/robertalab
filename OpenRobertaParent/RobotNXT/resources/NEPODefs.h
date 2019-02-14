@@ -531,13 +531,15 @@ inline float ArrMax(float arr[]) {
   }
   return max;
 }
-float ArrMean(float arr[]) {
+
+float ArrMean(float arr[], int length) {
   float sum = 0;
-  for(int i = 0; i < ArrayLen(arr); i++) {
+  for(int i = 0; i < length; i++) {
     sum += arr[i];
   }
-  return sum/ArrayLen(arr);
+  return sum/length;
 }
+
 inline void ArrInsertionSort(float &arr[]) {
   for (int i=1; i < ArrayLen(arr); i++) {
     int index = arr[i];
@@ -570,7 +572,7 @@ inline float ArrStandardDeviatioin(float arr[]) {
     return 0;
   }
   float variance = 0;
-  float mean = ArrMean(arr);
+  float mean = ArrMean(arr, ArrayLen(arr));
   for (int i = 0; i < ArrayLen(arr); i++) {
     variance += MathPow(arr[i] - mean, 2);
   }
