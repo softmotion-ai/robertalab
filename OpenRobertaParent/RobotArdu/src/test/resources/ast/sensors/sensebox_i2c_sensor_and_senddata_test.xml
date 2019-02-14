@@ -108,7 +108,7 @@
             </block>
             </value>
         </block>
-        <block type="robActions_send_data_to_opensensemap" id="-Yw;OU#0x,/t:8%N%^Sy" intask="true">
+        <block type="robActions_sendData" id="-Yw;OU#0x,/t:8%N%^Sy" intask="true">
             <mutation items="6"/>
             <value name="ADD0">
             <block type="robSensors_humidity_getSample" id="2Lh1q{eT%D`*O!:#fZ^P" intask="true">
