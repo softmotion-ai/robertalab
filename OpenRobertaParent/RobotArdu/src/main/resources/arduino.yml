@@ -70,3 +70,6 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.sensebox.SendDataAction
       type: [robActions_sendData]
+
+configuration:
+  SENSEBOX: [robBrick_senseBox-Brick]
