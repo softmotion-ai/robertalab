@@ -532,12 +532,16 @@ inline float ArrMax(float arr[]) {
   return max;
 }
 
-float ArrMean(float arr[], int length) {
+inline int idty(int id) {
+  return id;
+}
+
+inline float ArrMean(float arr[]) {
   float sum = 0;
-  for(int i = 0; i < length; i++) {
+  for(int i = 0; i < ArrayLen(arr); i++) {
     sum += arr[i];
   }
-  return sum/length;
+  return sum/idty(ArrayLen(arr));
 }
 
 inline void ArrInsertionSort(float &arr[]) {
@@ -552,7 +556,7 @@ inline void ArrInsertionSort(float &arr[]) {
   }
 }
 inline float ArrMedian(float arr[]) {
-  int n = ArrayLen(arr);
+  int n = idty(ArrayLen(arr));
   if (n == 0) {
     return 0;
   }
@@ -567,12 +571,12 @@ inline float ArrMedian(float arr[]) {
 }
 
 inline float ArrStandardDeviatioin(float arr[]) {
-  int n = ArrayLen(arr);
+  int n = idty(ArrayLen(arr));
   if (n == 0) {
     return 0;
   }
   float variance = 0;
-  float mean = ArrMean(arr, ArrayLen(arr));
+  float mean = ArrMean(arr);
   for (int i = 0; i < ArrayLen(arr); i++) {
     variance += MathPow(arr[i] - mean, 2);
   }
@@ -581,7 +585,7 @@ inline float ArrStandardDeviatioin(float arr[]) {
 }
 
 inline float ArrRand(float arr[]) {
-  int arrayInd = ArrayLen(arr) * Random(100) / 100;
+  int arrayInd = idty(ArrayLen(arr)) * Random(100) / 100;
   return arr[arrayInd - 1];
 }
 
@@ -615,20 +619,20 @@ inline int ArrFindFirstNum(float arr[], float item) {
   } else {
     do {
       i++;
-    } while((arr[i] != item) && (i != ArrayLen(arr)));
+    } while((arr[i] != item) && (i != idty(ArrayLen(arr))));
     return i;
   }
 }
 
 inline int ArrFindLastNum(float arr[], float item) {
   int i = 0;
-  if (arr[ArrayLen(arr) - 1] == item){
-    return ArrayLen(arr) - 1 - i;
+  if (arr[idty(ArrayLen(arr)) - 1] == item){
+    return idty(ArrayLen(arr)) - 1 - i;
   } else {
     do {
       i++;
-    } while((arr[ArrayLen(arr) - 1 - i] != item)&&(i != 0));
-      return ArrayLen(arr) - 1 - i;
+    } while((arr[idty(ArrayLen(arr)) - 1 - i] != item)&&(i != 0));
+    return idty(ArrayLen(arr)) - 1 - i;
   }
 }
 
@@ -639,20 +643,20 @@ inline int ArrFindFirstStr(string arr[], string item) {
   } else {
     do {
       i++;
-    } while((arr[i] != item) && (i != ArrayLen(arr)));
+    } while((arr[i] != item) && (i != idty(ArrayLen(arr))));
     return i;
   }
 }
 
 inline int ArrFindLastStr(string arr[], string item) {
   int i = 0;
-  if (arr[ArrayLen(arr) - 1] == item){
-    return ArrayLen(arr) - 1 - i;
+  if (arr[idty(ArrayLen(arr)) - 1] == item){
+    return idty(ArrayLen(arr)) - 1 - i;
   } else {
     do {
       i++;
-    } while((arr[ArrayLen(arr) - 1 - i] != item)&&(i != 0));
-      return ArrayLen(arr) - 1 - i;
+    } while((arr[idty(ArrayLen(arr)) - 1 - i] != item)&&(i != 0));
+      return idty(ArrayLen(arr)) - 1 - i;
   }
 }
 
@@ -663,25 +667,25 @@ inline int ArrFindFirstBool(bool arr[], bool item) {
   } else {
     do {
       i++;
-    } while((arr[i] != item) && (i != ArrayLen(arr)));
+    } while((arr[i] != item) && (i != idty(ArrayLen(arr))));
     return i;
   }
 }
 
 inline int ArrFindLastBool(bool arr[], bool item) {
   int i = 0;
-  if (arr[ArrayLen(arr) - 1] == item){
-    return ArrayLen(arr) - 1 - i;
+  if (arr[idty(ArrayLen(arr)) - 1] == item){
+    return idty(ArrayLen(arr)) - 1 - i;
   } else {
     do {
       i++;
-    } while((arr[ArrayLen(arr) - 1 - i] != item)&&(i != 0));
-      return ArrayLen(arr) - 1 - i;
+    } while((arr[idty(ArrayLen(arr)) - 1 - i] != item)&&(i != 0));
+      return idty(ArrayLen(arr)) - 1 - i;
   }
 }
 
 inline bool ArrIsEmpty(float arr[]){
-  if (ArrayLen(arr) == 0){
+  if (idty(ArrayLen(arr)) == 0){
     return true;
   } else {
     return false;
@@ -769,7 +773,24 @@ inline float SpeedTest(float speed){
     return abs(speed) < 100  ? speed : speed/abs(speed)*100;
 }
 
-int sanitise_index(int array_length, int index) {
+int sanitiseFromStart(int array_length, int index) {
+    if(index >= 0 && index < array_length) {
+        return index;
+    } else {
+        TextOut(0, (MAXLINES - 1) * MAXLINES, "Index out of bounds: ");
+        NumOut(0, (MAXLINES - 2) * MAXLINES, index);
+        TextOut(0, (MAXLINES - 1) * MAXLINES, "Press enter to continue.");
+        while (true) {
+            if ( ButtonPressed(BTNCENTER, false) == true ) {
+                Stop(true);
+            }
+            Wait(15);
+        }
+    }
+}
+
+int sanitiseFromEnd(int array_length, int from_end) {
+    int index = array_length - from_end;
     if(index >= 0 && index < array_length) {
         return index;
     } else {

@@ -11,15 +11,15 @@ task main() {
     float __item[] = {0, 0, 0};
     item = __item;
     item2 = 0;
-    item[sanitise_index(ArrayLen(item), 0)] = 0;
-    item[sanitise_index(ArrayLen(item), ArrayLen(item) - 0)] = 0;
-    item[sanitise_index(ArrayLen(item), 0)] = 0;
-    item[sanitise_index(ArrayLen(item), ArrayLen(item) - 1)] = 0;
-    item[sanitise_index(ArrayLen(item), 0)] = 0;
-    item2 = item[sanitise_index(ArrayLen(item), 0)];
-    item2 = item[sanitise_index(ArrayLen(item), ArrayLen(item) - 0)];
-    item2 = item[sanitise_index(ArrayLen(item), 0)];
-    item2 = item[sanitise_index(ArrayLen(item), ArrayLen(item) - 1)];
-    item2 = item[sanitise_index(ArrayLen(item), 0)];
+    item[sanitiseFromStart(ArrayLen(item), 0)] = 0;
+    item[sanitiseFromEnd(ArrayLen(item), -1 - 0)] = 0;
+    item[sanitiseFromStart(ArrayLen(item), 0)] = 0;
+    item[sanitiseFromEnd(ArrayLen(item), -1)] = 0;
+    item[sanitiseFromStart(ArrayLen(item), 0)] = 0;
+    item2 = item[sanitiseFromStart(ArrayLen(item), 0)];
+    item2 = item[sanitiseFromEnd(ArrayLen(item), -1 - 0)];
+    item2 = item[sanitiseFromStart(ArrayLen(item), 0)];
+    item2 = item[sanitiseFromEnd(ArrayLen(item), -1)];
+    item2 = item[sanitiseFromStart(ArrayLen(item), 0)];
 }
 

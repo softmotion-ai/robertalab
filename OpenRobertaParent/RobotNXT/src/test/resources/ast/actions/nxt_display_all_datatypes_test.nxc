@@ -48,11 +48,11 @@ task main() {
     NumOut(0, (MAXLINES - 1) * MAXLINES, (sqrt(213) + 213));
     BoolOut(0, (MAXLINES - 1) * MAXLINES, true && true);
     NumOut(0, (MAXLINES - 1) * MAXLINES, ( (213 + 213) ) == sqrt(213));
-    NumOut(0, (MAXLINES - 1) * MAXLINES, item6[sanitise_index(ArrayLen(item6), 0)]);
-    BoolOut(0, (MAXLINES - 1) * MAXLINES, item7[sanitise_index(ArrayLen(item7), 0)]);
-    TextOut(0, (MAXLINES - 1) * MAXLINES, item8[sanitise_index(ArrayLen(item8), 0)]);
-    NumOut(0, (MAXLINES - 1) * MAXLINES, item9[sanitise_index(ArrayLen(item9), 0)]);
-    NumOut(0, (MAXLINES - 1) * MAXLINES, item10[sanitise_index(ArrayLen(item10), 0)]);
+    NumOut(0, (MAXLINES - 1) * MAXLINES, item6[sanitiseFromStart(ArrayLen(item6), 0)]);
+    BoolOut(0, (MAXLINES - 1) * MAXLINES, item7[sanitiseFromStart(ArrayLen(item7), 0)]);
+    TextOut(0, (MAXLINES - 1) * MAXLINES, item8[sanitiseFromStart(ArrayLen(item8), 0)]);
+    NumOut(0, (MAXLINES - 1) * MAXLINES, item9[sanitiseFromStart(ArrayLen(item9), 0)]);
+    NumOut(0, (MAXLINES - 1) * MAXLINES, item10[sanitiseFromStart(ArrayLen(item10), 0)]);
     NumOut(0, (MAXLINES - 1) * MAXLINES, Sensor(S1));
     BoolOut(0, (MAXLINES - 1) * MAXLINES, ( ( true ) ? ( true ) : ( true) ));
     ColorOut(0, (MAXLINES - 1) * MAXLINES, SensorColor(S3, "COLOUR"));

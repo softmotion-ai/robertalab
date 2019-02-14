@@ -41,15 +41,15 @@ task main() {
     item2 = ArrFindLastNum(item5, INPUT_WHITECOLOR);
     item2 = ArrFindFirstNum(item6, 0);
     item2 = ArrFindLastNum(item6, 0);
-    item2 = item[sanitise_index(ArrayLen(item), 0)];
-    item7 = item3[sanitise_index(ArrayLen(item3), 0)];
-    item8 = item4[sanitise_index(ArrayLen(item4), 0)];
-    item9 = item5[sanitise_index(ArrayLen(item5), 0)];
-    item10 = item6[sanitise_index(ArrayLen(item6), 0)];
-    item[sanitise_index(ArrayLen(item), 0)] = 0;
-    item3[sanitise_index(ArrayLen(item3), 0)] = true;
-    item4[sanitise_index(ArrayLen(item4), 0)] = "";
-    item5[sanitise_index(ArrayLen(item5), 0)] = INPUT_WHITECOLOR;
-    item6[sanitise_index(ArrayLen(item6), 0)] = 0;
+    item2 = item[sanitiseFromStart(ArrayLen(item), 0)];
+    item7 = item3[sanitiseFromStart(ArrayLen(item3), 0)];
+    item8 = item4[sanitiseFromStart(ArrayLen(item4), 0)];
+    item9 = item5[sanitiseFromStart(ArrayLen(item5), 0)];
+    item10 = item6[sanitiseFromStart(ArrayLen(item6), 0)];
+    item[sanitiseFromStart(ArrayLen(item), 0)] = 0;
+    item3[sanitiseFromStart(ArrayLen(item3), 0)] = true;
+    item4[sanitiseFromStart(ArrayLen(item4), 0)] = "";
+    item5[sanitiseFromStart(ArrayLen(item5), 0)] = INPUT_WHITECOLOR;
+    item6[sanitiseFromStart(ArrayLen(item6), 0)] = 0;
 }
 
