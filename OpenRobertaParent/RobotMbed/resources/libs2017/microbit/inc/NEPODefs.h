@@ -104,7 +104,7 @@ void _insertListElementBeforeIndex(std::list<T> &list, unsigned index, P value) 
 }
 
 template <typename T, typename P>
-int _getFirstOccuranceOfElement(std::list<T> list, P value) {
+int _getFirstOccuranceOfElement(std::list<T> &list, P value) {
     int i = 0;
     auto iterator = list.begin();
     for(i = 0, iterator = list.begin(); iterator != list.end(); ++iterator, ++i) {
@@ -112,9 +112,7 @@ int _getFirstOccuranceOfElement(std::list<T> list, P value) {
         return i;
       }
     }
-    if ( !((P) (*iterator) == value) ) {
-      return -1;
-    }
+    return -1;
 }
 
 template <typename T, typename P>
@@ -123,12 +121,10 @@ int _getLastOccuranceOfElement(std::list<T> &list, P value) {
     auto iterator = list.rbegin();
     for(i = 0, iterator = list.rbegin(); iterator != list.rend(); ++iterator, ++i) {
       if ((P) (*iterator) == value) {
-        return i;
+        return list.size() - i - 1;
       }
     }
-    if ( !((P) (*iterator) == value) ) {
-        return -1;
-    }
+    return -1;
 }
 
 template <typename T>
@@ -136,11 +132,11 @@ std::list<T> &_getSubList(std::list<T> &list, int startIndex, int endIndex) {
     auto beginIterator = list.begin();
     advance(beginIterator, startIndex);
     auto endIterator = list.begin();
-    advance(endIterator, endIndex);
+    advance(endIterator, endIndex + 1);
     return *(new std::list<T>(beginIterator, endIterator));
 }
 
-double _getListSum(std::list<double> list) {
+double _getListSum(std::list<double> &list) {
     double result = 0;
     for(auto iterator = list.begin(); iterator != list.end(); ++iterator) {
         result += *iterator;
@@ -190,7 +186,7 @@ double _getListAverage(std::list<double> &list) {
     return sum / list.size();
 }
 
-double _getListStandardDeviation(std::list<double> list) {
+double _getListStandardDeviation(std::list<double> &list) {
     double mean = _getListSum(list) / list.size();
     double sum = 0;
     for(auto iterator = list.begin(); iterator != list.end(); ++iterator) {

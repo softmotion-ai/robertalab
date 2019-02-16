@@ -128,9 +128,7 @@ int _getFirstOccuranceOfElement(std::list<T> &list, P value) {
             return i;
         }
     }
-    if ((P) (*iterator) != value) {
-        return -1;
-    }
+    return -1;
 }
 
 template <typename T, typename P>
@@ -139,12 +137,10 @@ int _getLastOccuranceOfElement(std::list<T> &list, P value) {
     auto iterator = list.rbegin();
     for(i = 0, iterator = list.rbegin(); iterator != list.rend(); ++iterator, ++i) {
         if ((P) (*iterator) == value) {
-            return i;
+            return list.size() - i - 1;
         }
     }
-    if ((P) (*iterator) != value) {
-        return -1;
-    }
+    return -1;
 }
 
 template <typename T>
@@ -152,7 +148,7 @@ std::list<T> &_getSubList(std::list<T> &list, int startIndex, int endIndex) {
     auto beginIterator = list.begin();
     advance(beginIterator, startIndex);
     auto endIterator = list.begin();
-    advance(endIterator, endIndex);
+    advance(endIterator, endIndex + 1);
     return *(new std::list<T>(beginIterator, endIterator));
 }
 

@@ -37,25 +37,25 @@
 #include <array>
 
 inline double absD(double d) {
-    return d < 0.0 ? -d : d;
+	return d < 0.0 ? -d : d;
 }
 
 inline bool isWholeD(double d) {
-    return d == floor(d);
+	return d == floor(d);
 }
 
 inline bool isPrimeD(double d) {
-    if (!isWholeD(d)) {
-        return false;
-    }
-    int n = (int) d;
-    if ( n < 2 ) { return false; }
-    if ( n == 2 ) { return true; }
-    if ( n % 2 == 0 ) { return false; }
-    for ( int i = 3, s = (int)(sqrt( d )+1); i <= s; i += 2 ) {
-        if ( n % i == 0 ) { return false; }
-    }
-    return true;
+	if (!isWholeD(d)) {
+		return false;
+	}
+	int n = (int) d;
+	if ( n < 2 ) { return false; }
+	if ( n == 2 ) { return true; }
+	if ( n % 2 == 0 ) { return false; }
+	for ( int i = 3, s = (int)(sqrt( d )+1); i <= s; i += 2 ) {
+		if ( n % i == 0 ) { return false; }
+	}
+	return true;
 }
 
 template <typename T>
@@ -80,10 +80,10 @@ void _removeListElementByIndex(std::list<T> &list, unsigned index) {
 }
 
 /*
- * The only known situation where the cast of P to T would be needed is for int to double
- * in other cases T and P will be the same type. If only one template parameter is used
- * then the match void setListElementByIndex(std::list<double>, int, int) would not be possible
- */
+* The only known situation where the cast of P to T would be needed is for int to double
+* in other cases T and P will be the same type. If only one template parameter is used
+* then the match void setListElementByIndex(std::list<double>, int, int) would not be possible
+*/
 
 template <typename T, typename P>
 void _setListElementByIndex(std::list<T> &list, unsigned index, P value) {
@@ -108,13 +108,11 @@ int _getFirstOccuranceOfElement(std::list<T> &list, P value) {
     int i = 0;
     auto iterator = list.begin();
     for(i = 0, iterator = list.begin(); iterator != list.end(); ++iterator, ++i) {
-        if ((P) (*iterator) == value) {
-            return i;
-        }
+      if ((P) (*iterator) == value) {
+        return i;
+      }
     }
-    if ((P) (*iterator) != value) {
-        return -1;
-    }
+    return -1;
 }
 
 template <typename T, typename P>
@@ -122,13 +120,11 @@ int _getLastOccuranceOfElement(std::list<T> &list, P value) {
     int i = 0;
     auto iterator = list.rbegin();
     for(i = 0, iterator = list.rbegin(); iterator != list.rend(); ++iterator, ++i) {
-        if ((P) (*iterator) == value) {
-            return i;
-        }
+      if ((P) (*iterator) == value) {
+        return list.size() - i - 1;
+      }
     }
-    if ((P) (*iterator) != value) {
-        return -1;
-    }
+    return -1;
 }
 
 template <typename T>
@@ -136,11 +132,11 @@ std::list<T> &_getSubList(std::list<T> &list, int startIndex, int endIndex) {
     auto beginIterator = list.begin();
     advance(beginIterator, startIndex);
     auto endIterator = list.begin();
-    advance(endIterator, endIndex);
+    advance(endIterator, endIndex + 1);
     return *(new std::list<T>(beginIterator, endIterator));
 }
 
-double _getListSum(std::list<double> list) {
+double _getListSum(std::list<double> &list) {
     double result = 0;
     for(auto iterator = list.begin(); iterator != list.end(); ++iterator) {
         result += *iterator;
@@ -202,22 +198,22 @@ double _getListStandardDeviation(std::list<double> &list) {
 
 template <typename T, long unsigned S>
 std::array<T, S> _convertToArray(std::list<T> &list) {
-    auto iterator = list.begin();
-    std::array<T, S> result;
-    int i = 0;
-    for(auto iterator = list.begin(), i = 0; iterator != list.end(); ++iterator, ++i) {
-        result[i] = *iterator;
-    }
-    return result;
+  auto iterator = list.begin();
+  std::array<T, S> result;
+  int i = 0;
+  for(auto iterator = list.begin(), i = 0; iterator != list.end(); ++iterator, ++i) {
+    result[i] = *iterator;
+  }
+  return result;
 }
 
 template <typename T, long unsigned S>
 std::array<T, S> _convertToArray(std::initializer_list<T> &list) {
-    auto iterator = list.begin();
-    std::array<T, S> result;
-    int i = 0;
-    for(auto iterator = list.begin(), i = 0; iterator != list.end(); ++iterator, ++i) {
-        result[i] = *iterator;
-    }
-    return result;
+  auto iterator = list.begin();
+  std::array<T, S> result;
+  int i = 0;
+  for(auto iterator = list.begin(), i = 0; iterator != list.end(); ++iterator, ++i) {
+    result[i] = *iterator;
+  }
+  return result;
 }
