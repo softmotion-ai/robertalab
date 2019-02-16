@@ -28,6 +28,12 @@ progs:
     assign:
        exclude:
        remark: "simple assignment. For testing the test only"
+    listOperations:
+       decl: listOperations
+       exclude:
+          nxt: "no extendable lists"
+          bob3: "too small"
+       remark: "test of mutable lists"
     mathAndLists:
        exclude:
           bob3: ".text overflow. Test must be splitted"
