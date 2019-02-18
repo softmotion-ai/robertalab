@@ -1,8 +1,5 @@
-insert into ROBOT values (DEFAULT,'botnroll',now,null,0);
-commit;
-
-update PROGRAM set ROBOT_ID = (select ID from ROBOT where NAME='botnroll') where ROBOT_ID = 192;
-update CONFIGURATION set ROBOT_ID = (select ID from ROBOT where NAME='botnroll') where ROBOT_ID = 192;
+update PROGRAM set ROBOT_ID = (select ID from ROBOT where NAME='botnroll') where ROBOT_ID = (select ID from ROBOT where NAME='ardu');
+update CONFIGURATION set ROBOT_ID = (select ID from ROBOT where NAME='botnroll') where ROBOT_ID = (select ID from ROBOT where NAME='ardu');
 commit;
 
 update PROGRAM set PROGRAM_TEXT = replace(PROGRAM_TEXT, '"ardu"', '"botnroll"') where ROBOT_ID = (select ID from ROBOT where NAME='botnroll');
