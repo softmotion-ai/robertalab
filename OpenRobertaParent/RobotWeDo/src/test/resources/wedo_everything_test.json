@@ -132,7 +132,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_RED"
+      "value": 9
     },
     {
       "opc": "ledOnAction",

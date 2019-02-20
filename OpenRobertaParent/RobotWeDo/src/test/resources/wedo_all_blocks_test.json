@@ -390,7 +390,7 @@
                     {
                       "opc": "expr",
                       "expr": "COLOR_CONST",
-                      "value": "W_RED"
+                      "value": 9
                     },
                     {
                       "opc": "ledOnAction",
@@ -426,7 +426,7 @@
                 {
                   "opc": "expr",
                   "expr": "COLOR_CONST",
-                  "value": "W_RED"
+                  "value": 9
                 },
                 {
                   "opc": "ledOnAction",
@@ -564,7 +564,7 @@
           {
             "opc": "expr",
             "expr": "COLOR_CONST",
-            "value": "W_RED"
+            "value": 9
           },
           {
             "opc": "ledOnAction",
@@ -794,7 +794,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_PINK"
+      "value": 1
     },
     {
       "opc": "ledOnAction",
@@ -803,7 +803,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_PURPLE"
+      "value": 2
     },
     {
       "opc": "ledOnAction",
@@ -812,7 +812,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_BLUE"
+      "value": 3
     },
     {
       "opc": "ledOnAction",
@@ -821,7 +821,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_CYAN"
+      "value": 4
     },
     {
       "opc": "ledOnAction",
@@ -830,7 +830,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_LIGHTGREEN"
+      "value": 5
     },
     {
       "opc": "ledOnAction",
@@ -839,7 +839,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_GREEN"
+      "value": 6
     },
     {
       "opc": "ledOnAction",
@@ -848,7 +848,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_YELLOW"
+      "value": 7
     },
     {
       "opc": "ledOnAction",
@@ -857,7 +857,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_ORANGE"
+      "value": 8
     },
     {
       "opc": "ledOnAction",
@@ -866,7 +866,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_RED"
+      "value": 9
     },
     {
       "opc": "ledOnAction",
@@ -875,7 +875,7 @@
     {
       "opc": "expr",
       "expr": "COLOR_CONST",
-      "value": "W_WHITE"
+      "value": 10
     },
     {
       "opc": "ledOnAction",
