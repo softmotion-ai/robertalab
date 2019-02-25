@@ -21,6 +21,10 @@
       </statement>
     </block>
     <block type="robCommunication_sendBlock" id="151" inline="false">
+      <mutation datatype="String"/>
+      <field name="TYPE">String</field>
+      <field name="PROTOCOL">BLUETOOTH</field>
+      <data>ev3</data>
       <value name="sendData">
         <block type="text" id="158">
           <field name="TEXT"></field>

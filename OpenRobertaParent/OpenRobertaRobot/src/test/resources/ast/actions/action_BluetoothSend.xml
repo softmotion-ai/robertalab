@@ -1,40 +1,26 @@
-<block_set xmlns="http://de.fhg.iais.roberta.blockly"
-	robottype="ev3" xmlversion="" description="" tags="">
-	<instance x="97" y="7">
-		<block type="robControls_start" id="47" deletable="false">
-			<mutation declare="true"></mutation>
-			<field name="DEBUG">FALSE</field>
-			<statement name="ST">
-				<block type="robGlobalvariables_declare" id="122"
-					inline="true" deletable="false" movable="false">
-					<mutation next="false" declaration_type="Connection"></mutation>
-					<field name="VAR">variablenName2</field>
-					<field name="TYPE">Connection</field>
-					<value name="VALUE">
-						<block type="robCommunication_startConnection" id="129"
-							inline="true">
-							<value name="ADDRESS">
-								<block type="text" id="145">
-									<field name="TEXT"></field>
-								</block>
-							</value>
-						</block>
-					</value>
-				</block>
-			</statement>
-		</block>
-		<block type="robCommunication_sendBlock" id="151" inline="false">
-			<value name="sendData">
-				<block type="text" id="158">
-					<field name="TEXT"></field>
-				</block>
-			</value>
-			<value name="CONNECTION">
-				<block type="variables_get" id="155">
-					<mutation datatype="Connection"></mutation>
-					<field name="VAR">variablenName2</field>
-				</block>
-			</value>
-		</block>
-	</instance>
+<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="nxt" xmlversion="2.0" description="" tags="">
+  <instance x="384" y="50">
+    <block type="robControls_start" id="tw.kud}d)8Qv4PX|6%Pc" intask="true" deletable="false">
+      <mutation declare="false"/>
+      <field name="DEBUG">TRUE</field>
+    </block>
+    <block type="robCommunication_sendBlock" id="Q#a0r,;Tw}|ClUPvK^AV" intask="true">
+      <mutation datatype="Number"/>
+      <field name="TYPE">Number</field>
+      <field name="PROTOCOL">BLUETOOTH</field>
+      <field name="CHANNEL">5</field>
+      <data>nxt</data>
+      <value name="sendData">
+        <block type="math_number" id="b5W~r1_q:v{RLo5/.4#3" intask="true">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <value name="CONNECTION">
+        <block type="robCommunication_connection" id="P,y.OHV7G:~grr;{CE)7" intask="true">
+          <field name="CONNECTION">2</field>
+          <data>nxt</data>
+        </block>
+      </value>
+    </block>
+  </instance>
 </block_set>
