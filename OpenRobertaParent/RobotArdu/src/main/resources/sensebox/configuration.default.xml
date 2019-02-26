@@ -9,14 +9,29 @@
     </instance>
     <instance x="250" y="191">
         <block type="robConf_led" id="Tris)a2:6F0Y.;)LAiy|" intask="true" deletable="false">
-            <field name="NAME">R</field>
+            <field name="NAME">R1</field>
             <field name="INPUT">7</field>
         </block>
     </instance>
     <instance x="250" y="299">
         <block type="robConf_led" id="O)bMmWN5:W1`T:0!R@-a" intask="true" deletable="false">
-            <field name="NAME">G</field>
+            <field name="NAME">R2</field>
             <field name="INPUT">8</field>
+        </block>
+    </instance>
+    <instance x="250" y="407">
+        <block type="robConf_accelerometer" id="9L:HO||CjNS(,!YiSk[P" intask="true" deletable="false">
+          <field name="NAME">A</field>
+        </block>
+    </instance>
+    <instance x="250" y="460">
+        <block type="robConf_gyro" id="9L:HO||CjNS(,!YiSk[P" intask="true" deletable="false">
+          <field name="NAME">G</field>
+        </block>
+    </instance>
+        <instance x="250" y="520">
+        <block type="robConf_compass" id="9L:HO||CjNS(,!YiSk[P" intask="true" deletable="false">
+          <field name="NAME">C</field>
         </block>
     </instance>
 </block_set>
