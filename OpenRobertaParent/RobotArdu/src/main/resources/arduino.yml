@@ -75,3 +75,4 @@ configuration:
   SENSEBOX: [robBrick_senseBox-Brick]
   SENSEBOX_ACCELEROMETER: [robConf_accelerometer]
   SENSEBOX_COMPASS: [robConf_compass]
+  SENSEBOX_SDCARD: [robConf_sdcard]
