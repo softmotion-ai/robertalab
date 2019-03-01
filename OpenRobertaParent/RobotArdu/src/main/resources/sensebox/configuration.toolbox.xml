@@ -4,7 +4,8 @@
     <block type="robConf_rgbled"/>
     <block type="robConf_buzzer"/>
     <block type="robConf_wireless"/>
-    <block type="robConf_sdcard"/>     
+    <block type="robConf_sdcard"/>
+    <block type="robConf_lcdi2c"/>
   </category>
   <category name="TOOLBOX_SENSOR" svg="true">
     <block type="robConf_key" />
