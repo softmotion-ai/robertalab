@@ -38,7 +38,10 @@
 #define BCHANNEL(color) ( ((color << 11) >> 11 ) * 255 / 31)
 #endif
 
+#ifndef _SENSEBOX_INCLUDES
 #include <ArduinoSTL.h>
+#endif
+
 #include <list>
 #include <math.h>
 
