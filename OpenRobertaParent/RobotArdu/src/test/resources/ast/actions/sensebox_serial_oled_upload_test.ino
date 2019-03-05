@@ -88,12 +88,12 @@ void loop()
     Serial.println(_bmp280_T.getPressure());
     Serial.println(_tsl_V.getIlluminance());
     Serial.println(_veml_V.getUvIntensity());
-    _insertListElementBeforeIndex(values, values.size() - 1, _hdc1080_H.getHumidity());
-    _insertListElementBeforeIndex(values, values.size() - 1, _hdc1080_H.getTemperature());
-    _insertListElementBeforeIndex(values, values.size() - 1, _bmp280_T.getTemperature());
-    _insertListElementBeforeIndex(values, values.size() - 1, _bmp280_T.getPressure());
-    _insertListElementBeforeIndex(values, values.size() - 1, _tsl_V.getIlluminance());
-    _insertListElementBeforeIndex(values, values.size() - 1, _veml_V.getUvIntensity());
+    values.push_back(_hdc1080_H.getHumidity());
+    values.push_back(_hdc1080_H.getTemperature());
+    values.push_back(_bmp280_T.getTemperature());
+    values.push_back(_bmp280_T.getPressure());
+    values.push_back(_tsl_V.getIlluminance());
+    values.push_back(_veml_V.getUvIntensity());
     for ( double value : values ) {
         _display_L.setCursor(0, 0);
         _display_L.setTextSize(1);

@@ -47,7 +47,7 @@ int main()
     _insertListElementBeforeIndex(item, 0, 0);
     _insertListElementBeforeIndex(item, item.size() - 1 - 0, 0);
     _insertListElementBeforeIndex(item, 0, 0);
-    _insertListElementBeforeIndex(item, item.size() - 1, 0);
+    item.push_back(0);
     _insertListElementBeforeIndex(item, 0 /* absolutely random number */, 0);
     release_fiber();
 }
