@@ -29,8 +29,9 @@ uint8_t _bob3_revision;
 
 void Bob3::init() {
   uint8_t sig2 = boot_signature_byte_get(4);
-  if (sig2==0x0a) _bob3_revision = 102;  // V1.02
-  if (sig2==0x0f) _bob3_revision = 103;  // V1.03
+  // if (sig2==0x0a) _bob3_revision = 102;  // V1.02
+  // if (sig2==0x0f) _bob3_revision = 103;  // V1.03
+  _bob3_revision = 103;
   leds_init();
   analog_init();
   leds_set_RGBx(1, OFF);
