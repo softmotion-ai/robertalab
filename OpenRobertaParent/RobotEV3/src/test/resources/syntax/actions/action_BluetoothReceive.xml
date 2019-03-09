@@ -17,9 +17,13 @@
     <block type="robActions_display_text" id="173" inline="false">
       <value name="OUT">
         <block type="robCommunication_receiveBlock" id="187" inline="false">
+          <mutation datatype="String"/>
+          <field name="TYPE">String</field>
+          <field name="PROTOCOL">BLUETOOTH</field>
+          <field name="CHANNEL">-1</field>
           <value name="CONNECTION">
             <block type="variables_get" id="190">
-              <mutation datatype="Connection"></mutation>
+              <mutation datatype="Connection"/>
               <field name="VAR">variablenName2</field>
             </block>
           </value>
