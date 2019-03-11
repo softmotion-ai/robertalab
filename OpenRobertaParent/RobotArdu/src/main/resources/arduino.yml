@@ -70,9 +70,18 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.sensebox.SendDataAction
       type: [robActions_sendData]
+  PLOT_POINT_ACTION:
+      category: ACTOR
+      implementor: de.fhg.iais.roberta.syntax.actors.arduino.sensebox.PlotPointAction
+      type: [robactions_plot_point]
+  PLOT_CLEAR_ACTION:
+      category: ACTOR
+      implementor: de.fhg.iais.roberta.syntax.actors.arduino.sensebox.PlotClearAction
+      type: [robactions_plot_clear]
 
 configuration:
   SENSEBOX: [robBrick_senseBox-Brick]
   SENSEBOX_ACCELEROMETER: [robConf_accelerometer]
   SENSEBOX_COMPASS: [robConf_compass]
   SENSEBOX_SDCARD: [robConf_sdcard]
+  SENSEBOX_PLOTTING: [robConf_plotting]
