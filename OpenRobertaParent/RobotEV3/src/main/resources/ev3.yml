@@ -4,12 +4,3 @@ block:
     category: ACTOR
     implementor: de.fhg.iais.roberta.syntax.action.ev3.ShowPictureAction
     type: [robActions_display_picture,robActions_display_picture_new]
-color:
-  NONE: "#585858"
-  BLACK: "#000000"
-  BLUE: "#0057A6"
-  GREEN: "#00642E"
-  YELLOW: "#F7D117"
-  RED: "#B30006"
-  WHITE: "#FFFFFF"
-  BROWN: "#532115"
