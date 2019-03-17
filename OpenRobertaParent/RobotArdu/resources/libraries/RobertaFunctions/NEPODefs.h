@@ -22,10 +22,6 @@
 #define M_INFINITY 0x7f800000
 #endif
 
-#ifndef RGB(r, g, b)
-#define RGB(r, g, b) (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3))
-#endif
-
 #ifndef RCHANNEL(color)
 #define RCHANNEL(color) ((color >> 11) * 255 / 31)
 #endif
@@ -44,6 +40,10 @@
 
 #include <list>
 #include <math.h>
+
+inline unsigned RGB(unsigned r, unsigned g, unsigned b) {
+    return (((r & 0xF8) << 8) | ((g & 0xFC) << 3) | ((b & 0xF8) >> 3));
+}
 
 inline double absD(double d) {
   return d < 0.0 ? -d : d;
@@ -75,6 +75,16 @@ inline int _randomIntegerInRange(int val1, int val2){
 
 inline float _randomFloat(){
   return (float)rand()/(float)RAND_MAX;
+}
+
+template <typename T>
+std::list<T> &_createListRepeat(unsigned count, T e)
+{
+  std::list<T> &l = *(new std::list<T>);
+  for (unsigned i = 0; i< count; i++) {
+      l.push_back(e);
+  }
+  return l;
 }
 
 template <typename T>

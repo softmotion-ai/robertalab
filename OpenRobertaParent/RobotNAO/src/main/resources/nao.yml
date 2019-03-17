@@ -118,10 +118,6 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.action.nao.RastaDuration
       type: [naoActions_rasta]
-  COLOR_HEX_STRING:
-      category: EXPR
-      implementor: de.fhg.iais.roberta.syntax.lang.expr.nao.ColorHexString
-      type: [naoColour_picker]
   LEARN_FACE:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.action.nao.LearnFace

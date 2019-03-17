@@ -24,9 +24,9 @@ void setup()
 void loop()
 {
     Serial.println("Hallo");
-    _meRgbLed.setColor(2, 204, 0, 0);
+    _meRgbLed.setColor(2, 0xcc, 0x00, 0x00);
     _meRgbLed.show();
-    _meRgbLed.setColor(1, 204, 0, 0);
+    _meRgbLed.setColor(1, 0xcc, 0x00, 0x00);
     _meRgbLed.show();
     _meRgbLed.setColor(2, RCHANNEL(item), GCHANNEL(item), BCHANNEL(item));
     _meRgbLed.show();

@@ -15,10 +15,10 @@ void setup()
 {
     Serial.begin(9600); 
     pinMode(_led_L, OUTPUT);
-    item = {5, 5, 5, 5, 5};
-    item2 = {true, true, true, true, true};
-    item3 = {123, 123, 123, 123, 123};
-    item4 = {RGB(51, 204, 0), RGB(51, 204, 0), RGB(51, 204, 0), RGB(51, 204, 0), RGB(51, 204, 0)};
+    item = _createListRepeat(5,5);
+    item2= _createListRepeat(5,true);
+    item3= _createListRepeat(5,"123");
+    item4= _createListRepeat(5,RGB(0x33,0xcc,0x00));
 }
 
 void loop()

@@ -67,9 +67,9 @@ void loop()
     digitalWrite(_led_R1, HIGH);
     digitalWrite(_led_R2, HIGH);
     digitalWrite(_led_L, HIGH);
-    analogWrite(_led_red_R, 204);
-    analogWrite(_led_green_R, 0);
-    analogWrite(_led_blue_R, 0);
+    analogWrite(_led_red_R, 0xcc);
+    analogWrite(_led_green_R, 0x00);
+    analogWrite(_led_blue_R, 0x00);
     
     analogWrite(_led_red_R, 120);
     analogWrite(_led_green_R, 120);
