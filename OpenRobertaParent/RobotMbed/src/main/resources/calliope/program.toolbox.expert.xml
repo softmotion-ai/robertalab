@@ -175,6 +175,7 @@
     <block type="robSensors_pin_getSample"/>
     <block type="robSensors_gyro_getSample"/>
     <block type="robSensors_accelerometer_getSample"/>
+    <block type="robSensors_humidity_getSample"/>
   </category>
   <category name="TOOLBOX_CONTROL" svg="true">
     <category name="TOOLBOX_DECISION" svg="true">
