@@ -29,7 +29,7 @@ timer1 = microbit.running_time()
 
 item = [0, 0, 0]
 item2 = [True, True, True]
-item3 = ['', '', '']
+item3 = ["", "", ""]
 item4 = [microbit.Image.HEART, microbit.Image.HEART, microbit.Image.HEART]
 item5 = []
 item6 = []
