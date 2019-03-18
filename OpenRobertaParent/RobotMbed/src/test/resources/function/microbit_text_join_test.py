@@ -10,10 +10,10 @@ class ContinueLoop(Exception): pass
 
 timer1 = microbit.running_time()
 
-item = 'a'
+item = "a"
 def run():
     global timer1, item
-    item = "".join(str(arg) for arg in ['sadf', 'sdf'])
+    item = "".join(str(arg) for arg in ["sadf", "sdf"])
 
 def main():
     try:

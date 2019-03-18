@@ -14,7 +14,7 @@ timer1 = microbit.running_time()
 
 item = 0
 item2 = True
-item3 = ''
+item3 = ""
 def run():
     global timer1, item, item2, item3
     radio.config(group=0)
@@ -23,7 +23,7 @@ def run():
     radio.config(power=7)
     radio.send(str(True))
     radio.config(power=7)
-    radio.send(str('123'))
+    radio.send(str("123"))
     item = ((lambda x: 0 if x is None else float(x))(radio.receive()))
     item2 = ('True' == radio.receive())
     item3 = radio.receive()
