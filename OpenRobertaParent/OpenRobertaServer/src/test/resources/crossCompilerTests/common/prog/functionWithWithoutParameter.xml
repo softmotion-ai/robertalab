@@ -4,7 +4,7 @@
     <field name="VAR">two</field>
     <value name="VALUE">
         <block type="robLists_getIndex" id="chyaZC}%1Z{@?GRBATNm" intask="true">
-            <mutation statement="false" at="true" />
+            <mutation statement="false" at="true" datatype="Number" />
             <field name="MODE">GET</field>
             <field name="WHERE">FROM_START</field>
             <value name="VALUE">
@@ -34,7 +34,7 @@
             </value>
             <value name="B">
                 <block type="robProcedures_callreturn" id="kwx3Fa=Js%lueVonwo3z" intask="true">
-                    <mutation name="getNumber" output_type="Number" />
+                    <mutation name="get3" output_type="Number" />
                 </block>
             </value>
         </block>
@@ -78,60 +78,6 @@
 <block type="text_comment" id="*D?.oLi0,s.j0X[IE^lm" intask="true">
     <field name="TEXT">9</field>
 </block>
-<block type="robControls_if" id="oB7#cD7S*Nn3XsjDp9^H" intask="true">
-    <value name="IF0">
-        <block type="logic_compare" id="r6|3ZnL9,-=g.KNa=L-J" intask="true">
-            <field name="OP">EQ</field>
-            <value name="A">
-                <block type="robProcedures_callreturn" id="/=K|m`D0%Ac+xA+C/ai7" intask="true">
-                    <mutation name="getColor" output_type="Colour" />
-                </block>
-            </value>
-            <value name="B">
-                <block type="mbedColour_rgb" id="u(}]@ahj;d]fHR(:}N;6" intask="true">
-                    <value name="RED">
-                        <block type="math_number" id="6JxsJ9l]_L.ACz|]!P:?" intask="true">
-                            <field name="NUM">255</field>
-                        </block>
-                    </value>
-                    <value name="GREEN">
-                        <block type="math_number" id="Hv;(7XJ)6~GT,Mu0M1hp" intask="true">
-                            <field name="NUM">255</field>
-                        </block>
-                    </value>
-                    <value name="BLUE">
-                        <block type="math_number" id="~_0*:0i9Zfn/60y]oJ6Q" intask="true">
-                            <field name="NUM">0</field>
-                        </block>
-                    </value>
-                    <value name="WHITE">
-                        <block type="math_number" id=";[IcvM~Gj8:*_t0%]mjf" intask="true">
-                            <field name="NUM">255</field>
-                        </block>
-                    </value>
-                </block>
-            </value>
-        </block>
-    </value>
-    <statement name="DO0">
-        <block type="robMath_change" id="w;{.Ij-y|lzsJ4B!v|AR" intask="true">
-            <value name="VAR">
-                <block type="variables_get" id="GqPMeY/~5(xBc,=Y82/h" intask="true">
-                    <mutation datatype="Number" />
-                    <field name="VAR">sum</field>
-                </block>
-            </value>
-            <value name="DELTA">
-                <block type="math_number" id="%*rNiM=q/:0YK4FuJ(*G" intask="true">
-                    <field name="NUM">6</field>
-                </block>
-            </value>
-        </block>
-    </statement>
-</block>
-<block type="text_comment" id="2gO`-E5]o9t3cZl:3sFi" intask="true">
-    <field name="TEXT">15</field>
-</block>
 <block type="robMath_change" id="3khUNXL|9u,]D)b/es)U" intask="true">
     <value name="VAR">
         <block type="variables_get" id="EAjnju.UVQiXD`D:BdGg" intask="true">
@@ -141,12 +87,12 @@
     </value>
     <value name="DELTA">
         <block type="robLists_getIndex" id="B!u6-b-~P?Wl4ifFtutF" intask="true">
-            <mutation statement="false" at="true" />
+            <mutation statement="false" at="true" datatype="Number" />
             <field name="MODE">GET</field>
             <field name="WHERE">FROM_START</field>
             <value name="VALUE">
                 <block type="robProcedures_callreturn" id="4stg:b^kFYA-Im(`@3+A" intask="true">
-                    <mutation name="getList2" output_type="Array_Number">
+                    <mutation name="getListUpd1To8" output_type="Array_Number">
                         <arg name="x2" type="Array_Number" />
                     </mutation>
                     <value name="ARG0">
@@ -176,7 +122,7 @@
     </value>
 </block>
 <block type="text_comment" id="*3@T#=D;YG2UNG,-by;e" intask="true">
-    <field name="TEXT">23</field>
+    <field name="TEXT">17</field>
 </block>
 <block type="robMath_change" id="[wn)og+5gos%~(OK7o`W" intask="true">
     <value name="VAR">
@@ -187,7 +133,7 @@
     </value>
     <value name="DELTA">
         <block type="robProcedures_callreturn" id="vl2tk*O+@5LwM!]:P=wY" intask="true">
-            <mutation name="getNumber2" output_type="Number">
+            <mutation name="getParmPlus6" output_type="Number">
                 <arg name="x1" type="Number" />
             </mutation>
             <value name="ARG0">
@@ -199,49 +145,7 @@
     </value>
 </block>
 <block type="text_comment" id="4?5koT.vA]:W0kjNe*6I" intask="true">
-    <field name="TEXT">30</field>
-</block>
-<block type="robControls_if" id="ca#,6%.)ra_gkVkZ!~w6" intask="true">
-    <value name="IF0">
-        <block type="logic_compare" id="q0+K353k#!?A4-?j%Wuw" intask="true">
-            <field name="OP">EQ</field>
-            <value name="A">
-                <block type="robProcedures_callreturn" id="3wjFU1/a,[}DQSx?F.YF" intask="true">
-                    <mutation name="getColor2" output_type="Colour">
-                        <arg name="x4" type="Colour" />
-                    </mutation>
-                    <value name="ARG0">
-                        <block type="mbedColour_picker" id="pes98j%WQ.F`srW}{LzO" intask="true">
-                            <field name="COLOUR">#ff0000</field>
-                        </block>
-                    </value>
-                </block>
-            </value>
-            <value name="B">
-                <block type="mbedColour_picker" id="5h{[`vsQ5~3[S7d)T6Cq" intask="true">
-                    <field name="COLOUR">#006600</field>
-                </block>
-            </value>
-        </block>
-    </value>
-    <statement name="DO0">
-        <block type="robMath_change" id="0ZLKn4Hz!fYmqq!5}5,}" intask="true">
-            <value name="VAR">
-                <block type="variables_get" id=";~2D*4eKe{?Bi58Zo@I." intask="true">
-                    <mutation datatype="Number" />
-                    <field name="VAR">sum</field>
-                </block>
-            </value>
-            <value name="DELTA">
-                <block type="math_number" id="@|0wwe({5|Tjy[(~w7_s" intask="true">
-                    <field name="NUM">9</field>
-                </block>
-            </value>
-        </block>
-    </statement>
-</block>
-<block type="text_comment" id="L]p,:IP{zYAK.z7Of9lB" intask="true">
-    <field name="TEXT">39</field>
+    <field name="TEXT">24</field>
 </block>
 <block type="robControls_if" id="Flz1j`@^%]}Fm0*%,!^E" intask="true">
     <value name="IF0">
@@ -249,7 +153,7 @@
             <field name="OP">EQ</field>
             <value name="A">
                 <block type="robProcedures_callreturn" id="3ikbOIM!Lbdak4DNorx^" intask="true">
-                    <mutation name="getString2" output_type="String">
+                    <mutation name="getStringAppPP" output_type="String">
                         <arg name="x3" type="String" />
                     </mutation>
                     <value name="ARG0">
@@ -283,5 +187,5 @@
     </statement>
 </block>
 <block type="text_comment" id="|lNGf]349h/vqr0UsNw2" intask="true">
-    <field name="TEXT">50</field>
+    <field name="TEXT">35</field>
 </block>

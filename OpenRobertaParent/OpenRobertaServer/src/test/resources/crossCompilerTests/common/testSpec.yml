@@ -26,6 +26,7 @@ robots:
 
 progs:
     assign:
+       decl: default
        exclude:
        remark: "simple assignment. For testing the test only"
     functionWithWithoutParameter:
@@ -41,22 +42,24 @@ progs:
           bob3: "too small"
        remark: "test of mutable lists"
     mathAndLists:
+       decl: mathAndLists
        exclude:
           bob3: ".text overflow. Test must be splitted"
        remark: "list functions and math functions (sum of list items, ...) on lists"
     mathFunctions:
+       decl: mathFunctions
        exclude:
           bob3: ".text overflow. Test must be splitted"
        remark: "some math functions (min, sin, pi, ...), similar to mathLogic. For testing the test only"
     mathLogic-1:
+       decl: mathLogic
        exclude:
           bob3: ".text overflow. Test must be splitted"
        fragment: mathLogic
-       decl: mathLogic
        remark: "math functions (min, random, ...)"
     mathLogic-2:
+       decl: mathLogic
        exclude:
           bob3: ".text overflow. Test must be splitted"
        fragment: mathLogic
-       decl: mathLogic
        remark: "trigonometric functions (min, sin, pi, ...)"

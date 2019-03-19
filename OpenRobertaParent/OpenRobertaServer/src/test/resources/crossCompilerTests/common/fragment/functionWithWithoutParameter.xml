@@ -1,7 +1,8 @@
+
 <instance x="662" y="33">
     <block type="robProcedures_defreturn" id="(8IRh5*ICQj}b@lOWOtn" intask="true">
         <mutation declare="false" return_type="Number" />
-        <field name="NAME">getNumber</field>
+        <field name="NAME">get3</field>
         <field name="TYPE">Number</field>
         <repetitions>
             <value name="RETURN">
@@ -12,7 +13,7 @@
         </repetitions>
     </block>
 </instance>
-<instance x="1112" y="27">
+<instance x="1113" y="54">
     <block type="robProcedures_defreturn" id="_;N`S:oP|Zy^wNG,XOx)" intask="true">
         <mutation declare="false" return_type="Array_Number" />
         <field name="NAME">getList</field>
@@ -45,7 +46,7 @@
 <instance x="664" y="139">
     <block type="robProcedures_defreturn" id="^7{zya)BSq_7Q!w04G81" intask="true">
         <mutation declare="true" return_type="Number" />
-        <field name="NAME">getNumber2</field>
+        <field name="NAME">getParmPlus6</field>
         <field name="TYPE">Number</field>
         <repetitions>
             <statement name="ST">
@@ -74,10 +75,10 @@
         </repetitions>
     </block>
 </instance>
-<instance x="1115" y="178">
+<instance x="1112" y="201">
     <block type="robProcedures_defreturn" id="Zxg{3?j!4W*a:Ns[uZUc" intask="true">
         <mutation declare="true" return_type="Array_Number" />
-        <field name="NAME">getList2</field>
+        <field name="NAME">getListUpd1To8</field>
         <field name="TYPE">Array_Number</field>
         <repetitions>
             <statement name="ST">
@@ -119,107 +120,7 @@
         </repetitions>
     </block>
 </instance>
-<instance x="1010" y="417">
-    <block type="robProcedures_defreturn" id="=C1c3#u-[fkf7n]A_}7t" intask="true">
-        <mutation declare="false" return_type="Colour" />
-        <field name="NAME">getColor</field>
-        <field name="TYPE">Colour</field>
-        <repetitions>
-            <value name="RETURN">
-                <block type="mbedColour_rgb" id="b46D-Q{myJ29:EEZ!J)X" intask="true">
-                    <value name="RED">
-                        <block type="math_number" id="LEUf~{ic9SYt]@{|MH~N" intask="true">
-                            <field name="NUM">255</field>
-                        </block>
-                    </value>
-                    <value name="GREEN">
-                        <block type="math_number" id="}ZNK1-G1+RTLX2X=1XCH" intask="true">
-                            <field name="NUM">255</field>
-                        </block>
-                    </value>
-                    <value name="BLUE">
-                        <block type="math_number" id="{/XFT%{*JZUYPh5st=jw" intask="true">
-                            <field name="NUM">0</field>
-                        </block>
-                    </value>
-                    <value name="WHITE">
-                        <block type="math_number" id=")`};vb,Hk}TM%zg=_wtd" intask="true">
-                            <field name="NUM">255</field>
-                        </block>
-                    </value>
-                </block>
-            </value>
-        </repetitions>
-    </block>
-</instance>
-<instance x="1013" y="593">
-    <block type="robProcedures_defreturn" id="fvftWG/]OL|MlmJH|Gru" intask="true">
-        <mutation declare="true" return_type="Colour" />
-        <field name="NAME">getColor2</field>
-        <field name="TYPE">Colour</field>
-        <repetitions>
-            <statement name="ST">
-                <block type="robLocalVariables_declare" id="q7s0FU]KOOfq=YR65Oz+" intask="true" deletable="false" movable="false">
-                    <mutation next="false" declaration_type="Colour" />
-                    <field name="VAR">x4</field>
-                    <field name="TYPE">Colour</field>
-                </block>
-            </statement>
-            <statement name="STACK">
-                <block type="robControls_ifElse" id="b,P}3h8/dU|o@hqc)%80" intask="true">
-                    <mutation else="1" />
-                    <repetitions>
-                        <value name="IF0">
-                            <block type="logic_compare" id="8,wDnN5QN`64?0+ZRb%," intask="true">
-                                <field name="OP">EQ</field>
-                                <value name="A">
-                                    <block type="variables_get" id="W!f)@E}X`r6507Et|qT@" intask="true">
-                                        <mutation datatype="Colour" />
-                                        <field name="VAR">x4</field>
-                                    </block>
-                                </value>
-                                <value name="B">
-                                    <block type="mbedColour_picker" id="FW]pL+BZC?8KcLnS=/?%" intask="true">
-                                        <field name="COLOUR">#ff0000</field>
-                                    </block>
-                                </value>
-                            </block>
-                        </value>
-                        <statement name="DO0">
-                            <block type="variables_set" id="*GQUEZZ%H(NZqgbSwm[o" intask="true">
-                                <mutation datatype="Colour" />
-                                <field name="VAR">x4</field>
-                                <value name="VALUE">
-                                    <block type="mbedColour_picker" id="kD;M+Gkn:A.x=,k??gWt" intask="true">
-                                        <field name="COLOUR">#006600</field>
-                                    </block>
-                                </value>
-                            </block>
-                        </statement>
-                        <statement name="ELSE">
-                            <block type="variables_set" id="5kphAxm,]fCxYcjt2%?y" intask="true">
-                                <mutation datatype="Colour" />
-                                <field name="VAR">x4</field>
-                                <value name="VALUE">
-                                    <block type="mbedColour_picker" id="Vh0]ay/YzI@G53Bol]01" intask="true">
-                                        <field name="COLOUR">#ffff00</field>
-                                    </block>
-                                </value>
-                            </block>
-                        </statement>
-                    </repetitions>
-                </block>
-            </statement>
-            <value name="RETURN">
-                <block type="variables_get" id="?^,2`)!CxZIGGjGHFu{}" intask="true">
-                    <mutation datatype="Colour" />
-                    <field name="VAR">x4</field>
-                </block>
-            </value>
-        </repetitions>
-    </block>
-</instance>
-<instance x="757" y="775">
+<instance x="1110" y="414">
     <block type="robProcedures_defreturn" id="C}_0P,-^GVP,g~XCB7UM" intask="true">
         <mutation declare="false" return_type="String" />
         <field name="NAME">getString</field>
@@ -243,10 +144,10 @@
         </repetitions>
     </block>
 </instance>
-<instance x="763" y="915">
+<instance x="1110" y="541">
     <block type="robProcedures_defreturn" id="qJDi2p4K50n,aN/8nXQ%" intask="true">
         <mutation declare="true" return_type="String" />
-        <field name="NAME">getString2</field>
+        <field name="NAME">getStringAppPP</field>
         <field name="TYPE">String</field>
         <repetitions>
             <statement name="ST">
