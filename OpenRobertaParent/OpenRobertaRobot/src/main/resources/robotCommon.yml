@@ -71,10 +71,14 @@ block:
       category: SENSOR
       implementor: de.fhg.iais.roberta.syntax.sensor.generic.RfidSensor
       type: [robSensors_rfid_getSample]
-  PIN_VALUE :
+  PIN_READ_VALUE :
       category: SENSOR
       implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
-      type: [mbedSensors_pin_getSample,robsensors_pin_getsample]
+      type: [mbedSensors_pin_getSample,robsensors_pin_getsample,robsensors_out_getsample]
+  PIN_WRITE_VALUE :
+      category: ACTOR
+      implementor: de.fhg.iais.roberta.syntax.action.generic.PinWriteValueAction
+      type: [mbedActions_write_to_pin,robActions_write_pin]
   ACCELEROMETER_SENSING:
       category: SENSOR
       implementor: de.fhg.iais.roberta.syntax.sensor.generic.AccelerometerSensor
@@ -594,6 +598,14 @@ wait:
         sensor: PIN_ANALOG
         mode: ANALOG
   PIN_DIGITAL :
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
+        sensor: PIN_DIGITAL
+        mode: DIGITAL
+  OUT_ANALOG :
+        implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
+        sensor: PIN_ANALOG
+        mode: ANALOG
+  OUT_DIGITAL :
         implementor: de.fhg.iais.roberta.syntax.sensor.generic.PinGetValueSensor
         sensor: PIN_DIGITAL
         mode: DIGITAL

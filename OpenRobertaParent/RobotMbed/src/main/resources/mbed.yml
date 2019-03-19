@@ -44,10 +44,6 @@ block:
       category: SENSOR
       implementor: de.fhg.iais.roberta.syntax.sensor.mbed.RadioRssiSensor
       type: [mbedSensors_getRssi,robsensors_rssi_getsample]
-  PIN_WRITE_VALUE :
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.action.mbed.PinWriteValue
-      type: [mbedActions_write_to_pin]
   DISPLAY_SET_BRIGHTNESS :
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.action.mbed.DisplaySetBrightnessAction

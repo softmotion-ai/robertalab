@@ -1,13 +1,5 @@
 include: "classpath:/robotCommon.yml"
 block:
-  WRITE_TO_PIN:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.PinWriteValueAction
-      type: [robActions_write_pin]
-  READ_FROM_PIN:
-      category: ACTOR
-      implementor: de.fhg.iais.roberta.syntax.actors.arduino.PinReadValueAction
-      type: [robsensors_out_getsample]
   RELAY_ACTION:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.actors.arduino.RelayAction
@@ -31,7 +23,7 @@ block:
       type: [bob3Communication_receiveBlock]
   BOB3_SENSOR_GET_SAMPLE :
       category: SENSOR
-      implementor: de.fhg.iais.roberta.syntax.sensors.arduino.bob3.GetSampleSensor
+      implementor: de.fhg.iais.roberta.syntax.sensor.generic.GetSampleSensor
       type: [bob3Sensors_getSample_bob3 ]
   BOB3_REMEMBER :
       category: ACTOR
