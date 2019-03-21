@@ -22,7 +22,7 @@
 </block>
 <block type="variables_set" id="af)uU),39tROCCDF0:fS" intask="true">
     <mutation datatype="Number" />
-    <field name="VAR">sum</field>
+    <field name="VAR">summe</field>
     <value name="VALUE">
         <block type="math_arithmetic" id="Fn8KC{vZ[v+!W;Sm]oj!" intask="true">
             <field name="OP">ADD</field>
@@ -64,7 +64,7 @@
             <value name="VAR">
                 <block type="variables_get" id="M06d:8qcQ3rkL+[{M0Pj" intask="true">
                     <mutation datatype="Number" />
-                    <field name="VAR">sum</field>
+                    <field name="VAR">summe</field>
                 </block>
             </value>
             <value name="DELTA">
@@ -82,7 +82,7 @@
     <value name="VAR">
         <block type="variables_get" id="EAjnju.UVQiXD`D:BdGg" intask="true">
             <mutation datatype="Number" />
-            <field name="VAR">sum</field>
+            <field name="VAR">summe</field>
         </block>
     </value>
     <value name="DELTA">
@@ -128,7 +128,7 @@
     <value name="VAR">
         <block type="variables_get" id="RotMzQY!HSf,q*t0^wL." intask="true">
             <mutation datatype="Number" />
-            <field name="VAR">sum</field>
+            <field name="VAR">summe</field>
         </block>
     </value>
     <value name="DELTA">
@@ -175,7 +175,7 @@
             <value name="VAR">
                 <block type="variables_get" id="rvJ%nMpf+57i}Zt-r4hA" intask="true">
                     <mutation datatype="Number" />
-                    <field name="VAR">sum</field>
+                    <field name="VAR">summe</field>
                 </block>
             </value>
             <value name="DELTA">
