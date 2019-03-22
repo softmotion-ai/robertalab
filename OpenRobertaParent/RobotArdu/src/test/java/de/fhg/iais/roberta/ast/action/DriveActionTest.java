@@ -24,7 +24,7 @@ public class DriveActionTest {
     @Test
     public void getDirection() throws Exception {
         DriveAction<?> da = (DriveAction<?>) this.h.generateAST("/ast/actions/action_MotorDiffOnFor.xml");
-        Assert.assertEquals(DriveDirection.FOREWARD, da.getDirection());
+        Assert.assertEquals(DriveDirection.FORWARD, da.getDirection());
     }
 
     @Test

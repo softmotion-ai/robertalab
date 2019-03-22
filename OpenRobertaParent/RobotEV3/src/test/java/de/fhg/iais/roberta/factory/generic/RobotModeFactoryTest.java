@@ -141,7 +141,7 @@ public class RobotModeFactoryTest {
 
     @Test
     public void getDriveDirectionByAlternativeName() {
-        Assert.assertEquals(this.dropdownFactory.getDriveDirection("OFF"), DriveDirection.FOREWARD);
+        Assert.assertEquals(this.dropdownFactory.getDriveDirection("OFF"), DriveDirection.FORWARD);
     }
 
     @Test(expected = DbcException.class)

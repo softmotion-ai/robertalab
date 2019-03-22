@@ -870,7 +870,7 @@ public abstract class AbstractSimVisitor<V> implements ILanguageVisitor<V> {
         if ( isReverse ) {
             return DriveDirection.BACKWARD;
         }
-        return DriveDirection.FOREWARD;
+        return DriveDirection.FORWARD;
     }
 
     protected TurnDirection getTurnDirection(boolean isReverse) {

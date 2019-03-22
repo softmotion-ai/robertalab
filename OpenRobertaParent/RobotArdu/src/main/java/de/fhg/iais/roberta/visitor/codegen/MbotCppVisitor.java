@@ -246,7 +246,7 @@ public final class MbotCppVisitor extends AbstractCommonArduinoCppVisitor implem
         this.sb.append("_meDrive.drive(");
         driveAction.getParam().getSpeed().visit(this);
         this.sb.append(", ");
-        this.sb.append(driveAction.getDirection() == DriveDirection.FOREWARD ? 1 : 0);
+        this.sb.append(driveAction.getDirection() == DriveDirection.FORWARD ? 1 : 0);
         if ( duration != null ) {
             this.sb.append(", ");
             duration.getValue().visit(this);
@@ -262,7 +262,7 @@ public final class MbotCppVisitor extends AbstractCommonArduinoCppVisitor implem
         curveAction.getParamLeft().getSpeed().visit(this);
         this.sb.append(", ");
         curveAction.getParamRight().getSpeed().visit(this);
-        this.sb.append(", ").append(curveAction.getDirection() == DriveDirection.FOREWARD ? 1 : 0);
+        this.sb.append(", ").append(curveAction.getDirection() == DriveDirection.FORWARD ? 1 : 0);
         if ( duration != null ) {
             this.sb.append(", ");
             duration.getValue().visit(this);

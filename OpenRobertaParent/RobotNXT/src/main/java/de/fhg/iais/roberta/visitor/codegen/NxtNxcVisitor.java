@@ -691,7 +691,7 @@ public final class NxtNxcVisitor extends AbstractCppVisitor implements INxtVisit
 
         final boolean isDuration = curveAction.getParamLeft().getDuration() != null;
         final boolean confForward = leftMotor.getProperty(SC.MOTOR_REVERSE).equals(SC.OFF);
-        final boolean blockForward = curveAction.getDirection() == DriveDirection.FOREWARD;
+        final boolean blockForward = curveAction.getDirection() == DriveDirection.FORWARD;
 
         String methodName = isDuration ? "SteerDriveEx" : "SteerDrive";
 

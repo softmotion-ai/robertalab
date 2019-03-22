@@ -710,7 +710,7 @@ public abstract class AbstractWeDoVisitor<V> implements ILanguageVisitor<V>, IWe
     }
 
     protected DriveDirection getDriveDirection(boolean isReverse) {
-        return isReverse ? DriveDirection.BACKWARD : DriveDirection.FOREWARD;
+        return isReverse ? DriveDirection.BACKWARD : DriveDirection.FORWARD;
     }
 
     protected TurnDirection getTurnDirection(boolean isReverse) {

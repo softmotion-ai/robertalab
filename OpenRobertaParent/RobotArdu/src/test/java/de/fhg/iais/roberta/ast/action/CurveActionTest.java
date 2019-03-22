@@ -38,7 +38,7 @@ public class CurveActionTest {
     @Test
     public void getDirection() throws Exception {
         CurveAction<?> da = (CurveAction<?>) this.h.generateAST("/ast/actions/action_MotorCurveFor.xml");
-        Assert.assertEquals(DriveDirection.FOREWARD, da.getDirection());
+        Assert.assertEquals(DriveDirection.FORWARD, da.getDirection());
     }
 
     @Test

@@ -73,8 +73,8 @@ public final class NxtSimVisitor extends AbstractSimVisitor<Void> implements INx
         IDriveDirection leftMotorRotationDirection = DriveDirection.get(reverse);
 
         DriveDirection driveDirection = (DriveDirection) driveAction.getDirection();
-        if ( leftMotorRotationDirection != DriveDirection.FOREWARD ) {
-            driveDirection = getDriveDirection(driveAction.getDirection() == DriveDirection.FOREWARD);
+        if ( leftMotorRotationDirection != DriveDirection.FORWARD ) {
+            driveDirection = getDriveDirection(driveAction.getDirection() == DriveDirection.FORWARD);
         }
         this.sb.append(", CONST." + driveDirection);
         MotorDuration<Void> duration = driveAction.getParam().getDuration();
@@ -94,8 +94,8 @@ public final class NxtSimVisitor extends AbstractSimVisitor<Void> implements INx
         IDriveDirection leftMotorRotationDirection = DriveDirection.get(reverse);
 
         DriveDirection driveDirection = (DriveDirection) curveAction.getDirection();
-        if ( leftMotorRotationDirection != DriveDirection.FOREWARD ) {
-            driveDirection = getDriveDirection(curveAction.getDirection() == DriveDirection.FOREWARD);
+        if ( leftMotorRotationDirection != DriveDirection.FORWARD ) {
+            driveDirection = getDriveDirection(curveAction.getDirection() == DriveDirection.FORWARD);
         }
         this.sb.append(", CONST." + driveDirection);
         MotorDuration<Void> duration = curveAction.getParamLeft().getDuration();
@@ -112,7 +112,7 @@ public final class NxtSimVisitor extends AbstractSimVisitor<Void> implements INx
         String reverse = this.brickConfiguration.getFirstMotor(SC.LEFT).getProperty(SC.MOTOR_REVERSE);
         IDriveDirection leftMotorRotationDirection = DriveDirection.get(reverse);
         ITurnDirection turnDirection = turnAction.getDirection();
-        if ( leftMotorRotationDirection != DriveDirection.FOREWARD ) {
+        if ( leftMotorRotationDirection != DriveDirection.FORWARD ) {
             turnDirection = getTurnDirection(turnAction.getDirection() == TurnDirection.LEFT);
         }
         this.sb.append(", CONST." + turnDirection);
