@@ -14,7 +14,7 @@
 					intask="true">
 					<mutation name="PRESSED" />
 					<field name="MODE">PRESSED</field>
-					<field name="SENSORPORT">button_a</field>
+					<field name="SENSORPORT">A</field>
 				</block>
 			</value>
 		</block>

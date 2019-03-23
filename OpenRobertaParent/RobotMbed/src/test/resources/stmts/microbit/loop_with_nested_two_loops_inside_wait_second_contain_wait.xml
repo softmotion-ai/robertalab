@@ -22,7 +22,7 @@
 										intask="true" deletable="false" movable="false">
 										<mutation input="KEY_PRESSED"></mutation>
 										<field name="SENSORTYPE">KEY_PRESSED</field>
-										<field name="SENSORPORT">button_a</field><field name="SLOT" />
+										<field name="SENSORPORT">A</field><field name="SLOT" />
 										<data>microbit</data>
 									</block>
 								</value>
@@ -101,7 +101,7 @@
 										intask="true" deletable="false" movable="false">
 										<mutation input="KEY_PRESSED"></mutation>
 										<field name="SENSORTYPE">KEY_PRESSED</field>
-										<field name="SENSORPORT">button_a</field><field name="SLOT" />
+										<field name="SENSORPORT">A</field><field name="SLOT" />
 										<data>microbit</data>
 									</block>
 								</value>
@@ -149,7 +149,7 @@
 															intask="true" deletable="false" movable="false">
 															<mutation input="KEY_PRESSED"></mutation>
 															<field name="SENSORTYPE">KEY_PRESSED</field>
-															<field name="SENSORPORT">button_a</field><field name="SLOT" />
+															<field name="SENSORPORT">A</field><field name="SLOT" />
 															<data>microbit</data>
 														</block>
 													</value>
@@ -176,7 +176,7 @@
 															intask="true" deletable="false" movable="false">
 															<mutation input="KEY_PRESSED"></mutation>
 															<field name="SENSORTYPE">KEY_PRESSED</field>
-															<field name="SENSORPORT">button_a</field><field name="SLOT" />
+															<field name="SENSORPORT">A</field><field name="SLOT" />
 															<data>microbit</data>
 														</block>
 													</value>

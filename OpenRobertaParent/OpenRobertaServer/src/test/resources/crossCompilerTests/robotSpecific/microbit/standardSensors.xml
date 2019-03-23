@@ -148,7 +148,7 @@
 							id="q6dJJG[R/Xq!B[HC7G{c" intask="true">
 							<mutation mode="PRESSED"></mutation>
 							<field name="MODE">PRESSED</field>
-							<field name="SENSORPORT">button_a</field>
+							<field name="SENSORPORT">A</field>
 							<field name="SLOT"></field>
 						</block>
 					</value>
