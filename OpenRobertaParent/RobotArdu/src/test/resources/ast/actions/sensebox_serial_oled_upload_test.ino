@@ -15,34 +15,6 @@
 unsigned long _time = millis();
 
 std::list<double> values;
-int _led_R2 = 8;
-BMX055 _bmx055_A;
-
-int _getValueFromBmx(int axis, int mode) {
-    int _x_axis;
-    int _y_axis;
-    int _z_axis;
-    switch (mode) {
-        case 1:
-            _bmx055_A.getAcceleration(&_x_axis, &_y_axis, &_z_axis);
-            break;
-        case 2:
-            _bmx055_A.getRotation(&_x_axis, &_y_axis, &_z_axis);
-            break;
-        case 3:
-            _bmx055_A.getMagnet(&_x_axis, &_y_axis, &_z_axis);
-            break;
-    }
-    switch (axis) {
-        case 1:
-            return _x_axis;
-        case 2:
-            return _y_axis;
-        case 3:
-            return _z_axis;
-    }
-}
-
 char* _temperature = "111111111111111111111112";
 char* _pressure = "111111111111111111111113";
 char* _humidity = "111111111111111111111114";
@@ -57,13 +29,10 @@ OpenSenseMap _osm("111111111111111111111111", _bee_);
 HDC1080 _hdc1080_H;
 #define OLED_RESET 4
 Adafruit_SSD1306 _display_L(OLED_RESET);
-int _led_R1 = 7;
 
 void setup()
 {
     Serial.begin(9600); 
-    pinMode(_led_R2, OUTPUT);
-    _bmx055_A.begin();
     _bmp280_T.begin();
     _veml_V.begin();
     _tsl_V.begin();
@@ -76,7 +45,6 @@ void setup()
     _display_L.display();
     delay(100);
     _display_L.clearDisplay();
-    pinMode(_led_R1, OUTPUT);
     values = {};
 }
 

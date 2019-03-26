@@ -9,35 +9,7 @@ unsigned long _time = millis();
 
 unsigned int item;
 unsigned int item2;
-char* _ID1 = "";
 int _led_R2 = 8;
-BMX055 _bmx055_A;
-
-int _getValueFromBmx(int axis, int mode) {
-    int _x_axis;
-    int _y_axis;
-    int _z_axis;
-    switch (mode) {
-        case 1:
-            _bmx055_A.getAcceleration(&_x_axis, &_y_axis, &_z_axis);
-            break;
-        case 2:
-            _bmx055_A.getRotation(&_x_axis, &_y_axis, &_z_axis);
-            break;
-        case 3:
-            _bmx055_A.getMagnet(&_x_axis, &_y_axis, &_z_axis);
-            break;
-    }
-    switch (axis) {
-        case 1:
-            return _x_axis;
-        case 2:
-            return _y_axis;
-        case 3:
-            return _z_axis;
-    }
-}
-
 int _buzzer_B = 5;
 int _led_red_R = 1;
 int _led_green_R = 2;
@@ -49,7 +21,6 @@ void setup()
 {
     Serial.begin(9600); 
     pinMode(_led_R2, OUTPUT);
-    _bmx055_A.begin();
     pinMode(_led_red_R, OUTPUT);
     pinMode(_led_green_R, OUTPUT);
     pinMode(_led_blue_R, OUTPUT);

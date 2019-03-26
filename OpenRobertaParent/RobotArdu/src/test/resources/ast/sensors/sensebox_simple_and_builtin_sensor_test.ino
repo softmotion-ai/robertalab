@@ -9,11 +9,9 @@ unsigned long _time = millis();
 
 bool item;
 double item2;
-char* _ID1 = "";
 int _potentiometer_P = 3;
-int _led_R2 = 8;
-BMX055 _bmx055_A;
 
+BMX055 _bmx055_A;
 int _getValueFromBmx(int axis, int mode) {
     int _x_axis;
     int _y_axis;
@@ -43,15 +41,12 @@ int _button_B = 2;
 int _mic_S = 4;
 Ultrasonic _hcsr04_U(5, 6);
 int _output_L = 1;
-int _led_R1 = 7;
 
 void setup()
 {
     Serial.begin(9600); 
-    pinMode(_led_R2, OUTPUT);
     _bmx055_A.begin();
     pinMode(_button_B, INPUT);
-    pinMode(_led_R1, OUTPUT);
     item = true;
     item2 = 0;
 }
