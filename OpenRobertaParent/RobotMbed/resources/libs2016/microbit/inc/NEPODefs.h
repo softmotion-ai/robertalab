@@ -208,7 +208,7 @@ std::array<T, S> _convertToArray(std::list<T> &list) {
 }
 
 template <typename T, long unsigned S>
-std::array<T, S> _convertToArray(std::initializer_list<T> &list) {
+std::array<T, S> _convertToArray(std::initializer_list<T> list) {
   auto iterator = list.begin();
   std::array<T, S> result;
   int i = 0;
