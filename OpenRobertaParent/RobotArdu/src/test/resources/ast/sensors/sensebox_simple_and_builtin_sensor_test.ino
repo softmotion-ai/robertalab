@@ -3,7 +3,9 @@
 #undef min
 #define _SENSEBOX_INCLUDES
 #include <NEPODefs.h>
+#include "RobertaFunctions.h"
 #include "SenseBoxMCU.h"
+RobertaFunctions rob;
     
 unsigned long _time = millis();
 

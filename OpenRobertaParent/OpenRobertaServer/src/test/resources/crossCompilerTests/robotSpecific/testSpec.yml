@@ -35,3 +35,6 @@ robots:
     calliope2016:
         dir: calliope
         suffix: ".cpp"
+    sensebox:
+        dir: sensebox
+        suffix: ".ino"

@@ -3,6 +3,7 @@
 #undef min
 #define _SENSEBOX_INCLUDES
 #include <NEPODefs.h>
+#include "RobertaFunctions.h"
 #include "SenseBoxMCU.h"
 #include <SPI.h>
 #include <Wire.h>
@@ -11,6 +12,7 @@
 #include <senseBoxIO.h>
 #include <stdlib.h>
 #include <list>
+RobertaFunctions rob;
     
 unsigned long _time = millis();
 
