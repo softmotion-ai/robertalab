@@ -1,5 +1,0 @@
-<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="calliope" xmlversion="2.0" description="" tags="">
-	<instance x="138" y="88">
-		<block type="mbedBrick_Calliope-Brick" id="1" intask="true"/>
-	</instance>
-</block_set>

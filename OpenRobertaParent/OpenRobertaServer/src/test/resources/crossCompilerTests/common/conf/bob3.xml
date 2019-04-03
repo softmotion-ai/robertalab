@@ -1,5 +1,0 @@
-<block_set xmlns="http://de.fhg.iais.roberta.blockly" robottype="bob3" xmlversion="2.0" description="" tags="">
-	<instance x="213" y="213">
-		<block type="robControls_loopForever_ardu" id="1" intask="true" deletable="false" movable="false"/>
-	</instance>
-</block_set>
