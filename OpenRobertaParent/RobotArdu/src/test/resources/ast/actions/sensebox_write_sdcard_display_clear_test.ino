@@ -21,6 +21,7 @@ File _dataFile;
 char* _expression = "111111111111111111111112";
 #define OLED_RESET 4
 Adafruit_SSD1306 _display_L(OLED_RESET);
+Plot _plot_L(&_display_L);
 
 void setup()
 {

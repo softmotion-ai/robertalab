@@ -31,6 +31,7 @@ OpenSenseMap _osm("111111111111111111111111", _bee_);
 HDC1080 _hdc1080_H;
 #define OLED_RESET 4
 Adafruit_SSD1306 _display_L(OLED_RESET);
+Plot _plot_L(&_display_L);
 
 void setup()
 {
