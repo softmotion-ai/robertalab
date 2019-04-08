@@ -187,6 +187,10 @@ block:
       category: STMT
       implementor: de.fhg.iais.roberta.syntax.lang.stmt.WaitTimeStmt
       type: [robControls_wait_time]
+  DEBUG_STMT:
+      category: STMT
+      implementor: de.fhg.iais.roberta.syntax.lang.stmt.DebugAction
+      type: [robActions_debug]
   TURN_ACTION:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.action.motor.differential.TurnAction
@@ -371,6 +375,10 @@ block:
       category: ACTOR
       implementor: de.fhg.iais.roberta.syntax.action.serial.SerialWriteAction
       type: [robActions_serial_print]
+  ASSERT_STMT:
+      category: STMT
+      implementor: de.fhg.iais.roberta.syntax.lang.stmt.AssertStmt
+      type: [robActions_assert]
   
 wait:
   ACCELERATION :
