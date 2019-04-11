@@ -48,6 +48,13 @@
           </block>
         </value>
       </block>
+      <block type="robActions_serial_print">
+        <value name="OUT">
+          <block type="text">
+            <field name="TEXT">Hallo</field>
+          </block>
+        </value>
+      </block>
     </category>
     <category name="TOOLBOX_PIN" svg="false">
       <block type='mbedActions_write_to_pin'>
