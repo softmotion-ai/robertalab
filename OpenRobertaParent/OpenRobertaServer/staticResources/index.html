@@ -191,23 +191,23 @@ limitations under the License.
                             class="head-navi-title hidden-sm hidden-md hidden-lg" lkey="Blockly.Msg.MENU_LANGUAGE"></span>
                     </a>
                         <ul id="language" class="dropdown-menu" role="menu" aria-labelledby="chosenLanguage">
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="de"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="en"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="sv"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="es"></a></li>
+                            <!-- <li><a role="menuitem" href="#" class="lang-lbl" lang="de"></a></li> 	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="sv"></a></li>	
                             <li><a role="menuitem" href="#" class="lang-lbl" lang="pt"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="it"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="fr"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="ca"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="ru"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="cs"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="pl"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="tr"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="nl"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="fi"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="da"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="zh-hans"></a></li>
-                            <li><a role="menuitem" href="#" class="lang-lbl" lang="zh-hant"></a></li>
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="it"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="fr"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="ca"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="ru"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="cs"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="pl"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="tr"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="nl"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="fi"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="da"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="zh-hans"></a></li>	
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="zh-hant"></a></li> -->
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="es"></a></li>
+                            <li><a role="menuitem" href="#" class="lang-lbl" lang="en"></a></li>
                         </ul></li>
                     <!-- Menu Navigation -->
                     <li class="divider visible-xs"></li>
@@ -621,6 +621,7 @@ limitations under the License.
             </div>
         </div>
     </div>
+    
     <!--Add Status Text-->
     <div class="modal fade" id="modal-addStatusText" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
@@ -710,6 +711,77 @@ limitations under the License.
             </div>
         </div>
     </div>
+    <!-- New popup 4 Startup -->	
+    <!-- <div id="show-startup-message" class="modal fade" data-keyboard="false" data-backdrop="static">	
+        <div class="modal-dialog modal-lg">	
+            <div class="modal-content" style="padding-top: 10px;">	
+                <a href="https://github.com/OpenRoberta/robertalab/releases" class="modal-body" target="_blank">Release <span id="startupVersion"font-size: 18px;">	
+                        2.0.0 </span></a> <a href="https://www.roberta-home.de/impressum" target="_blank" class="DE modal-body" style="float: right;">Impressum</a> <a	
+                    href="https://www.roberta-home.de/impressum/?L=1" target="_blank" class="EN modal-body" style="float: right;">Publishing notes</a>	
+                <div class="modal-header" style="text-align: center; font-size: 18px;">	
+                    <h4 lkey="Blockly.Msg.POPUP_STARTUP_START">Choose your system!</h4>	
+                </div>	
+                <div id="slick-container">	
+                    <div id="popup-robot-container" class="modal-body" style="text-align: center;">	
+                        <div id="popup-robot-main">	
+                            <div id="popup-sim" class="popup-robot robot-container">	
+                                <span href="#" class='typcn typcn-open robot-icon'></span><span class="robot-label">Open Roberta Sim</span><img class="img-beta"	
+                                    src="/css/img/beta.png" alt="beta" /><a href="#" target="_blank" style="display: inline;"> <span	
+                                    class='robot-info typcn typcn-info-large'></span>	
+                                </a>	
+                            </div>	
+                        </div>	
+                        <div id="popup-robot-subgroup"></div>	
+                    </div>	
+                </div>	
+                <div class="modal-body">	
+                    <a href="#" class="hidden" style="display: inline;" id="startPopupBack"> <span class="typcn typcn-arrow-back-outline"></span>	
+                    </a>	
+                </div>	
+                <div class="container-fluid">	
+                    <div class="row">	
+                        <div class="modal-header" style="text-align: center; font-size: 18px;">	
+                            <h4 lkey="Blockly.Msg.POPUP_STARTUP_HELP">Do you need help?</h4>	
+                        </div>	
+                        <div class="clearer"></div>	
+                        <div class="col-md-3 hidden-xs" lkey="Blockly.Msg.POPUP_STARTUP_TOUR_TEXT">Möchtest du gleich loslegen, weißt aber nicht genau	
+                            wie? Wir zeigen dir die ersten Schritte in einer interaktiven Anleitung.</div>	
+                        <div class="col-md-3 hidden-xs">	
+                            <!-- <h4 lkey="Blockly.Msg.POPUP_STARTUP_HELP">Do you need help?</h4> -->	
+                            <div style="text-align: center">	
+                                <div id="takeATour" class="robot-container startupImages" data-dismiss="modal"	
+                                    style="background-image: url(/css/img/tour.png); background-size: contain; background-repeat: no-repeat">	
+                                    <br>	
+                                    <span lkey="Blockly.Msg.POPUP_TOUR" class="robot-label"></span>	
+                                </div>	
+                            </div>	
+                        </div>	
+                        <div class="col-md-3 hidden-xs" lkey="Blockly.Msg.POPUP_STARTUP_HELP_TEXT">In unserer ausführlichen Hilfe erklären wir dir alles	
+                            ganz genau, von der Bauanleitung bis zu häufig gestellten Fragen.</div>	
+                        <div class="col-md-3">	
+                            <!-- <h4 lkey="Blockly.Msg.POPUP_STARTUP_HELP">Do you need help?</h4> -->	
+                            <div style="text-align: center">	
+                                <div id="goToWiki" class="robot-container startupImages" data-dismiss="modal"	
+                                    style="background-image: url(/css/img/wiki.png); background-size: contain; background-repeat: no-repeat">	
+                                    <br>	
+                                    <span class="robot-label">Open Roberta<br>Wiki</span>	
+                                </div>	
+                            </div>	
+                        </div>	
+                    </div>	
+                    <hr class="cookies-enabled" style="border: 2px solid #33B8CA; margin: 10px 0">	
+                    <div class="modal-footer left-inner-addon popup-checkbox cookies-enabled">	
+                        <div id="startup-message-statustext">	
+                            <h4 id="statustext-en" class="EN"></h4>	
+                            <h4 id="statustext-de" class="DE"></h4>	
+                        </div>	
+                        <input type="checkbox" name="checkbox" id="checkbox_id" value="value" /> <label for="checkbox_id" style="color: #333;"	
+                            lkey="Blockly.Msg.POPUP_STARTUP_HIDE"> Okay, don't show this again. </label>	
+                    </div>	
+                </div>	
+            </div>	
+        </div>	
+    </div> -->
     <!-- Single Modal List -->
     <div id="single-modal-list" class="modal fade">
         <div class="modal-dialog modal-sm">
@@ -904,77 +976,6 @@ limitations under the License.
                     <button type="button" class="btn" id="doUpdateFirmware" lkey="Blockly.Msg.POPUP_DO_UPDATE_FIRMWARE">Update now</button>
                     <input id="buttonCancelFirmwareUpdate" type="button" class="btn backButton" data-dismiss="modal" lkey="Blockly.Msg.POPUP_CANCEL"></input> <input
                         id="buttonCancelFirmwareUpdateAndRun" type="button" class="btn backButton" data-dismiss="modal" lkey="Blockly.Msg.POPUP_CANCEL"></input>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- New popup 4 Startup -->
-    <div id="show-startup-message" class="modal fade" data-keyboard="false" data-backdrop="static">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content" style="padding-top: 10px;">
-                <a href="https://github.com/OpenRoberta/robertalab/releases" class="modal-body" target="_blank">Release <span id="startupVersion"font-size: 18px;">
-                        2.0.0 </span></a> <a href="https://www.roberta-home.de/impressum" target="_blank" class="DE modal-body" style="float: right;">Impressum</a> <a
-                    href="https://www.roberta-home.de/impressum/?L=1" target="_blank" class="EN modal-body" style="float: right;">Publishing notes</a>
-                <div class="modal-header" style="text-align: center; font-size: 18px;">
-                    <h4 lkey="Blockly.Msg.POPUP_STARTUP_START">Choose your system!</h4>
-                </div>
-                <div id="slick-container">
-                    <div id="popup-robot-container" class="modal-body" style="text-align: center;">
-                        <div id="popup-robot-main">
-                            <div id="popup-sim" class="popup-robot robot-container">
-                                <span href="#" class='typcn typcn-open robot-icon'></span><span class="robot-label">Open Roberta Sim</span><img class="img-beta"
-                                    src="/css/img/beta.png" alt="beta" /><a href="#" target="_blank" style="display: inline;"> <span
-                                    class='robot-info typcn typcn-info-large'></span>
-                                </a>
-                            </div>
-                        </div>
-                        <div id="popup-robot-subgroup"></div>
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <a href="#" class="hidden" style="display: inline;" id="startPopupBack"> <span class="typcn typcn-arrow-back-outline"></span>
-                    </a>
-                </div>
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="modal-header" style="text-align: center; font-size: 18px;">
-                            <h4 lkey="Blockly.Msg.POPUP_STARTUP_HELP">Do you need help?</h4>
-                        </div>
-                        <div class="clearer"></div>
-                        <div class="col-md-3 hidden-xs" lkey="Blockly.Msg.POPUP_STARTUP_TOUR_TEXT">Möchtest du gleich loslegen, weißt aber nicht genau
-                            wie? Wir zeigen dir die ersten Schritte in einer interaktiven Anleitung.</div>
-                        <div class="col-md-3 hidden-xs">
-                            <!-- <h4 lkey="Blockly.Msg.POPUP_STARTUP_HELP">Do you need help?</h4> -->
-                            <div style="text-align: center">
-                                <div id="takeATour" class="robot-container startupImages" data-dismiss="modal"
-                                    style="background-image: url(/css/img/tour.png); background-size: contain; background-repeat: no-repeat">
-                                    <br>
-                                    <span lkey="Blockly.Msg.POPUP_TOUR" class="robot-label"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 hidden-xs" lkey="Blockly.Msg.POPUP_STARTUP_HELP_TEXT">In unserer ausführlichen Hilfe erklären wir dir alles
-                            ganz genau, von der Bauanleitung bis zu häufig gestellten Fragen.</div>
-                        <div class="col-md-3">
-                            <!-- <h4 lkey="Blockly.Msg.POPUP_STARTUP_HELP">Do you need help?</h4> -->
-                            <div style="text-align: center">
-                                <div id="goToWiki" class="robot-container startupImages" data-dismiss="modal"
-                                    style="background-image: url(/css/img/wiki.png); background-size: contain; background-repeat: no-repeat">
-                                    <br>
-                                    <span class="robot-label">Open Roberta<br>Wiki</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="cookies-enabled" style="border: 2px solid #33B8CA; margin: 10px 0">
-                    <div class="modal-footer left-inner-addon popup-checkbox cookies-enabled">
-                        <div id="startup-message-statustext">
-                            <h4 id="statustext-en" class="EN"></h4>
-                            <h4 id="statustext-de" class="DE"></h4>
-                        </div>
-                        <input type="checkbox" name="checkbox" id="checkbox_id" value="value" /> <label for="checkbox_id" style="color: #333;"
-                            lkey="Blockly.Msg.POPUP_STARTUP_HIDE"> Okay, don't show this again. </label>
-                    </div>
                 </div>
             </div>
         </div>
