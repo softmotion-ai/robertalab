@@ -40,7 +40,7 @@ define([ 'exports', 'log', 'jquery', 'guiState.controller', 'program.controller'
         } else if (navigator.language.indexOf("zh-hant") > -1) {
             language = 'zh-hant';
         } else {
-            language = 'en';
+            language = 'es';
         }
         if (language === 'de') {
             $('.EN').css('display', 'none');
