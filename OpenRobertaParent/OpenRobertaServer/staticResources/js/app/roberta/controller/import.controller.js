@@ -78,7 +78,7 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'pr
             }
         });
     }
-
+    exports.loadProgramFromXML = loadProgramFromXML;
     /**
      * Open a file select dialog to load source code from local disk and send it
      * to the cross compiler
