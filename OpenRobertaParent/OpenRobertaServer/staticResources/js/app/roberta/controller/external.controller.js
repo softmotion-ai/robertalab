@@ -8,12 +8,19 @@ EnjoyHint, TOUR_C, SIM, PROGLIST, $, Blockly) {
   }
   exports.init = init;
 
-  function initEvents() {
-    var uri = window.location.toString();
+  function initEvents() {    
     const params = new URLSearchParams(window.location.search);
     var choosenRobotType = params.get("robot");
+    var programId = params.get('programId');
     if (choosenRobotType) {
-      ROBOT_C.switchRobot(choosenRobotType);
+      ROBOT_C.switchRobot(choosenRobotType);      
+      IMPORT_C.loadProgramFromXML(programId, getProgramXML());
     }
+  }
+  function getProgramXML() {
+    var xml = new XMLHttpRequest();
+    xml.open('GET', '../../../../xmlTest/Boom.xml', false);
+    xml.send();
+    return new XMLSerializer().serializeToString(xml.responseXML);
   }
 });

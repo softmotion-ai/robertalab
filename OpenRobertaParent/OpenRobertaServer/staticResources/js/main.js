@@ -78,7 +78,7 @@ require.config({
         'simulation.scene' : '../app/simulation/simulationLogic/scene',
         'simulation.simulation' : '../app/simulation/simulationLogic/simulation',
 
-        'externalRouting.controller' : '../app/roberta/controller/externalRouting.controller',
+        'external.controller' : '../app/roberta/controller/external.controller',
 
         'comm' : '../helper/comm',
         'log' : '../helper/log',
@@ -135,7 +135,7 @@ require([ 'require', 'wrap', 'log', 'jquery', 'jquery-cookie', 'guiState.control
         'progDelete.controller', 'confDelete.controller', 'progShare.controller', 'cookieDisclaimer.controller', 'menu.controller', 'multSim.controller',
         'user.controller', 'robot.controller', 'program.controller', 'progSim.controller', 'progCode.controller', 'progDelete.controller',
         'progHelp.controller', 'progInfo.controller', 'progRun.controller', 'configuration.controller', 'language.controller', 'socket.controller',
-        'progTutorial.controller', 'tutorialList.controller', 'volume-meter', 'user.model', 'webview.controller', 'externalRouting.controller' ], function(require) {
+        'progTutorial.controller', 'tutorialList.controller', 'volume-meter', 'user.model', 'webview.controller', 'external.controller' ], function(require) {
 
     $ = require('jquery', 'jquery-cookie');
     WRAP = require('wrap');
@@ -168,7 +168,7 @@ require([ 'require', 'wrap', 'log', 'jquery', 'jquery-cookie', 'guiState.control
     tutorialController = require('progTutorial.controller');
     tutorialListController = require('tutorialList.controller');
     webviewController = require('webview.controller');
-    externalController = require('externalRouting.controller');
+    externalController = require('external.controller');
 
     $(document).ready(WRAP.fn3(init, 'page init'));
 });

@@ -51,7 +51,7 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'pr
                 dom = Blockly.Xml.workspaceToDom(GUISTATE_C.getBricklyWorkspace());
                 var xmlConfOld = Blockly.Xml.domToText(dom);
                 GUISTATE_C.setConfigurationXML(xmlConfOld);
-
+            
                 // on server side we only test case insensitive block names, displaying xml can still fail:
                 result.programSaved = false;
                 result.name = 'NEPOprog';
@@ -78,7 +78,7 @@ define([ 'exports', 'comm', 'message', 'log', 'util', 'guiState.controller', 'pr
             }
         });
     }
-
+    exports.loadProgramFromXML = loadProgramFromXML;
     /**
      * Open a file select dialog to load source code from local disk and send it
      * to the cross compiler
